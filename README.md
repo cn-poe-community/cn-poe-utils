@@ -6,9 +6,11 @@
 - JSON,TEXT 翻译
 - Building 生成
 
-## 依赖（临时）
+## 安装
 
-由于npmjs.com需要开启2阶段认证或使用CI跳过2阶段认证，因此本项目暂未上传至npmjs.com，目前请作为本地依赖使用。
+```
+npm install cn-poe-utils
+```
 
 ## 使用
 
