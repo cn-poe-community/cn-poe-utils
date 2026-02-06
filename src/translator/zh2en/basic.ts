@@ -532,18 +532,18 @@ export class BasicTranslator {
                         console.warn(`untranslated ascendant: ${zh}`);
                     }
                 } else if (refType === "display_indexable_support") {
-                    const zh = posParams.get(0)!;
+                    const zh = posParams.get(pos)!;
                     const en = this.transIndexableSupports(zh);
                     if (en) {
-                        posParams.set(0, en);
+                        posParams.set(pos, en);
                     } else {
                         console.warn(`untranslated indexable_support: ${zh}`);
                     }
                 } else if (refType === "display_indexable_skill") {
-                    const zh = posParams.get(0)!;
+                    const zh = posParams.get(pos)!;
                     const en = this.transSkill(zh);
                     if (en) {
-                        posParams.set(0, en);
+                        posParams.set(pos, en);
                     } else {
                         console.warn(`untranslated indexable_skill: ${zh}`);
                     }

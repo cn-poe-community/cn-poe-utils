@@ -66,7 +66,7 @@ export interface Item {
     corrupted?: boolean;
     craftedMods?: string[];
     /**
-     *  熔炉数据，暂未解析
+     *  熔炉数据
      */
     crucible?: unknown;
     /**
@@ -121,6 +121,10 @@ export interface Item {
      */
     identified: boolean;
     ilvl: number;
+    /**
+     * 孕育物品
+     */
+    incubatedItem?: unknown;
     /**
      * 基底词缀
      */

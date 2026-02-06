@@ -48,6 +48,7 @@ export interface Node {
     expansionJewel?: ExpansionJewel;
     reminderText?: string[];
     isNotable?: boolean;
+    grantedStrength?: number;
 }
 
 export interface ExpansionJewel {

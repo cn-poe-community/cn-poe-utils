@@ -5,7 +5,10 @@ import { TranslatorFactory } from "../../factory.js";
 const factory = new TranslatorFactory();
 const basic = factory.getBasicTranslator();
 
-const mods = [["增加 8 个天赋技能", "Adds 8 Passive Skills"]];
+const mods = [
+    ["增加 8 个天赋技能", "Adds 8 Passive Skills"],
+    ["所有 电球 宝石等级 +3", "+3 to Level of all Spark Gems"],
+];
 
 test("mods translations", () => {
     for (let i = 0; i < mods.length; i++) {
@@ -18,7 +21,7 @@ test("mods translations", () => {
 
 const zhEldritchImplicitMods = [
     "有一个传奇怪物出现在你面前：法术附加 {0} - {1} 基础物理伤害",
-    "有一个异界图鉴最终首领出现在你面前：【冰霜净化】的光环效果提高 {0}%",
+    "有一个异界图鉴最终首领出现在你面前：冰霜净化的光环效果提高 {0}%",
 ];
 const enEldritchImplicitMods = [
     "While a Unique Enemy is in your Presence, Adds {0} to {1} Physical Damage to Spells",
