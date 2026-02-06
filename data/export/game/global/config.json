@@ -1,0 +1,66 @@
+{
+  "patch": "3.27.0.8.2",
+  "files": [
+    "Metadata/StatDescriptions/stat_descriptions.txt",
+    "Metadata/StatDescriptions/tincture_stat_descriptions.txt"
+  ],
+  "translations": [
+    "English"
+  ],
+  "tables": [
+    {
+      "name": "ActiveSkills"
+    },
+    {
+      "name": "AlternateQualityTypes"
+    },
+    {
+      "name": "Ascendancy"
+    },
+    {
+      "name": "BaseItemTypes"
+    },
+    {
+      "name": "Characters"
+    },
+    {
+      "name": "ClientStrings"
+    },
+    {
+      "name": "GemEffects"
+    },
+    {
+      "name": "GrantedEffects"
+    },
+    {
+      "name": "ItemClasses"
+    },
+    {
+      "name": "IndexableSkillGems"
+    },
+    {
+      "name": "IndexableSupportGems"
+    },
+    {
+      "name": "PassiveSkills"
+    },
+    {
+      "name": "PassiveSkillTattoos"
+    },
+    {
+      "name": "SkillGems"
+    },
+    {
+      "name": "UniqueStashLayout"
+    },
+    {
+      "name": "UniqueStashTypes"
+    },
+    {
+      "name": "WeaponTypes"
+    },
+    {
+      "name": "Words"
+    }
+  ]
+}

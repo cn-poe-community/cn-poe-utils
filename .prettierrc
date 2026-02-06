@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "src/**/*.ts",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}

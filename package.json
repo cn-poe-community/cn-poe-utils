@@ -1,0 +1,61 @@
+{
+  "name": "cn-poe-utils",
+  "version": "0.0.2",
+  "description": "",
+  "files": [
+    "dist/**/*"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./api": {
+      "import": "./dist/api/index.js",
+      "types": "./dist/api/index.d.ts"
+    },
+    "./data/poe": {
+      "import": "./dist/data/poe/index.js",
+      "types": "./dist/data/poe/index.d.ts"
+    },
+    "./data/pob": {
+      "import": "./dist/data/pob/index.js",
+      "types": "./dist/data/pob/index.d.ts"
+    },
+    "./translator/zh2en": {
+      "import": "./dist/translator/zh2en/index.js",
+      "types": "./dist/translator/zh2en/index.d.ts"
+    },
+    "./building": {
+      "import": "./dist/building/index.js",
+      "types": "./dist/building/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "format": "prettier --write src/",
+    "lint": "eslint src",
+    "test": "vitest --run"
+  },
+  "keywords": [
+    "path of exile",
+    "pathofexile"
+  ],
+  "author": "me1ting",
+  "license": "MIT",
+  "packageManager": "pnpm@10.9.0",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "3.8.1",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.0.18"
+  }
+}
