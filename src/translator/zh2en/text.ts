@@ -332,8 +332,7 @@ class ModLine extends Line {
 
     constructor(content: string) {
         super(content);
-        const pattern = new RegExp("(.+)\\s(\\(\\w+\\))$");
-        const match = pattern.exec(content);
+        const match = /^(.+)\s(\(\w+\))$/.exec(content);
         if (match) {
             this.mod = match[1];
             this.suffix = match[2];
