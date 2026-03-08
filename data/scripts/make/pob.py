@@ -1,10 +1,8 @@
 import re
-from common import CLIENT_GLOBAL, LANG_EN, at, at_pob, must_parent, read_json
+from typing import Any
+from common import CLIENT_GLOBAL, LANG_EN, at_pob, read_json
 from db import pob
 from export import game
-from make.poe import json_to_js
-
-POB_DATA_PATH = "../src/data/pob/data.ts"
 
 
 def get_slim_classes(tree):
@@ -106,18 +104,13 @@ def get_slim_cluster_jewel_metadata():
     }
 
 
-def make():
+def get_all() -> dict[str, Any]:
     (rarityMap, slotMap) = get_rarity_map_and_slot_map()
-    codes = [
-        json_to_js(get_slim_tree(), None, "tree"),
-        json_to_js(get_phrecia_ascendancy_map(), None, "phreciaAscendancyMap"),
-        json_to_js(rarityMap, None, "rarityMap"),
-        json_to_js(slotMap, None, "slotMap"),
-        json_to_js(get_slim_cluster_jewel_metadata(),
-                   None, "clusterJewels"),
-    ]
 
-    must_parent(at(POB_DATA_PATH))
-    print(f"saved {at(POB_DATA_PATH)}")
-    with open(at(POB_DATA_PATH), 'wt', encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(codes))
+    return {
+        "tree": get_slim_tree(),
+        "phreciaAscendancyMap": get_phrecia_ascendancy_map(),
+        "rarityMap": rarityMap,
+        "slotMap": slotMap,
+        "clusterJewels": get_slim_cluster_jewel_metadata(),
+    }

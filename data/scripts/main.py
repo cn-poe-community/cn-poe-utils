@@ -1,5 +1,5 @@
 import sys
-from make import pob, poe
+from make import all
 from db import skill, item, pair, passive_skill, stat, unique
 from export import game, trade, tree
 
@@ -27,8 +27,7 @@ def run_tasks():
 
 
 def make():
-    poe.make()
-    pob.make()
+    all.make()
 
 
 def main():

@@ -1,10 +1,7 @@
-import json
 import os
-
-from common import at, must_parent, read_any_json, read_json, read_ndjson
+from common import at, read_json, read_ndjson
 from db import skill, pair, passive_skill, stat, unique
 
-POE_DATA_PATH = "../src/data/poe/data.ts"
 
 checked_non_ascii_types = {"Maelström Staff"}
 checked_non_ascii_names = {"Doppelgänger Guise", "Mjölner"}
@@ -22,11 +19,12 @@ def check_non_ascii_names():
                 basetype = item["en"]
                 if not basetype.isascii():
                     non_ascii_types.add(basetype)
-                if "uniques" in item:
-                    for u in item["uniques"]:
-                        name = u["en"]
-                        if not name.isascii():
-                            non_ascii_names.add(name)
+
+    uniques = read_ndjson(at(unique.UNIQUES_PATH))
+    for u in uniques:
+        name = u["en"]
+        if not name.isascii():
+            non_ascii_names.add(name)
 
     deprecated_types = checked_non_ascii_types-non_ascii_types
     deprecated_names = checked_non_ascii_names-non_ascii_names
@@ -73,56 +71,44 @@ def remain_fields(obj: dict, fields: set[str]):
                         remain_fields(item, fields)
 
 
-def json_to_js(data, remained_fields: set | None, name: str) -> str:
-    """
-    将JSON文件转换为JavaScript代码。
+def remain_fields_of_each(arr: list[dict], fields: set[str]) -> list[dict]:
+    for item in arr:
+        remain_fields(item, fields)
 
-    :param data: 数据
-    :param remained_fields: 保留的字段，如果传入None或空set，表示保留所有字段
-    :param name: 变量名
-    """
-    if remained_fields is not None and len(remained_fields) > 0:
-        for item in data:
-            remain_fields(item, remained_fields)
-    return f"export const {name} = {json.dumps(data, ensure_ascii=False, indent=2)};"
+    return arr
 
 
-def jsons_to_js(files: list[str], remained_fields: set, variable_name) -> str:
-    """
-    将多个数组JSON文件转换为JavaScript代码。
+def get_attributes() -> list:
+    data: list = read_json(at(pair.ATTRIBUTES_PATH))
+    return remain_fields_of_each(data, {"zh", "en", "values"})
 
-    :param data: 数据路径列表
-    :param remained_fields: 保留的字段，如果传入None或空set，表示保留所有字段
-    :param name: 变量名
-    """
+
+def get_properties() -> list:
     data = []
-    for file in files:
-        data.extend(read_any_json(file))
-    return json_to_js(data, remained_fields, variable_name)
+    data.extend(read_json(at(pair.PROPERTIES_PATH)))
+    data.extend(read_json(at(pair.PROPERTIES2_PATH)))
+
+    return remain_fields_of_each(data, {"zh", "en", "values"})
 
 
-def make_attributes():
-    return jsons_to_js([at("db/attributes.json")], {"zh", "en", "values"}, "attributes")
+def get_requirements() -> list:
+    data: list = read_json(at(pair.REQUIREMENTS_PATH))
+    return remain_fields_of_each(data, {"zh", "en", "values"})
 
 
-def make_properties():
-    return jsons_to_js([at("db/properties.json"), at("db/properties2.json")], {"zh", "en", "values"}, "properties")
+def get_requirements_suffixes() -> list:
+    data: list = read_json(at(pair.REQUIREMENT_SUFFIXES_PATH))
+    return remain_fields_of_each(data, {"zh", "en", "values"})
 
 
-def make_requirements():
-    codes = []
-    codes.append(jsons_to_js(
-        [at(pair.REQUIREMENTS_PATH)], {"zh", "en", "values"}, "requirements"))
-    codes.append(jsons_to_js(
-        [at(pair.REQUIREMENT_SUFFIXES_PATH)], {"zh", "en", "values"}, "requirementSuffixes"))
-    return "\n".join(codes)
+def get_strings() -> list:
+    data: list = read_json(at(pair.STRINGS_PATH))
+    return remain_fields_of_each(data, {"id", "zh", "en", "type"})
 
 
-def make_strings():
-    return jsons_to_js([at("db/strings.json")], {"id", "zh", "en", "type"}, "strings")
+def get_items() -> dict[str, list]:
+    check_non_ascii_names()
 
-
-def make_items():
     uniques = read_ndjson(at(unique.UNIQUES_PATH))
     uniques_base_type_idx = {}
     for u in uniques:
@@ -131,7 +117,8 @@ def make_items():
             uniques_base_type_idx[base_type] = []
         uniques_base_type_idx[base_type].append(u)
 
-    codes = []
+    items = {}
+
     for file_name in os.listdir(at("db/items")):
         source = at("db/items", file_name)
         if os.path.isfile(source) and file_name.endswith(".json"):
@@ -140,35 +127,38 @@ def make_items():
                 base_type = item["en"]
                 if base_type in uniques_base_type_idx:
                     item["uniques"] = uniques_base_type_idx[base_type]
+
             name = file_name[:-5]
-            code = json_to_js(
-                data, {"zh", "en", "uniques"}, snake_to_camel(name))
-            codes.append(code)
-    return "\n".join(codes)
+            remain_fields_of_each(data, {"zh", "en", "uniques"})
+            items[snake_to_camel(name)] = data
+
+    return items
 
 
-def make_skills():
-    codes = []
-    codes.append(jsons_to_js(
-        [at(skill.GEM_SKILLS_PATH)], {"zh", "en"}, "gemSkills"))
-    codes.append(jsons_to_js(
-        [at(skill.TRANSFIGURED_SKILLS_PATH)], {"zh", "en"}, "transfiguredSkills"))
-    codes.append(jsons_to_js(
-        [at(skill.HYBRID_SKILLS_PATH)], {"zh", "en"}, "hybridSkills"))
-    codes.append(jsons_to_js(
-        [at(skill.INDEXABLE_SUPPORT_PATH)], {"zh", "en"}, "indexableSupports"))
-    return "\n".join(codes)
+def get_skills() -> dict[str, list]:
+    skills = {}
+
+    skills["gemSkills"] = remain_fields_of_each(
+        read_ndjson(at(skill.GEM_SKILLS_PATH)), {"zh", "en"})
+    skills["transfiguredSkills"] = remain_fields_of_each(
+        read_ndjson(at(skill.TRANSFIGURED_SKILLS_PATH)), {"zh", "en"})
+    skills["hybridSkills"] = remain_fields_of_each(
+        read_ndjson(at(skill.HYBRID_SKILLS_PATH)), {"zh", "en"})
+    skills["indexableSupports"] = remain_fields_of_each(
+        read_ndjson(at(skill.INDEXABLE_SUPPORT_PATH)), {"zh", "en"})
+
+    return skills
 
 
-def make_passive_skills():
-    codes = []
-    codes.append(jsons_to_js(
-        [at(passive_skill.ANOINTED_PATH)], {"zh", "en"}, "anointed"))
-    codes.append(jsons_to_js(
-        [at(passive_skill.KEYSTONES_PATH)], {"zh", "en"}, "keystones"))
-    codes.append(jsons_to_js(
-        [at(passive_skill.ASCENDANT_PATH)], {"zh", "en"}, "ascendant"))
-    return "\n".join(codes)
+def get_passive_skills() -> dict[str, list]:
+    skills = {}
+    skills["anointed"] = remain_fields_of_each(
+        read_ndjson(at(passive_skill.ANOINTED_PATH)), {"zh", "en"})
+    skills["keystones"] = remain_fields_of_each(
+        read_ndjson(at(passive_skill.KEYSTONES_PATH)), {"zh", "en"})
+    skills["ascendant"] = remain_fields_of_each(
+        read_ndjson(at(passive_skill.ASCENDANT_PATH)), {"zh", "en"})
+    return skills
 
 
 def remove_repeats(stats):
@@ -190,7 +180,7 @@ def remove_repeats(stats):
     return stat_list
 
 
-def make_stats():
+def get_stats() -> list:
     stats = []
     stats.extend(read_json(at(stat.DESC_STATS_PATH)))
     stats.extend(read_json(at(stat.TRADE_STATS_PATH)))
@@ -198,23 +188,26 @@ def make_stats():
     stats = remove_repeats(stats)
 
     # 还需要保留refs字段以及refs中的参数索引，这里假设索引最大为5
-    return json_to_js(stats, {"zh", "en", "refs", "0", "1", "2", "3", "4", "5"}, "stats")
+    return remain_fields_of_each(stats, {"zh", "en", "refs", "0", "1", "2", "3", "4", "5"})
 
 
-def make():
-    print("info: making...")
-    codes = [
-        make_attributes(),
-        make_properties(),
-        make_requirements(),
-        make_strings(),
-        make_items(),
-        make_skills(),
-        make_passive_skills(),
-        make_stats(),
-    ]
+def get_all() -> dict[str, list]:
+    all = {}
+    all["attributes"] = get_attributes()
+    all["properties"] = get_properties()
+    all["requirements"] = get_requirements()
+    all["requirementSuffixes"] = get_requirements_suffixes()
+    all["strings"] = get_strings()
 
-    must_parent(at(POE_DATA_PATH))
-    print(f"saved {at(POE_DATA_PATH)}")
-    with open(at(POE_DATA_PATH), 'wt', encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(codes))
+    for name, array in get_items().items():
+        all[name] = array
+
+    for name, array in get_skills().items():
+        all[name] = array
+
+    for name, array in get_passive_skills().items():
+        all[name] = array
+
+    all["stats"] = get_stats()
+
+    return all
