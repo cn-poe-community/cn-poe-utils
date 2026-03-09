@@ -23,9 +23,8 @@ export class JsonTranslator {
      */
     private preHandleItem(item: itemTypes.Item) {
         if (
-            item.name &&
-            (item.name === ZH_FORBIDDEN_FLAME ||
-                item.name === ZH_FORBIDDEN_FLESH)
+            item.name === ZH_FORBIDDEN_FLAME ||
+            item.name === ZH_FORBIDDEN_FLESH
         ) {
             if (item.requirements) {
                 for (const requirement of item.requirements) {
@@ -36,7 +35,7 @@ export class JsonTranslator {
                     }
 
                     const value = requirement.values[0][0];
-                    // 禁断珠宝，其中贵族的升华大点 `暗影` 与暗影的升华大点 `暗影` 中文同名问题。
+                    // 禁断珠宝，其中贵族的升华大点 `暗影` 与暗影的升华大点 `暗影` 存在中文同名问题
                     if (value === ZH_CLASS_SCION) {
                         if (item.explicitMods) {
                             for (let i = 0; i < item.explicitMods.length; i++) {

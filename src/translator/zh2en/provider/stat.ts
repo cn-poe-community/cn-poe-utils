@@ -2,8 +2,8 @@ import { DATA as POE_DATA } from "../../../data/poe/index.js";
 import type { Stat } from "../../../data/poe/types.js";
 import { getTextSkeleton, LINE_SEPARATOR } from "../util/text.js";
 
-export interface MultilineStats {
-    maxLines: number;
+export interface MultilineStatGroup {
+    maxLineSize: number;
     stats: MultilineStat[];
 }
 
@@ -14,7 +14,10 @@ export interface MultilineStat {
 
 export class StatProvider {
     private readonly zhSkeletonIdx = new Map<string, Stat[]>();
-    private readonly firstLineZhSkeletonIdx = new Map<string, MultilineStats>();
+    private readonly firstLineZhSkeletonIdx = new Map<
+        string,
+        MultilineStatGroup
+    >();
     private readonly referenceStats = new Array<Stat>();
     private readonly multilineRefStats = new Array<MultilineStat>();
 
@@ -50,12 +53,12 @@ export class StatProvider {
                 const multilineStat = { lineSize: lines.length, stat: stat };
                 if (idxValue === undefined) {
                     this.firstLineZhSkeletonIdx.set(firstLineSkeleton, {
-                        maxLines: lines.length,
+                        maxLineSize: lines.length,
                         stats: [multilineStat],
                     });
                 } else {
-                    if (idxValue.maxLines < lines.length) {
-                        idxValue.maxLines = lines.length;
+                    if (idxValue.maxLineSize < lines.length) {
+                        idxValue.maxLineSize = lines.length;
                     }
                     idxValue.stats.push(multilineStat);
                 }
@@ -74,7 +77,9 @@ export class StatProvider {
         return this.zhSkeletonIdx.get(skeleton);
     }
 
-    provideByFirstLineZhSkeleton(skeleton: string): MultilineStats | undefined {
+    provideByFirstLineZhSkeleton(
+        skeleton: string,
+    ): MultilineStatGroup | undefined {
         return this.firstLineZhSkeletonIdx.get(skeleton);
     }
 

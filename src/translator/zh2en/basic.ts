@@ -162,11 +162,11 @@ export class BasicTranslator {
     }
 
     /**
-     * 根据 typeLine 推断 BaseType。
+     * 根据 typeLine 推断 BaseType，用于文本翻译。。
      *
      * name 用于匹配传奇，否则返回首个匹配的 BaseType。
      */
-    findBaseTypeFromTypeLine(
+    private findBaseTypeFromTypeLine(
         typeLine: string,
         name: string,
     ): BaseType | undefined {
@@ -195,7 +195,7 @@ export class BasicTranslator {
             return;
         }
 
-        // 魔法物品、普通物品、未鉴定传奇物品、未鉴定稀有物品
+        // 魔法物品、普通物品、未鉴定物品
 
         if (typeLine.startsWith(this.qualityPrefix.zh)) {
             typeLine = typeLine.substring(this.qualityPrefix.zh.length);
@@ -239,9 +239,11 @@ export class BasicTranslator {
     /**
      * 翻译 name 和 typeLine，用于文本翻译。
      *
-     * typeLine 是 baseType 加上一些修饰词。修饰词可以分为两类，一类是 `意境 ` 和 `精良的 `，一类是与物品词缀相关的修饰词。
+     * typeLine 是 baseType 加上一些修饰词。修饰词可以分为两类，一类是 `忆境 ` 和 `精良的 `，一类是与物品词缀相关的修饰词。
      *
-     * 第一类修饰词出现在所有相关物品上，不区分稀有度，第二类修饰词仅出现在魔法物品上。
+     * `忆境 `出现在所有稀有度物品上，`精良的 `出现在非传奇物品上，第二类修饰词仅出现在魔法物品上。
+     * 
+     * 未鉴定物品是例外，它只会存在第一类修饰词，`忆境 `和`精良的 `出现在所有稀有度的未鉴定物品上。
      *
      * 由于第二类修饰词对于POB而言是没有什么作用的，且维护比较麻烦，这里仅支持第一类修饰词的翻译，第二类修饰词被移除。
      */
@@ -283,9 +285,10 @@ export class BasicTranslator {
 
             return;
         }
-        // 魔法物品、普通物品、未鉴定稀有物品、未鉴定传奇物品
+        // 魔法物品、普通物品、未鉴定物品
         let typeLinePrefix = "";
 
+        // 同时出现时，顺序为`精良的 忆境 `
         if (typeLine.startsWith(this.qualityPrefix.zh)) {
             typeLine = typeLine.substring(this.qualityPrefix.zh.length);
             typeLinePrefix = this.qualityPrefix.en;
@@ -582,9 +585,9 @@ export class BasicTranslator {
         lines: string[],
     ): { result: string; lineCount: number } | undefined {
         const skeleton = getTextSkeleton(lines[0]);
-        const entry = this.statProvider.provideByFirstLineZhSkeleton(skeleton);
-        if (entry) {
-            for (const multilineStat of entry.stats) {
+        const group = this.statProvider.provideByFirstLineZhSkeleton(skeleton);
+        if (group) {
+            for (const multilineStat of group.stats) {
                 const lineSize = multilineStat.lineSize;
                 if (multilineStat.lineSize > lines.length) {
                     continue;

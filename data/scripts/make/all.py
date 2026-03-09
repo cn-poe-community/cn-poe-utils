@@ -31,8 +31,8 @@ def pob_make_for_ts(all: dict[str, Any]):
         f.write("\n".join(codes))
 
 
-def poe_make_for_ts(all: dict[str, Any]):
-    codes = [json_to_js(data,name) for name, data in all.items()]
+def poe_make_for_ts(all: dict[str, list]):
+    codes = [json_to_js(data, name) for name, data in all.items()]
 
     must_parent(at(TS_POE_DATA_PATH))
     print(f"saved {at(TS_POE_DATA_PATH)}")
