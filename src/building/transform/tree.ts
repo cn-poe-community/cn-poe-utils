@@ -116,29 +116,26 @@ export function getEnabledNodeIdsOfJewels(
     return allEnabledNodeIds;
 }
 
-/**
- * 获取所有星团珠宝，并按照大小逆序排序。
- */
-function getSortedClusterJewels(
-    jewelData: passiveSkillTypes.JewelData,
-    items: itemTypes.Item[],
-): {
+interface ClusterJewelInfo {
     seqNum: number;
     item: itemTypes.Item;
     data: passiveSkillTypes.ClusterJewelDatum;
     size: ClusterJewelSize;
-}[] {
+}
+
+/**
+ * 获取所有星团珠宝，并按照大小降序排序。
+ */
+function getSortedClusterJewels(
+    jewelData: passiveSkillTypes.JewelData,
+    items: itemTypes.Item[],
+): ClusterJewelInfo[] {
     const itemIdx = new Map<number, itemTypes.Item>();
     for (const item of items) {
         itemIdx.set(item.x!, item);
     }
 
-    const jewelList: {
-        seqNum: number;
-        item: itemTypes.Item;
-        data: passiveSkillTypes.ClusterJewelDatum;
-        size: ClusterJewelSize;
-    }[] = [];
+    const jewelList: ClusterJewelInfo[] = [];
     for (const [i, data] of Object.entries<passiveSkillTypes.JewelDatum>(
         jewelData,
     )) {
@@ -173,12 +170,7 @@ interface ClusterJewelNode {
 // socketEjs用于返回填充数据，供子星团使用
 function getEnabledNodeIdsOfJewel(
     hashExSet: Set<number>,
-    jewel: {
-        seqNum: number;
-        item: itemTypes.Item;
-        data: passiveSkillTypes.ClusterJewelDatum;
-        size: ClusterJewelSize;
-    },
+    jewel: ClusterJewelInfo,
     expansionJewel: pobDataTypes.ExpansionJewel,
     id: number | undefined,
     socketEjs: Map<number, { id: number; ej: pobDataTypes.ExpansionJewel }>,
@@ -194,9 +186,9 @@ function getEnabledNodeIdsOfJewel(
         id = 0x10000;
     }
     if (expansionJewel.size == 2) {
-        id = id + (expansionJewel.index << 6);
+        id += expansionJewel.index << 6;
     } else if (expansionJewel.size == 1) {
-        id = id + (expansionJewel.index << 9);
+        id += expansionJewel.index << 9;
     }
     const nodeIdGenerator = id + (jMeta.sizeIndex << 4);
 
@@ -221,11 +213,10 @@ function getEnabledNodeIdsOfJewel(
 
     for (const i of originalNodeIds) {
         const node = jewelNodes[i];
-        const originalId = Number(i);
         if (node.isNotable) {
-            notableIds.push(originalId);
+            notableIds.push(i);
         } else if (node.isJewelSocket) {
-            socketIds.push(originalId);
+            socketIds.push(i);
             socketEjs.set(Number(node.expansionJewel!.proxy), {
                 id,
                 ej: node.expansionJewel!,
@@ -233,7 +224,7 @@ function getEnabledNodeIdsOfJewel(
         } else if (node.isMastery) {
             //DO NOTHING
         } else {
-            smallIds.push(originalId);
+            smallIds.push(i);
         }
     }
 
@@ -355,13 +346,12 @@ function getEnabledNodeIdsOfJewel(
 
     for (const i of originalNodeIds) {
         const node = jewelNodes[i];
-        const originalId = Number(i);
-        if (hashExSet.has(originalId)) {
+        if (hashExSet.has(i)) {
             const pobNode = indicies.get(node.orbitIndex);
             if (pobNode != undefined) {
                 enabledNodeIds.push(pobNode.id);
             }
-            hashExSet.delete(originalId);
+            hashExSet.delete(i);
         }
     }
 

@@ -1,7 +1,5 @@
 interface PlaceholderInfo {
     index: number; // 占位符索引
-    start: number; // 在模板中的开始位置
-    end: number; // 在模板中的结束位置
 }
 
 export class Template {
@@ -37,8 +35,6 @@ export class Template {
             // 存储占位符信息
             placeholders.push({
                 index: placeholderIndex,
-                start,
-                end,
             });
 
             lastIndex = end;
@@ -137,12 +133,5 @@ export class Template {
         builder[pos] = this.staticParts[this.staticParts.length - 1];
 
         return builder.join("");
-    }
-
-    /**
-     * 获取原始模板字符串
-     */
-    getTemplate(): string {
-        return this.template;
     }
 }
