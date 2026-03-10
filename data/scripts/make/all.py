@@ -56,7 +56,7 @@ def pob_make_for_go(pob_all: dict[str, Any], poe_all: dict[str, list]):
         json.dump(pob_all, f, ensure_ascii=False, separators=(',', ':'))
         f.write("`")
 
-    del poe_all["transfiguredSkills"]
+    del pob_all["transfiguredSkills"]
 
 
 def poe_make_for_go(all: dict[str, list]):
