@@ -79,7 +79,6 @@ def create_equipments():
         ("boots", ["Boots"]),
         ("flasks", ["LifeFlask", "ManaFlask", "HybridFlask", "UtilityFlask"]),
         ("gloves", ["Gloves"]),
-        ("grafts", ["BrequelGraft"]),
         ("helmets", ["Helmet"]),
         ("jewels", ["Jewel", "AbyssJewel"]),
         ("quivers", ["Quiver"]),

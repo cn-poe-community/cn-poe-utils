@@ -18,7 +18,6 @@ func NewBaseTypeProvider(data *poe.Data) *BaseTypeProvider {
 	list = append(list, data.Boots)
 	list = append(list, data.Flasks)
 	list = append(list, data.Gloves)
-	list = append(list, data.Grafts)
 	list = append(list, data.Helmets)
 	list = append(list, data.Jewels)
 	list = append(list, data.Quivers)

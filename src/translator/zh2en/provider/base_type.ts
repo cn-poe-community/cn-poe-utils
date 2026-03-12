@@ -12,7 +12,6 @@ export class BaseTypeProvider {
             POE_DATA.boots,
             POE_DATA.flasks,
             POE_DATA.gloves,
-            POE_DATA.grafts,
             POE_DATA.helmets,
             POE_DATA.jewels,
             POE_DATA.quivers,

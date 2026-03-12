@@ -10,7 +10,6 @@ export const DATA: Data = {
     boots: data.boots,
     flasks: data.flasks,
     gloves: data.gloves,
-    grafts: data.grafts,
     helmets: data.helmets,
     jewels: data.jewels,
     quivers: data.quivers,

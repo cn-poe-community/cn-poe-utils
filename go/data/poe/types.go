@@ -94,7 +94,6 @@ type Data struct {
 	Boots             []BaseType `json:"boots"`
 	Flasks            []BaseType `json:"flasks"`
 	Gloves            []BaseType `json:"gloves"`
-	Grafts            []BaseType `json:"grafts"`
 	Helmets           []BaseType `json:"helmets"`
 	Jewels            []BaseType `json:"jewels"`
 	Quivers           []BaseType `json:"quivers"`

@@ -80,7 +80,6 @@ export interface Data {
     boots: BaseType[];
     flasks: BaseType[];
     gloves: BaseType[];
-    grafts: BaseType[];
     helmets: BaseType[];
     jewels: BaseType[];
     quivers: BaseType[];

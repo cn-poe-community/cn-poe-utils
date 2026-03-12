@@ -278,11 +278,5 @@
     "en": "Quality",
     "ref": "ClientStrings,Id,Text",
     "key": "Quality"
-  },
-  {
-    "zh": "嫁接之血：{0}/{1}",
-    "en": "Graftblood: {0}/{1}",
-    "ref": "ClientStrings,Id,Text",
-    "key": "ChayulaGraftResourceString"
   }
 ]

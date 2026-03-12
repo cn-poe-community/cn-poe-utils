@@ -188,12 +188,6 @@
         "en": "Thrusting One Hand Swords",
         "ref": "ItemClasses,Id,Name",
         "key": "Thrusting One Hand Sword"
-      },
-      {
-        "zh": "嫁接物",
-        "en": "Grafts",
-        "ref": "ItemClasses,Id,Name",
-        "key": "BrequelGraft"
       }
     ],
     "ref": "ClientStrings,Id,Text",
