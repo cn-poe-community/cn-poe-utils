@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"slices"
 	"sort"
-	"strconv"
 
 	"github.com/cn-poe-community/cn-poe-utils/go/api"
+	"github.com/cn-poe-community/cn-poe-utils/go/building/util"
 	"github.com/cn-poe-community/cn-poe-utils/go/data/pob"
 )
 
@@ -103,7 +103,7 @@ func GetEnabledNodeIdsOfJewels(passiveSkills *api.GetPassiveSkillsResult) []int 
 		// 中小型星团
 		if size == ClusterJewelSizeMedium || size == ClusterJewelSizeSmall {
 			group := jewel.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", seqNum)]
-			proxy, _ := strconv.Atoi(group.Proxy)
+			proxy := util.MustAtoi(group.Proxy)
 			idAndEj := socketExpansionJewels[proxy]
 			// 且是（位于socket上）子星团
 			if idAndEj != nil {
@@ -170,7 +170,7 @@ func getSortedClusterJewels(
 
 	var jewelList []*ClusterJewelInfo
 	for i, data := range jewelData {
-		seqNum, _ := strconv.Atoi(i)
+		seqNum := util.MustAtoi(i)
 		size := clusterJewelSize(data.Type)
 		if size != nil {
 			jewelList = append(jewelList, &ClusterJewelInfo{
@@ -238,7 +238,7 @@ func getEnabledNodeIdsOfJewel(
 	group := jewel.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", jewel.SeqNum)]
 	originalNodeIds := make([]int, 0, len(group.Nodes))
 	for _, n := range group.Nodes {
-		id, _ := strconv.Atoi(n)
+		id := util.MustAtoi(n)
 		originalNodeIds = append(originalNodeIds, id)
 	}
 	jewelNodes := jewel.Data.Subgraph.Nodes
@@ -258,7 +258,7 @@ func getEnabledNodeIdsOfJewel(
 		} else if node.IsJewelSocket != nil && *node.IsJewelSocket {
 			socketIds = append(socketIds, originalId)
 			if node.ExpansionJewel != nil {
-				proxy, _ := strconv.Atoi(node.ExpansionJewel.Proxy)
+				proxy := util.MustAtoi(node.ExpansionJewel.Proxy)
 				socketEjs[proxy] = &struct {
 					ID int
 					EJ *api.ExpansionJewel
@@ -282,7 +282,7 @@ func getEnabledNodeIdsOfJewel(
 
 	if jSize == ClusterJewelSizeLarge && len(socketIds) == 1 {
 		socket := jewelNodes[socketIds[0]]
-		skill, _ := strconv.Atoi(socket.Skill)
+		skill := util.MustAtoi(socket.Skill)
 		pobNode := &ClusterJewelNode{
 			ID:   skill,
 			OIdx: 6,
@@ -292,7 +292,7 @@ func getEnabledNodeIdsOfJewel(
 	} else {
 		for i := 0; i < len(socketIds); i++ {
 			socket := jewelNodes[socketIds[i]]
-			skill, _ := strconv.Atoi(socket.Skill)
+			skill := util.MustAtoi(socket.Skill)
 			pobNode := &ClusterJewelNode{
 				ID:   skill,
 				OIdx: jMeta.SocketIndicies[i],

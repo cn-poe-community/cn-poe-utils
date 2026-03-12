@@ -40,3 +40,11 @@ func ParseIntOrDefault(text string, def int) int {
 	}
 	return int(num)
 }
+
+func MustAtoi(s string) int {
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err)
+	}
+	return i
+}

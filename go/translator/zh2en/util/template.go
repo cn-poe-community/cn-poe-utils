@@ -52,7 +52,10 @@ func (t *Template) parseTemplate() {
 		staticParts = append(staticParts, before)
 
 		// 解析占位符索引（从捕获组中提取数字）
-		placeholderIndex, _ := strconv.Atoi(t.template[groupStart:groupEnd])
+		placeholderIndex, err := strconv.Atoi(t.template[groupStart:groupEnd])
+		if err != nil {
+			panic(err)
+		}
 
 		// 存储占位符信息
 		placeholders = append(placeholders, PlaceholderInfo{
