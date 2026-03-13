@@ -172,9 +172,9 @@ export class Transformer {
             this.passiveSkillsData.alternate_ascendancy;
 
         if (isPhreciaAscendancy(character.class)) {
-            spec.treeVersion = "3_27_alternate";
+            spec.treeVersion = "3_28_alternate";
         } else {
-            spec.treeVersion = "3_27";
+            spec.treeVersion = "3_28";
         }
 
         for (const [node, effect] of Object.entries<number>(

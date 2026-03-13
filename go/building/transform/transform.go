@@ -172,9 +172,9 @@ func (t *Transformer) parseTree() {
 	spec.SecondaryAscendClassId = t.passiveSkillsData.AlternateAscendancy
 
 	if IsPhreciaAscendancy(character.Class) {
-		spec.TreeVersion = "3_27_alternate"
+		spec.TreeVersion = "3_28_alternate"
 	} else {
-		spec.TreeVersion = "3_27"
+		spec.TreeVersion = "3_28"
 	}
 
 	for node, effect := range t.passiveSkillsData.MasteryEffects {
