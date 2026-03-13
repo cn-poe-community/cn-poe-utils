@@ -192,7 +192,8 @@ def create_skills():
 
     transfigured_skills = select_transfigured_skills(gem_skill_en_set)
     transfigured_skill_en_set = {g["en"] for g in transfigured_skills}
-    transfigured_skills = [s for s in transfigured_skills if s["en"] in tradable_gems_en_set]
+    transfigured_skills = [
+        s for s in transfigured_skills if s["en"] in tradable_gems_en_set]
 
     hybrid_supports = select_hybrid_support()
     hybrid_effects = select_hybrid_effects(

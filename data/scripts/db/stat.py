@@ -344,6 +344,8 @@ hackable_zh_stat_desc_content_entries = [
      r'10 "对你造成的冻结会扩散给 {0} 米内的其他敌人" locations_to_metres 1' + "\n"],
     [r'1000 "反击技能的可使用时间额外延长 {0} 秒"' + "\n",
      r'1000 "反击技能的可使用时间额外延长 {0} 秒" milliseconds_to_seconds_2dp_if_required 1' + "\n"],
+    [r'16 "召唤圣物的最大数量翻倍\n不能拥有除召唤圣物之外的其他召唤生物"'+"\n",
+     r'16 "神圣武装的最大数量翻倍\n不能拥有除召唤圣物之外的其他召唤生物"'+"\n"]
 ]
 
 
@@ -396,6 +398,8 @@ skipped_desc_id_prefixes = {
     "delve_biome_",
     # 赤炼玄炉插槽
     "hellscape_extra_",
+    # 孕育（S28）
+    "brequel_",
 }
 
 
@@ -458,6 +462,8 @@ def hack_descs(descs: list[Desc]):
 def fill_fixed_param_to_template(text: Text) -> str:
     """将固定值填充进模板文本"""
     tmpl = text.template
+    if '{' not in tmpl or '}' not in tmpl:
+        return tmpl
     for i, p in enumerate(text.params):
         if p.is_fixed_value():
             val = p.matcher.left
