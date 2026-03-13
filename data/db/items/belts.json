@@ -63,5 +63,10 @@
     "zh": "深渊腰带",
     "en": "Stygian Vise",
     "key": "Metadata/Items/Belts/BeltAbyss"
+  },
+  {
+    "zh": "细线腰带",
+    "en": "Cord Belt",
+    "key": "Metadata/Items/Belts/BeltFaridun"
   }
 ]

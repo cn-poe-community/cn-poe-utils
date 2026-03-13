@@ -1,6 +1,7 @@
 {"zh": "寒冰弹之冰霜新星", "en": "Ice Nova of Frostbolts"}
 {"zh": "深寒之冰霜新星", "en": "Ice Nova of Deep Freeze"}
 {"zh": "破土之震地跃击", "en": "Leap Slam of Groundbreaking"}
+{"zh": "投射之蓄力疾风闪", "en": "Charged Dash of Projection"}
 {"zh": "割痕之刀刃乱舞", "en": "Blade Flurry of Incision"}
 {"zh": "震地之裂地之击", "en": "Ground Slam of Earthshaking"}
 {"zh": "怒火之劈砍", "en": "Cleave of Rage"}
@@ -29,6 +30,7 @@
 {"zh": "瞬息之召唤灵体", "en": "Raise Spectre of Transience"}
 {"zh": "献祭之炼狱之击", "en": "Infernal Blow of Immolation"}
 {"zh": "碎冰之冰霜之锤", "en": "Glacial Hammer of Shattering"}
+{"zh": "加护之闪电新星", "en": "Shock Nova of Procession"}
 {"zh": "曼巴之毒蛇打击", "en": "Viper Strike of the Mamba"}
 {"zh": "射手之召唤魔侍", "en": "Summon Skeletons of Archers"}
 {"zh": "法师之召唤魔侍", "en": "Summon Skeletons of Mages"}
@@ -43,6 +45,7 @@
 {"zh": "割碎之放血", "en": "Puncture of Shanking"}
 {"zh": "电殛之闪电箭矢", "en": "Lightning Arrow of Electrocution"}
 {"zh": "气焰之燃烧箭矢", "en": "Burning Arrow of Vigour"}
+{"zh": "统御之震波图腾", "en": "Shockwave Totem of Authority"}
 {"zh": "扩散之冰锥地雷", "en": "Icicle Mine of Fanning"}
 {"zh": "破坏之冰锥地雷", "en": "Icicle Mine of Sabotage"}
 {"zh": "钉刺之捕熊陷阱", "en": "Bear Trap of Skewers"}
@@ -50,12 +53,15 @@
 {"zh": "徘徊之虚空匕首", "en": "Ethereal Knives of Lingering Blades"}
 {"zh": "狂戮之虚空匕首", "en": "Ethereal Knives of the Massacre"}
 {"zh": "贯穿之冰霜射击", "en": "Ice Shot of Penetration"}
+{"zh": "浮冰之电光寒霜", "en": "Creeping Frost of Floes"}
 {"zh": "激涌之电弧", "en": "Arc of Surging"}
 {"zh": "震荡之电弧", "en": "Arc of Oscillating"}
 {"zh": "怒焰之圣焰图腾", "en": "Holy Flame Totem of Ire"}
+{"zh": "抗拒之裂风雷球", "en": "Storm Burst of Repulsion"}
 {"zh": "蔓延之烧毁", "en": "Incinerate of Expanse"}
 {"zh": "泄火之烧毁", "en": "Incinerate of Venting"}
 {"zh": "嚣狂之旋风斩", "en": "Cyclone of Tumult"}
+{"zh": "引爆之灼热连接", "en": "Searing Bond of Detonation"}
 {"zh": "折射之冲击波", "en": "Reave of Refraction"}
 {"zh": "火花之闪电陷阱", "en": "Lightning Trap of Sparking"}
 {"zh": "惩击之幻化守卫", "en": "Animate Guardian of Smiting"}
@@ -84,6 +90,7 @@
 {"zh": "棱光复制体之闪现射击", "en": "Blink Arrow of Prismatic Clones"}
 {"zh": "轰炸复制体之魅影射击", "en": "Mirror Arrow of Bombarding Clones"}
 {"zh": "棱光复制体之魅影射击", "en": "Mirror Arrow of Prismatic Clones"}
+{"zh": "聚雷之充能打击", "en": "Static Strike of Gathering Lightning"}
 {"zh": "结群之召唤混沌魔像", "en": "Summon Chaos Golem of Hordes"}
 {"zh": "混渊之召唤混沌魔像", "en": "Summon Chaos Golem of the Maelström"}
 {"zh": "结群之召唤寒冰魔像", "en": "Summon Ice Golem of Hordes"}
@@ -107,6 +114,7 @@
 {"zh": "延时之寒霜爆", "en": "Frost Bomb of Forthcoming"}
 {"zh": "分叉之攻城炮台", "en": "Siege Ballista of Splintering"}
 {"zh": "特拉特斯之攻城炮台", "en": "Siege Ballista of Trarthus"}
+{"zh": "狂风之风暴旋涡", "en": "Orb of Storms of Squalls"}
 {"zh": "结群之召唤巨石魔像", "en": "Summon Stone Golem of Hordes"}
 {"zh": "卫护之召唤巨石魔像", "en": "Summon Stone Golem of Safeguarding"}
 {"zh": "增幅之地震", "en": "Earthquake of Amplification"}
@@ -127,6 +135,8 @@
 {"zh": "灾变之破釜一击", "en": "Tectonic Slam of Cataclysm"}
 {"zh": "破片之爆炸陷阱", "en": "Explosive Trap of Shrapnel"}
 {"zh": "剧烈之爆炸陷阱", "en": "Explosive Trap of Magnitude"}
+{"zh": "痛苦之虹吸陷阱", "en": "Siphoning Trap of Pain"}
+{"zh": "稳定之掷火陷阱", "en": "Flamethrower Trap of Stability"}
 {"zh": "震荡之电塔陷阱", "en": "Lightning Spire Trap of Zapping"}
 {"zh": "超载之电塔陷阱", "en": "Lightning Spire Trap of Overloading"}
 {"zh": "膨胀之震波陷阱", "en": "Seismic Trap of Swells"}
@@ -196,3 +206,4 @@
 {"zh": "蜿蜒之火山裂缝", "en": "Volcanic Fissure of Snaking"}
 {"zh": "集结之冰封军团", "en": "Frozen Legion of Rallying"}
 {"zh": "冲击之念动之雨", "en": "Kinetic Rain of Impact"}
+{"zh": "引爆之念动齐射", "en": "Kinetic Fusillade of Detonation"}

@@ -1,8 +1,8 @@
 import duckdb
-from common import CLIENT_GLOBAL, CLIENT_TENCENT, LANG_CHS, LANG_EN, at, save_ndjson
+from common import CLIENT_GLOBAL, CLIENT_TENCENT, LANG_CHS, LANG_EN, SERVER_GLOBAL, at, save_ndjson
 from db import pair
 from db.utils import check_duplicate_zhs, remove_duplicate
-from export import game
+from export import game, trade
 
 GEM_SKILLS_PATH = "db/skills/gem_skills.ndjson"
 HYBRID_SKILLS_PATH = "db/skills/hybrid_skills.ndjson"
@@ -32,14 +32,13 @@ def select_gem_skills():
             INNER JOIN {duck_name3} ON {duck_name2}.Id = {duck_name3}.Id
         """).fetchall()
 
-    array = [{"zh": r[0], "en": r[1]} for r in rows if not r[1].startswith(
-        "[UNUSED]") and not r[1].startswith("[DNT]")]
+    array = [{"zh": r[0], "en": r[1]} for r in rows]
 
     # 存在同名的数据
     return remove_duplicate(array)
 
 
-def select_transfigured_skills(gem_skill_zh_set: set):
+def select_transfigured_skills(gem_skill_en_set: set):
     table1 = (CLIENT_TENCENT, LANG_CHS, "SkillGems")
     table2 = (CLIENT_TENCENT, LANG_CHS, "GemEffects")
     table3 = (CLIENT_GLOBAL, LANG_EN, "GemEffects")
@@ -74,7 +73,7 @@ def select_transfigured_skills(gem_skill_zh_set: set):
                 continue
             zh = record[0]
             en = record[1]
-            if zh.isascii() or zh in gem_skill_zh_set or "DNT" in en:
+            if zh.isascii() or en in gem_skill_en_set or "DNT" in en:
                 continue
 
             array.append({"zh": zh, "en": en})
@@ -123,7 +122,7 @@ def select_hybrid_support():
     return remove_duplicate(array)
 
 
-def select_hybrid_effects(gem_skill_zh_set: set, transfigured_skill_zh_set: set):
+def select_hybrid_effects(gem_skill_en_set: set, transfigured_skill_en_set: set):
     table1 = (CLIENT_TENCENT, LANG_CHS, "SkillGems")
     table2 = (CLIENT_TENCENT, LANG_CHS, "GemEffects")
     table3 = (CLIENT_TENCENT, LANG_CHS, "GrantedEffects")
@@ -169,7 +168,7 @@ def select_hybrid_effects(gem_skill_zh_set: set, transfigured_skill_zh_set: set)
                 continue
             zh = effect[0]
             en = effect[1]
-            if zh.isascii() or zh in gem_skill_zh_set or zh in transfigured_skill_zh_set:
+            if zh.isascii() or en in gem_skill_en_set or en in transfigured_skill_en_set:
                 continue
             array.append({"zh": zh, "en": en})
 
@@ -184,21 +183,30 @@ def select_indexable_supports():
 
 
 def create_skills():
+    tradable_gems = trade.tradable_gems(SERVER_GLOBAL)
+    tradable_gems_en_set = {name for name in tradable_gems}
+
     gem_skills = select_gem_skills()
-    gem_skill_zh_set = {g["zh"] for g in gem_skills}
+    gem_skills = [g for g in gem_skills if g["en"] in tradable_gems_en_set]
+    gem_skill_en_set = {g["en"] for g in gem_skills}
 
-    check_duplicate_zhs(gem_skills, GEM_SKILLS_PATH)
-
-    transfigured_skills = select_transfigured_skills(gem_skill_zh_set)
-    transfigured_skill_zh_set = {g["zh"] for g in transfigured_skills}
+    transfigured_skills = select_transfigured_skills(gem_skill_en_set)
+    transfigured_skill_en_set = {g["en"] for g in transfigured_skills}
+    transfigured_skills = [s for s in transfigured_skills if s["en"] in tradable_gems_en_set]
 
     hybrid_supports = select_hybrid_support()
     hybrid_effects = select_hybrid_effects(
-        gem_skill_zh_set, transfigured_skill_zh_set)
+        gem_skill_en_set, transfigured_skill_en_set)
 
     hybrid_supports.extend(hybrid_effects)
 
     indexable_supports = select_indexable_supports()
+
+    skills = []
+    skills.extend(gem_skills)
+    skills.extend(transfigured_skills)
+    skills.extend(hybrid_supports)
+    check_duplicate_zhs(skills, 'db/skills')
 
     print(f"info: 创建 {GEM_SKILLS_PATH}...")
     save_ndjson(at(GEM_SKILLS_PATH), gem_skills)

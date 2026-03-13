@@ -52,7 +52,7 @@
 {"zh": "生命偷取", "en": "Life Leech"}
 {"zh": "击中生命回复", "en": "Life Gain on Hit"}
 {"zh": "低阶毒化", "en": "Chance to Poison"}
-{"zh": "低阶多重投射", "en": "Lesser Multiple Projectiles"}
+{"zh": "多重投射", "en": "Multiple Projectiles"}
 {"zh": "击退", "en": "Knockback"}
 {"zh": "物品稀有度增幅", "en": "Item Rarity"}
 {"zh": "钢铁意志", "en": "Iron Will"}
@@ -166,3 +166,7 @@
 {"zh": "风爆术", "en": "Windburst"}
 {"zh": "念动失稳", "en": "Kinetic Instability"}
 {"zh": "活体闪电", "en": "Living Lightning"}
+{"zh": "神圣驱逐", "en": "Excommunicate"}
+{"zh": "祝福呼唤", "en": "Blessed Call"}
+{"zh": "英勇典范", "en": "Exemplar"}
+{"zh": "圣化", "en": "Hallow"}

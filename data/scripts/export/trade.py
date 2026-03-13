@@ -71,6 +71,26 @@ def equipment_uniques(client):
 loaded_tables = set()
 
 
+def tradable_gems(client)->list[str]:
+    """从交易网站数据导出可交易的技能宝石，参数client指定客户端"""
+    data = read_json(trade_file_path(client, "items.json"))
+    array = []
+    for category in data["result"]:
+        if category["id"] != "gem":
+            continue
+
+        entries = category["entries"]
+        for entry in entries:
+            if "text" in entry:
+                text = entry["text"]
+                # 交易网站上改造版本的瓦尔技能宝石是自定义命名，不兼容游戏客户端数据，所以这里排除掉
+                if not text.startswith("Vaal "):
+                    array.append(text)
+            else:
+                array.append(entry["type"])
+    return array
+
+
 def load_table(client, table):
     """
     将数据存在数据库中，便于处理。

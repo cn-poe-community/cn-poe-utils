@@ -50,6 +50,11 @@
     "key": "JewelleryCriticalQuality"
   },
   {
+    "zh": "品质（数量）",
+    "en": "Quality (Quantity)",
+    "key": "MapQuantityQuality"
+  },
+  {
     "zh": "品质（稀有度）",
     "en": "Quality (Rarity)",
     "key": "MapRarityQuality"
@@ -73,5 +78,15 @@
     "zh": "品质（通货物品）",
     "en": "Quality (Currency)",
     "key": "MapCurrencyQuality"
+  },
+  {
+    "zh": "品质（前缀）",
+    "en": "Quality (Prefix Modifiers)",
+    "key": "JewelleryPrefixQuality"
+  },
+  {
+    "zh": "品质（后缀）",
+    "en": "Quality (Suffix Modifiers)",
+    "key": "JewellerySufffixQuality"
   }
 ]

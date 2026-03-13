@@ -573,5 +573,55 @@
     "zh": "渔夫之符文嵌板",
     "en": "Runegraft of the Angler",
     "key": "Metadata/Items/Currency/RunegraftFishing"
+  },
+  {
+    "zh": "奉献之符文嵌板",
+    "en": "Runegraft of Consecration",
+    "key": "Metadata/Items/Currency/RunegraftConsecratedGround"
+  },
+  {
+    "zh": "狂怒之符文嵌板",
+    "en": "Runegraft of Fury",
+    "key": "Metadata/Items/Currency/RunegraftLifeFlaskRage"
+  },
+  {
+    "zh": "奋锐之符文嵌板",
+    "en": "Runegraft of Rallying",
+    "key": "Metadata/Items/Currency/RunegraftFortificationBanner"
+  },
+  {
+    "zh": "腐血之符文嵌板",
+    "en": "Runegraft of Rotblood",
+    "key": "Metadata/Items/Currency/RunegraftPoisonConversion"
+  },
+  {
+    "zh": "灌注之符文嵌板",
+    "en": "Runegraft of the Imbued",
+    "key": "Metadata/Items/Currency/RunegraftTinctures"
+  },
+  {
+    "zh": "灵巧之符文嵌板",
+    "en": "Runegraft of the Agile",
+    "key": "Metadata/Items/Currency/RunegraftElusive"
+  },
+  {
+    "zh": "苦难之符文嵌板",
+    "en": "Runegraft of Suffering",
+    "key": "Metadata/Items/Currency/RunegraftSuffering"
+  },
+  {
+    "zh": "着魔之符文嵌板",
+    "en": "Runegraft of the Spellbound",
+    "key": "Metadata/Items/Currency/RunegraftSpellbound"
+  },
+  {
+    "zh": "复苏之符文嵌板",
+    "en": "Runegraft of Resurgence",
+    "key": "Metadata/Items/Currency/RunegraftResurgence"
+  },
+  {
+    "zh": "联结之符文嵌板",
+    "en": "Runegraft of Connection",
+    "key": "Metadata/Items/Currency/RunegraftConnection"
   }
 ]
