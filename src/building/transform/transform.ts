@@ -97,21 +97,18 @@ export class Transformer {
                         const slot = Slot.NewEquipmentSlot(siSlotName, item.id);
                         slotSet.append(slot);
                     } else {
-                        const gem = si as itemTypes.Gem;
+                        const gem = si as itemTypes.Gem & itemTypes.Socketed;
+                        const groupNum = sockets![gem.socket].group;
 
-                        if (i == 0) {
-                            group.push(gem);
-                            prevGroupNum = sockets![0].group;
-                        } else {
-                            const groupNum = sockets![i].group;
+                        if (i > 0) {
                             if (groupNum !== prevGroupNum) {
                                 skills.push(new Skill(slotName, group));
-                                prevGroupNum = groupNum;
-                                group = [gem];
-                            } else {
-                                group.push(gem);
+                                group = [];
                             }
                         }
+
+                        group.push(gem);
+                        prevGroupNum = groupNum;
                     }
                 }
                 if (group.length > 0) {
