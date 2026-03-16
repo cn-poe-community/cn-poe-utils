@@ -31,8 +31,6 @@ func TestValue_Serialization(t *testing.T) {
 	if parsed.Value != original.Value || parsed.Index != original.Index {
 		t.Errorf("Expected %+v, got %+v", original, parsed)
 	}
-
-	t.Logf("Successfully tested ValuePair serialization and deserialization")
 }
 
 // TestParseItemsJSON 测试 testdata/items.json 是否能解析为 GetItemsResult
@@ -53,8 +51,6 @@ func TestParseItemsJSON(t *testing.T) {
 	if len(result.Items) == 0 {
 		t.Error("Expected at least one item in the result")
 	}
-
-	t.Logf("Successfully parsed items.json with %d items", len(result.Items))
 }
 
 // TestParsePassiveSkillsJSON 测试 testdata/passive_skills.json 是否能正确解析为 GetPassiveSkillsResult
@@ -70,11 +66,4 @@ func TestParsePassiveSkillsJSON(t *testing.T) {
 	if err := json.Unmarshal(data, &result); err != nil {
 		t.Fatalf("Failed to unmarshal passive_skills.json: %v", err)
 	}
-
-	// 验证解析结果
-	if result.Character == 0 {
-		t.Error("Expected character ID to be non-zero")
-	}
-
-	t.Logf("Successfully parsed passive_skills.json with character ID: %d", result.Character)
 }

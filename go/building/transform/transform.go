@@ -98,21 +98,16 @@ func (t *Transformer) parseItems() {
 					slot := xml.NewEquipmentSlot(siSlotName, item.ID)
 					slotSet.Append(slot)
 				} else {
-					gem := &si.Item
+					gem := &si
+					groupNum := sockets[gem.Socket].Group
 
-					if i == 0 {
-						group = append(group, gem)
-						prevGroupNum = sockets[0].Group
-					} else {
-						groupNum := sockets[i].Group
-						if groupNum != prevGroupNum {
-							skills = append(skills, xml.NewSkill(slotName, group))
-							prevGroupNum = groupNum
-							group = []*api.Item{gem}
-						} else {
-							group = append(group, gem)
-						}
+					if i > 0 && groupNum != prevGroupNum {
+						skills = append(skills, xml.NewSkill(slotName, group))
+						group = []*api.Item{}
 					}
+
+					group = append(group, &gem.Item)
+					prevGroupNum = groupNum
 				}
 			}
 			if len(group) > 0 {
@@ -177,12 +172,17 @@ func (t *Transformer) parseTree() {
 		spec.TreeVersion = "3_28"
 	}
 
-	for node, effect := range t.passiveSkillsData.MasteryEffects {
-		nodeId := 0
-		for _, c := range node {
-			nodeId = nodeId*10 + int(c-'0')
+	masteryEffects := t.passiveSkillsData.MasteryEffects
+	if masteryEffects.IsArray {
+		// 空数组
+	} else if masteryEffects.IsMap {
+		for node, effect := range masteryEffects.Map {
+			nodeId := 0
+			for _, c := range node {
+				nodeId = nodeId*10 + int(c-'0')
+			}
+			spec.MasteryEffects = append(spec.MasteryEffects, xml.NewMasteryEffect(nodeId, effect))
 		}
-		spec.MasteryEffects = append(spec.MasteryEffects, xml.NewMasteryEffect(nodeId, effect))
 	}
 
 	spec.Nodes = t.passiveSkillsData.Hashes

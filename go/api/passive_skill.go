@@ -1,5 +1,10 @@
 package api
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
 // JewelData 珠宝数据
 type JewelData map[string]JewelDatum
 
@@ -31,8 +36,8 @@ type Expansion struct {
 // Node 节点
 type Node struct {
 	Skill           string          `json:"skill"`
-	Name            string          `json:"name"`
-	Icon            string          `json:"icon"`
+	Name            *string         `json:"name"`
+	Icon            *string         `json:"icon"`
 	IsMastery       *bool           `json:"isMastery,omitempty"`
 	Stats           []string        `json:"stats"`
 	Group           string          `json:"group"`
@@ -70,7 +75,30 @@ type SkillOverride struct {
 }
 
 // MasteryEffects 大师效果
-type MasteryEffects map[string]int
+type MasteryEffects struct {
+	Map     map[string]int
+	Array   []any
+	IsMap   bool
+	IsArray bool
+}
+
+func (m *MasteryEffects) UnmarshalJSON(data []byte) error {
+	if len(data) == 0 {
+		return nil
+	}
+
+	// 检查第一个字符
+	switch data[0] {
+	case '{':
+		m.IsMap = true
+		return json.Unmarshal(data, &m.Map)
+	case '[':
+		m.IsArray = true
+		return json.Unmarshal(data, &m.Array)
+	default:
+		return fmt.Errorf("unexpected data type: %s", string(data[0]))
+	}
+}
 
 // SkillOverrides 技能覆盖映射
 type SkillOverrides map[string]*SkillOverride

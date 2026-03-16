@@ -7,6 +7,8 @@ import (
 
 type Inventory struct {
 	ExtraColumns int `json:"extra_columns"`
+	// 金币
+	Gold int `json:"gold"`
 }
 
 // Influences 影响
@@ -184,7 +186,7 @@ type Hybrid struct {
 // SocketedItem 插槽物品
 type SocketedItem struct {
 	Item
-	// 插槽物品通常有该属性，接肢上的技能例外
+	// 仅限：宝石
 	Colour *SocketAttribute `json:"colour,omitempty"`
 	Socket int              `json:"socket"`
 }
