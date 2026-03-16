@@ -4,6 +4,7 @@ export interface Character {
     class: string;
     league: string;
     level: number;
+    lastLoginTime: number;
 }
 
 export type GetCharactersResult = Character[];

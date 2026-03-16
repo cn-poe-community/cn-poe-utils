@@ -2,6 +2,10 @@ import type { Character } from "./character.js";
 
 export interface Inventory {
     extra_columns: number;
+    /**
+     * 金币
+     */
+    gold: number;
 }
 
 export interface Influences {
@@ -230,7 +234,7 @@ export interface Socketed {
     /**
      * 深渊珠宝的该属性为null
      */
-    colour: SocketAttribute;
+    colour: SocketAttribute | null;
 }
 
 export type GetItemsResult = {

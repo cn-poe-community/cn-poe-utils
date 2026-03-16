@@ -18,7 +18,7 @@ export interface ClusterJewelDatum extends JewelDatum {
 
 export interface Subgraph {
     groups: Groups;
-    nodes: { [index: number]: Node };
+    nodes: { [key: string]: Node };
 }
 
 export interface Groups {
@@ -35,10 +35,10 @@ export interface Expansion {
 
 export interface Node {
     skill: string;
-    name: string;
-    icon: string;
+    name?: string;
+    icon?: string;
     isMastery?: boolean;
-    stats: string[];
+    stats?: string[];
     group: string;
     orbit: number;
     orbitIndex: number;
@@ -81,9 +81,11 @@ export interface SkillOverride {
     activeIcon?: string;
 }
 
-export interface MasteryEffects {
-    [key: string]: number;
-}
+export type MasteryEffects =
+    | {
+          [key: string]: number;
+      }
+    | [];
 
 export interface SkillOverrides {
     [key: string]: SkillOverride;

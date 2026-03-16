@@ -177,10 +177,16 @@ export class Transformer {
             spec.treeVersion = "3_28";
         }
 
-        for (const [node, effect] of Object.entries<number>(
-            this.passiveSkillsData.mastery_effects,
-        )) {
-            spec.masteryEffects.push(new MasteryEffect(Number(node), effect));
+        if (Array.isArray(this.passiveSkillsData.mastery_effects)) {
+            //空数组
+        } else {
+            for (const [node, effect] of Object.entries<number>(
+                this.passiveSkillsData.mastery_effects,
+            )) {
+                spec.masteryEffects.push(
+                    new MasteryEffect(Number(node), effect),
+                );
+            }
         }
 
         spec.nodes = this.passiveSkillsData.hashes;
