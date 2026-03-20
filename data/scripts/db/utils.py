@@ -1,4 +1,4 @@
-def check_duplicate_zhs(array: list[dict], logger: str, raise_error=False, skip_same_en=True):
+def check_duplicate_zhs(array: list[dict], logger: str, raise_error=False):
     """检查重复的中文"""
     mapping = {}
     for item in array:

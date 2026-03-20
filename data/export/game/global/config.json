@@ -1,5 +1,5 @@
 {
-  "patch": "3.28.0.3.2",
+  "patch": "3.28.0.5",
   "files": [
     "Metadata/StatDescriptions/stat_descriptions.txt",
     "Metadata/StatDescriptions/tincture_stat_descriptions.txt"

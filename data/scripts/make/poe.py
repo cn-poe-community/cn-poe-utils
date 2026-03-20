@@ -145,7 +145,7 @@ def get_skills() -> dict[str, list]:
     skills["hybridSkills"] = remain_fields_of_each(
         read_ndjson(at(skill.HYBRID_SKILLS_PATH)), {"zh", "en"})
     skills["indexableSupports"] = remain_fields_of_each(
-        read_ndjson(at(skill.INDEXABLE_SUPPORT_PATH)), {"zh", "en"})
+        read_ndjson(at(skill.INDEXABLE_SUPPORTS_PATH)), {"zh", "en"})
 
     return skills
 
