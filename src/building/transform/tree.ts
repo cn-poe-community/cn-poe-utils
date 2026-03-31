@@ -1,10 +1,15 @@
 import * as itemTypes from "../../api/item.js";
 import * as passiveSkillTypes from "../../api/passive_skill.js";
 import { DATA as POB_DATA } from "../../data/pob/index.js";
-import * as pobDataTypes from "../../data/pob/types.js";
+import type { Group, Node } from "../../data/pob/types.js";
 
-export function getNodeIdOfExpansionSlot(seqNum: number): number {
-    return POB_DATA.tree.jewelSlots[seqNum];
+/**
+ * 根据id获取珠宝插槽对应的nodeId。
+ *
+ * @param id 插槽在数组中的索引
+ */
+export function getNodeIdOfJewelSlot(id: number): number {
+    return POB_DATA.tree.jewelSlots[id];
 }
 
 export function getCharacterName(num: number): string {
@@ -32,77 +37,70 @@ export function isPhreciaAscendancy(name: string): boolean {
 }
 
 /**
- * 返回所有星团上点亮的node的nodeId。
+ * 返回所有星团珠宝上点亮的节点的`nodeId`。
  *
- * POE的API数据并未给星团珠宝上的节点分配全局的nodeId，而是使用一套区别于nodeId的id体系，其中`hashes_ex`
- * 记录了被点亮的节点。
+ * API数据并未给星团珠宝上的节点分配`nodeId`，而是使用`exId`(extended id)，点亮的节点的`exId`记录
+ * 在`hashes_ex`中。星团珠宝上的插槽是个特例，既有`nodeId`，也有`exId`。
  *
- * POB在支持星团珠宝时沿用nodeId体系，给星团珠宝上的节点分配了全局的nodeId，因此我们需要解析API数据，计算
- * 得到被点亮节点的nodeId。
+ * POB给星团珠宝上的没有`nodeId`的节点分配了nodeId，我们需要根据POB的内部算法将`exId`转
+ * 换为`nodeId`。
  *
- * 这里采用如下定义：
- * slot为天赋树上的原生插槽，socket为星团珠宝提供的扩展插槽，但在少量情况下这两者会混用。
+ * 我们称天赋树与星团珠宝提供的插槽均为“slot”或“socket”，特别的，我们称天赋树提供的插槽为`原生插槽`，
+ * 称星团珠宝提供的插槽为`扩展插槽`。
  */
-export function getEnabledNodeIdsOfJewels(
+export function getEnabledNodeIdsOfClusterJewels(
     passiveSkills: passiveSkillTypes.GetPassiveSkillsResult,
 ): number[] {
     const hashEx = passiveSkills.hashes_ex;
     const jewelData = passiveSkills.jewel_data;
     const items = passiveSkills.items;
 
-    // 获取所有jewel，并按照从大到小进行排序
-    const jewelList = getSortedClusterJewels(jewelData, items);
+    const jewelList = getOrderedClusterJewels(jewelData, items);
 
     const hashExSet = new Set<number>(hashEx);
 
-    // 使用proxy作为key，关联所在socket的ExpansionJewel
-    // id是socket所在星团的POB内部实现细节，供子星团使用
-    const socketExpansionJewels = new Map<
-        number,
-        { id: number; ej: pobDataTypes.ExpansionJewel }
-    >();
+    // 使用proxy关联插槽信息
+    // proxy是一个唯一数字，关联了扩展插槽与插入的子星团
+    // 插槽信息是POB内部实现，POB在实例化子星团珠宝时，需要父星团传递这部分信息
+    //
+    //  POB在实例化星团珠宝时，采用深度优先，使用递归形式
+    //  当前采用广度优先遍历所有星团珠宝，使用循环形式，使用一个表来维护父星团上的插槽信息
+    const socketInfoMap = new Map<number, SocketInfo>();
 
     const allEnabledNodeIds: number[] = [];
-    // 由于API给的数据无法判断传奇小型星团珠宝的keystone是否点亮（如果使用POB原生导入，keystone是未点亮的）
-    // 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除关联的索引键
-    // 最后我们根据hashExSet的剩余大小，来点亮相同数目的keystone，这不一定准确，但适用于99%的情况
+    // API数据未给星团的keystone节点分配`exId`，因此我们无法直接判断keystone节点是否被点亮。
+    // 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除关联的。
+    // 最后我们根据hashExSet的剩余大小，来点亮相同数目的keystone，这不一定准确，但适用于大多数的情况。
     const allProbableNodeIds: number[] = [];
 
     for (const jewel of jewelList) {
-        const seqNum = jewel.seqNum;
+        const slotId = jewel.slotId;
         const size = jewel.size;
 
         let id: number | undefined = undefined;
-        let expansionJewel: pobDataTypes.ExpansionJewel | undefined = undefined;
+        let upSize: number | undefined = undefined;
 
-        // 中小型星团
+        // 只有中小型星团才可能是子星团
         if (
             size === ClusterJewelSize.MEDIUM ||
             size === ClusterJewelSize.SMALL
         ) {
-            const proxy =
-                jewel.data.subgraph.groups[`expansion_${seqNum}`].proxy;
-            const idAndEj = socketExpansionJewels.get(Number(proxy));
-            //且是（位于socket上）子星团
-            if (idAndEj !== undefined) {
-                id = idAndEj.id;
-                expansionJewel = idAndEj.ej;
-            }
+            const proxy = Number(
+                jewel.data.subgraph.groups[`expansion_${slotId}`].proxy,
+            );
+            const socketInfo = socketInfoMap.get(proxy);
+            id = socketInfo?.id;
+            upSize = socketInfo?.upSize;
         }
 
-        // 大型星团（必然位于slot上）或位于slot上的中小型星团
-        if (id === undefined) {
-            const slotNodeId = getNodeIdOfExpansionSlot(seqNum);
-            expansionJewel = POB_DATA.tree.nodes[slotNodeId].expansionJewel;
-        }
-
-        const { enabledNodeIds, probableNodeIds } = getEnabledNodeIdsOfJewel(
-            hashExSet,
-            jewel,
-            expansionJewel!,
-            id,
-            socketExpansionJewels,
-        );
+        const { enabledNodeIds, probableNodeIds } =
+            getEnabledNodeIdsOfClusterJewel(
+                hashExSet,
+                jewel,
+                id,
+                upSize,
+                socketInfoMap,
+            );
 
         allEnabledNodeIds.push(...enabledNodeIds);
         allProbableNodeIds.push(...probableNodeIds);
@@ -117,45 +115,74 @@ export function getEnabledNodeIdsOfJewels(
 }
 
 interface ClusterJewelInfo {
-    seqNum: number;
+    slotId: number;
     item: itemTypes.Item;
     data: passiveSkillTypes.ClusterJewelDatum;
     size: ClusterJewelSize;
 }
 
+enum ClusterJewelSize {
+    LARGE = "Large Cluster Jewel",
+    MEDIUM = "Medium Cluster Jewel",
+    SMALL = "Small Cluster Jewel",
+}
+
+function clusterJewelSize(type: string): ClusterJewelSize | undefined {
+    if (type === "JewelPassiveTreeExpansionLarge") {
+        return ClusterJewelSize.LARGE;
+    } else if (type === "JewelPassiveTreeExpansionMedium") {
+        return ClusterJewelSize.MEDIUM;
+    } else if (type === "JewelPassiveTreeExpansionSmall") {
+        return ClusterJewelSize.SMALL;
+    }
+    return undefined;
+}
+
 /**
  * 获取所有星团珠宝，并按照大小降序排序。
  */
-function getSortedClusterJewels(
+function getOrderedClusterJewels(
     jewelData: passiveSkillTypes.JewelData,
     items: itemTypes.Item[],
 ): ClusterJewelInfo[] {
-    const itemIdx = new Map<number, itemTypes.Item>();
+    const itemSlotIdIdx = new Map<number, itemTypes.Item>();
     for (const item of items) {
-        itemIdx.set(item.x!, item);
+        if (item.x === undefined) {
+            console.error("cluster jewel item missing x field", item);
+            continue;
+        }
+        itemSlotIdIdx.set(item.x, item);
     }
 
     const jewelList: ClusterJewelInfo[] = [];
     for (const [i, data] of Object.entries<passiveSkillTypes.JewelDatum>(
         jewelData,
     )) {
-        const seqNum = Number(i);
+        const slotId = Number(i);
         const size = clusterJewelSize(data.type);
-        if (size !== undefined) {
-            jewelList.push({
-                seqNum,
-                item: itemIdx.get(seqNum)!,
-                data: data as passiveSkillTypes.ClusterJewelDatum,
-                size,
-            });
+        const item = itemSlotIdIdx.get(slotId);
+        if (!item) {
+            console.error("cluster jewel item not found for slotId", slotId);
+            continue;
         }
+        if (!size) {
+            console.error("invalid cluster jewel type", data.type);
+            continue;
+        }
+
+        jewelList.push({
+            slotId,
+            item,
+            data: data as passiveSkillTypes.ClusterJewelDatum,
+            size,
+        });
     }
 
     jewelList.sort((a, b) => {
         const sizeA = a.size;
         const sizeB = b.size;
         // 字符串的自然序"LARGE"<"MEDIUM"<"SMALL"，与实际顺序相反
-        // 这里我们需要逆序，也就是使用自然序
+        // 这里我们需要逆序，所以使用自然序
         return sizeA === sizeB ? 0 : sizeA > sizeB ? 1 : -1;
     });
     return jewelList;
@@ -163,105 +190,140 @@ function getSortedClusterJewels(
 
 interface ClusterJewelNode {
     id: number; // nodeId
-    oIdx: number; // 局部序号，指使用0~11标记单个星团中的节点
+    oIdx: number; // 局部序号，使用0~11标记单个星团中的节点
 }
 
-// 返回单个星团上点亮的node的nodeId
-// socketEjs用于返回填充数据，供子星团使用
-function getEnabledNodeIdsOfJewel(
+/**
+ * POB在递归构建子星团时，父星团向子星团传递的数据
+ */
+interface SocketInfo {
+    id: number;
+    upSize: number;
+}
+
+/**
+ * 返回单个星团上点亮的节点的nodeId。算法移植自PassiveSpec.lua文件的BuildSubgraph()方法。
+ *
+ * @param hashExSet 点亮的节点的`exId`集合，每当`exId`转换为`nodeId`，就从集合中移除该`exId`。
+ * 最后集合中剩余的`exId`数量将用于点亮相同数量的可能点亮的节点。
+ * @param jewelInfo 星团信息。
+ * @param id POB内部实现，原生插槽上的星团的该参数为undefined，子星团的该参数由父星团传递。
+ * @param upSize POB内部实现，原生插槽上的星团的该参数为undefined，子星团的该参数由父星团传递。
+ * @param socketInfos `{proxy: SocketInfo}`,用于将递归实现为循环时保存参数。
+ * @return `enabledNodeIds`是点亮的节点的`nodeId`列表，`probableNodeIds`是可能点亮的节点的`nodeId`列表。
+ */
+function getEnabledNodeIdsOfClusterJewel(
     hashExSet: Set<number>,
-    jewel: ClusterJewelInfo,
-    expansionJewel: pobDataTypes.ExpansionJewel,
+    jewelInfo: ClusterJewelInfo,
     id: number | undefined,
-    socketEjs: Map<number, { id: number; ej: pobDataTypes.ExpansionJewel }>,
+    upSize: number | undefined,
+    socketInfos: Map<number, SocketInfo>,
 ): { enabledNodeIds: number[]; probableNodeIds: number[] } {
+    const slotNodeId = getNodeIdOfJewelSlot(jewelInfo.slotId);
+    const expansionJewel = POB_DATA.tree.nodes[slotNodeId].expansionJewel;
+
+    if (!expansionJewel) {
+        console.error(
+            "expansion jewel data for slotId is missing",
+            jewelInfo.slotId,
+        );
+        return { enabledNodeIds: [], probableNodeIds: [] };
+    }
+
     const enabledNodeIds: number[] = [];
     const probableNodeIds: number[] = [];
 
-    const jSize = jewel.size;
-    const jMeta = POB_DATA.clusterJewels.jewels[jSize];
+    const jSize = jewelInfo.size;
+    const clusterJewel = POB_DATA.clusterJewels.jewels[jSize];
 
-    // 算法移植自PassiveSpec.lua文件的BuildSubgraph()方法
-    if (id == undefined) {
-        id = 0x10000;
-    }
+    id = id ?? 0x10000;
     if (expansionJewel.size == 2) {
         id += expansionJewel.index << 6;
     } else if (expansionJewel.size == 1) {
         id += expansionJewel.index << 9;
     }
-    const nodeIdGenerator = id + (jMeta.sizeIndex << 4);
+    const nodeId = id + (clusterJewel.sizeIndex << 4);
 
-    // 原始的id，最终需要转换为nodeId
-    const notableIds: number[] = [];
-    const socketIds: number[] = [];
-    const smallIds: number[] = [];
+    let proxyNode = POB_DATA.tree.nodes[Number(expansionJewel.proxy)];
+    let proxyGroup = POB_DATA.tree.groups[proxyNode.group];
 
-    const group = jewel.data.subgraph.groups[`expansion_${jewel.seqNum}`];
-    const originalNodeIds: number[] = group.nodes.map((n) => Number(n));
-    const jewelNodes = jewel.data.subgraph.nodes;
+    const group =
+        jewelInfo.data.subgraph.groups[`expansion_${jewelInfo.slotId}`];
+    const exIds: number[] = group.nodes.map((n) => Number(n));
+    const exNodes = jewelInfo.data.subgraph.nodes;
 
-    // unique small cluster jewel
+    // 传奇小星团珠宝
     if (
-        originalNodeIds.length === 0 &&
-        Object.keys(jewelNodes).length === 0 &&
-        jewel.item.rarity === "Unique"
+        exIds.length === 0 &&
+        Object.keys(exNodes).length === 0 &&
+        jewelInfo.item.rarity === "Unique"
     ) {
-        probableNodeIds.push(nodeIdGenerator);
+        probableNodeIds.push(nodeId);
         return { enabledNodeIds, probableNodeIds };
     }
 
-    for (const i of originalNodeIds) {
-        const node = jewelNodes[i];
+    // 非传奇小星团珠宝上的节点分为三类：notable、socket和small
+    const notableExIds: number[] = [];
+    const socketExIds: number[] = [];
+    const smallExIds: number[] = [];
+
+    for (const i of exIds) {
+        const node = exNodes[i];
         if (node.isNotable) {
-            notableIds.push(i);
+            notableExIds.push(i);
         } else if (node.isJewelSocket) {
-            socketIds.push(i);
-            socketEjs.set(Number(node.expansionJewel!.proxy), {
-                id,
-                ej: node.expansionJewel!,
-            });
+            socketExIds.push(i);
         } else if (node.isMastery) {
-            //DO NOTHING
+            // 目前星团珠宝的专精节点是无效数据
         } else {
-            smallIds.push(i);
+            smallExIds.push(i);
         }
     }
 
-    const nodeCount = notableIds.length + socketIds.length + smallIds.length;
+    const nodeCount =
+        notableExIds.length + socketExIds.length + smallExIds.length;
 
-    const pobJewelNodes: ClusterJewelNode[] = [];
-    // 使用0~11索引星团中的节点
+    const clusterJewelNodes: ClusterJewelNode[] = [];
+    // 使用局部序号(0~11)标记星团中的节点
     const indicies = new Map<number, ClusterJewelNode>();
+    const notableIndicies = [];
+    const smallIndicies = [];
 
-    if (jSize === ClusterJewelSize.LARGE && socketIds.length === 1) {
-        const socket = jewelNodes[socketIds[0]];
-        const pobNode = {
+    if (jSize === ClusterJewelSize.LARGE && socketExIds.length === 1) {
+        const socket = exNodes[socketExIds[0]];
+        const node = {
             id: Number(socket.skill),
             oIdx: 6,
         };
-        pobJewelNodes.push(pobNode);
-        indicies.set(pobNode.oIdx, pobNode);
+        clusterJewelNodes.push(node);
+        indicies.set(node.oIdx, node);
     } else {
-        for (let i = 0; i < socketIds.length; i++) {
-            const socket = jewelNodes[socketIds[i]];
-            const pobNode = {
-                id: Number(socket.skill),
-                oIdx: jMeta.socketIndicies[i],
+        const getJewels = [0, 2, 1];
+        for (let i = 0; i < socketExIds.length; i++) {
+            const nodeIndex = clusterJewel.socketIndicies[i];
+            const jewelIndex = getJewels[i];
+            const socket = findSocket(proxyGroup, jewelIndex);
+            if (!socket) {
+                console.error("socket not found");
+                continue;
+            }
+
+            const node = {
+                id: socket.id,
+                oIdx: nodeIndex,
             };
-            pobJewelNodes.push(pobNode);
-            indicies.set(pobNode.oIdx, pobNode);
+            clusterJewelNodes.push(node);
+            indicies.set(node.oIdx, node);
         }
     }
 
-    const notableIndicies = [];
-    for (let n of jMeta.notableIndicies) {
-        if (notableIndicies.length === notableIds.length) {
+    for (let n of clusterJewel.notableIndicies) {
+        if (notableIndicies.length === notableExIds.length) {
             break;
         }
 
         if (jSize === ClusterJewelSize.MEDIUM) {
-            if (socketIds.length === 0 && notableIds.length === 2) {
+            if (socketExIds.length === 0 && notableExIds.length === 2) {
                 if (n === 6) {
                     n = 4;
                 } else if (n === 10) {
@@ -283,17 +345,16 @@ function getEnabledNodeIdsOfJewel(
 
     for (let i = 0; i < notableIndicies.length; i++) {
         const idx = notableIndicies[i];
-        const pobNode = {
-            id: nodeIdGenerator + idx,
+        const node = {
+            id: nodeId + idx,
             oIdx: idx,
         };
-        pobJewelNodes.push(pobNode);
-        indicies.set(idx, pobNode);
+        clusterJewelNodes.push(node);
+        indicies.set(idx, node);
     }
 
-    const smallIndicies = [];
-    for (let n of jMeta.smallIndicies) {
-        if (smallIndicies.length === smallIds.length) {
+    for (let n of clusterJewel.smallIndicies) {
+        if (smallIndicies.length === smallExIds.length) {
             break;
         }
 
@@ -315,64 +376,111 @@ function getEnabledNodeIdsOfJewel(
 
     for (let i = 0; i < smallIndicies.length; i++) {
         const idx = smallIndicies[i];
-        const pobNode = {
-            id: nodeIdGenerator + idx,
+        const node = {
+            id: nodeId + idx,
             oIdx: idx,
         };
-        pobJewelNodes.push(pobNode);
-        indicies.set(idx, pobNode);
+        clusterJewelNodes.push(node);
+        indicies.set(idx, node);
     }
 
-    const proxyNode = POB_DATA.tree.nodes[Number(expansionJewel.proxy)];
+    let groupSize = expansionJewel.size;
+    upSize = upSize ?? 0;
+
+    while (clusterJewel.sizeIndex < groupSize) {
+        const result = findSocket(proxyGroup, 1) ?? findSocket(proxyGroup, 0);
+        if (!result) {
+            console.error("socket not found", expansionJewel.proxy);
+            return { enabledNodeIds, probableNodeIds };
+        }
+
+        const { id: socketId, node: socket } = result;
+
+        if (!socket.expansionJewel) {
+            console.error("socket has no expansion jewel", socketId);
+            return { enabledNodeIds, probableNodeIds };
+        }
+
+        proxyNode = POB_DATA.tree.nodes[Number(socket.expansionJewel.proxy)];
+        proxyGroup = POB_DATA.tree.groups[proxyNode.group];
+        groupSize = socket.expansionJewel.size;
+        upSize++;
+    }
+
+    const translatedIndicies = new Map<number, ClusterJewelNode>();
+
     const proxyNodeSkillsPerOrbit =
         POB_DATA.tree.constants.skillsPerOrbit[proxyNode.orbit];
-    for (const node of pobJewelNodes) {
+    for (const node of clusterJewelNodes) {
         const proxyNodeOidxRelativeToClusterIndicies = translateOidx(
             proxyNode.orbitIndex,
             proxyNodeSkillsPerOrbit,
-            jMeta.totalIndicies,
+            clusterJewel.totalIndicies,
         );
         const correctedNodeOidxRelativeToClusterIndicies =
             (node.oIdx + proxyNodeOidxRelativeToClusterIndicies) %
-            jMeta.totalIndicies;
+            clusterJewel.totalIndicies;
         const correctedNodeOidxRelativeToTreeSkillsPerOrbit = translateOidx(
             correctedNodeOidxRelativeToClusterIndicies,
-            jMeta.totalIndicies,
+            clusterJewel.totalIndicies,
             proxyNodeSkillsPerOrbit,
         );
         node.oIdx = correctedNodeOidxRelativeToTreeSkillsPerOrbit;
-        indicies.set(node.oIdx, node);
+        translatedIndicies.set(node.oIdx, node);
     }
 
-    for (const i of originalNodeIds) {
-        const node = jewelNodes[i];
-        if (hashExSet.has(i)) {
-            const pobNode = indicies.get(node.orbitIndex);
-            if (pobNode != undefined) {
-                enabledNodeIds.push(pobNode.id);
+    if (jewelInfo.size === ClusterJewelSize.SMALL) {
+        // 算法对 orbitIndex 进行了转换，但目前对于小星团珠宝的转换结果是错误的
+        // 需要使用其它办法
+        const orderedIndicies = indicies.keys().toArray().sort();
+        const orderedNodes = getSmallClusterJewelOrderedNodes(jewelInfo.data);
+        if (orderedNodes.length === 0) {
+            console.error("empty ordered nodes");
+        } else {
+            for (let i = 0; i < orderedNodes.length; i++) {
+                const exId = orderedNodes[i].exId;
+                if (hashExSet.has(exId)) {
+                    const clusterJewelNode = indicies.get(orderedIndicies[i]);
+                    if (clusterJewelNode) {
+                        enabledNodeIds.push(clusterJewelNode.id);
+                    }
+                    hashExSet.delete(exId);
+                }
             }
-            hashExSet.delete(i);
         }
+    } else {
+        for (const exId of exIds) {
+            const node = exNodes[exId];
+            if (hashExSet.has(exId)) {
+                const clusterJewelNode = translatedIndicies.get(
+                    node.orbitIndex,
+                );
+                if (clusterJewelNode) {
+                    enabledNodeIds.push(clusterJewelNode.id);
+                }
+                hashExSet.delete(exId);
+            }
+        }
+    }
+
+    for (const exId of socketExIds) {
+        const node = exNodes[exId];
+        socketInfos.set(Number(node.expansionJewel!.proxy), { id, upSize });
     }
 
     return { enabledNodeIds, probableNodeIds };
 }
 
-enum ClusterJewelSize {
-    LARGE = "Large Cluster Jewel",
-    MEDIUM = "Medium Cluster Jewel",
-    SMALL = "Small Cluster Jewel",
-}
-
-function clusterJewelSize(type: string): ClusterJewelSize | undefined {
-    if (type === "JewelPassiveTreeExpansionLarge") {
-        return ClusterJewelSize.LARGE;
-    } else if (type === "JewelPassiveTreeExpansionMedium") {
-        return ClusterJewelSize.MEDIUM;
-    } else if (type === "JewelPassiveTreeExpansionSmall") {
-        return ClusterJewelSize.SMALL;
+function findSocket(
+    group: Group,
+    index: number,
+): { id: number; node: Node } | undefined {
+    for (const nodeId of group.nodes) {
+        const node = POB_DATA.tree.nodes[nodeId];
+        if (node.expansionJewel && node.expansionJewel.index === index) {
+            return { id: nodeId, node };
+        }
     }
-    return undefined;
 }
 
 function translateOidx(
@@ -389,4 +497,53 @@ function translateOidx(
     } else {
         return Math.floor((srcOidx * destNodesPerOrbit) / srcNodesPerOrbit);
     }
+}
+
+/**
+ * 按从连接父插槽的第一个节点开始的单向顺序返回小星团珠宝的所有节点
+ */
+function getSmallClusterJewelOrderedNodes(
+    jewelDatum: passiveSkillTypes.ClusterJewelDatum,
+): {
+    exId: number;
+    node: passiveSkillTypes.Node;
+}[] {
+    const nodes = jewelDatum.subgraph.nodes;
+
+    const exIds = Object.keys(nodes).map((id) => Number(id));
+    let startExId = -1;
+
+    for (const [exId, node] of Object.entries(nodes)) {
+        const inId = Number(node.in[0]);
+        if (!exIds.includes(inId)) {
+            startExId = Number(exId);
+            break;
+        }
+    }
+
+    if (startExId === -1) {
+        return [];
+    }
+
+    const result: { exId: number; node: passiveSkillTypes.Node }[] = [];
+    // 目前小型星团珠宝是有向无环图，但需要避免恶意数据或版本更新导致死循环
+    const visited = new Set<number>();
+
+    let exId = startExId;
+    while (!visited.has(exId)) {
+        visited.add(exId);
+        const node = nodes[exId];
+        result.push({
+            exId,
+            node,
+        });
+
+        if (node.out.length > 0) {
+            exId = Number(node.out[0]);
+        } else {
+            break;
+        }
+    }
+
+    return result;
 }

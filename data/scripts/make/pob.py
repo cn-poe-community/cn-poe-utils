@@ -19,6 +19,22 @@ def get_slim_classes(tree):
     return slim_classes
 
 
+def get_slim_groups(tree):
+    slim_groups = {}
+
+    groups: dict = tree["groups"]
+    for id, group in groups.items():
+        nodes = []
+        for node in group["nodes"]:
+            num = int(node)
+            nodes.append(num)
+        slim_groups[id] = {
+            "nodes": nodes,
+        }
+
+    return slim_groups
+
+
 def get_slim_nodes(tree):
     slim_nodes = {}
 
@@ -28,14 +44,16 @@ def get_slim_nodes(tree):
             slim_nodes[id] = {
                 "expansionJewel": node["expansionJewel"],
                 "orbit": node["orbit"],
-                "orbitIndex": node["orbitIndex"]
+                "orbitIndex": node["orbitIndex"],
+                "group": node["group"],
             }
             proxyNodeId = node["expansionJewel"]["proxy"]
             proxyNode = nodes[proxyNodeId]
 
             slim_nodes[proxyNodeId] = {
                 "orbit": proxyNode["orbit"],
-                "orbitIndex": proxyNode["orbitIndex"]
+                "orbitIndex": proxyNode["orbitIndex"],
+                "group": proxyNode["group"],
             }
 
     return slim_nodes
@@ -46,6 +64,7 @@ def get_slim_tree():
 
     return {
         "classes": get_slim_classes(tree),
+        "groups": get_slim_groups(tree),
         "nodes": get_slim_nodes(tree),
         "jewelSlots": tree["jewelSlots"],
         "constants": tree["constants"]

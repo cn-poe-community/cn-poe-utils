@@ -9,8 +9,8 @@ import { MasteryEffect, Socket } from "../xml/Tree.js";
 import {
     getAscendancyName,
     getCharacterName,
-    getEnabledNodeIdsOfJewels,
-    getNodeIdOfExpansionSlot,
+    getEnabledNodeIdsOfClusterJewels,
+    getNodeIdOfJewelSlot,
     isPhreciaAscendancy,
 } from "./tree.js";
 
@@ -156,7 +156,7 @@ export class Transformer {
             itemList.push(item);
 
             const socket = new Socket(
-                getNodeIdOfExpansionSlot(itemData.x!),
+                getNodeIdOfJewelSlot(itemData.x!),
                 item.id,
             );
             spec.sockets.append(socket);
@@ -188,7 +188,9 @@ export class Transformer {
 
         spec.nodes = this.passiveSkillsData.hashes;
 
-        spec.nodes.push(...getEnabledNodeIdsOfJewels(this.passiveSkillsData));
+        spec.nodes.push(
+            ...getEnabledNodeIdsOfClusterJewels(this.passiveSkillsData),
+        );
 
         spec.overrides.parse(this.passiveSkillsData.skill_overrides);
     }

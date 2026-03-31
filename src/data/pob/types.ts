@@ -7,12 +7,17 @@ export type Ascendancy = {
     name: string;
 };
 
+export type Group = {
+    nodes: number[];
+};
+
 export type Node = {
     isProxy?: boolean;
     isJewelSocket?: boolean;
     expansionJewel?: ExpansionJewel;
     orbit: number;
     orbitIndex: number;
+    group: number;
 };
 
 export type ExpansionJewel = {
@@ -32,8 +37,9 @@ export type Constants = {
 
 export type Tree = {
     classes: Clazz[];
-    jewelSlots: number[];
+    groups: { [index: number]: Group };
     nodes: { [index: number]: Node };
+    jewelSlots: number[];
     constants: Constants;
 };
 
