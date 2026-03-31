@@ -155,7 +155,7 @@ func (t *Transformer) parseTree() {
 		t.itemIdGenerator++
 
 		socket := xml.NewSocket(
-			GetNodeIdOfExpansionSlot(*itemData.X),
+			GetNodeIdOfJewelSlot(*itemData.X),
 			item.ID,
 		)
 		spec.Sockets.Append(socket)
@@ -186,7 +186,7 @@ func (t *Transformer) parseTree() {
 	}
 
 	spec.Nodes = t.passiveSkillsData.Hashes
-	spec.Nodes = append(spec.Nodes, GetEnabledNodeIdsOfJewels(t.passiveSkillsData)...)
+	spec.Nodes = append(spec.Nodes, GetEnabledNodeIdsOfClusterJewels(t.passiveSkillsData)...)
 
 	spec.Overrides.Parse(t.passiveSkillsData.SkillOverrides)
 }

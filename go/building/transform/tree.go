@@ -2,6 +2,7 @@ package transform
 
 import (
 	"fmt"
+	"log"
 	"slices"
 	"sort"
 
@@ -10,9 +11,9 @@ import (
 	"github.com/cn-poe-community/cn-poe-utils/go/data/pob"
 )
 
-// GetNodeIdOfExpansionSlot 获取扩展插槽的节点ID
-func GetNodeIdOfExpansionSlot(seqNum int) int {
-	return pob.DefaultData.Tree.JewelSlots[seqNum]
+// GetNodeIdOfJewelSlot 获取星团珠宝插槽的节点ID
+func GetNodeIdOfJewelSlot(slotId int) int {
+	return pob.DefaultData.Tree.JewelSlots[slotId]
 }
 
 // GetCharacterName 获取角色名称
@@ -66,73 +67,52 @@ func clusterJewelSize(jewelType string) *ClusterJewelSize {
 	return nil
 }
 
-// GetEnabledNodeIdsOfJewels 返回所有星团上点亮的node的nodeId
-func GetEnabledNodeIdsOfJewels(passiveSkills *api.GetPassiveSkillsResult) []int {
+// GetEnabledNodeIdsOfClusterJewels 返回所有星团上点亮的node的nodeId
+func GetEnabledNodeIdsOfClusterJewels(passiveSkills *api.GetPassiveSkillsResult) []int {
 	hashEx := passiveSkills.HashesEx
 	jewelData := passiveSkills.JewelData
 	items := passiveSkills.Items
 
 	// 获取所有jewel，并按照从大到小进行排序
-	jewelList := getSortedClusterJewels(jewelData, items)
+	jewelList := getOrderedClusterJewels(jewelData, items)
 
 	hashExSet := make(map[int]struct{})
 	for _, h := range hashEx {
 		hashExSet[h] = struct{}{}
 	}
 
-	// 使用proxy作为key，关联所在socket的ExpansionJewel
-	// id是socket所在星团的POB内部实现细节，供子星团使用
-	socketExpansionJewels := make(map[int]*struct {
-		ID int
-		EJ *api.ExpansionJewel
-	})
+	// 使用proxy关联插槽信息
+	socketInfoMap := make(map[int]*SocketInfo)
 
 	var allEnabledNodeIds []int
-	// 由于API给的数据无法判断传奇小型星团珠宝的keystone是否点亮（如果使用POB原生导入，keystone是未点亮的）
-	// 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除关联的索引键
-	// 最后我们根据hashExSet的剩余大小，来点亮相同数目的keystone，这不一定准确，但适用于99%的情况
+	// API数据未给星团的keystone节点分配`exId`，因此我们无法直接判断keystone节点是否被点亮。
+	// 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除关联的。
+	// 最后我们根据hashExSet的剩余大小，来点亮相同数目的keystone，这不一定准确，但适用于大多数的情况。
 	var allProbableNodeIds []int
 
 	for _, jewel := range jewelList {
-		seqNum := jewel.SeqNum
-		size := jewel.Size
+		slotId := jewel.SlotId
 
 		var id *int
-		var expansionJewel *api.ExpansionJewel
+		var upSize *int
 
-		// 中小型星团
-		if size == ClusterJewelSizeMedium || size == ClusterJewelSizeSmall {
-			group := jewel.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", seqNum)]
+		// 只有中小型星团才可能是子星团
+		if jewel.Size == ClusterJewelSizeMedium || jewel.Size == ClusterJewelSizeSmall {
+			group := jewel.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", slotId)]
 			proxy := util.MustAtoi(group.Proxy)
-			idAndEj := socketExpansionJewels[proxy]
-			// 且是（位于socket上）子星团
-			if idAndEj != nil {
-				id = &idAndEj.ID
-				expansionJewel = idAndEj.EJ
+			socketInfo := socketInfoMap[proxy]
+			if socketInfo != nil {
+				id = &socketInfo.ID
+				upSize = &socketInfo.UpSize
 			}
 		}
 
-		// 大型星团（必然位于slot上）或位于slot上的中小型星团
-		if id == nil {
-			slotNodeId := GetNodeIdOfExpansionSlot(seqNum)
-			n := pob.DefaultData.Tree.Nodes[slotNodeId]
-			expansionJewel = &api.ExpansionJewel{
-				Size:  n.ExpansionJewel.Size,
-				Index: n.ExpansionJewel.Index,
-				Proxy: n.ExpansionJewel.Proxy,
-			}
-
-			if n.ExpansionJewel.Parent != nil {
-				expansionJewel.Parent = *n.ExpansionJewel.Parent
-			}
-		}
-
-		enabledNodeIds, probableNodeIds := getEnabledNodeIdsOfJewel(
+		enabledNodeIds, probableNodeIds := getEnabledNodeIdsOfClusterJewel(
 			hashExSet,
 			jewel,
-			expansionJewel,
 			id,
-			socketExpansionJewels,
+			upSize,
+			socketInfoMap,
 		)
 
 		allEnabledNodeIds = append(allEnabledNodeIds, enabledNodeIds...)
@@ -149,44 +129,52 @@ func GetEnabledNodeIdsOfJewels(passiveSkills *api.GetPassiveSkillsResult) []int 
 
 // ClusterJewelInfo 星团珠宝信息
 type ClusterJewelInfo struct {
-	SeqNum int
+	SlotId int
 	Item   *api.Item
 	Data   *api.JewelDatum
 	Size   ClusterJewelSize
 }
 
 // 获取所有星团珠宝，并按照大小降序排序
-func getSortedClusterJewels(
+func getOrderedClusterJewels(
 	jewelData api.JewelData,
 	items []api.Item,
 ) []*ClusterJewelInfo {
-	itemIdx := make(map[int]*api.Item)
+	itemSlotIdIdx := make(map[int]*api.Item)
 	for i := range items {
 		item := &items[i]
 		if item.X != nil {
-			itemIdx[*item.X] = item
+			itemSlotIdIdx[*item.X] = item
 		}
 	}
 
 	var jewelList []*ClusterJewelInfo
 	for i, data := range jewelData {
-		seqNum := util.MustAtoi(i)
+		slotId := util.MustAtoi(i)
 		size := clusterJewelSize(data.Type)
-		if size != nil {
-			jewelList = append(jewelList, &ClusterJewelInfo{
-				SeqNum: seqNum,
-				Item:   itemIdx[seqNum],
-				Data:   &data,
-				Size:   *size,
-			})
+		item := itemSlotIdIdx[slotId]
+		if item == nil {
+			log.Printf("cluster jewel item not found for slotId %d", slotId)
+			continue
 		}
+		if size == nil {
+			log.Printf("invalid cluster jewel type %s", data.Type)
+			continue
+		}
+
+		jewelList = append(jewelList, &ClusterJewelInfo{
+			SlotId: slotId,
+			Item:   item,
+			Data:   &data,
+			Size:   *size,
+		})
 	}
 
 	slices.SortFunc(jewelList, func(a, b *ClusterJewelInfo) int {
 		sizeA := a.Size
 		sizeB := b.Size
 		// 字符串的自然序"LARGE"<"MEDIUM"<"SMALL"，与实际顺序相反
-		// 这里我们需要逆序，也就是使用自然序
+		// 这里我们需要逆序，所以使用自然序
 		if sizeA < sizeB {
 			return -1
 		} else if sizeA > sizeB {
@@ -200,116 +188,125 @@ func getSortedClusterJewels(
 // ClusterJewelNode 星团珠宝节点
 type ClusterJewelNode struct {
 	ID   int // nodeId
-	OIdx int // 局部序号，指使用0~11标记单个星团中的节点
+	OIdx int // 局部序号，使用0~11标记单个星团中的节点
 }
 
-// 返回单个星团上点亮的node的nodeId
-// socketEjs用于返回填充数据，供子星团使用
-func getEnabledNodeIdsOfJewel(
+// SocketInfo POB在递归构建子星团时，父星团向子星团传递的数据
+type SocketInfo struct {
+	ID     int
+	UpSize int
+}
+
+// 返回单个星团上点亮的节点的nodeId。算法移植自PassiveSpec.lua文件的BuildSubgraph()方法。
+func getEnabledNodeIdsOfClusterJewel(
 	hashExSet map[int]struct{},
-	jewel *ClusterJewelInfo,
-	expansionJewel *api.ExpansionJewel,
+	jewelInfo *ClusterJewelInfo,
 	id *int,
-	socketEjs map[int]*struct {
-		ID int
-		EJ *api.ExpansionJewel
-	},
+	upSize *int,
+	socketInfos map[int]*SocketInfo,
 ) (enabledNodeIds []int, probableNodeIds []int) {
-	jSize := jewel.Size
-	jMeta := pob.DefaultData.ClusterJewels.Jewels[string(jSize)]
+	slotNodeId := GetNodeIdOfJewelSlot(jewelInfo.SlotId)
+	expansionJewel := pob.DefaultData.Tree.Nodes[slotNodeId].ExpansionJewel
 
-	// 算法移植自PassiveSpec.lua文件的BuildSubgraph()方法
-	idGen := 0x10000
-	if id != nil {
-		idGen = *id
-	}
-	if expansionJewel.Size == 2 {
-		idGen += (expansionJewel.Index << 6)
-	} else if expansionJewel.Size == 1 {
-		idGen += (expansionJewel.Index << 9)
-	}
-	nodeIdGenerator := idGen + (jMeta.SizeIndex << 4)
-
-	// 原始的id，最终需要转换为nodeId
-	var notableIds []int
-	var socketIds []int
-	var smallIds []int
-
-	group := jewel.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", jewel.SeqNum)]
-	originalNodeIds := make([]int, 0, len(group.Nodes))
-	for _, n := range group.Nodes {
-		id := util.MustAtoi(n)
-		originalNodeIds = append(originalNodeIds, id)
-	}
-	jewelNodes := jewel.Data.Subgraph.Nodes
-
-	// unique small cluster jewel
-	isUnique := jewel.Item.Rarity != nil && *jewel.Item.Rarity == api.RarityUnique
-	if len(originalNodeIds) == 0 && len(jewelNodes) == 0 && isUnique {
-		probableNodeIds = append(probableNodeIds, nodeIdGenerator)
+	if expansionJewel == nil {
+		log.Printf("expansion jewel data for slotId is missing %d", jewelInfo.SlotId)
 		return
 	}
 
-	for _, i := range originalNodeIds {
-		node := jewelNodes[i]
-		originalId := i
+	jSize := jewelInfo.Size
+	clusterJewel := pob.DefaultData.ClusterJewels.Jewels[string(jSize)]
+
+	idVal := 0x10000
+	if id != nil {
+		idVal = *id
+	}
+	if expansionJewel.Size == 2 {
+		idVal += (expansionJewel.Index << 6)
+	} else if expansionJewel.Size == 1 {
+		idVal += (expansionJewel.Index << 9)
+	}
+	nodeId := idVal + (clusterJewel.SizeIndex << 4)
+
+	proxyNode := pob.DefaultData.Tree.Nodes[util.MustAtoi(expansionJewel.Proxy)]
+	proxyGroup := pob.DefaultData.Tree.Groups[proxyNode.Group]
+
+	group := jewelInfo.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", jewelInfo.SlotId)]
+	exIds := make([]int, 0, len(group.Nodes))
+	for _, n := range group.Nodes {
+		exId := util.MustAtoi(n)
+		exIds = append(exIds, exId)
+	}
+	exNodes := jewelInfo.Data.Subgraph.Nodes
+
+	// 传奇小星团珠宝
+	isUnique := jewelInfo.Item.Rarity != nil && *jewelInfo.Item.Rarity == api.RarityUnique
+	if len(exIds) == 0 && len(exNodes) == 0 && isUnique {
+		probableNodeIds = append(probableNodeIds, nodeId)
+		return
+	}
+
+	// 非传奇小星团珠宝上的节点分为三类：notable、socket和small
+	var notableExIds []int
+	var socketExIds []int
+	var smallExIds []int
+
+	for _, exId := range exIds {
+		node := exNodes[exId]
 		if node.IsNotable != nil && *node.IsNotable {
-			notableIds = append(notableIds, originalId)
+			notableExIds = append(notableExIds, exId)
 		} else if node.IsJewelSocket != nil && *node.IsJewelSocket {
-			socketIds = append(socketIds, originalId)
-			if node.ExpansionJewel != nil {
-				proxy := util.MustAtoi(node.ExpansionJewel.Proxy)
-				socketEjs[proxy] = &struct {
-					ID int
-					EJ *api.ExpansionJewel
-				}{
-					ID: idGen,
-					EJ: node.ExpansionJewel,
-				}
-			}
+			socketExIds = append(socketExIds, exId)
 		} else if node.IsMastery != nil && *node.IsMastery {
-			// DO NOTHING
+			// 目前星团珠宝的专精节点是无效数据
 		} else {
-			smallIds = append(smallIds, originalId)
+			smallExIds = append(smallExIds, exId)
 		}
 	}
 
-	nodeCount := len(notableIds) + len(socketIds) + len(smallIds)
+	nodeCount := len(notableExIds) + len(socketExIds) + len(smallExIds)
 
-	var pobJewelNodes []*ClusterJewelNode
-	// 使用0~11索引星团中的节点
+	var clusterJewelNodes []*ClusterJewelNode
+	// 使用局部序号(0~11)标记星团中的节点
 	indicies := make(map[int]*ClusterJewelNode)
+	var notableIndicies []int
+	var smallIndicies []int
 
-	if jSize == ClusterJewelSizeLarge && len(socketIds) == 1 {
-		socket := jewelNodes[socketIds[0]]
+	if jSize == ClusterJewelSizeLarge && len(socketExIds) == 1 {
+		socket := exNodes[socketExIds[0]]
 		skill := util.MustAtoi(socket.Skill)
-		pobNode := &ClusterJewelNode{
+		node := &ClusterJewelNode{
 			ID:   skill,
 			OIdx: 6,
 		}
-		pobJewelNodes = append(pobJewelNodes, pobNode)
-		indicies[pobNode.OIdx] = pobNode
+		clusterJewelNodes = append(clusterJewelNodes, node)
+		indicies[node.OIdx] = node
 	} else {
-		for i := 0; i < len(socketIds); i++ {
-			socket := jewelNodes[socketIds[i]]
-			skill := util.MustAtoi(socket.Skill)
-			pobNode := &ClusterJewelNode{
-				ID:   skill,
-				OIdx: jMeta.SocketIndicies[i],
+		getJewels := []int{0, 2, 1}
+		for i := 0; i < len(socketExIds); i++ {
+			nodeIndex := clusterJewel.SocketIndicies[i]
+			jewelIndex := getJewels[i]
+			socket := findSocket(proxyGroup, jewelIndex)
+			if socket == nil {
+				log.Println("socket not found")
+				continue
 			}
-			pobJewelNodes = append(pobJewelNodes, pobNode)
-			indicies[pobNode.OIdx] = pobNode
+
+			node := &ClusterJewelNode{
+				ID:   socket.ID,
+				OIdx: nodeIndex,
+			}
+			clusterJewelNodes = append(clusterJewelNodes, node)
+			indicies[node.OIdx] = node
 		}
 	}
 
-	var notableIndicies []int
-	for _, n := range jMeta.NotableIndicies {
-		if len(notableIndicies) == len(notableIds) {
+	for _, n := range clusterJewel.NotableIndicies {
+		if len(notableIndicies) == len(notableExIds) {
 			break
 		}
 
 		if jSize == ClusterJewelSizeMedium {
-			if len(socketIds) == 0 && len(notableIds) == 2 {
+			if len(socketExIds) == 0 && len(notableExIds) == 2 {
 				if n == 6 {
 					n = 4
 				} else if n == 10 {
@@ -331,17 +328,16 @@ func getEnabledNodeIdsOfJewel(
 
 	for i := 0; i < len(notableIndicies); i++ {
 		idx := notableIndicies[i]
-		pobNode := &ClusterJewelNode{
-			ID:   nodeIdGenerator + idx,
+		node := &ClusterJewelNode{
+			ID:   nodeId + idx,
 			OIdx: idx,
 		}
-		pobJewelNodes = append(pobJewelNodes, pobNode)
-		indicies[idx] = pobNode
+		clusterJewelNodes = append(clusterJewelNodes, node)
+		indicies[idx] = node
 	}
 
-	var smallIndicies []int
-	for _, n := range jMeta.SmallIndicies {
-		if len(smallIndicies) == len(smallIds) {
+	for _, n := range clusterJewel.SmallIndicies {
+		if len(smallIndicies) == len(smallExIds) {
 			break
 		}
 
@@ -364,49 +360,132 @@ func getEnabledNodeIdsOfJewel(
 
 	for i := 0; i < len(smallIndicies); i++ {
 		idx := smallIndicies[i]
-		pobNode := &ClusterJewelNode{
-			ID:   nodeIdGenerator + idx,
+		node := &ClusterJewelNode{
+			ID:   nodeId + idx,
 			OIdx: idx,
 		}
-		pobJewelNodes = append(pobJewelNodes, pobNode)
-		indicies[idx] = pobNode
+		clusterJewelNodes = append(clusterJewelNodes, node)
+		indicies[idx] = node
 	}
 
-	proxy := 0
-	for _, c := range expansionJewel.Proxy {
-		proxy = proxy*10 + int(c-'0')
+	groupSize := expansionJewel.Size
+	upSizeVal := 0
+	if upSize != nil {
+		upSizeVal = *upSize
 	}
-	proxyNode := pob.DefaultData.Tree.Nodes[proxy]
+
+	for clusterJewel.SizeIndex < groupSize {
+		result := findSocket(proxyGroup, 1)
+		if result == nil {
+			result = findSocket(proxyGroup, 0)
+		}
+		if result == nil {
+			log.Printf("socket not found %s", expansionJewel.Proxy)
+			return
+		}
+
+		socket := result.Node
+
+		if socket.ExpansionJewel == nil {
+			log.Println("socket has no expansion jewel")
+			return
+		}
+
+		proxyNode = pob.DefaultData.Tree.Nodes[util.MustAtoi(socket.ExpansionJewel.Proxy)]
+		proxyGroup = pob.DefaultData.Tree.Groups[proxyNode.Group]
+		groupSize = socket.ExpansionJewel.Size
+		upSizeVal++
+	}
+
+	translatedIndicies := make(map[int]*ClusterJewelNode)
+
 	proxyNodeSkillsPerOrbit := pob.DefaultData.Tree.Constants.SkillsPerOrbit[proxyNode.Orbit]
-	for _, node := range pobJewelNodes {
+	for _, node := range clusterJewelNodes {
 		proxyNodeOidxRelativeToClusterIndicies := translateOidx(
 			proxyNode.OrbitIndex,
 			proxyNodeSkillsPerOrbit,
-			jMeta.TotalIndicies,
+			clusterJewel.TotalIndicies,
 		)
-		correctedNodeOidxRelativeToClusterIndicies := (node.OIdx + proxyNodeOidxRelativeToClusterIndicies) % jMeta.TotalIndicies
+		correctedNodeOidxRelativeToClusterIndicies := (node.OIdx + proxyNodeOidxRelativeToClusterIndicies) % clusterJewel.TotalIndicies
 		correctedNodeOidxRelativeToTreeSkillsPerOrbit := translateOidx(
 			correctedNodeOidxRelativeToClusterIndicies,
-			jMeta.TotalIndicies,
+			clusterJewel.TotalIndicies,
 			proxyNodeSkillsPerOrbit,
 		)
 		node.OIdx = correctedNodeOidxRelativeToTreeSkillsPerOrbit
-		indicies[node.OIdx] = node
+		translatedIndicies[node.OIdx] = node
 	}
 
-	for _, i := range originalNodeIds {
-		node := jewelNodes[i]
-		originalId := i
-		if _, exists := hashExSet[originalId]; exists {
-			pobNode := indicies[node.OrbitIndex]
-			if pobNode != nil {
-				enabledNodeIds = append(enabledNodeIds, pobNode.ID)
+	if jewelInfo.Size == ClusterJewelSizeSmall {
+		// 算法对 orbitIndex 进行了转换，但目前对于小星团珠宝的转换结果是错误的
+		// 需要使用其它办法
+		orderedIndicies := make([]int, 0, len(indicies))
+		for k := range indicies {
+			orderedIndicies = append(orderedIndicies, k)
+		}
+		sort.Ints(orderedIndicies)
+
+		orderedNodes := getSmallClusterJewelOrderedNodes(jewelInfo.Data)
+		if len(orderedNodes) == 0 {
+			log.Println("empty ordered nodes")
+		} else {
+			for i := 0; i < len(orderedNodes); i++ {
+				exId := orderedNodes[i].ExId
+				if _, exists := hashExSet[exId]; exists {
+					clusterJewelNode := indicies[orderedIndicies[i]]
+					if clusterJewelNode != nil {
+						enabledNodeIds = append(enabledNodeIds, clusterJewelNode.ID)
+					}
+					delete(hashExSet, exId)
+				}
 			}
-			delete(hashExSet, originalId)
+		}
+	} else {
+		for _, exId := range exIds {
+			node := exNodes[exId]
+			if _, exists := hashExSet[exId]; exists {
+				clusterJewelNode := translatedIndicies[node.OrbitIndex]
+				if clusterJewelNode != nil {
+					enabledNodeIds = append(enabledNodeIds, clusterJewelNode.ID)
+				}
+				delete(hashExSet, exId)
+			}
+		}
+	}
+
+	for _, exId := range socketExIds {
+		node := exNodes[exId]
+		if node.ExpansionJewel != nil {
+			socketInfos[util.MustAtoi(node.ExpansionJewel.Proxy)] = &SocketInfo{
+				ID:     idVal,
+				UpSize: upSizeVal,
+			}
 		}
 	}
 
 	return
+}
+
+// SocketResult 插槽查找结果
+type SocketResult struct {
+	ID   int
+	Node *pob.Node
+}
+
+func findSocket(
+	group pob.Group,
+	index int,
+) *SocketResult {
+	for _, nodeId := range group.Nodes {
+		node := pob.DefaultData.Tree.Nodes[nodeId]
+		if node.ExpansionJewel != nil && node.ExpansionJewel.Index == index {
+			return &SocketResult{
+				ID:   nodeId,
+				Node: &node,
+			}
+		}
+	}
+	return nil
 }
 
 func translateOidx(srcOidx int, srcNodesPerOrbit int, destNodesPerOrbit int) int {
@@ -419,4 +498,67 @@ func translateOidx(srcOidx int, srcNodesPerOrbit int, destNodesPerOrbit int) int
 	} else {
 		return (srcOidx * destNodesPerOrbit) / srcNodesPerOrbit
 	}
+}
+
+// OrderedNode 按顺序排列的节点
+type OrderedNode struct {
+	ExId int
+	Node *api.Node
+}
+
+// 按从连接父插槽的第一个节点开始的单向顺序返回小星团珠宝的所有节点
+func getSmallClusterJewelOrderedNodes(
+	jewelDatum *api.JewelDatum,
+) []OrderedNode {
+	nodes := jewelDatum.Subgraph.Nodes
+
+	exIds := make([]int, 0, len(nodes))
+	for id := range nodes {
+		exIds = append(exIds, id)
+	}
+
+	startExId := -1
+	for exId, node := range nodes {
+		inId := util.MustAtoi(node.In[0])
+		found := false
+		for _, id := range exIds {
+			if id == inId {
+				found = true
+				break
+			}
+		}
+		if !found {
+			startExId = exId
+			break
+		}
+	}
+
+	if startExId == -1 {
+		return nil
+	}
+
+	var result []OrderedNode
+	// 目前小型星团珠宝是有向无环图，但需要避免恶意数据或版本更新导致死循环
+	visited := make(map[int]struct{})
+
+	exId := startExId
+	for {
+		if _, exists := visited[exId]; exists {
+			break
+		}
+		visited[exId] = struct{}{}
+		node := nodes[exId]
+		result = append(result, OrderedNode{
+			ExId: exId,
+			Node: &node,
+		})
+
+		if len(node.Out) > 0 {
+			exId = util.MustAtoi(node.Out[0])
+		} else {
+			break
+		}
+	}
+
+	return result
 }

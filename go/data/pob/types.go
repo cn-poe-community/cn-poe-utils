@@ -13,6 +13,11 @@ type Ascendancy struct {
 	Name string `json:"name"`
 }
 
+// Group 组
+type Group struct {
+	Nodes []int `json:"nodes"`
+}
+
 // Node 节点
 type Node struct {
 	IsProxy        *bool           `json:"isProxy,omitempty"`
@@ -20,6 +25,7 @@ type Node struct {
 	ExpansionJewel *ExpansionJewel `json:"expansionJewel,omitempty"`
 	Orbit          int             `json:"orbit"`
 	OrbitIndex     int             `json:"orbitIndex"`
+	Group          int             `json:"group"`
 }
 
 // ExpansionJewel 扩展珠宝
@@ -41,10 +47,11 @@ type Constants struct {
 
 // Tree 天赋树
 type Tree struct {
-	Classes    []Clazz      `json:"classes"`
-	JewelSlots []int        `json:"jewelSlots"`
-	Nodes      map[int]Node `json:"nodes"`
-	Constants  Constants    `json:"constants"`
+	Classes    []Clazz       `json:"classes"`
+	Groups     map[int]Group `json:"groups"`
+	Nodes      map[int]Node  `json:"nodes"`
+	JewelSlots []int         `json:"jewelSlots"`
+	Constants  Constants     `json:"constants"`
 }
 
 // ClusterJewelMetadata 星团珠宝元数据
