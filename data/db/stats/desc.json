@@ -30,34 +30,9 @@
     "en": "{0}% of Physical Damage from your Hits cannot be Reflected"
   },
   {
-    "id": "-%_of_your_cold_damage_cannot_be_reflected_while_affected_by_purity_of_ice",
-    "zh": "受到冰霜净化影响时，你冰霜击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Cold Damage from your Hits cannot be Reflected while affected by Purity of Ice"
-  },
-  {
     "id": "-%_of_your_damage_cannot_be_reflected",
     "zh": "你击中伤害的 {0}% 无法被反射",
     "en": "{0}% of Damage from your Hits cannot be Reflected"
-  },
-  {
-    "id": "-%_of_your_elemental_damage_cannot_be_reflected_while_affected_by_purity_of_elements",
-    "zh": "受到元素净化影响时，你元素击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Elemental Damage from your Hits cannot be Reflected while\naffected by Purity of Elements"
-  },
-  {
-    "id": "-%_of_your_fire_damage_cannot_be_reflected_while_affected_by_purity_of_fire",
-    "zh": "受到火焰净化影响时，你火焰击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Fire Damage from your Hits cannot be Reflected while affected by Purity of Fire"
-  },
-  {
-    "id": "-%_of_your_lightning_damage_cannot_be_reflected_while_affected_by_purity_of_lightning",
-    "zh": "受到闪电净化影响时，你闪电击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Lightning Damage from your Hits cannot be Reflected while\naffected by Purity of Lightning"
-  },
-  {
-    "id": "-%_of_your_physical_damage_cannot_be_reflected_while_affected_by_determination",
-    "zh": "受到坚定影响时，你物理击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Physical Damage from your Hits cannot be Reflected while affected by Determination"
   },
   {
     "id": "local_jewel_+%_effect_per_passive_between_jewel_and_class_start",
@@ -9292,12 +9267,12 @@
   },
   {
     "id": "physical_damage_reduction_rating_+%",
-    "zh": "该装备的护甲提高 {0}%",
+    "zh": "护甲提高 {0}%",
     "en": "{0}% increased Armour"
   },
   {
     "id": "physical_damage_reduction_rating_+%",
-    "zh": "该装备的护甲降低 {0}%",
+    "zh": "护甲降低 {0}%",
     "en": "{0}% reduced Armour"
   },
   {
@@ -9347,12 +9322,12 @@
   },
   {
     "id": "evasion_rating_+%",
-    "zh": "该装备的闪避值提高 {0}%",
+    "zh": "闪避值提高 {0}%",
     "en": "{0}% increased Evasion Rating"
   },
   {
     "id": "evasion_rating_+%",
-    "zh": "该装备的闪避值降低 {0}%",
+    "zh": "闪避值降低 {0}%",
     "en": "{0}% reduced Evasion Rating"
   },
   {
@@ -10013,7 +9988,7 @@
   },
   {
     "id": "all_resistances_%_per_active_minion_not_from_vaal_skills",
-    "zh": "每有一个来自你的非瓦尔技能的召唤生物，使所有抗性 +{0}%",
+    "zh": "每有一个来自你的非瓦尔技能的召唤生物，使所有抗性 {0}%",
     "en": "{0}% to all Resistances per Minion from your Non-Vaal Skills"
   },
   {
@@ -17778,7 +17753,7 @@
   },
   {
     "id": "chance_to_be_frozen_shocked_ignited_%",
-    "zh": "冻结、感电、点燃 几率 {0}%",
+    "zh": "{0}% 的几率被冻结、感电、点燃",
     "en": "{0}% chance to be Frozen, Shocked and Ignited"
   },
   {
@@ -54668,6 +54643,31 @@
     "id": "minions_use_your_main_hand_base_crit_chance_from_weapon",
     "zh": "召唤生物的基础攻击暴击几率\n等于你的主手武器暴击几率",
     "en": "Minions' Base Attack Critical Strike Chance is equal to the Critical\nStrike Chance of your Main Hand Weapon"
+  },
+  {
+    "id": "-%_of_your_cold_damage_cannot_be_reflected_while_affected_by_purity_of_ice",
+    "zh": "受到冰霜净化影响时，你冰霜击中伤害的 {0}% 无法被反射",
+    "en": "{0}% of Cold Damage from your Hits cannot be Reflected while affected by Purity of Ice"
+  },
+  {
+    "id": "-%_of_your_elemental_damage_cannot_be_reflected_while_affected_by_purity_of_elements",
+    "zh": "受到元素净化影响时，你元素击中伤害的 {0}% 无法被反射",
+    "en": "{0}% of Elemental Damage from your Hits cannot be Reflected while\naffected by Purity of Elements"
+  },
+  {
+    "id": "-%_of_your_fire_damage_cannot_be_reflected_while_affected_by_purity_of_fire",
+    "zh": "受到火焰净化影响时，你火焰击中伤害的 {0}% 无法被反射",
+    "en": "{0}% of Fire Damage from your Hits cannot be Reflected while affected by Purity of Fire"
+  },
+  {
+    "id": "-%_of_your_lightning_damage_cannot_be_reflected_while_affected_by_purity_of_lightning",
+    "zh": "受到闪电净化影响时，你闪电击中伤害的 {0}% 无法被反射",
+    "en": "{0}% of Lightning Damage from your Hits cannot be Reflected while\naffected by Purity of Lightning"
+  },
+  {
+    "id": "-%_of_your_physical_damage_cannot_be_reflected_while_affected_by_determination",
+    "zh": "受到坚定影响时，你物理击中伤害的 {0}% 无法被反射",
+    "en": "{0}% of Physical Damage from your Hits cannot be Reflected while affected by Determination"
   },
   {
     "id": "mirage_archer_duration_+%",
