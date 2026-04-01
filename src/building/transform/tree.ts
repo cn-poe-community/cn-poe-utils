@@ -63,13 +63,13 @@ export function getEnabledNodeIdsOfClusterJewels(
     // proxy是一个唯一数字，关联了扩展插槽与插入的子星团
     // 插槽信息是POB内部实现，POB在实例化子星团珠宝时，需要父星团传递这部分信息
     //
-    //  POB在实例化星团珠宝时，采用深度优先，使用递归形式
-    //  当前采用广度优先遍历所有星团珠宝，使用循环形式，使用一个表来维护父星团上的插槽信息
+    // POB在实例化星团珠宝时，采用深度优先，使用递归形式
+    // 当前采用广度优先遍历所有星团珠宝，使用循环形式，使用一个表来维护父星团上的插槽信息
     const socketInfoMap = new Map<number, SocketInfo>();
 
     const allEnabledNodeIds: number[] = [];
     // API数据未给星团的keystone节点分配`exId`，因此我们无法直接判断keystone节点是否被点亮。
-    // 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除关联的。
+    // 这里我们将其标记为可能点亮的，当我们每点亮一个节点，就从hashExSet移除其`exId`。
     // 最后我们根据hashExSet的剩余大小，来点亮相同数目的keystone，这不一定准确，但适用于大多数的情况。
     const allProbableNodeIds: number[] = [];
 
