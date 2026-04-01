@@ -121,22 +121,32 @@ interface ClusterJewelInfo {
     size: ClusterJewelSize;
 }
 
+enum JewelType {
+    LargeClusterJewel = "JewelPassiveTreeExpansionLarge",
+    MediumClusterJewel = "JewelPassiveTreeExpansionMedium",
+    SmallClusterJewel = "JewelPassiveTreeExpansionSmall",
+    // 省略了非星团珠宝的类型：基础珠宝、深渊珠宝、三项珠宝、永恒珠宝
+}
+
+function isClusterJewel(type: string): type is JewelType {
+    return (
+        type === JewelType.LargeClusterJewel ||
+        type === JewelType.MediumClusterJewel ||
+        type === JewelType.SmallClusterJewel
+    );
+}
+
 enum ClusterJewelSize {
     LARGE = "Large Cluster Jewel",
     MEDIUM = "Medium Cluster Jewel",
     SMALL = "Small Cluster Jewel",
 }
 
-function clusterJewelSize(type: string): ClusterJewelSize | undefined {
-    if (type === "JewelPassiveTreeExpansionLarge") {
-        return ClusterJewelSize.LARGE;
-    } else if (type === "JewelPassiveTreeExpansionMedium") {
-        return ClusterJewelSize.MEDIUM;
-    } else if (type === "JewelPassiveTreeExpansionSmall") {
-        return ClusterJewelSize.SMALL;
-    }
-    return undefined;
-}
+const CLUSTER_JEWEL_SIZE_MAP = {
+    [JewelType.LargeClusterJewel]: ClusterJewelSize.LARGE,
+    [JewelType.MediumClusterJewel]: ClusterJewelSize.MEDIUM,
+    [JewelType.SmallClusterJewel]: ClusterJewelSize.SMALL,
+};
 
 /**
  * 获取所有星团珠宝，并按照大小降序排序。
@@ -148,7 +158,7 @@ function getOrderedClusterJewels(
     const itemSlotIdIdx = new Map<number, itemTypes.Item>();
     for (const item of items) {
         if (item.x === undefined) {
-            console.error("cluster jewel item missing x field", item);
+            console.error("jewel item missing slot id(x field)", item);
             continue;
         }
         itemSlotIdIdx.set(item.x, item);
@@ -158,15 +168,15 @@ function getOrderedClusterJewels(
     for (const [i, data] of Object.entries<passiveSkillTypes.JewelDatum>(
         jewelData,
     )) {
+        if (!isClusterJewel(data.type)) {
+            continue;
+        }
+        const size = CLUSTER_JEWEL_SIZE_MAP[data.type]!;
+
         const slotId = Number(i);
-        const size = clusterJewelSize(data.type);
         const item = itemSlotIdIdx.get(slotId);
         if (!item) {
             console.error("cluster jewel item not found for slotId", slotId);
-            continue;
-        }
-        if (!size) {
-            console.error("invalid cluster jewel type", data.type);
             continue;
         }
 
