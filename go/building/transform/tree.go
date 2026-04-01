@@ -43,6 +43,22 @@ func IsPhreciaAscendancy(name string) bool {
 	return ok
 }
 
+// JewelType 珠宝类型
+type JewelType string
+
+const (
+	JewelTypeLargeClusterJewel  JewelType = "JewelPassiveTreeExpansionLarge"
+	JewelTypeMediumClusterJewel JewelType = "JewelPassiveTreeExpansionMedium"
+	JewelTypeSmallClusterJewel  JewelType = "JewelPassiveTreeExpansionSmall"
+	// 省略了非星团珠宝的类型：基础珠宝、深渊珠宝、三项珠宝、永恒珠宝
+)
+
+func isClusterJewel(jewelType string) bool {
+	return jewelType == string(JewelTypeLargeClusterJewel) ||
+		jewelType == string(JewelTypeMediumClusterJewel) ||
+		jewelType == string(JewelTypeSmallClusterJewel)
+}
+
 // ClusterJewelSize 星团珠宝大小
 type ClusterJewelSize string
 
@@ -52,19 +68,10 @@ const (
 	ClusterJewelSizeSmall  ClusterJewelSize = "Small Cluster Jewel"
 )
 
-func clusterJewelSize(jewelType string) *ClusterJewelSize {
-	switch jewelType {
-	case "JewelPassiveTreeExpansionLarge":
-		s := ClusterJewelSizeLarge
-		return &s
-	case "JewelPassiveTreeExpansionMedium":
-		s := ClusterJewelSizeMedium
-		return &s
-	case "JewelPassiveTreeExpansionSmall":
-		s := ClusterJewelSizeSmall
-		return &s
-	}
-	return nil
+var ClusterJewelSizeMap = map[JewelType]ClusterJewelSize{
+	JewelTypeLargeClusterJewel:  ClusterJewelSizeLarge,
+	JewelTypeMediumClusterJewel: ClusterJewelSizeMedium,
+	JewelTypeSmallClusterJewel:  ClusterJewelSizeSmall,
 }
 
 // GetEnabledNodeIdsOfClusterJewels 返回所有星团上点亮的node的nodeId
@@ -143,22 +150,24 @@ func getOrderedClusterJewels(
 	itemSlotIdIdx := make(map[int]*api.Item)
 	for i := range items {
 		item := &items[i]
-		if item.X != nil {
-			itemSlotIdIdx[*item.X] = item
+		if item.X == nil {
+			log.Printf("jewel item missing slot id(x field) %v", item)
+			continue
 		}
+		itemSlotIdIdx[*item.X] = item
 	}
 
 	var jewelList []*ClusterJewelInfo
 	for i, data := range jewelData {
+		if !isClusterJewel(data.Type) {
+			continue
+		}
+		size := ClusterJewelSizeMap[JewelType(data.Type)]
+
 		slotId := util.MustAtoi(i)
-		size := clusterJewelSize(data.Type)
 		item := itemSlotIdIdx[slotId]
 		if item == nil {
 			log.Printf("cluster jewel item not found for slotId %d", slotId)
-			continue
-		}
-		if size == nil {
-			log.Printf("invalid cluster jewel type %s", data.Type)
 			continue
 		}
 
@@ -166,7 +175,7 @@ func getOrderedClusterJewels(
 			SlotId: slotId,
 			Item:   item,
 			Data:   &data,
-			Size:   *size,
+			Size:   size,
 		})
 	}
 
