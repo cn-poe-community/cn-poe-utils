@@ -95,8 +95,8 @@ func TestTemplateParseParams(t *testing.T) {
 			name:     "无占位符",
 			template: "Hello World",
 			input:    "Hello World",
-			want:     nil,
-			wantOk:   false,
+			want:     map[int]string{},
+			wantOk:   true,
 		},
 		{
 			name:     "单个占位符",

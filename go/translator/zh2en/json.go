@@ -328,6 +328,15 @@ func (t *JsonTranslator) transGem(gem *api.Item) {
 			}
 		}
 	}
+
+	if gem.BuiltInSupport != nil {
+		result := t.basic.TransBuiltInSupport(*gem.BuiltInSupport)
+		if result != nil {
+			*gem.BuiltInSupport = *result
+		} else {
+			log.Printf("untranslated: gem builtInSupport: %s\n", *gem.BuiltInSupport)
+		}
+	}
 }
 
 // TransPassiveSkills 翻译被动技能

@@ -2,6 +2,7 @@ package xml
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 
 	"github.com/cn-poe-community/cn-poe-utils/go/api"
@@ -60,7 +61,7 @@ func NewSkill(slotName string, jsonList []*api.Item) *Skill {
 		Gems: []*Gem{},
 	}
 	for _, json := range jsonList {
-		skill.Gems = append(skill.Gems, NewGem(json))
+		skill.Gems = append(skill.Gems, NewGems(json)...)
 	}
 	return skill
 }
@@ -86,7 +87,7 @@ type Gem struct {
 	EnableGlobal2 bool
 }
 
-func NewGem(json *api.Item) *Gem {
+func NewGems(json *api.Item) []*Gem {
 	propMap := make(map[string]*api.Property)
 	if json.Properties != nil {
 		for i := range json.Properties {
@@ -128,7 +129,32 @@ func NewGem(json *api.Item) *Gem {
 		gem.EnableGlobal2 = true
 	}
 
-	return gem
+	result := []*Gem{gem}
+
+	// 处理内置辅助技能
+	if json.BuiltInSupport != nil {
+		builtInSupport := *json.BuiltInSupport
+		// 从类似`Supported by Level 1 Damage on Full Life`的文本中提取出`1`,`Damage on Full Life`
+		re := regexp.MustCompile(`Supported by Level (\d+) (.+)`)
+		match := re.FindStringSubmatch(builtInSupport)
+		if len(match) == 3 {
+			supportLevel := util.ParseIntOrDefault(match[1], 1)
+			supportName := match[2]
+			buildInSupportGem := &Gem{
+				Level:         supportLevel,
+				QualityId:     "Default",
+				Quality:       0,
+				NameSpec:      supportName,
+				EnableGlobal1: true,
+				EnableGlobal2: false,
+			}
+			result = append(result, buildInSupportGem)
+		} else {
+			fmt.Printf("Failed to parse gem builtInSupport: %s\n", builtInSupport)
+		}
+	}
+
+	return result
 }
 
 func nameSpecOfVaalTransfiguredGem(transfiguredGemName string) string {

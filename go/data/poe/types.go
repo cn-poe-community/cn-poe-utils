@@ -79,10 +79,9 @@ type Stat struct {
 
 // ClientString 客户端字符串
 type ClientString struct {
-	Id   string `json:"id"`
-	Zh   string `json:"zh"`
-	En   string `json:"en"`
-	Type string `json:"type"`
+	Id string `json:"id"`
+	Zh string `json:"zh"`
+	En string `json:"en"`
 }
 
 // Data 数据

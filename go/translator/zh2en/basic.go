@@ -16,6 +16,29 @@ var GEM_PROPERTY_MAP = map[string]string{
 	"品质": "Quality",
 }
 
+// ClientStringTranslator 客户端字符串翻译器
+type ClientStringTranslator struct {
+	clientString *poe.ClientString
+	zhTemplate   *util.Template
+	enTemplate   *util.Template
+}
+
+func NewClientStringTranslator(clientString *poe.ClientString) *ClientStringTranslator {
+	return &ClientStringTranslator{
+		clientString: clientString,
+		zhTemplate:   util.NewTemplate(clientString.Zh),
+		enTemplate:   util.NewTemplate(clientString.En),
+	}
+}
+
+func (t *ClientStringTranslator) ParseZh(str string) (map[int]string, bool) {
+	return t.zhTemplate.ParseParams(str)
+}
+
+func (t *ClientStringTranslator) RenderEn(posParams map[int]string) string {
+	return t.enTemplate.Render(posParams)
+}
+
 // BasicTranslator 基础翻译器
 type BasicTranslator struct {
 	attributeProvider    *provider.AttributeProvider
@@ -27,11 +50,12 @@ type BasicTranslator struct {
 	statProvider         *provider.StatProvider
 	stringProvider       *provider.StringProvider
 
-	qualityPrefix           *poe.ClientString
-	synthesisedPrefix       *poe.ClientString
-	mutatedUniqueNamePrefix *poe.ClientString
-	influenceStatPrefix1    *poe.ClientString
-	influenceStatPrefix2    *poe.ClientString
+	qualityItemTranslator           *ClientStringTranslator
+	synthesisedItemTranslator       *ClientStringTranslator
+	mutatedUniqueNameTranslator     *ClientStringTranslator
+	influenceStat1Translator        *ClientStringTranslator
+	influenceStat2Translator        *ClientStringTranslator
+	buildInSupportTranslator        *ClientStringTranslator
 }
 
 // NewBasicTranslator 创建基础翻译器
@@ -45,6 +69,13 @@ func NewBasicTranslator(data *poe.Data) *BasicTranslator {
 	statProvider := provider.NewStatProvider(data)
 	stringProvider := provider.NewStringProvider(data)
 
+	qualityItem := stringProvider.MustProvide("QualityItem")
+	synthesisedItem := stringProvider.MustProvide("SynthesisedItem")
+	mutatedUniqueName := stringProvider.MustProvide("MutatedUniqueName")
+	influenceStat1 := stringProvider.MustProvide("InfluenceStatConditionPresenceUniqueMonster")
+	influenceStat2 := stringProvider.MustProvide("InfluenceStatConditionPresenceCelestialBoss")
+	itemDisplayBuiltInSupport := stringProvider.MustProvide("ItemDisplayBuiltInSupport")
+
 	return &BasicTranslator{
 		attributeProvider:    attributeProvider,
 		baseTypeProvider:     baseTypeProvider,
@@ -55,11 +86,12 @@ func NewBasicTranslator(data *poe.Data) *BasicTranslator {
 		statProvider:         statProvider,
 		stringProvider:       stringProvider,
 
-		qualityPrefix:           stringProvider.MustProvide("QualityPrefix"),
-		synthesisedPrefix:       stringProvider.MustProvide("SynthesisedPrefix"),
-		mutatedUniqueNamePrefix: stringProvider.MustProvide("MutatedUniqueNamePrefix"),
-		influenceStatPrefix1:    stringProvider.MustProvide("InfluenceStatPrefix1"),
-		influenceStatPrefix2:    stringProvider.MustProvide("InfluenceStatPrefix2"),
+		qualityItemTranslator:       NewClientStringTranslator(qualityItem),
+		synthesisedItemTranslator:   NewClientStringTranslator(synthesisedItem),
+		mutatedUniqueNameTranslator: NewClientStringTranslator(mutatedUniqueName),
+		influenceStat1Translator:    NewClientStringTranslator(influenceStat1),
+		influenceStat2Translator:    NewClientStringTranslator(influenceStat2),
+		buildInSupportTranslator:    NewClientStringTranslator(itemDisplayBuiltInSupport),
 	}
 }
 
@@ -120,18 +152,23 @@ func (t *BasicTranslator) TransNameAndBaseType(name string, baseType string) *Tr
 	}
 
 	if name != "" {
-		uniqueNamePrefix := ""
-		// 处理秽生传奇名称前缀
-		if strings.HasPrefix(name, t.mutatedUniqueNamePrefix.Zh) {
-			uniqueNamePrefix = t.mutatedUniqueNamePrefix.En
-			name = name[len(t.mutatedUniqueNamePrefix.Zh):]
+		isMutatedUnique := false
+
+		parseResult, ok := t.mutatedUniqueNameTranslator.ParseZh(name)
+		if ok {
+			name = parseResult[0]
+			isMutatedUnique = true
 		}
 
 		result := t.findUnique(baseTypes, name)
 		// 传奇物品
 		if result != nil {
+			enName := result.Unique.En
+			if isMutatedUnique {
+				enName = t.mutatedUniqueNameTranslator.RenderEn(map[int]string{0: result.Unique.En})
+			}
 			return &TransNameAndBaseTypeResult{
-				uniqueNamePrefix + result.Unique.En,
+				enName,
 				result.BaseType.En,
 			}
 		}
@@ -192,9 +229,15 @@ func (t *BasicTranslator) FindBaseTypeFromTypeLine(typeLine string, name string)
 	// 传奇物品、稀有物品
 	if name != "" {
 		// 秽生传奇
-		name = strings.TrimLeft(name, t.mutatedUniqueNamePrefix.Zh)
+		parseResult, ok := t.mutatedUniqueNameTranslator.ParseZh(name)
+		if ok {
+			name = parseResult[0]
+		}
 		// 忆境物品
-		typeLine = strings.TrimLeft(typeLine, t.synthesisedPrefix.Zh)
+		parseResult, ok = t.synthesisedItemTranslator.ParseZh(typeLine)
+		if ok {
+			typeLine = parseResult[0]
+		}
 
 		baseTypes := t.baseTypeProvider.ProvideByZh(typeLine)
 		if len(baseTypes) > 0 {
@@ -210,8 +253,15 @@ func (t *BasicTranslator) FindBaseTypeFromTypeLine(typeLine string, name string)
 
 	// 魔法物品、普通物品、未鉴定传奇物品、未鉴定稀有物品
 
-	typeLine = strings.TrimLeft(typeLine, t.qualityPrefix.Zh)
-	typeLine = strings.TrimLeft(typeLine, t.synthesisedPrefix.Zh)
+	parseResult, ok := t.qualityItemTranslator.ParseZh(typeLine)
+	if ok {
+		typeLine = parseResult[0]
+	}
+
+	parseResult, ok = t.synthesisedItemTranslator.ParseZh(typeLine)
+	if ok {
+		typeLine = parseResult[0]
+	}
 
 	// 先检查完整匹配的情况
 	baseTypes := t.baseTypeProvider.ProvideByZh(typeLine)
@@ -284,55 +334,84 @@ type TransNameAndTypeLineResult struct {
 func (t *BasicTranslator) TransNameAndTypeLine(name string, typeLine string) *TransNameAndTypeLineResult {
 	// 传奇物品、稀有物品
 	if name != "" {
-		uniqueNamePrefix := ""
-		typeLinePrefix := ""
+		isMutatedUnique := false
+		isSynthesised := false
 
-		if strings.HasPrefix(name, t.mutatedUniqueNamePrefix.Zh) {
-			uniqueNamePrefix = t.mutatedUniqueNamePrefix.En
-			name = name[len(t.mutatedUniqueNamePrefix.Zh):]
+		parseResult, ok := t.mutatedUniqueNameTranslator.ParseZh(name)
+		if ok {
+			name = parseResult[0]
+			isMutatedUnique = true
 		}
 
-		if strings.HasPrefix(typeLine, t.synthesisedPrefix.Zh) {
-			typeLine = typeLine[len(t.synthesisedPrefix.Zh):]
-			typeLinePrefix += t.synthesisedPrefix.En
+		parseResult, ok = t.synthesisedItemTranslator.ParseZh(typeLine)
+		if ok {
+			typeLine = parseResult[0]
+			isSynthesised = true
 		}
+
 		baseType := t.FindBaseTypeFromTypeLine(typeLine, name)
 		if baseType != nil {
 			if len(baseType.Uniques) > 0 {
 				for _, u := range baseType.Uniques {
 					if u.Zh == name {
+						enName := u.En
+						if isMutatedUnique {
+							enName = t.mutatedUniqueNameTranslator.RenderEn(map[int]string{0: u.En})
+						}
+						enTypeLine := baseType.En
+						if isSynthesised {
+							enTypeLine = t.synthesisedItemTranslator.RenderEn(map[int]string{0: baseType.En})
+						}
 						return &TransNameAndTypeLineResult{
-							Name:     uniqueNamePrefix + u.En,
-							TypeLine: typeLinePrefix + baseType.En,
+							enName,
+							enTypeLine,
 						}
 					}
 				}
 			}
+
+			enTypeLine := baseType.En
+			if isSynthesised {
+				enTypeLine = t.synthesisedItemTranslator.RenderEn(map[int]string{0: baseType.En})
+			}
+
 			return &TransNameAndTypeLineResult{
-				Name:     DEFAULT_RARITY_ITEM_NAME,
-				TypeLine: typeLinePrefix + baseType.En,
+				DEFAULT_RARITY_ITEM_NAME,
+				enTypeLine,
 			}
 		}
 
 		return nil
 	}
 	// 魔法物品、普通物品、未鉴定稀有物品、未鉴定传奇物品
-	typeLinePrefix := ""
+	isQuality := false
+	isSynthesised := false
 
-	if strings.HasPrefix(typeLine, t.qualityPrefix.Zh) {
-		typeLine = typeLine[len(t.qualityPrefix.Zh):]
-		typeLinePrefix = t.qualityPrefix.En
+	parseResult, ok := t.qualityItemTranslator.ParseZh(typeLine)
+	if ok {
+		typeLine = parseResult[0]
+		isQuality = true
 	}
 
-	if strings.HasPrefix(typeLine, t.synthesisedPrefix.Zh) {
-		typeLine = typeLine[len(t.synthesisedPrefix.Zh):]
-		typeLinePrefix += t.synthesisedPrefix.En
+	parseResult, ok = t.synthesisedItemTranslator.ParseZh(typeLine)
+	if ok {
+		typeLine = parseResult[0]
+		isSynthesised = true
 	}
+
 	baseType := t.FindBaseTypeFromTypeLine(typeLine, name)
 	if baseType != nil {
+		enTypeLine := baseType.En
+		if isSynthesised {
+			enTypeLine = t.synthesisedItemTranslator.RenderEn(map[int]string{0: baseType.En})
+		}
+		if isQuality {
+			enTypeLine = t.qualityItemTranslator.RenderEn(map[int]string{0: enTypeLine})
+		}
+
 		return &TransNameAndTypeLineResult{
-			Name:     "",
-			TypeLine: typeLinePrefix + baseType.En,
+			"",
+			enTypeLine,
 		}
 	}
 
@@ -359,6 +438,20 @@ func (t *BasicTranslator) TransSkillProp(name string) *string {
 func (t *BasicTranslator) TransIndexableSupports(name string) *string {
 	if skill := t.skillProvider.ProvideIndexableSupport(name); skill != nil {
 		return &skill.En
+	}
+	return nil
+}
+
+// TransBuiltInSupport 翻译内置辅助技能
+func (t *BasicTranslator) TransBuiltInSupport(text string) *string {
+	parseResult, ok := t.buildInSupportTranslator.ParseZh(text)
+	if ok {
+		support := parseResult[0]
+		enSupport := t.TransIndexableSupports(support)
+		if enSupport != nil {
+			result := t.buildInSupportTranslator.RenderEn(map[int]string{0: *enSupport})
+			return &result
+		}
 	}
 	return nil
 }
@@ -493,16 +586,22 @@ func (t *BasicTranslator) TransRequirementSuffix(suffix string) *string {
 
 // TransMod 翻译词缀
 func (t *BasicTranslator) TransMod(zhMod string) *string {
-	if strings.HasPrefix(zhMod, t.influenceStatPrefix1.Zh) {
-		subMod := t.transModInner(zhMod[len(t.influenceStatPrefix1.Zh):])
-		if subMod != nil {
-			result := t.influenceStatPrefix1.En + *subMod
+	parseResult, ok := t.influenceStat1Translator.ParseZh(zhMod)
+	if ok {
+		subMod := parseResult[0]
+		enSubMod := t.transModInner(subMod)
+		if enSubMod != nil {
+			result := t.influenceStat1Translator.RenderEn(map[int]string{0: *enSubMod})
 			return &result
 		}
-	} else if strings.HasPrefix(zhMod, t.influenceStatPrefix2.Zh) {
-		subMod := t.transModInner(zhMod[len(t.influenceStatPrefix2.Zh):])
-		if subMod != nil {
-			result := t.influenceStatPrefix2.En + *subMod
+	}
+
+	parseResult, ok = t.influenceStat2Translator.ParseZh(zhMod)
+	if ok {
+		subMod := parseResult[0]
+		enSubMod := t.transModInner(subMod)
+		if enSubMod != nil {
+			result := t.influenceStat2Translator.RenderEn(map[int]string{0: *enSubMod})
 			return &result
 		}
 	}

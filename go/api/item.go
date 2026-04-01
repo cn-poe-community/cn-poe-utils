@@ -172,6 +172,9 @@ type Item struct {
 	W           int      `json:"w"`
 	X           *int     `json:"x,omitempty"`
 	Y           *int     `json:"y,omitempty"`
+	// 仅限：宝石
+	// 技能可内置辅助技能
+	BuiltInSupport *string `json:"builtInSupport,omitempty"`
 }
 
 // Hybrid 附带技能

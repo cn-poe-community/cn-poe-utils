@@ -79,6 +79,9 @@ func (t *Template) parseTemplate() {
 func (t *Template) ParseParams(str string) (map[int]string, bool) {
 	// 如果没有占位符，直接返回空 map
 	if len(t.placeholders) == 0 {
+		if str == t.template {
+			return make(map[int]string), true
+		}
 		return nil, false
 	}
 
