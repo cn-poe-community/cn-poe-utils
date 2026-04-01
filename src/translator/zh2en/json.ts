@@ -337,6 +337,17 @@ export class JsonTranslator {
                 }
             }
         }
+
+        if (gem.builtInSupport) {
+            const result = this.basic.transBuiltInSupport(gem.builtInSupport);
+            if (result) {
+                gem.builtInSupport = result;
+            } else {
+                console.warn(
+                    `untranslated: gem builtInSupport: ${gem.builtInSupport}`,
+                );
+            }
+        }
     }
 
     transPassiveSkills(skills: passiveSkillTypes.GetPassiveSkillsResult) {

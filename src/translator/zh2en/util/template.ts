@@ -56,6 +56,10 @@ export class Template {
     parseParams(str: string): Map<number, string> | undefined {
         // 如果没有占位符，直接返回空Map
         if (this.placeholders.length === 0) {
+            if (str === this.template) {
+                return new Map();
+            }
+
             return;
         }
 

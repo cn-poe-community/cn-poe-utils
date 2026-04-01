@@ -69,7 +69,6 @@ export interface ClientString {
     id: string;
     zh: string;
     en: string;
-    type: string;
 }
 
 export interface Data {

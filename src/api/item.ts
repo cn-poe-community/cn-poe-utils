@@ -219,6 +219,10 @@ export interface Gem extends Item {
      * 部分技能会包含额外的技能。
      */
     hybrid?: Hybrid;
+    /**
+     * 技能可内置辅助技能。
+     */
+    builtInSupport?: string;
 }
 
 export interface AbyssalJewel extends Item {

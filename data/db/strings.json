@@ -1,42 +1,32 @@
 [
   {
-    "id": "QualityPrefix",
-    "zh": "精良的 ",
-    "en": "Superior ",
-    "ref": "ClientStrings,Id,Text",
-    "key": "QualityItem",
-    "type": "Prefix"
+    "id": "QualityItem",
+    "zh": "精良的 {0}",
+    "en": "Superior {0}"
   },
   {
-    "id": "SynthesisedPrefix",
-    "zh": "忆境 ",
-    "en": "Synthesised ",
-    "ref": "ClientStrings,Id,Text",
-    "key": "SynthesisedItem",
-    "type": "Prefix"
+    "id": "SynthesisedItem",
+    "zh": "忆境 {0}",
+    "en": "Synthesised {0}"
   },
   {
-    "id": "MutatedUniqueNamePrefix",
-    "zh": "秽生",
-    "en": "Foulborn ",
-    "ref": "ClientStrings,Id,Text",
-    "key": "MutatedUniqueName",
-    "type": "Prefix"
+    "id": "MutatedUniqueName",
+    "zh": "秽生{0}",
+    "en": "Foulborn {0}"
   },
   {
-    "id": "InfluenceStatPrefix1",
-    "zh": "有一个传奇怪物出现在你面前：",
-    "en": "While a Unique Enemy is in your Presence, ",
-    "ref": "ClientStrings,Id,Text",
-    "key": "InfluenceStatConditionPresenceUniqueMonster",
-    "type": "Prefix"
+    "id": "InfluenceStatConditionPresenceUniqueMonster",
+    "zh": "有一个传奇怪物出现在你面前：{0}",
+    "en": "While a Unique Enemy is in your Presence, {0}"
   },
   {
-    "id": "InfluenceStatPrefix2",
-    "zh": "有一个异界图鉴最终首领出现在你面前：",
-    "en": "While a Pinnacle Atlas Boss is in your Presence, ",
-    "ref": "ClientStrings,Id,Text",
-    "key": "InfluenceStatConditionPresenceCelestialBoss",
-    "type": "Prefix"
+    "id": "InfluenceStatConditionPresenceCelestialBoss",
+    "zh": "有一个异界图鉴最终首领出现在你面前：{0}",
+    "en": "While a Pinnacle Atlas Boss is in your Presence, {0}"
+  },
+  {
+    "id": "ItemDisplayBuiltInSupport",
+    "zh": "被等级 1 的{0}辅助",
+    "en": "Supported by Level 1 {0}"
   }
 ]

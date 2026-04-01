@@ -22,15 +22,44 @@ const GEM_PROPERTY_MAP = new Map([
     ["品质", "Quality"],
 ]);
 
+class ClientStringTranslator {
+    clientString: ClientString;
+    zhTemplate: Template;
+    enTemplate: Template;
+
+    constructor(clientString: ClientString) {
+        this.clientString = clientString;
+        this.zhTemplate = new Template(clientString.zh);
+        this.enTemplate = new Template(clientString.en);
+    }
+
+    parseZh(str: string): Map<number, string> | undefined {
+        return this.zhTemplate.parseParams(str);
+    }
+
+    renderEn(posParams: Map<number, string> | string[]): string {
+        if (posParams instanceof Array) {
+            const map = new Map<number, string>();
+            posParams.forEach((v, i) => {
+                map.set(i, v);
+            });
+            posParams = map;
+        }
+        return this.enTemplate.render(posParams);
+    }
+}
+
 /**
  * BasicTranslator 提供了最基础、最底层的中文翻译为英文的功能，为更上层的 JSONTranslator 和 TextTranslator 提供支持。
  */
 export class BasicTranslator {
-    private readonly qualityPrefix: ClientString;
-    private readonly synthesisedPrefix: ClientString;
-    private readonly mutatedUniqueNamePrefix: ClientString;
-    private readonly influenceStatPrefix1: ClientString;
-    private readonly influenceStatPrefix2: ClientString;
+    private readonly qualityItemTranslator: ClientStringTranslator;
+    private readonly synthesisedItemTranslator: ClientStringTranslator;
+    private readonly mutatedUniqueNameTranslator: ClientStringTranslator;
+    private readonly influenceStat1Translator: ClientStringTranslator;
+    private readonly influenceStat2Translator: ClientStringTranslator;
+    private readonly buildInSupportTranslator: ClientStringTranslator;
+
     constructor(
         private readonly attributeProvider: AttributeProvider,
         private readonly baseTypeProvider: BaseTypeProvider,
@@ -41,17 +70,36 @@ export class BasicTranslator {
         private readonly statProvider: StatProvider,
         private readonly stringProvider: StringProvider,
     ) {
-        this.qualityPrefix = this.stringProvider.mustProvide("QualityPrefix");
-        this.synthesisedPrefix =
-            this.stringProvider.mustProvide("SynthesisedPrefix");
-        this.mutatedUniqueNamePrefix = this.stringProvider.mustProvide(
-            "MutatedUniqueNamePrefix",
+        const qualityItem = this.stringProvider.mustProvide("QualityItem");
+        const synthesisedItem =
+            this.stringProvider.mustProvide("SynthesisedItem");
+        const mutatedUniqueName =
+            this.stringProvider.mustProvide("MutatedUniqueName");
+        const influenceStat1 = this.stringProvider.mustProvide(
+            "InfluenceStatConditionPresenceUniqueMonster",
         );
-        this.influenceStatPrefix1 = this.stringProvider.mustProvide(
-            "InfluenceStatPrefix1",
+        const influenceStat2 = this.stringProvider.mustProvide(
+            "InfluenceStatConditionPresenceCelestialBoss",
         );
-        this.influenceStatPrefix2 = this.stringProvider.mustProvide(
-            "InfluenceStatPrefix2",
+        const itemDisplayBuiltInSupport = this.stringProvider.mustProvide(
+            "ItemDisplayBuiltInSupport",
+        );
+
+        this.qualityItemTranslator = new ClientStringTranslator(qualityItem);
+        this.synthesisedItemTranslator = new ClientStringTranslator(
+            synthesisedItem,
+        );
+        this.mutatedUniqueNameTranslator = new ClientStringTranslator(
+            mutatedUniqueName,
+        );
+        this.influenceStat1Translator = new ClientStringTranslator(
+            influenceStat1,
+        );
+        this.influenceStat2Translator = new ClientStringTranslator(
+            influenceStat2,
+        );
+        this.buildInSupportTranslator = new ClientStringTranslator(
+            itemDisplayBuiltInSupport,
         );
     }
 
@@ -108,18 +156,23 @@ export class BasicTranslator {
         }
 
         if (name.length > 0) {
-            let uniqueNamePrefix = "";
-            // 处理秽生传奇名称前缀
-            if (name.startsWith(this.mutatedUniqueNamePrefix.zh)) {
-                uniqueNamePrefix = this.mutatedUniqueNamePrefix.en;
-                name = name.substring(this.mutatedUniqueNamePrefix.zh.length);
+            let isMutatedUnique = false;
+
+            let parseResult = this.mutatedUniqueNameTranslator.parseZh(name);
+            if (parseResult !== undefined) {
+                name = parseResult.get(0)!;
+                isMutatedUnique = true;
             }
 
             const result = this.findUnique(baseTypes, name);
             // 传奇物品
             if (result) {
+                const enName = isMutatedUnique
+                    ? this.mutatedUniqueNameTranslator.renderEn([result.u.en])
+                    : result.u.en;
+
                 return {
-                    name: uniqueNamePrefix + result.u.en,
+                    name: enName,
                     baseType: result.b.en,
                 };
             }
@@ -162,7 +215,7 @@ export class BasicTranslator {
     }
 
     /**
-     * 根据 typeLine 推断 BaseType，用于文本翻译。。
+     * 根据 typeLine 推断 BaseType，用于文本翻译。
      *
      * name 用于匹配传奇，否则返回首个匹配的 BaseType。
      */
@@ -173,13 +226,15 @@ export class BasicTranslator {
         // 传奇物品、稀有物品
         if (name.length > 0) {
             // 秽生传奇
-            if (name && name.startsWith(this.mutatedUniqueNamePrefix.zh)) {
-                name = name.substring(this.mutatedUniqueNamePrefix.zh.length);
+            let parseResult = this.mutatedUniqueNameTranslator.parseZh(name);
+            if (parseResult !== undefined) {
+                name = parseResult.get(0)!;
             }
 
             // 忆境物品
-            if (typeLine.startsWith(this.synthesisedPrefix.zh)) {
-                typeLine = typeLine.substring(this.synthesisedPrefix.zh.length);
+            parseResult = this.synthesisedItemTranslator.parseZh(typeLine);
+            if (parseResult !== undefined) {
+                typeLine = parseResult.get(0)!;
             }
 
             const baseTypes = this.baseTypeProvider.provideByZh(typeLine);
@@ -197,12 +252,14 @@ export class BasicTranslator {
 
         // 魔法物品、普通物品、未鉴定物品
 
-        if (typeLine.startsWith(this.qualityPrefix.zh)) {
-            typeLine = typeLine.substring(this.qualityPrefix.zh.length);
+        let parseResult = this.qualityItemTranslator.parseZh(typeLine);
+        if (parseResult !== undefined) {
+            typeLine = parseResult.get(0)!;
         }
 
-        if (typeLine.startsWith(this.synthesisedPrefix.zh)) {
-            typeLine = typeLine.substring(this.synthesisedPrefix.zh.length);
+        parseResult = this.synthesisedItemTranslator.parseZh(typeLine);
+        if (parseResult !== undefined) {
+            typeLine = parseResult.get(0)!;
         }
 
         // 先检查完整匹配的情况
@@ -253,56 +310,85 @@ export class BasicTranslator {
     ): { name: string; typeLine: string } | undefined {
         // 传奇物品、稀有物品
         if (name.length > 0) {
-            let uniqueNamePrefix = "";
-            let typeLinePrefix = "";
+            let isMutatedUnique = false;
+            let isSynthesised = false;
 
-            if (name.startsWith(this.mutatedUniqueNamePrefix.zh)) {
-                uniqueNamePrefix = this.mutatedUniqueNamePrefix.en;
-                name = name.substring(this.mutatedUniqueNamePrefix.zh.length);
+            let parseResult = this.mutatedUniqueNameTranslator.parseZh(name);
+            if (parseResult !== undefined) {
+                name = parseResult.get(0)!;
+                isMutatedUnique = true;
             }
 
-            if (typeLine.startsWith(this.synthesisedPrefix.zh)) {
-                typeLine = typeLine.substring(this.synthesisedPrefix.zh.length);
-                typeLinePrefix += this.synthesisedPrefix.en;
+            parseResult = this.synthesisedItemTranslator.parseZh(typeLine);
+            if (parseResult !== undefined) {
+                typeLine = parseResult.get(0)!;
+                isSynthesised = true;
             }
+
             const baseType = this.findBaseTypeFromTypeLine(typeLine, name);
             if (baseType) {
                 if (baseType.uniques) {
                     for (const u of baseType.uniques) {
                         if (u.zh === name) {
+                            const enName = isMutatedUnique
+                                ? this.mutatedUniqueNameTranslator.renderEn([
+                                      u.en,
+                                  ])
+                                : u.en;
+                            const enTypeLine = isSynthesised
+                                ? this.synthesisedItemTranslator.renderEn([
+                                      baseType.en,
+                                  ])
+                                : baseType.en;
                             return {
-                                name: uniqueNamePrefix + u.en,
-                                typeLine: typeLinePrefix + baseType.en,
+                                name: enName,
+                                typeLine: enTypeLine,
                             };
                         }
                     }
                 }
+
+                const enTypeLine = isSynthesised
+                    ? this.synthesisedItemTranslator.renderEn([baseType.en])
+                    : baseType.en;
+
                 return {
                     name: DEFAULT_RARITY_ITEM_NAME,
-                    typeLine: typeLinePrefix + baseType.en,
+                    typeLine: enTypeLine,
                 };
             }
 
             return;
         }
         // 魔法物品、普通物品、未鉴定物品
-        let typeLinePrefix = "";
+        let isQuality = false;
+        let isSynthesised = false;
 
         // 同时出现时，顺序为`精良的 忆境 `
-        if (typeLine.startsWith(this.qualityPrefix.zh)) {
-            typeLine = typeLine.substring(this.qualityPrefix.zh.length);
-            typeLinePrefix = this.qualityPrefix.en;
+        let parseResult = this.qualityItemTranslator.parseZh(typeLine);
+        if (parseResult !== undefined) {
+            typeLine = parseResult.get(0)!;
+            isQuality = true;
         }
 
-        if (typeLine.startsWith(this.synthesisedPrefix.zh)) {
-            typeLine = typeLine.substring(this.synthesisedPrefix.zh.length);
-            typeLinePrefix += this.synthesisedPrefix.en;
+        parseResult = this.synthesisedItemTranslator.parseZh(typeLine);
+        if (parseResult !== undefined) {
+            typeLine = parseResult.get(0)!;
+            isSynthesised = true;
         }
+
         const baseType = this.findBaseTypeFromTypeLine(typeLine, name);
         if (baseType) {
+            let enTypeLine = isSynthesised
+                ? this.synthesisedItemTranslator.renderEn([baseType.en])
+                : baseType.en;
+            enTypeLine = isQuality
+                ? this.qualityItemTranslator.renderEn([enTypeLine])
+                : enTypeLine;
+
             return {
                 name: "",
-                typeLine: typeLinePrefix + baseType.en,
+                typeLine: enTypeLine,
             };
         }
 
@@ -325,6 +411,18 @@ export class BasicTranslator {
      */
     transIndexableSupports(name: string): string | undefined {
         return this.skillProvider.provideIndexableSupport(name)?.en;
+    }
+
+    transBuiltInSupport(text: string): string | undefined {
+        const parseResult = this.buildInSupportTranslator.parseZh(text);
+        if (parseResult) {
+            const support = parseResult.get(0)!;
+            const enSupport = this.transIndexableSupports(support);
+            if (enSupport) {
+                return this.buildInSupportTranslator.renderEn([enSupport]);
+            }
+        }
+        return undefined;
     }
 
     /**
@@ -461,19 +559,21 @@ export class BasicTranslator {
      * 翻译词缀
      */
     transMod(zhMod: string): string | undefined {
-        if (zhMod.startsWith(this.influenceStatPrefix1.zh)) {
-            const subMod = this.transModInner(
-                zhMod.substring(this.influenceStatPrefix1.zh.length),
-            );
-            if (subMod) {
-                return this.influenceStatPrefix1.en + subMod;
+        let parseResult = this.influenceStat1Translator.parseZh(zhMod);
+        if (parseResult !== undefined) {
+            const subMod = parseResult.get(0)!;
+            const enSubMod = this.transModInner(subMod);
+            if (enSubMod) {
+                return this.influenceStat1Translator.renderEn([enSubMod]);
             }
-        } else if (zhMod.startsWith(this.influenceStatPrefix2.zh)) {
-            const subMod = this.transModInner(
-                zhMod.substring(this.influenceStatPrefix2.zh.length),
-            );
-            if (subMod) {
-                return this.influenceStatPrefix2.en + subMod;
+        }
+
+        parseResult = this.influenceStat2Translator.parseZh(zhMod);
+        if (parseResult !== undefined) {
+            const subMod = parseResult.get(0)!;
+            const enSubMod = this.transModInner(subMod);
+            if (enSubMod) {
+                return this.influenceStat2Translator.renderEn([enSubMod]);
             }
         }
 

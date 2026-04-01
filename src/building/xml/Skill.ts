@@ -34,7 +34,7 @@ export class Skill {
     constructor(slotName: string, jsonList: itemTypes.Gem[]) {
         this.slot = slotName;
         for (const json of jsonList) {
-            this.gems.push(new Gem(json));
+            this.gems.push(...Gem.parseJson(json));
         }
     }
 
@@ -55,14 +55,20 @@ export class Gem {
     enableGlobal1 = true;
     enableGlobal2 = false;
 
-    constructor(json: itemTypes.Gem) {
+    private constructor() {}
+
+    static parseJson(json: itemTypes.Gem): Gem[] {
+        const result = [];
+        const skill = new Gem();
+        let buildInSupport: Gem | undefined = undefined;
+
         const propMap = new Map<string, itemTypes.Property>();
         if (json.properties) {
             json.properties.forEach((prop) => propMap.set(prop.name, prop));
         }
-        this.level = parseIntOrDefault(propMap.get("Level")?.values[0][0], 20);
+        skill.level = parseIntOrDefault(propMap.get("Level")?.values[0][0], 20);
         try {
-            this.quality = parseIntOrDefault(
+            skill.quality = parseIntOrDefault(
                 propMap.get("Quality")?.values[0][0],
                 0,
             );
@@ -71,19 +77,38 @@ export class Gem {
             throw e;
         }
 
-        this.nameSpec = json.baseType.replace(" Support", "");
+        skill.nameSpec = json.baseType.replace(" Support", "");
         if (json.hybrid && json.hybrid.isVaalGem) {
             const hybridBaseTypeName = json.hybrid.baseTypeName;
             if (isTransfiguredSkill(hybridBaseTypeName)) {
-                this.nameSpec =
-                    this.nameSpecOfVaalTransfiguredGem(hybridBaseTypeName);
+                skill.nameSpec =
+                    skill.nameSpecOfVaalTransfiguredGem(hybridBaseTypeName);
             }
         }
 
-        if (this.isVaalGem()) {
-            this.enableGlobal1 = false;
-            this.enableGlobal2 = true;
+        if (skill.isVaalGem()) {
+            skill.enableGlobal1 = false;
+            skill.enableGlobal2 = true;
         }
+
+        if (json.builtInSupport) {
+            // 从类似`Supported by Level 1 Damage on Full Life`的文本中提取出`1`,`Damage on Full Life`
+            const builtInSupport = json.builtInSupport;
+            const match = builtInSupport.match(/Supported by Level (\d+) (.+)/);
+            if (match) {
+                const level = match[1];
+                const support = match[2];
+                buildInSupport = new Gem();
+                buildInSupport.level = parseIntOrDefault(level, 1);
+                buildInSupport.nameSpec = support;
+            }
+        }
+
+        result.push(skill);
+        if (buildInSupport) {
+            result.push(buildInSupport);
+        }
+        return result;
     }
 
     nameSpecOfVaalTransfiguredGem(transfiguredGemName: string): string {

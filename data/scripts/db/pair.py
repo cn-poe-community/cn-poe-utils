@@ -238,22 +238,17 @@ def update_requirements():
 
 def update_strings():
     print(f"info: 更新 {STRINGS_PATH} ...")
-    strs = read_json(at(STRINGS_PATH))
-    for str in strs:
-        table_info = str.get("ref")
-        key = str.get("key")
-        type = str.get("type")
+    strings = read_json(at(STRINGS_PATH))
+    for item in strings:
+        table_info = "ClientStrings,Id,Text"
+        id = item.get("id")
 
-        pair = select_pair(table_info, key)
+        pair = select_pair(table_info, id)
 
         if pair is None:
             raise Exception("[db/strings] {key} 在 {table_info} 中未找到记录")
 
-        if type in ["Prefix"]:
-            if not pair["zh"].endswith("{0}") or not pair["zh"].endswith("{0}"):
-                raise Exception(
-                    f"[db/strings] {key} 在 {table_info} 的值不是前缀")
-            str["zh"] = pair["zh"][:-(len("{0}"))]
-            str["en"] = pair["en"][:-(len("{0}"))]
+        item["zh"] = pair["zh"]
+        item["en"] = pair["en"]
 
-    save_json(at(STRINGS_PATH), strs)
+    save_json(at(STRINGS_PATH), strings)
