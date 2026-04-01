@@ -31,7 +31,7 @@ def read_json(file: str | Path) -> Any:
 def save_json(file: str, data) -> None:
     '''保存json文件'''
     must_parent(file)
-    with open(file, 'wt', encoding='utf-8') as f:
+    with open(file, 'wt', encoding='utf-8', newline='\n') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write('\n')
 
@@ -40,6 +40,14 @@ def read_ndjson(file: str) -> Any:
     '''读取ndjson文件'''
     with open(file, 'rt', encoding='utf-8') as f:
         return ndjson.load(f)
+
+
+def save_ndjson(file: str, data: list) -> None:
+    '''保存ndjson文件'''
+    must_parent(file)
+    with open(file, 'wt', encoding='utf-8', newline='\n') as f:
+        ndjson.dump(data, f, ensure_ascii=False)
+        f.write('\n')
 
 
 def is_any_json(file: str):
@@ -54,14 +62,6 @@ def read_any_json(file: str):
         return read_json(file)
     else:
         raise Exception(f"unsupported file: {file}")
-
-
-def save_ndjson(file: str, data: list) -> None:
-    '''保存ndjson文件'''
-    must_parent(file)
-    with open(file, 'wt', encoding='utf-8') as f:
-        ndjson.dump(data, f, ensure_ascii=False)
-        f.write('\n')
 
 
 def at(*paths: str) -> str:
