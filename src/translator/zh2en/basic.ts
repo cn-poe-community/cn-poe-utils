@@ -591,13 +591,13 @@ export class BasicTranslator {
                     return result;
                 }
             }
-        } else {
-            const referenceStats = this.statProvider.provideReferenceStats();
-            for (const stat of referenceStats) {
-                const result = this.doTransMod(stat, zhMod);
-                if (result) {
-                    return result;
-                }
+        }
+
+        const referenceStats = this.statProvider.provideReferenceStats();
+        for (const stat of referenceStats) {
+            const result = this.doTransMod(stat, zhMod);
+            if (result) {
+                return result;
             }
         }
 

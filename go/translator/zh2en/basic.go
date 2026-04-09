@@ -50,12 +50,12 @@ type BasicTranslator struct {
 	statProvider         *provider.StatProvider
 	stringProvider       *provider.StringProvider
 
-	qualityItemTranslator           *ClientStringTranslator
-	synthesisedItemTranslator       *ClientStringTranslator
-	mutatedUniqueNameTranslator     *ClientStringTranslator
-	influenceStat1Translator        *ClientStringTranslator
-	influenceStat2Translator        *ClientStringTranslator
-	buildInSupportTranslator        *ClientStringTranslator
+	qualityItemTranslator       *ClientStringTranslator
+	synthesisedItemTranslator   *ClientStringTranslator
+	mutatedUniqueNameTranslator *ClientStringTranslator
+	influenceStat1Translator    *ClientStringTranslator
+	influenceStat2Translator    *ClientStringTranslator
+	buildInSupportTranslator    *ClientStringTranslator
 }
 
 // NewBasicTranslator 创建基础翻译器
@@ -621,13 +621,13 @@ func (t *BasicTranslator) transModInner(zhMod string) *string {
 				return result
 			}
 		}
-	} else {
-		referenceStats := t.statProvider.ProvideReferenceStats()
-		for _, stat := range referenceStats {
-			result := t.doTransMod(stat, zhMod)
-			if result != nil {
-				return result
-			}
+	}
+
+	referenceStats := t.statProvider.ProvideReferenceStats()
+	for _, stat := range referenceStats {
+		result := t.doTransMod(stat, zhMod)
+		if result != nil {
+			return result
 		}
 	}
 

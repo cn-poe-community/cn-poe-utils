@@ -88,6 +88,10 @@ func TestTransMod(t *testing.T) {
 			en: "+3 to Level of all Spark Gems",
 		},
 		{
+			zh: "插入的技能石被 8 级的精准破坏辅助",
+			en: "Socketed Gems are Supported by Level 8 Controlled Destruction",
+		},
+		{
 			zh: "有一个传奇怪物出现在你面前：法术附加 {0} - {1} 基础物理伤害",
 			en: "While a Unique Enemy is in your Presence, Adds {0} to {1} Physical Damage to Spells",
 		},

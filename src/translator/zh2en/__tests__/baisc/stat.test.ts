@@ -8,6 +8,10 @@ const basic = factory.getBasicTranslator();
 const mods = [
     ["增加 8 个天赋技能", "Adds 8 Passive Skills"],
     ["所有 电球 宝石等级 +3", "+3 to Level of all Spark Gems"],
+    [
+        "插入的技能石被 8 级的精准破坏辅助",
+        "Socketed Gems are Supported by Level 8 Controlled Destruction",
+    ],
 ];
 
 test("mods translations", () => {
