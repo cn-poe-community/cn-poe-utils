@@ -101,8 +101,10 @@ export class Gem {
                 buildInSupport = new Gem();
                 buildInSupport.level = parseIntOrDefault(level, 1);
                 buildInSupport.nameSpec = support;
-            }else{
-                console.error(`Failed to parse gem builtInSupport: ${builtInSupport}`);
+            } else {
+                console.error(
+                    `Failed to parse gem builtInSupport: ${builtInSupport}`,
+                );
             }
         }
 
