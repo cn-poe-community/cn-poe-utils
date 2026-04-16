@@ -278,5 +278,11 @@
     "en": "Quality",
     "ref": "ClientStrings,Id,Text",
     "key": "Quality"
+  },
+  {
+    "zh": "回忆束丝",
+    "en": "Memory Strands",
+    "ref": "ClientStrings,Id,Text",
+    "key": "ZanaInfluencedItem"
   }
 ]
