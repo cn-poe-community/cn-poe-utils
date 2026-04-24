@@ -27,7 +27,7 @@ const factory = new TranslatorFactory();
 const jsonTranslator = factory.getJsonTranslator();
 jsonTranslator.transItems(items);
 jsonTranslator.transPassiveSkills(passiveSkills);
-const building = transform(r.items, r.passiveSkills);
+const building = transform(items, passiveSkills);
 console.log(building);
 ```
 
