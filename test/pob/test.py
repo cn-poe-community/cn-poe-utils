@@ -84,6 +84,13 @@ def main():
     tgz_path = os.path.join(test_pob_dir, tgz_name)
 
     if not run_command(
+        ['pnpm', 'build'],
+        cwd=project_root,
+        description="Build cn-poe-utils"
+    ):
+        sys.exit(1)
+
+    if not run_command(
         ['pnpm', 'pack', '--pack-destination', './test/pob'],
         cwd=project_root,
         description="Pack cn-poe-utils"
