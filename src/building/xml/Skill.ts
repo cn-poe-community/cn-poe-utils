@@ -30,20 +30,31 @@ ${skillsView}
 export class Skill {
     slot = "";
     gems: Gem[] = [];
+    imbuedSupport = "";
 
     constructor(slotName: string, jsonList: itemTypes.Gem[]) {
         this.slot = slotName;
         for (const json of jsonList) {
-            this.gems.push(...Gem.parseJson(json));
+            const { gem, buildInSupport } = Gem.parseJson(json);
+            this.gems.push(gem);
+            if (buildInSupport) {
+                this.imbuedSupport = buildInSupport.nameSpec;
+            }
         }
     }
 
     public toString(): string {
         const gemsView = this.gems.map((gem) => gem.toString()).join("\n");
 
-        return `<Skill enabled="true" slot="${this.slot}" mainActiveSkill="nil">
+        if (this.imbuedSupport === "") {
+            return `<Skill enabled="true" slot="${this.slot}" mainActiveSkill="nil" imbuedSupport="${this.imbuedSupport}">
 ${gemsView}
 </Skill>`;
+        } else {
+            return `<Skill enabled="true" slot="${this.slot}" mainActiveSkill="nil">
+${gemsView}
+</Skill>`;
+        }
     }
 }
 
@@ -57,18 +68,20 @@ export class Gem {
 
     private constructor() {}
 
-    static parseJson(json: itemTypes.Gem): Gem[] {
-        const result = [];
-        const skill = new Gem();
+    static parseJson(json: itemTypes.Gem): {
+        gem: Gem;
+        buildInSupport?: Gem;
+    } {
+        const gem = new Gem();
         let buildInSupport: Gem | undefined = undefined;
 
         const propMap = new Map<string, itemTypes.Property>();
         if (json.properties) {
             json.properties.forEach((prop) => propMap.set(prop.name, prop));
         }
-        skill.level = parseIntOrDefault(propMap.get("Level")?.values[0][0], 20);
+        gem.level = parseIntOrDefault(propMap.get("Level")?.values[0][0], 20);
         try {
-            skill.quality = parseIntOrDefault(
+            gem.quality = parseIntOrDefault(
                 propMap.get("Quality")?.values[0][0],
                 0,
             );
@@ -77,18 +90,18 @@ export class Gem {
             throw e;
         }
 
-        skill.nameSpec = json.baseType.replace(" Support", "");
+        gem.nameSpec = json.baseType.replace(" Support", "");
         if (json.hybrid && json.hybrid.isVaalGem) {
             const hybridBaseTypeName = json.hybrid.baseTypeName;
             if (isTransfiguredSkill(hybridBaseTypeName)) {
-                skill.nameSpec =
-                    skill.nameSpecOfVaalTransfiguredGem(hybridBaseTypeName);
+                gem.nameSpec =
+                    gem.nameSpecOfVaalTransfiguredGem(hybridBaseTypeName);
             }
         }
 
-        if (skill.isVaalGem()) {
-            skill.enableGlobal1 = false;
-            skill.enableGlobal2 = true;
+        if (gem.isVaalGem()) {
+            gem.enableGlobal1 = false;
+            gem.enableGlobal2 = true;
         }
 
         if (json.builtInSupport) {
@@ -108,11 +121,7 @@ export class Gem {
             }
         }
 
-        result.push(skill);
-        if (buildInSupport) {
-            result.push(buildInSupport);
-        }
-        return result;
+        return { gem, buildInSupport };
     }
 
     nameSpecOfVaalTransfiguredGem(transfiguredGemName: string): string {

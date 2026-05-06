@@ -51,8 +51,9 @@ func (ss *SkillSet) String() string {
 
 // Skill 技能
 type Skill struct {
-	Slot string
-	Gems []*Gem
+	Slot          string
+	Gems          []*Gem
+	ImbuedSupport string
 }
 
 func NewSkill(slotName string, jsonList []*api.Item) *Skill {
@@ -61,7 +62,11 @@ func NewSkill(slotName string, jsonList []*api.Item) *Skill {
 		Gems: []*Gem{},
 	}
 	for _, json := range jsonList {
-		skill.Gems = append(skill.Gems, NewGems(json)...)
+		gem, buildInSupport := parseJson(json)
+		skill.Gems = append(skill.Gems, gem)
+		if buildInSupport != nil {
+			skill.ImbuedSupport = buildInSupport.NameSpec
+		}
 	}
 	return skill
 }
@@ -72,9 +77,14 @@ func (s *Skill) String() string {
 	for _, gem := range s.Gems {
 		gemsView = append(gemsView, gem.String())
 	}
-	return fmt.Sprintf(`<Skill enabled="true" slot="%s" mainActiveSkill="nil">
+	if s.ImbuedSupport == "" {
+		return fmt.Sprintf(`<Skill enabled="true" slot="%s" mainActiveSkill="nil">
 %s
 </Skill>`, s.Slot, strings.Join(gemsView, "\n"))
+	}
+	return fmt.Sprintf(`<Skill enabled="true" slot="%s" mainActiveSkill="nil" imbuedSupport="%s">
+%s
+</Skill>`, s.Slot, s.ImbuedSupport, strings.Join(gemsView, "\n"))
 }
 
 // Gem 宝石
@@ -87,7 +97,7 @@ type Gem struct {
 	EnableGlobal2 bool
 }
 
-func NewGems(json *api.Item) []*Gem {
+func parseJson(json *api.Item) (*Gem, *Gem) {
 	propMap := make(map[string]*api.Property)
 	if json.Properties != nil {
 		for i := range json.Properties {
@@ -129,18 +139,17 @@ func NewGems(json *api.Item) []*Gem {
 		gem.EnableGlobal2 = true
 	}
 
-	result := []*Gem{gem}
+	var buildInSupport *Gem
 
 	// 处理内置辅助技能
 	if json.BuiltInSupport != nil {
 		builtInSupport := *json.BuiltInSupport
-		// 从类似`Supported by Level 1 Damage on Full Life`的文本中提取出`1`,`Damage on Full Life`
 		re := regexp.MustCompile(`Supported by Level (\d+) (.+)`)
 		match := re.FindStringSubmatch(builtInSupport)
 		if len(match) == 3 {
 			supportLevel := util.ParseIntOrDefault(match[1], 1)
 			supportName := match[2]
-			buildInSupportGem := &Gem{
+			buildInSupport = &Gem{
 				Level:         supportLevel,
 				QualityId:     "Default",
 				Quality:       0,
@@ -148,13 +157,12 @@ func NewGems(json *api.Item) []*Gem {
 				EnableGlobal1: true,
 				EnableGlobal2: false,
 			}
-			result = append(result, buildInSupportGem)
 		} else {
 			fmt.Printf("Failed to parse gem builtInSupport: %s\n", builtInSupport)
 		}
 	}
 
-	return result
+	return gem, buildInSupport
 }
 
 func nameSpecOfVaalTransfiguredGem(transfiguredGemName string) string {
