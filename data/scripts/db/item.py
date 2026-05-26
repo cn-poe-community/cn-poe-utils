@@ -86,10 +86,8 @@ def create_equipments():
         ("shields", ["Shield"]),
         ("tinctures", ["Tincture"])
     ]
-    equipment_names = ["helmets", "body_armours", "gloves", "boots", "amulets", "belts", "shields",
-                       "flasks", "jewels", "quivers", "rings"]
 
-    equipment_base_types = []
+    base_types = []
 
     for entry in type_tables:
         name, table_name = entry
@@ -100,7 +98,7 @@ def create_equipments():
                  not in LEGACY_BASE_TYPE_IDS_BEFORE_TENCENT]
         save_json(at(f"db/items/{name}.json"), array)
 
-        equipment_base_types.extend(array)
+        base_types.extend(array)
 
     for entry in item_class_ids:
         name, item_class_ids = entry
@@ -111,12 +109,9 @@ def create_equipments():
                  not in LEGACY_BASE_TYPE_IDS_BEFORE_TENCENT]
         save_json(at(f"db/items/{name}.json"), array)
 
-        if name in equipment_names:
-            equipment_base_types.extend(array)
-        else:
-            check_duplicate_zhs(array, f"items/{name}")
+        base_types.extend(array)
 
-    check_duplicate_zhs(equipment_base_types, "items/equipments")
+    check_duplicate_zhs(base_types, "items/equipments")
 
 
 def create_tattoos():

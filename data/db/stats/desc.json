@@ -30,11 +30,6 @@
     "en": "{0}% of Physical Damage from your Hits cannot be Reflected"
   },
   {
-    "id": "-%_of_your_damage_cannot_be_reflected",
-    "zh": "你击中伤害的 {0}% 无法被反射",
-    "en": "{0}% of Damage from your Hits cannot be Reflected"
-  },
-  {
     "id": "local_jewel_+%_effect_per_passive_between_jewel_and_class_start",
     "zh": "从你职业的出发位置到该珠宝槽之间\n每一点配置的天赋就使该珠宝插槽的效果提高 {0}%",
     "en": "This Jewel's Socket has {0}% increased effect per Allocated Passive Skill between\nit and your Class' starting location"
@@ -861,11 +856,6 @@
   },
   {
     "id": "local_socketed_curse_gem_level_+",
-    "zh": "插入的诅咒技能石等级 {0}",
-    "en": "{0} to Level of Socketed Curse Gems"
-  },
-  {
-    "id": "local_socketed_hex_gem_level_+",
     "zh": "插入的诅咒技能石等级 {0}",
     "en": "{0} to Level of Socketed Curse Gems"
   },
@@ -1830,11 +1820,6 @@
     "en": "Socketed Gems are Supported by Level {0} Spell Cascade"
   },
   {
-    "id": "local_display_socketed_gems_supported_by_level_x_spell_focus",
-    "zh": "插槽中的宝石受 {0} 级法术凝聚辅助",
-    "en": "Socketed Gems are Supported by Level {0} Intensify"
-  },
-  {
     "id": "local_display_socketed_gems_supported_by_level_x_spellblade",
     "zh": "插槽中的宝石受 {0} 级碎影魔刃辅助",
     "en": "Socketed Gems are Supported by Level {0} Spellblade"
@@ -1958,21 +1943,6 @@
     "id": "local_display_socketed_gems_supported_by_level_x_chaos_attacks",
     "zh": "此物品上的技能石受到 {0} 级的 凋零之触 辅助",
     "en": "Socketed Gems are Supported by Level {0} Withering Touch"
-  },
-  {
-    "id": "local_display_socketed_gems_supported_by_x_intensify_level",
-    "zh": "插槽中的宝石受 {0} 级法术凝聚辅助",
-    "en": "Socketed Gems are Supported by Level {0} Intensify"
-  },
-  {
-    "id": "local_display_socketed_gems_supported_by_x_returning_projectiles_level",
-    "zh": "插槽中的宝石受 {0} 级投射物返回辅助",
-    "en": "Socketed Gems are Supported by Level {0} Returning Projectiles"
-  },
-  {
-    "id": "local_display_socketed_gems_supported_by_x_summon_phantasm_level",
-    "zh": "插槽中的宝石受 {0} 级召唤幻灵辅助",
-    "en": "Socketed Gems are Supported by Level {0} Summon Phantasm"
   },
   {
     "id": "local_display_socketed_triggered_skills_deal_double_damage",
@@ -2193,14 +2163,6 @@
     }
   },
   {
-    "id": "local_random_support_gem_level_1 local_random_support_gem_index_1",
-    "zh": "插入的技能石被 {0} 级的{1}辅助",
-    "en": "Socketed Gems are Supported by Level {0} {1}",
-    "refs": {
-      "1": "display_indexable_support"
-    }
-  },
-  {
     "id": "local_display_socketed_gems_get_concentrated_area_level",
     "zh": "此物品上的技能石受到 {0} 级的 集中效应 辅助",
     "en": "Socketed Gems are Supported by Level {0} Concentrated Effect"
@@ -2259,11 +2221,6 @@
     "id": "local_display_socketed_gems_get_spell_totem_level",
     "zh": "此物品上的技能石受到 {0} 级的 法术图腾 辅助",
     "en": "Socketed Gems are Supported by Level {0} Spell Totem"
-  },
-  {
-    "id": "local_display_socketed_gems_get_fire_penetration_level",
-    "zh": "此物品上的技能石受到 {0} 级的 火焰穿透 辅助",
-    "en": "Socketed Gems are Supported by Level {0} Fire Penetration"
   },
   {
     "id": "local_display_socketed_gems_get_elemental_proliferation_level",
@@ -2356,11 +2313,6 @@
     "en": "Socketed Gems are supported by Level {0} Elemental Damage with Attacks"
   },
   {
-    "id": "local_display_socketed_gems_get_echo_level",
-    "zh": "此物品上的技能石受到 {0} 级的 施法回响 辅助",
-    "en": "Socketed Gems are Supported by Level {0} Spell Echo"
-  },
-  {
     "id": "local_display_socketed_gems_get_reduced_mana_cost_level",
     "zh": "此物品上的技能石受到 {0} 级的启迪辅助",
     "en": "Socketed Gems are Supported by Level {0} Inspiration"
@@ -2404,11 +2356,6 @@
     "id": "local_display_socketed_gems_supported_by_x_knockback_level",
     "zh": "此物品上的技能石受到 {0} 级的 击退 辅助",
     "en": "Socketed Gems are Supported by Level {0} Knockback"
-  },
-  {
-    "id": "local_display_socketed_gems_supported_by_x_focused_channelling_level",
-    "zh": "插槽中的宝石受 {0} 级专注吟唱辅助",
-    "en": "Socketed Gems are Supported by Level {0} Focused Channelling"
   },
   {
     "id": "local_display_socketed_gems_supported_by_x_increased_minion_life_level",
@@ -2469,11 +2416,6 @@
     "id": "local_display_socketed_gems_supported_by_x_added_cold_damage",
     "zh": "此物品上的技能石受到 {0} 级的 附加冰霜伤害 辅助",
     "en": "Socketed Gems are Supported by Level {0} Added Cold Damage"
-  },
-  {
-    "id": "local_display_socketed_gems_supported_by_x_reduced_mana_cost",
-    "zh": "此物品上的技能石受到 {0} 级的启迪辅助",
-    "en": "Socketed Gems are Supported by Level {0} Inspiration"
   },
   {
     "id": "local_display_socketed_curse_gems_supported_by_level_x_blasphemy",
@@ -3666,11 +3608,6 @@
     "en": "Grants Level {0} Herald of Thunder Skill"
   },
   {
-    "id": "local_display_grants_skill_intimidating_cry_level",
-    "zh": "获得 {0} 级的主动技能威吓战吼",
-    "en": "Grants Level {0} Intimidating Cry Skill"
-  },
-  {
     "id": "local_display_grants_skill_lightning_warp_level",
     "zh": "获得 {0} 级的主动技能闪电传送，且可被此道具上的技能石辅助",
     "en": "Grants Level {0} Lightning Warp Skill"
@@ -3946,11 +3883,6 @@
     "en": "Trigger Level {0} Poacher's Mark when you Hit a Rare or Unique Enemy and have no Mark"
   },
   {
-    "id": "curse_on_hit_level_poachers_mark_bypass_hexproof",
-    "zh": "当你击中的稀有或传奇敌人没有被标记，触发 {0} 级盗猎者印记",
-    "en": "Trigger Level {0} Poacher's Mark when you Hit a Rare or Unique Enemy and have no Mark"
-  },
-  {
     "id": "display_abberaths_hooves_skill_level",
     "zh": "装备时施放 {0} 级的艾贝拉斯之怒",
     "en": "Triggers Level {0} Abberath's Fury when Equipped"
@@ -4191,11 +4123,6 @@
     "en": "Trigger Level 20 Twister when you gain Avian's Might or Avian's Flight"
   },
   {
-    "id": "local_display_trigger_level_X_assassins_mark_when_you_hit_rare_or_unique_enemy",
-    "zh": "当你击中的稀有或传奇敌人没有被标记，触发 {0} 级暗影印记",
-    "en": "Trigger Level {0} Assassin's Mark when you Hit a Rare or Unique Enemy and have no Mark"
-  },
-  {
     "id": "local_display_trigger_level_X_atziri_flameblast",
     "zh": "女王敕令可以触发 {0} 级审判烈焰",
     "en": "Queen's Demand can Trigger Level {0} Flames of Judgement"
@@ -4214,11 +4141,6 @@
     "id": "local_display_trigger_level_X_offering_every_5_seconds",
     "zh": "每 5 秒依次触发 {0} 级的骸骨奉献、血肉奉献或灵魂奉献\n以此种方式触发的奉献技能也会影响你",
     "en": "Trigger Level {0} Bone Offering, Flesh Offering, Spirit Offering every 5 seconds in sequence\nOffering Skills Triggered this way also affect you"
-  },
-  {
-    "id": "local_display_trigger_level_X_poachers_mark_when_you_hit_rare_or_unique_enemy",
-    "zh": "当你击中的稀有或传奇敌人没有被标记，触发 {0} 级盗猎者印记",
-    "en": "Trigger Level {0} Poacher's Mark when you Hit a Rare or Unique Enemy and have no Mark"
   },
   {
     "id": "local_display_trigger_level_X_shield_shatter_on_block",
@@ -4664,11 +4586,6 @@
     "id": "local_flask_mana_recovery_occurs_instantly_at_end_of_flask_effect",
     "zh": "魔力回复会在效果结束时立即开始",
     "en": "Mana Recovery occurs instantly at the end of Effect"
-  },
-  {
-    "id": "local_flask_recovers_instantly",
-    "zh": "立即回复",
-    "en": "Instant Recovery"
   },
   {
     "id": "local_flask_remove_effect_when_ward_breaks",
@@ -5206,17 +5123,7 @@
     "en": "{0}% of Attack Damage Leeched as Life during Effect"
   },
   {
-    "id": "local_flask_life_leech_permyriad_while_healing",
-    "zh": "生效期间，{0}% 的物理攻击伤害转化为生命偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Life during Effect"
-  },
-  {
     "id": "old_do_not_use_local_flask_mana_leech_%_while_healing",
-    "zh": "生效期间，{0}% 的物理攻击伤害转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana during Effect"
-  },
-  {
-    "id": "local_flask_mana_leech_permyriad_while_healing",
     "zh": "生效期间，{0}% 的物理攻击伤害转化为魔力偷取",
     "en": "{0}% of Physical Attack Damage Leeched as Mana during Effect"
   },
@@ -5259,16 +5166,6 @@
     "id": "local_flask_life_gain_on_skill_use_%_mana_cost",
     "zh": "生效期间使用技能会赋予你临终叹息，魔力消耗为 {0}%",
     "en": "Grants Last Breath when you Use a Skill during Effect, for {0}% of Mana Cost"
-  },
-  {
-    "id": "local_avoid_chill_%_during_flask_effect",
-    "zh": "生效期间，有 {0}% 几率避免被冰缓",
-    "en": "{0}% chance to Avoid being Chilled during Effect"
-  },
-  {
-    "id": "local_avoid_freeze_%_during_flask_effect",
-    "zh": "生效期间，有 {0}% 几率避免被冰冻",
-    "en": "{0}% chance to Avoid being Frozen during Effect"
   },
   {
     "id": "local_avoid_ignite_%_during_flask_effect",
@@ -5671,11 +5568,6 @@
     "en": "{0}% increased Quantity of Items found during Effect"
   },
   {
-    "id": "local_unique_flask_item_rarity_+%_while_healing",
-    "zh": "生效期间，找到的物品稀有度提高 {0}%",
-    "en": "{0}% increased Rarity of Items found during Effect"
-  },
-  {
     "id": "local_unique_flask_kiaras_determination",
     "zh": "生效期间免疫冻结、冻缓、诅咒和晕眩",
     "en": "Immunity to Freeze, Chill, Curses and Stuns during Effect"
@@ -5779,11 +5671,6 @@
     "id": "local_unique_lions_roar_melee_physical_damage_+%_final_during_flask_effect",
     "zh": "生效期间近战物理伤害总增 {0}%",
     "en": "{0}% more Melee Physical Damage during effect"
-  },
-  {
-    "id": "old_do_not_use_local_unique_flask_life_leech_from_chaos_damage_permyriad_while_healing",
-    "zh": "生效期间，{0}% 的混沌伤害转化为生命偷取",
-    "en": "{0}% of Chaos Damage Leeched as Life during Effect"
   },
   {
     "id": "spread_poison_to_nearby_enemies_on_kill",
@@ -6106,11 +5993,6 @@
     "en": "{0}% chance to Suppress Spell Damage"
   },
   {
-    "id": "base_spell_suppression_chance_%",
-    "zh": "法术伤害压制率 {0}%",
-    "en": "{0}% chance to Suppress Spell Damage"
-  },
-  {
     "id": "spell_block_while_dual_wielding_%",
     "zh": "双持时法术伤害格挡几率 {0}%",
     "en": "{0}% Chance to Block Spell Damage while Dual Wielding"
@@ -6171,11 +6053,6 @@
     "en": "{0}% Chance to Block Spell Damage per 50 Strength"
   },
   {
-    "id": "additional_staff_block_%",
-    "zh": "持长杖时攻击伤害格挡几率 {0}%",
-    "en": "{0}% Chance to Block Attack Damage while wielding a Staff"
-  },
-  {
     "id": "old_do_not_use_spell_block_%_from_assumed_block_value",
     "zh": "{0}% 法术格挡几率",
     "en": "{0}% Chance to Block Spell Damage"
@@ -6224,11 +6101,6 @@
     "id": "block_while_dual_wielding_claws_%",
     "zh": "双持爪时攻击伤害格挡几率 {0}%",
     "en": "{0}% Chance to Block Attack Damage while Dual Wielding Claws"
-  },
-  {
-    "id": "block_chance_%_while_holding_shield",
-    "zh": "攻击伤害格挡率在持盾牌时 {0}%",
-    "en": "{0}% Chance to Block Attack Damage while holding a Shield"
   },
   {
     "id": "dual_wield_or_shield_block_%",
@@ -6349,11 +6221,6 @@
     "id": "additional_strength_and_dexterity",
     "zh": "{0} 力量和敏捷",
     "en": "{0} to Strength and Dexterity"
-  },
-  {
-    "id": "additional_strength_and_intelligence",
-    "zh": "{0} 力量和智慧",
-    "en": "{0} to Strength and Intelligence"
   },
   {
     "id": "additional_dexterity_and_intelligence",
@@ -7099,11 +6966,6 @@
     "id": "minimum_added_fire_damage_per_active_buff maximum_added_fire_damage_per_active_buff",
     "zh": "自身的每个增益附加 {0} - {1} 基础火焰伤害",
     "en": "Adds {0} to {1} Fire Damage per Buff on you"
-  },
-  {
-    "id": "local_minimum_added_physical_damage local_maximum_added_physical_damage",
-    "zh": "该装备附加 {0} - {1} 基础物理伤害",
-    "en": "Adds {0} to {1} Physical Damage"
   },
   {
     "id": "attack_skills_damage_+%_while_dual_wielding",
@@ -7936,11 +7798,6 @@
     "en": "Adds {0} to {1} Fire Damage to Attacks against you"
   },
   {
-    "id": "local_minimum_added_fire_damage local_maximum_added_fire_damage",
-    "zh": "该装备附加 {0} - {1} 基础火焰伤害",
-    "en": "Adds {0} to {1} Fire Damage"
-  },
-  {
     "id": "unique_local_minimum_added_fire_damage_when_in_main_hand unique_local_maximum_added_fire_damage_when_in_main_hand",
     "zh": "主手武器附加 {0} - {1} 基础火焰伤害",
     "en": "Adds {0} to {1} Fire Damage in Main Hand"
@@ -7994,11 +7851,6 @@
     "id": "from_self_minimum_added_attack_cold_damage_taken from_self_maximum_added_attack_cold_damage_taken",
     "zh": "攻击你时附加{0}-{1}点冰霜伤害",
     "en": "Adds {0} to {1} Cold Damage to Attacks against you"
-  },
-  {
-    "id": "local_minimum_added_cold_damage local_maximum_added_cold_damage",
-    "zh": "该装备附加 {0} - {1} 基础冰霜伤害",
-    "en": "Adds {0} to {1} Cold Damage"
   },
   {
     "id": "unique_local_minimum_added_cold_damage_when_in_off_hand unique_local_maximum_added_cold_damage_when_in_off_hand",
@@ -8066,11 +7918,6 @@
     "en": "Adds {0} to {1} Lightning Damage to Attacks against you"
   },
   {
-    "id": "local_minimum_added_lightning_damage local_maximum_added_lightning_damage",
-    "zh": "该装备附加 {0} - {1} 基础闪电伤害",
-    "en": "Adds {0} to {1} Lightning Damage"
-  },
-  {
     "id": "damage_with_lightning_skills_+%",
     "zh": "闪电技能伤害提高 {0}%",
     "en": "{0}% increased Damage with Lightning Skills"
@@ -8121,11 +7968,6 @@
     "en": "{0} to {1} Added Attack Chaos Damage per 100 Maximum Mana"
   },
   {
-    "id": "local_minimum_added_chaos_damage local_maximum_added_chaos_damage",
-    "zh": "该装备附加 {0} - {1} 基础混沌伤害",
-    "en": "Adds {0} to {1} Chaos Damage"
-  },
-  {
     "id": "unique_local_minimum_added_chaos_damage_when_in_off_hand unique_local_maximum_added_chaos_damage_when_in_off_hand",
     "zh": "副手武器附加 {0} - {1} 基础混沌伤害",
     "en": "Adds {0} to {1} Chaos Damage in Off Hand"
@@ -8172,31 +8014,6 @@
   },
   {
     "id": "spell_minimum_base_chaos_damage spell_maximum_base_chaos_damage",
-    "zh": "造成 {0} - {1} 混沌伤害",
-    "en": "Deals {0} to {1} Chaos Damage"
-  },
-  {
-    "id": "secondary_minimum_base_physical_damage secondary_maximum_base_physical_damage",
-    "zh": "造成 {0} - {1} 物理伤害",
-    "en": "Deals {0} to {1} Physical Damage"
-  },
-  {
-    "id": "secondary_minimum_base_fire_damage secondary_maximum_base_fire_damage",
-    "zh": "造成 {0} - {1} 火焰伤害",
-    "en": "Deals {0} to {1} Fire Damage"
-  },
-  {
-    "id": "secondary_minimum_base_cold_damage secondary_maximum_base_cold_damage",
-    "zh": "造成 {0} - {1} 冰霜伤害",
-    "en": "Deals {0} to {1} Cold Damage"
-  },
-  {
-    "id": "secondary_minimum_base_lightning_damage secondary_maximum_base_lightning_damage",
-    "zh": "造成 {0} - {1} 闪电伤害",
-    "en": "Deals {0} to {1} Lightning Damage"
-  },
-  {
-    "id": "secondary_minimum_base_chaos_damage secondary_maximum_base_chaos_damage",
     "zh": "造成 {0} - {1} 混沌伤害",
     "en": "Deals {0} to {1} Chaos Damage"
   },
@@ -8254,26 +8071,6 @@
     "id": "active_skill_attack_speed_+%_final",
     "zh": "攻击速度总降 {0}%",
     "en": "{0}% less Attack Speed"
-  },
-  {
-    "id": "flicker_strike_more_attack_speed_+%_final",
-    "zh": "攻击速度总增 {0}%",
-    "en": "{0}% more Attack Speed"
-  },
-  {
-    "id": "flicker_strike_more_attack_speed_+%_final",
-    "zh": "攻击速度总降 {0}%",
-    "en": "{0}% less Attack Speed"
-  },
-  {
-    "id": "local_attack_speed_+%",
-    "zh": "攻击速度加快 {0}%",
-    "en": "{0}% increased Attack Speed"
-  },
-  {
-    "id": "local_attack_speed_+%",
-    "zh": "攻击速度减慢 {0}%",
-    "en": "{0}% reduced Attack Speed"
   },
   {
     "id": "melee_attack_speed_+%",
@@ -8409,16 +8206,6 @@
     "id": "wand_attack_speed_+%",
     "zh": "法杖攻击的攻击速度减慢 {0}%",
     "en": "{0}% reduced Attack Speed with Wands"
-  },
-  {
-    "id": "shield_attack_speed_+%",
-    "zh": "持盾牌时攻击速度加快 {0}%",
-    "en": "{0}% increased Attack Speed while holding a Shield"
-  },
-  {
-    "id": "shield_attack_speed_+%",
-    "zh": "持盾牌时攻击速度减慢 {0}%",
-    "en": "{0}% reduced Attack Speed while holding a Shield"
   },
   {
     "id": "unarmed_melee_attack_speed_+%",
@@ -8661,11 +8448,6 @@
     "en": "Critical Strikes with Daggers have a {0}% chance to Poison the Enemy"
   },
   {
-    "id": "chance_to_poison_on_critical_strike_with_dagger_%",
-    "zh": "匕首攻击的暴击使敌人中毒",
-    "en": "Critical Strikes with Daggers Poison the Enemy"
-  },
-  {
     "id": "poison_on_critical_strike_with_bow",
     "zh": "弓类攻击暴击时使敌人中毒",
     "en": "Critical Strikes with Bows Poison the Enemy"
@@ -8714,11 +8496,6 @@
     "id": "old_dagger_implicit_critical_strike_chance_+50%",
     "zh": "全域暴击率提高 50%",
     "en": "50% increased Global Critical Strike Chance"
-  },
-  {
-    "id": "local_critical_strike_chance",
-    "zh": "暴击几率提高 {0}%",
-    "en": "{0}% to Critical Strike Chance"
   },
   {
     "id": "local_critical_strike_chance_+%",
@@ -9146,11 +8923,6 @@
     "en": "{0}% chance to Avoid being Knocked Back"
   },
   {
-    "id": "avoid_knockback_%",
-    "zh": "无法被击退",
-    "en": "Cannot be Knocked Back"
-  },
-  {
     "id": "knockback_with_bow",
     "zh": "弓类击中会击退敌人",
     "en": "Knocks Enemies Back when Hit by a Bow"
@@ -9171,27 +8943,12 @@
     "en": "{0} to Ward"
   },
   {
-    "id": "local_ward",
-    "zh": "结界 {0}",
-    "en": "{0} to Ward"
-  },
-  {
     "id": "ward_+%",
     "zh": "结界提高 {0}%",
     "en": "{0}% increased Ward"
   },
   {
     "id": "ward_+%",
-    "zh": "结界降低 {0}%",
-    "en": "{0}% reduced Ward"
-  },
-  {
-    "id": "local_ward_+%",
-    "zh": "结界提高 {0}%",
-    "en": "{0}% increased Ward"
-  },
-  {
-    "id": "local_ward_+%",
     "zh": "结界降低 {0}%",
     "en": "{0}% reduced Ward"
   },
@@ -9211,27 +8968,12 @@
     "en": "{0} to Adaptation Rating"
   },
   {
-    "id": "local_adaptation_rating",
-    "zh": "适应率 {0}",
-    "en": "{0} to Adaptation Rating"
-  },
-  {
     "id": "adaptation_rating_+%",
     "zh": "适应率提高 {0}%",
     "en": "{0}% increased Adaptation Rating"
   },
   {
     "id": "adaptation_rating_+%",
-    "zh": "适应率降低 {0}%",
-    "en": "{0}% reduced Adaptation Rating"
-  },
-  {
-    "id": "local_adaptation_rating_+%",
-    "zh": "适应率提高 {0}%",
-    "en": "{0}% increased Adaptation Rating"
-  },
-  {
-    "id": "local_adaptation_rating_+%",
     "zh": "适应率降低 {0}%",
     "en": "{0}% reduced Adaptation Rating"
   },
@@ -9257,11 +8999,6 @@
   },
   {
     "id": "base_physical_damage_reduction_rating",
-    "zh": "{0} 护甲",
-    "en": "{0} to Armour"
-  },
-  {
-    "id": "local_base_physical_damage_reduction_rating",
     "zh": "{0} 护甲",
     "en": "{0} to Armour"
   },
@@ -9314,11 +9051,6 @@
     "id": "evasion_rating_+_per_1_helmet_energy_shield",
     "zh": "装备头盔的每 1 点能量护盾上限使闪避值提高 {0}",
     "en": "{0} to Evasion Rating per 1 Maximum Energy Shield on Equipped Helmet"
-  },
-  {
-    "id": "local_base_evasion_rating",
-    "zh": "{0} 点闪避值",
-    "en": "{0} to Evasion Rating"
   },
   {
     "id": "evasion_rating_+%",
@@ -9412,11 +9144,6 @@
   },
   {
     "id": "base_maximum_energy_shield",
-    "zh": "{0} 最大能量护盾",
-    "en": "{0} to maximum Energy Shield"
-  },
-  {
-    "id": "local_energy_shield",
     "zh": "{0} 最大能量护盾",
     "en": "{0} to maximum Energy Shield"
   },
@@ -9527,16 +9254,6 @@
   },
   {
     "id": "monster_life_+%_final_from_rarity",
-    "zh": "生命上限总降 {0}%",
-    "en": "{0}% less maximum Life"
-  },
-  {
-    "id": "monster_life_+%_final_from_map",
-    "zh": "生命上限总增 {0}%",
-    "en": "{0}% more maximum Life"
-  },
-  {
-    "id": "monster_life_+%_final_from_map",
     "zh": "生命上限总降 {0}%",
     "en": "{0}% less maximum Life"
   },
@@ -9676,16 +9393,6 @@
     "en": "{0}% reduced Quantity of Items found"
   },
   {
-    "id": "base_item_found_quantity_+%",
-    "zh": "物品掉落数量提高 {0}%",
-    "en": "{0}% increased Quantity of Items found"
-  },
-  {
-    "id": "base_item_found_quantity_+%",
-    "zh": "物品掉落数量降低 {0}%",
-    "en": "{0}% reduced Quantity of Items found"
-  },
-  {
     "id": "item_found_quantity_+%_when_on_low_life",
     "zh": "低血时物品掉落数量提高 {0}%",
     "en": "{0}% increased Quantity of Items found when on Low Life"
@@ -9712,16 +9419,6 @@
   },
   {
     "id": "item_found_rarity_+%",
-    "zh": "物品稀有度降低 {0}%",
-    "en": "{0}% reduced Rarity of Items found"
-  },
-  {
-    "id": "base_item_found_rarity_+%",
-    "zh": "物品稀有度提高 {0}%",
-    "en": "{0}% increased Rarity of Items found"
-  },
-  {
-    "id": "base_item_found_rarity_+%",
     "zh": "物品稀有度降低 {0}%",
     "en": "{0}% reduced Rarity of Items found"
   },
@@ -10067,27 +9764,7 @@
     "en": "{0}% of Physical Attack Damage Leeched by Enemy as Life"
   },
   {
-    "id": "life_leech_from_physical_attack_damage_permyriad",
-    "zh": "物理攻击伤害的 {0}% 会转化为生命偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Life"
-  },
-  {
-    "id": "old_do_not_use_local_life_leech_from_physical_damage_%",
-    "zh": "物理攻击伤害的 {0}% 会转化为生命偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Life"
-  },
-  {
-    "id": "local_life_leech_from_physical_damage_permyriad",
-    "zh": "物理攻击伤害的 {0}% 会转化为生命偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Life"
-  },
-  {
     "id": "old_do_not_use_life_leech_from_physical_damage_with_claw_%",
-    "zh": "爪类攻击造成物理伤害的 {0}% 会转化为生命偷取",
-    "en": "{0}% of Physical Damage Dealt with Claws Leeched as Life"
-  },
-  {
-    "id": "life_leech_from_physical_damage_with_claw_permyriad",
     "zh": "爪类攻击造成物理伤害的 {0}% 会转化为生命偷取",
     "en": "{0}% of Physical Damage Dealt with Claws Leeched as Life"
   },
@@ -10102,11 +9779,6 @@
     "en": "{0}% of Physical Attack Damage Leeched as Life and Mana"
   },
   {
-    "id": "local_life_and_mana_leech_from_physical_damage_permyriad",
-    "zh": "物理攻击伤害的{0}% 会转化为生命和魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Life and Mana"
-  },
-  {
     "id": "old_do_not_use_mana_leech_from_physical_damage_with_claw_%",
     "zh": "爪类攻击造成物理伤害的 {0}% 会转化为魔力偷取",
     "en": "{0}% of Physical Damage Dealt with Claws Leeched as Mana"
@@ -10115,11 +9787,6 @@
     "id": "recover_%_life_on_kill_per_different_mastery",
     "zh": "每配置一种不同类型的专精，击败敌人回复 {0}% 生命",
     "en": "Recover {0}% of Life on Kill for each different type of Mastery you have Allocated"
-  },
-  {
-    "id": "mana_leech_from_physical_damage_with_claw_permyriad",
-    "zh": "爪类攻击造成物理伤害的 {0}% 会转化为魔力偷取",
-    "en": "{0}% of Physical Damage Dealt with Claws Leeched as Mana"
   },
   {
     "id": "mana_leech_from_physical_damage_with_bow_permyriad",
@@ -10137,11 +9804,6 @@
     "en": "{0}% of Spell Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_spell_damage_permyriad",
-    "zh": "法术伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Spell Damage Leeched as Life"
-  },
-  {
     "id": "base_life_leech_from_attack_damage_permyriad",
     "zh": "攻击伤害的 {0}% 转化为生命偷取",
     "en": "{0}% of Attack Damage Leeched as Life"
@@ -10152,19 +9814,9 @@
     "en": "{0}% of Physical Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_physical_damage_permyriad",
-    "zh": "物理伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Physical Damage Leeched as Life"
-  },
-  {
     "id": "enemy_life_leech_from_physical_damage_permyriad",
     "zh": "{0}%的物理伤害被敌人吸取为生命",
     "en": "{0}% of Physical Damage Leeched by Enemy as Life"
-  },
-  {
-    "id": "horrible_ugly_life_leech_from_physical_damage_perhundredthousand",
-    "zh": "物理伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Physical Damage Leeched as Life"
   },
   {
     "id": "old_do_not_use_base_life_leech_from_fire_damage_permyriad",
@@ -10172,19 +9824,9 @@
     "en": "{0}% of Fire Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_fire_damage_permyriad",
-    "zh": "火焰伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Fire Damage Leeched as Life"
-  },
-  {
     "id": "enemy_life_leech_from_fire_damage_permyriad",
     "zh": "{0}%的火焰伤害被敌人吸取为生命",
     "en": "{0}% of Fire Damage Leeched by Enemy as Life"
-  },
-  {
-    "id": "horrible_ugly_life_leech_from_fire_damage_perhundredthousand",
-    "zh": "火焰伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Fire Damage Leeched as Life"
   },
   {
     "id": "recover_%_es_on_kill_per_different_mastery",
@@ -10197,19 +9839,9 @@
     "en": "{0}% of Cold Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_cold_damage_permyriad",
-    "zh": "冰霜伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Cold Damage Leeched as Life"
-  },
-  {
     "id": "enemy_life_leech_from_cold_damage_permyriad",
     "zh": "{0}%的冰霜伤害被敌人吸取为生命",
     "en": "{0}% of Cold Damage Leeched by Enemy as Life"
-  },
-  {
-    "id": "horrible_ugly_life_leech_from_cold_damage_perhundredthousand",
-    "zh": "冰霜伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Cold Damage Leeched as Life"
   },
   {
     "id": "old_do_not_use_base_life_leech_from_lightning_damage_permyriad",
@@ -10217,19 +9849,9 @@
     "en": "{0}% of Lightning Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_lightning_damage_permyriad",
-    "zh": "闪电伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Lightning Damage Leeched as Life"
-  },
-  {
     "id": "enemy_life_leech_from_lightning_damage_permyriad",
     "zh": "{0}%的闪电伤害被敌人吸取为生命",
     "en": "{0}% of Lightning Damage Leeched by Enemy as Life"
-  },
-  {
-    "id": "horrible_ugly_life_leech_from_lightning_damage_perhundredthousand",
-    "zh": "闪电伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Lightning Damage Leeched as Life"
   },
   {
     "id": "base_life_leech_from_chaos_damage_permyriad",
@@ -10242,27 +9864,12 @@
     "en": "{0}% of Chaos Damage Leeched by Enemy as Life"
   },
   {
-    "id": "horrible_ugly_life_leech_from_chaos_damage_perhundredthousand",
-    "zh": "混沌伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Chaos Damage Leeched as Life"
-  },
-  {
     "id": "old_do_not_use_base_life_leech_from_elemental_damage_permyriad",
     "zh": "元素伤害的 {0}% 转化为生命偷取",
     "en": "{0}% of Elemental Damage Leeched as Life"
   },
   {
-    "id": "base_life_leech_from_elemental_damage_permyriad",
-    "zh": "元素伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Elemental Damage Leeched as Life"
-  },
-  {
     "id": "old_do_not_use_life_leech_permyriad_vs_shocked_enemies",
-    "zh": "对感电敌人造成伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Damage Leeched as Life against Shocked Enemies"
-  },
-  {
-    "id": "base_life_leech_permyriad_vs_shocked_enemies",
     "zh": "对感电敌人造成伤害的 {0}% 转化为生命偷取",
     "en": "{0}% of Damage Leeched as Life against Shocked Enemies"
   },
@@ -10277,27 +9884,12 @@
     "en": "Recover {0}% of Mana on Kill for each different type of Mastery you have Allocated"
   },
   {
-    "id": "base_life_leech_permyriad_vs_frozen_enemies",
-    "zh": "对被冰冻敌人造成伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Damage against Frozen Enemies Leeched as Life"
-  },
-  {
     "id": "old_do_not_use_life_leech_from_attack_damage_permyriad_vs_chilled_enemies",
     "zh": "对被冰缓敌人所造成的攻击伤害的 {0}% 转化为生命偷取",
     "en": "{0}% of Attack Damage Leeched as Life against Chilled Enemies"
   },
   {
-    "id": "base_life_leech_from_attack_damage_permyriad_vs_chilled_enemies",
-    "zh": "对被冰缓敌人所造成的攻击伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Attack Damage Leeched as Life against Chilled Enemies"
-  },
-  {
     "id": "old_do_not_use_life_leech_permyriad_on_crit",
-    "zh": "暴击时偷取等同 {0}% 伤害的生命",
-    "en": "{0}% of Damage Leeched as Life on Critical Strike"
-  },
-  {
-    "id": "life_leech_permyriad_on_crit",
     "zh": "暴击时偷取等同 {0}% 伤害的生命",
     "en": "{0}% of Damage Leeched as Life on Critical Strike"
   },
@@ -10317,32 +9909,12 @@
     "en": "{0}% of Physical Attack Damage Leeched by Enemy as Mana"
   },
   {
-    "id": "mana_leech_from_physical_attack_damage_permyriad",
-    "zh": "物理攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana"
-  },
-  {
-    "id": "old_do_not_use_local_mana_leech_from_physical_damage_%",
-    "zh": "物理攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana"
-  },
-  {
-    "id": "local_mana_leech_from_physical_damage_permyriad",
-    "zh": "物理攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana"
-  },
-  {
     "id": "mana_leech_from_any_damage_permyriad",
     "zh": "伤害的 {0}% 转化为魔力偷取",
     "en": "{0}% of Damage Leeched as Mana"
   },
   {
     "id": "old_do_not_use_mana_leech_from_spell_damage_%",
-    "zh": "法术伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Spell Damage Leeched as Mana"
-  },
-  {
-    "id": "base_mana_leech_from_spell_damage_permyriad",
     "zh": "法术伤害的 {0}% 转化为魔力偷取",
     "en": "{0}% of Spell Damage Leeched as Mana"
   },
@@ -10382,11 +9954,6 @@
     "en": "{0}% of Lightning Damage Leeched as Mana"
   },
   {
-    "id": "base_mana_leech_from_lightning_damage_permyriad",
-    "zh": "闪电伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Lightning Damage Leeched as Mana"
-  },
-  {
     "id": "enemy_mana_leech_from_lightning_damage_permyriad",
     "zh": "{0}%的闪电伤害被敌人吸取为魔力",
     "en": "{0}% of Lightning Damage Leeched by Enemy as Mana"
@@ -10412,17 +9979,7 @@
     "en": "{0}% of Damage against Shocked Enemies Leeched as Mana"
   },
   {
-    "id": "base_mana_leech_permyriad_vs_shocked_enemies",
-    "zh": "对感电敌人造成伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Damage against Shocked Enemies Leeched as Mana"
-  },
-  {
     "id": "old_do_not_use_mana_leech_from_physical_damage_%_per_power_charge",
-    "zh": "每个暴击球所获得物理攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana per Power Charge"
-  },
-  {
-    "id": "mana_leech_from_physical_damage_permyriad_per_power_charge",
     "zh": "每个暴击球所获得物理攻击伤害的 {0}% 转化为魔力偷取",
     "en": "{0}% of Physical Attack Damage Leeched as Mana per Power Charge"
   },
@@ -10503,11 +10060,6 @@
   },
   {
     "id": "maximum_life_leech_rate_+1%_per_12_stat_value",
-    "zh": "偷取的每秒最大生命总恢复量提高 {0}%",
-    "en": "{0}% increased Maximum total Life Recovery per second from Leech"
-  },
-  {
-    "id": "maximum_life_leech_rate_+1%_per_12_stat_value",
     "zh": "偷取的最大生命总恢复量降低 {0}%",
     "en": "{0}% reduced Maximum total Life Recovery per second from Leech"
   },
@@ -10542,11 +10094,6 @@
     "en": "{0}% reduced Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry"
   },
   {
-    "id": "maximum_es_leech_rate_+1%_per_6_stat_value_while_affected_by_zealotry",
-    "zh": "在奋锐光环影响下，偷取的每秒最大能量护盾总恢复量提高 {0}%",
-    "en": "{0}% increased Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry"
-  },
-  {
     "id": "life_gain_per_target",
     "zh": "你的攻击击中每个敌人会回复 {0} 生命",
     "en": "Gain {0} Life per Enemy Hit with Attacks"
@@ -10575,16 +10122,6 @@
     "id": "base_life_gained_on_spell_hit",
     "zh": "每当你用法术击中一个敌人时，失去 {0} 生命",
     "en": "Lose {0} Life per Enemy Hit with Spells"
-  },
-  {
-    "id": "base_life_gain_per_target",
-    "zh": "你的攻击击中每个敌人会回复 {0} 生命",
-    "en": "Gain {0} Life per Enemy Hit with Attacks"
-  },
-  {
-    "id": "base_life_gain_per_target",
-    "zh": "你的攻击击中每个敌人会失去 {0} 生命",
-    "en": "Lose {0} Life per Enemy Hit with Attacks"
   },
   {
     "id": "life_and_mana_gain_per_hit",
@@ -10635,16 +10172,6 @@
     "id": "local_mana_gain_per_target",
     "zh": "每击中一名敌人使你流失 {0} 点魔力",
     "en": "Removes {0} of your Mana per Enemy Hit"
-  },
-  {
-    "id": "virtual_mana_gain_per_target",
-    "zh": "攻击每击中一名敌人获得{0}点魔力",
-    "en": "Gain {0} Mana per Enemy Hit with Attacks"
-  },
-  {
-    "id": "virtual_mana_gain_per_target",
-    "zh": "攻击每击中一名敌人损失{0}点魔力",
-    "en": "Lose {0} Mana per Enemy Hit with Attacks"
   },
   {
     "id": "energy_shield_gain_per_target",
@@ -11312,11 +10839,6 @@
     "en": "{0}% chance to gain a Power Charge on Critical Strike"
   },
   {
-    "id": "add_power_charge_on_critical_strike_%",
-    "zh": "暴击时获得暴击球",
-    "en": "Gain a Power Charge on Critical Strike"
-  },
-  {
     "id": "add_power_charge_on_melee_critical_strike",
     "zh": "近战暴击时获得暴击球",
     "en": "Gain a Power Charge on Melee Critical Strike"
@@ -11413,11 +10935,6 @@
   },
   {
     "id": "avoid_stun_%",
-    "zh": "{0}% 几率避免被晕眩",
-    "en": "{0}% chance to Avoid being Stunned"
-  },
-  {
-    "id": "base_avoid_stun_%",
     "zh": "{0}% 几率避免被晕眩",
     "en": "{0}% chance to Avoid being Stunned"
   },
@@ -11593,46 +11110,6 @@
   },
   {
     "id": "self_ignite_duration_-%",
-    "zh": "你被点燃的持续时间延长 {0}%",
-    "en": "{0}% increased Ignite Duration on you"
-  },
-  {
-    "id": "base_self_chill_duration_-%",
-    "zh": "你被冰缓的持续时间缩短 {0}%",
-    "en": "{0}% reduced Chill Duration on you"
-  },
-  {
-    "id": "base_self_chill_duration_-%",
-    "zh": "你被冰缓的持续时间延长 {0}%",
-    "en": "{0}% increased Chill Duration on you"
-  },
-  {
-    "id": "base_self_shock_duration_-%",
-    "zh": "你被感电的持续时间缩短 {0}%",
-    "en": "{0}% reduced Shock Duration on you"
-  },
-  {
-    "id": "base_self_shock_duration_-%",
-    "zh": "你被感电的持续时间延长 {0}%",
-    "en": "{0}% increased Shock Duration on you"
-  },
-  {
-    "id": "base_self_freeze_duration_-%",
-    "zh": "你被冰冻的持续时间缩短 {0}%",
-    "en": "{0}% reduced Freeze Duration on you"
-  },
-  {
-    "id": "base_self_freeze_duration_-%",
-    "zh": "你被冰冻的持续时间延长 {0}%",
-    "en": "{0}% increased Freeze Duration on you"
-  },
-  {
-    "id": "base_self_ignite_duration_-%",
-    "zh": "你被点燃的持续时间缩短 {0}%",
-    "en": "{0}% reduced Ignite Duration on you"
-  },
-  {
-    "id": "base_self_ignite_duration_-%",
     "zh": "你被点燃的持续时间延长 {0}%",
     "en": "{0}% increased Ignite Duration on you"
   },
@@ -12292,16 +11769,6 @@
     "en": "Minions deal {0}% reduced Damage if you've used a Minion Skill Recently"
   },
   {
-    "id": "virtual_minion_damage_+%",
-    "zh": "召唤生物的伤害提高 {0}%",
-    "en": "Minions deal {0}% increased Damage"
-  },
-  {
-    "id": "virtual_minion_damage_+%",
-    "zh": "召唤生物的伤害降低 {0}%",
-    "en": "Minions deal {0}% reduced Damage"
-  },
-  {
     "id": "minion_chance_to_deal_double_damage_%_per_fortification",
     "zh": "你身上的每层护体使召唤生物有 {0}% 几率造成双倍伤害",
     "en": "Minions have {0}% chance to deal Double Damage per Fortification on you"
@@ -12547,16 +12014,6 @@
     "en": "{0}% reduced Knockback Distance"
   },
   {
-    "id": "stun_duration_+%",
-    "zh": "敌人的晕眩时间延长 {0}%",
-    "en": "{0}% increased Stun Duration on Enemies"
-  },
-  {
-    "id": "stun_duration_+%",
-    "zh": "敌人的晕眩时间缩短 {0}%",
-    "en": "{0}% reduced Stun Duration on Enemies"
-  },
-  {
     "id": "sword_accuracy_rating",
     "zh": "剑类攻击 {0} 点命中值",
     "en": "{0} to Accuracy Rating with Swords"
@@ -12665,11 +12122,6 @@
     "id": "x_to_maximum_life_per_2_intelligence",
     "zh": "每 2 点智慧 {0} 最大生命",
     "en": "{0} to Maximum Life per 2 Intelligence"
-  },
-  {
-    "id": "local_accuracy_rating",
-    "zh": "{0} 命中值",
-    "en": "{0} to Accuracy Rating"
   },
   {
     "id": "base_chance_to_ignite_%",
@@ -12797,11 +12249,6 @@
     "en": "{0}% chance to Cause Monsters to Flee"
   },
   {
-    "id": "global_hit_causes_monster_flee_%",
-    "zh": "{0}% 的几率使敌人逃跑",
-    "en": "{0}% chance to Cause Monsters to Flee"
-  },
-  {
     "id": "local_always_hit",
     "zh": "击中无法被闪避",
     "en": "Hits can't be Evaded"
@@ -12845,16 +12292,6 @@
     "id": "attack_and_cast_speed_+%_per_frenzy_charge",
     "zh": "每个狂怒球使攻击和施法速度减慢 {0}%",
     "en": "{0}% reduced Attack and Cast Speed per Frenzy Charge"
-  },
-  {
-    "id": "base_attack_speed_+%_per_frenzy_charge",
-    "zh": "每个狂怒球使攻击速度加快 {0}%",
-    "en": "{0}% increased Attack Speed per Frenzy Charge"
-  },
-  {
-    "id": "base_attack_speed_+%_per_frenzy_charge",
-    "zh": "每个狂怒球使攻击速度减慢 {0}%",
-    "en": "{0}% reduced Attack Speed per Frenzy Charge"
   },
   {
     "id": "accuracy_rating_+%_per_frenzy_charge",
@@ -13662,11 +13099,6 @@
     "en": "Cannot be Stunned"
   },
   {
-    "id": "base_cannot_be_stunned",
-    "zh": "免疫晕眩",
-    "en": "Cannot be Stunned"
-  },
-  {
     "id": "cannot_be_stunned_when_on_low_life",
     "zh": "低血时免疫晕眩",
     "en": "Cannot be Stunned when on Low Life"
@@ -13693,11 +13125,6 @@
   },
   {
     "id": "base_no_mana",
-    "zh": "移除所有魔力",
-    "en": "Removes all Mana"
-  },
-  {
-    "id": "no_mana",
     "zh": "移除所有魔力",
     "en": "Removes all Mana"
   },
@@ -13972,32 +13399,12 @@
     "en": "Ignites you inflict spread to other Enemies within {0} metres"
   },
   {
-    "id": "passive_notable_ignite_proliferation_radius",
-    "zh": "你造成的点燃会扩散给 1 米内的其他敌人",
-    "en": "Ignites you inflict spread to other Enemies within 1 metre"
-  },
-  {
-    "id": "passive_notable_ignite_proliferation_radius",
-    "zh": "你造成的点燃会扩散给 {0} 米内的其他敌人",
-    "en": "Ignites you inflict spread to other Enemies within {0} metres"
-  },
-  {
     "id": "amulet_freeze_proliferation_radius",
     "zh": "你造成的冻结会扩散给 1 米内的其他敌人",
     "en": "Freezes you inflict spread to other Enemies within 1 metre"
   },
   {
     "id": "amulet_freeze_proliferation_radius",
-    "zh": "你造成的冻结会扩散给 {0} 米内的其他敌人",
-    "en": "Freezes you inflict spread to other Enemies within {0} metres"
-  },
-  {
-    "id": "gloves_freeze_proliferation_radius",
-    "zh": "你造成的冻结会扩散给 1 米内的其他敌人",
-    "en": "Freezes you inflict spread to other Enemies within 1 metre"
-  },
-  {
-    "id": "gloves_freeze_proliferation_radius",
     "zh": "你造成的冻结会扩散给 {0} 米内的其他敌人",
     "en": "Freezes you inflict spread to other Enemies within {0} metres"
   },
@@ -14095,26 +13502,6 @@
     "id": "base_reservation_+%",
     "zh": "技能的保留效果降低 {0}%",
     "en": "{0}% reduced Reservation of Skills"
-  },
-  {
-    "id": "mana_reservation_efficiency_-2%_per_1",
-    "zh": "技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Skills"
-  },
-  {
-    "id": "mana_reservation_efficiency_-2%_per_1",
-    "zh": "技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Skills"
-  },
-  {
-    "id": "reservation_efficiency_-2%_per_1",
-    "zh": "技能的保留效能降低 {0}%",
-    "en": "{0}% reduced Reservation Efficiency of Skills"
-  },
-  {
-    "id": "reservation_efficiency_-2%_per_1",
-    "zh": "技能的保留效能提高 {0}%",
-    "en": "{0}% increased Reservation Efficiency of Skills"
   },
   {
     "id": "physical_attack_damage_taken_+",
@@ -14275,11 +13662,6 @@
     "id": "base_number_of_remote_mines_allowed",
     "zh": "最多可同时拥有 {0} 个遥控地雷",
     "en": "Can have up to {0} Remote Mines placed at a time"
-  },
-  {
-    "id": "number_of_additional_totems_allowed",
-    "zh": "{0} 召唤图腾数量上限",
-    "en": "{0} to maximum number of Summoned Totems"
   },
   {
     "id": "number_of_additional_traps_allowed",
@@ -14872,16 +14254,6 @@
     "en": "{0}% reduced Light Radius"
   },
   {
-    "id": "virtual_light_radius_+%",
-    "zh": "照亮范围扩大 {0}%",
-    "en": "{0}% increased Light Radius"
-  },
-  {
-    "id": "virtual_light_radius_+%",
-    "zh": "照亮范围缩小 {0}%",
-    "en": "{0}% reduced Light Radius"
-  },
-  {
     "id": "gain_phasing_while_at_maximum_frenzy_charges",
     "zh": "你在拥有最大数量的狂怒球时，得到迷踪状态",
     "en": "You have Phasing while at maximum Frenzy Charges"
@@ -15047,21 +14419,6 @@
     "en": "Curse Enemies with Temporal Chains on Hit"
   },
   {
-    "id": "curse_on_hit_level_vulnerability",
-    "zh": "击中时对敌人附加脆弱诅咒。",
-    "en": "Curse Enemies with Vulnerability on Hit"
-  },
-  {
-    "id": "curse_on_hit_level_10_vulnerability_%",
-    "zh": "有 {0}% 几率击中时对敌人附加脆弱诅咒。",
-    "en": "{0}% chance to Curse Enemies with Vulnerability on Hit"
-  },
-  {
-    "id": "curse_on_hit_level_10_vulnerability_%",
-    "zh": "击中时对敌人附加脆弱诅咒。",
-    "en": "Curse Enemies with Vulnerability on Hit"
-  },
-  {
     "id": "curse_on_hit_level_elemental_weakness",
     "zh": "击中时对敌人附加元素要害诅咒。",
     "en": "Curse Enemies with Elemental Weakness on Hit"
@@ -15090,11 +14447,6 @@
     "id": "curse_on_hit_level_flammability",
     "zh": "击中时对敌人附加易燃诅咒。",
     "en": "Curse Enemies with Flammability on Hit"
-  },
-  {
-    "id": "curse_on_hit_level_frostbite",
-    "zh": "击中时对敌人附加冻伤诅咒。",
-    "en": "Curse Enemies with Frostbite on Hit"
   },
   {
     "id": "spells_have_culling_strike",
@@ -15133,11 +14485,6 @@
   },
   {
     "id": "base_leech_is_instant_on_critical",
-    "zh": "暴击时立即获得生命和魔力偷取",
-    "en": "Life and Mana Leech from Critical Strikes are instant"
-  },
-  {
-    "id": "unqiue_atzitis_acuity_instant_leech_60%_effectiveness_on_crit",
     "zh": "暴击时立即获得生命和魔力偷取",
     "en": "Life and Mana Leech from Critical Strikes are instant"
   },
@@ -15927,11 +15274,6 @@
     "en": "Your Critical Strikes cannot Freeze, Shock, or Ignite Enemies"
   },
   {
-    "id": "no_critical_strike_multiplier",
-    "zh": "你的暴击不造成额外暴击伤害",
-    "en": "Your Critical Strikes do not deal extra Damage"
-  },
-  {
     "id": "onslaught_on_crit_duration_ms",
     "zh": "暴击后获得 {0} 秒的猛攻状态",
     "en": "You gain Onslaught for {0} seconds on Critical Strike"
@@ -16243,11 +15585,6 @@
   },
   {
     "id": "old_do_not_use_global_mana_leech_from_physical_attack_damage_%_per_blue_socket_on_item",
-    "zh": "每个蓝色插槽会使你物理攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Physical Attack Damage Leeched as Mana per Blue Socket"
-  },
-  {
-    "id": "global_mana_leech_from_physical_attack_damage_permyriad_per_blue_socket_on_item",
     "zh": "每个蓝色插槽会使你物理攻击伤害的 {0}% 转化为魔力偷取",
     "en": "{0}% of Physical Attack Damage Leeched as Mana per Blue Socket"
   },
@@ -17307,11 +16644,6 @@
     "en": "Your Physical Damage can Shock"
   },
   {
-    "id": "unique_cold_damage_can_also_ignite",
-    "zh": "你的冰霜伤害可以点燃",
-    "en": "Your Cold Damage can Ignite"
-  },
-  {
     "id": "lightning_damage_can_freeze",
     "zh": "你的闪电伤害可以冰冻",
     "en": "Your Lightning Damage can Freeze"
@@ -17483,11 +16815,6 @@
   },
   {
     "id": "old_do_not_use_minion_life_leech_from_any_damage_permyriad",
-    "zh": "召唤生物获得 {0}% 生命偷取",
-    "en": "Minions Leech {0}% of Damage as Life"
-  },
-  {
-    "id": "minion_life_leech_from_any_damage_permyriad",
     "zh": "召唤生物获得 {0}% 生命偷取",
     "en": "Minions Leech {0}% of Damage as Life"
   },
@@ -19007,16 +18334,6 @@
     "en": "Hits have {0}% additional Critical Strike Chance against you"
   },
   {
-    "id": "enemy_critical_strike_chance_+%_against_self_20_times_value",
-    "zh": "对你的击中暴击率提高 {0}%",
-    "en": "Hits have {0}% increased Critical Strike Chance against you"
-  },
-  {
-    "id": "enemy_critical_strike_chance_+%_against_self_20_times_value",
-    "zh": "对你的击中暴击率降低 {0}%",
-    "en": "Hits have {0}% reduced Critical Strike Chance against you"
-  },
-  {
     "id": "local_unique_jewel_one_additional_maximum_lightning_damage_per_X_dex",
     "zh": "范围内每配置 {0} 点敏捷，攻击附加 1 点最大闪电伤害",
     "en": "Adds 1 maximum Lightning Damage to Attacks per {0} Dexterity Allocated in Radius"
@@ -19750,16 +19067,6 @@
     "id": "enchantment_boots_minimum_added_fire_damage_on_kill_4s enchantment_boots_maximum_added_fire_damage_on_kill_4s",
     "zh": "若你近期内有击败敌人，则附加 {0} - {1} 基础火焰伤害",
     "en": "Adds {0} to {1} Fire Damage if you've Killed Recently"
-  },
-  {
-    "id": "enchantment_boots_movement_speed_+%_when_not_hit_for_4_seconds",
-    "zh": "若你近期内没有被击中，则移动速度加快 {0}%",
-    "en": "{0}% increased Movement Speed if you haven't been Hit Recently"
-  },
-  {
-    "id": "enchantment_boots_movement_speed_+%_when_not_hit_for_4_seconds",
-    "zh": "若你近期内没有被击中，则移动速度减慢 {0}%",
-    "en": "{0}% reduced Movement Speed if you haven't been Hit Recently"
   },
   {
     "id": "enchantment_boots_status_ailment_chance_+%_when_havent_crit_for_4_seconds",
@@ -20747,11 +20054,6 @@
     "en": "Discipline has {0}% reduced Aura Effect"
   },
   {
-    "id": "cannot_be_poisoned",
-    "zh": "不会中毒",
-    "en": "Cannot be Poisoned"
-  },
-  {
     "id": "chance_to_be_poisoned_%",
     "zh": "{0}% 的几率被中毒",
     "en": "{0}% chance to be Poisoned"
@@ -20847,16 +20149,6 @@
     "en": "Minions gain Unholy Might for 4 seconds on Kill"
   },
   {
-    "id": "chance_to_gain_onslaught_on_kill_for_4_seconds_%",
-    "zh": "击败敌人时有 {0}% 的几率获得 4 秒猛攻状态",
-    "en": "{0}% chance to gain Onslaught for 4 seconds on Kill"
-  },
-  {
-    "id": "chance_to_gain_onslaught_on_kill_for_4_seconds_%",
-    "zh": "击败敌人时获得 4 秒猛攻状态",
-    "en": "Gain Onslaught for 4 seconds on Kill"
-  },
-  {
     "id": "minion_chance_to_gain_onslaught_on_kill_for_4_seconds_%",
     "zh": "击败敌人时，召唤生物有 {0}% 的几率获得 4 秒猛攻状态",
     "en": "Minions have {0}% chance to gain Onslaught for 4 seconds on Kill"
@@ -20940,16 +20232,6 @@
     "id": "mana_and_es_regeneration_per_minute_%_when_you_freeze_shock_or_ignite_an_enemy",
     "zh": "你冻结、感电、点燃敌人时，每秒再生 {0}% 魔力和能量护盾，持续 2 秒",
     "en": "Regenerate {0}% of Mana and Energy Shield per second for 2 seconds when you Freeze, Shock or Ignite an Enemy"
-  },
-  {
-    "id": "gain_flask_chance_on_crit_%",
-    "zh": "暴击时有 {0}% 的几率获得 1 充能",
-    "en": "{0}% chance to gain a Flask Charge when you deal a Critical Strike"
-  },
-  {
-    "id": "gain_flask_chance_on_crit_%",
-    "zh": "暴击时获得 1 充能",
-    "en": "Gain a Flask Charge when you deal a Critical Strike"
   },
   {
     "id": "virtual_base_maximum_energy_shield_to_grant_to_you_and_nearby_allies",
@@ -21040,11 +20322,6 @@
     "id": "gain_power_charge_on_non_critical_strike_%",
     "zh": "非暴击时有 {0}% 的几率获得一个暴击球",
     "en": "{0}% chance to gain a Power Charge on Non-Critical Strike"
-  },
-  {
-    "id": "gain_power_charge_on_non_critical_strike_%",
-    "zh": "非暴击时获得一个暴击球",
-    "en": "Gain a Power Charge on Non-Critical Strike"
   },
   {
     "id": "critical_strike_chance_+%_vs_blinded_enemies",
@@ -22447,16 +21724,6 @@
     "en": "{0}% slower start of Energy Shield Recharge during any Flask Effect"
   },
   {
-    "id": "virtual_energy_shield_delay_-%",
-    "zh": "能量护盾提前 {0}% 开始充能",
-    "en": "{0}% faster start of Energy Shield Recharge"
-  },
-  {
-    "id": "virtual_energy_shield_delay_-%",
-    "zh": "能量护盾延后 {0}% 开始充能",
-    "en": "{0}% slower start of Energy Shield Recharge"
-  },
-  {
     "id": "energy_shield_recharge_rate_during_flask_effect_+%",
     "zh": "能量护盾充能率在任意药剂生效期间提高 {0}%",
     "en": "{0}% increased Energy Shield Recharge Rate during any Flask Effect"
@@ -22465,16 +21732,6 @@
     "id": "energy_shield_recharge_rate_during_flask_effect_+%",
     "zh": "能量护盾充能率在任意药剂生效期间降低 {0}%",
     "en": "{0}% reduced Energy Shield Recharge Rate during any Flask Effect"
-  },
-  {
-    "id": "virtual_energy_shield_recharge_rate_+%",
-    "zh": "能量护盾充能率提高 {0}%",
-    "en": "{0}% increased Energy Shield Recharge Rate"
-  },
-  {
-    "id": "virtual_energy_shield_recharge_rate_+%",
-    "zh": "能量护盾充能率降低 {0}%",
-    "en": "{0}% reduced Energy Shield Recharge Rate"
   },
   {
     "id": "arrows_fork",
@@ -22562,27 +21819,12 @@
     "en": "{0}% less Elemental Damage"
   },
   {
-    "id": "support_gem_elemental_damage_+%_final",
-    "zh": "元素伤害总增 {0}%",
-    "en": "{0}% more Elemental Damage"
-  },
-  {
-    "id": "support_gem_elemental_damage_+%_final",
-    "zh": "元素伤害总降 {0}%",
-    "en": "{0}% less Elemental Damage"
-  },
-  {
     "id": "modifiers_to_map_item_drop_quantity_also_apply_to_map_item_drop_rarity",
     "zh": "此地图的物品数量加成同时套用于物品稀有度上",
     "en": "This Map's Modifiers to Quantity of Items found also apply to Rarity"
   },
   {
     "id": "base_should_have_onslaught_from_stat",
-    "zh": "猛攻",
-    "en": "Onslaught"
-  },
-  {
-    "id": "silver_flask_display_onslaught",
     "zh": "猛攻",
     "en": "Onslaught"
   },
@@ -26087,11 +25329,6 @@
     "en": "Blast Rain fires {0} additional Arrows"
   },
   {
-    "id": "blast_rain_single_additional_projectile",
-    "zh": "爆裂箭雨发射一支额外箭矢",
-    "en": "Blast Rain fires an additional Arrow"
-  },
-  {
     "id": "siphon_life_leech_from_damage_permyriad quality_display_essence_drain_is_gem",
     "zh": "灵魂吸取使你再生等同 {0}% 减益伤害的生命",
     "en": "Essence Drain Regenerates {0}% of Debuff Damage as Life"
@@ -26665,16 +25902,6 @@
     "id": "gain_attack_and_cast_speed_+%_for_4_seconds_if_taken_savage_hit",
     "zh": "若你近期内受到过残暴打击，则攻击和施法速度减慢 {0}%",
     "en": "{0}% reduced Attack and Cast Speed if you've taken a Savage\nHit Recently"
-  },
-  {
-    "id": "berserker_damage_+%_final",
-    "zh": "伤害总增 {0}%",
-    "en": "{0}% more Damage"
-  },
-  {
-    "id": "berserker_damage_+%_final",
-    "zh": "伤害总降 {0}%",
-    "en": "{0}% less Damage"
   },
   {
     "id": "elemental_damage_taken_+%_while_on_consecrated_ground",
@@ -28192,16 +27419,6 @@
     "en": "{0}% reduced Melee Damage while Fortified"
   },
   {
-    "id": "desecrate_creates_X_additional_corpses",
-    "zh": "亵渎产生一具额外灵柩",
-    "en": "Desecrate Spawns an additional corpse"
-  },
-  {
-    "id": "desecrate_creates_X_additional_corpses",
-    "zh": "亵渎产生 {0} 具额外灵柩",
-    "en": "Desecrate Spawns {0} additional corpses"
-  },
-  {
     "id": "damage_+%_if_you_have_consumed_a_corpse_recently",
     "zh": "若你近期内有消耗灵柩，则伤害提高 {0}%",
     "en": "{0}% increased Damage if you have Consumed a corpse Recently"
@@ -28235,11 +27452,6 @@
     "id": "taunted_enemies_damage_+%_final_vs_non_taunt_target",
     "zh": "被你嘲讽的敌人的击中和异常状态伤害\n对其它目标总降 {0}%",
     "en": "Enemies Taunted by you deal {0}% less Damage with Hits and\nAilments against other targets"
-  },
-  {
-    "id": "gain_life_leech_on_kill_permyriad",
-    "zh": "若你近期内有击败敌人，则造成伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Damage Leeched as Life if you've Killed Recently"
   },
   {
     "id": "poison_on_melee_hit",
@@ -28320,11 +27532,6 @@
     "id": "reflect_damage_taken_+%",
     "zh": "受到的反射伤害降低 {0}%",
     "en": "{0}% reduced Reflected Damage taken"
-  },
-  {
-    "id": "power_charge_on_block_%_chance",
-    "zh": "格挡时有 {0}% 的几率获得暴击球",
-    "en": "{0}% chance to gain a Power Charge when you Block"
   },
   {
     "id": "nearby_enemies_chilled_on_block",
@@ -29922,16 +29129,6 @@
     "en": "{0}% less Accuracy Rating against Marked Enemy"
   },
   {
-    "id": "accuracy_rating_against_marked_enemies_+%_final_from_mastery",
-    "zh": "对被标记敌人的命中值总增 {0}%",
-    "en": "{0}% more Accuracy Rating against Marked Enemy"
-  },
-  {
-    "id": "accuracy_rating_against_marked_enemies_+%_final_from_mastery",
-    "zh": "对被标记敌人的命中值总降 {0}%",
-    "en": "{0}% less Accuracy Rating against Marked Enemy"
-  },
-  {
     "id": "accuracy_rating_is_doubled",
     "zh": "全局命中值总增 50%",
     "en": "50% more Global Accuracy Rating"
@@ -30112,11 +29309,6 @@
     "en": "{0}% Chance to Block Attack Damage if you've dealt a Critical Strike Recently"
   },
   {
-    "id": "additional_block_%_per_endurance_charge",
-    "zh": "每有一个耐力球，攻击伤害格挡几率 {0}%",
-    "en": "{0}% Chance to Block Attack Damage per Endurance Charge"
-  },
-  {
     "id": "additional_block_%_per_hit_you_have_blocked_in_past_10_seconds",
     "zh": "在过去 10 秒内，你每格挡一次攻击或法术，攻击伤害格挡几率 {0}%",
     "en": "{0}% Chance to Block Attack Damage for each time you've Blocked in the past 10 seconds"
@@ -30145,11 +29337,6 @@
     "id": "additional_critical_strike_chance_per_10_shield_maximum_energy_shield_permyriad",
     "zh": "盾牌上每有 10 点最大能量护盾，便附加 {0}% 暴击率",
     "en": "{0}% to Critical Strike Chance per 10 Maximum Energy Shield on Shield"
-  },
-  {
-    "id": "additional_critical_strike_chance_per_power_charge_permyriad",
-    "zh": "每个暴击球 {0}% 暴击率",
-    "en": "{0}% Critical Strike Chance per Power Charge"
   },
   {
     "id": "additional_critical_strike_chance_permyriad_per_poison_on_enemy_up_to_2%",
@@ -30423,11 +29610,6 @@
   },
   {
     "id": "additive_flask_effect_modifiers_apply_to_arcane_surge",
-    "zh": "你受到的药剂效果的提高和降低\n同样套用于你身上的秘术增强效果",
-    "en": "Increases and Reductions to Effect of Flasks applied to you\nalso applies to Effect of Arcane Surge on you"
-  },
-  {
-    "id": "additive_flask_effect_modifiers_apply_to_arcane_surge_at_%_value",
     "zh": "你受到的药剂效果的提高和降低\n同样套用于你身上的秘术增强效果",
     "en": "Increases and Reductions to Effect of Flasks applied to you\nalso applies to Effect of Arcane Surge on you"
   },
@@ -31012,16 +30194,6 @@
     "en": "Anger has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "anger_mana_reservation_efficiency_+%",
-    "zh": "愤怒的魔力保留效能提高 {0}%",
-    "en": "Anger has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "anger_mana_reservation_efficiency_+%",
-    "zh": "愤怒的魔力保留效能降低 {0}%",
-    "en": "Anger has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "anger_reserves_no_mana",
     "zh": "愤怒没有保留效果",
     "en": "Anger has no Reservation"
@@ -31197,16 +30369,6 @@
     "en": "Cannot Recover Life or Energy Shield to above {0}%"
   },
   {
-    "id": "arctic_armour_chill_when_hit_duration",
-    "zh": "被敌人击中后使其冰缓 1 秒，行动速度降低 30%",
-    "en": "Chill Enemy for 1 second when Hit, reducing their Action Speed by 30%"
-  },
-  {
-    "id": "arctic_armour_chill_when_hit_duration",
-    "zh": "被敌人击中后使其冰缓 {0} 秒，行动速度降低 30%",
-    "en": "Chill Enemy for {0} seconds when Hit, reducing their Action Speed by 30%"
-  },
-  {
     "id": "arctic_armour_mana_reservation_efficiency_-2%_per_1",
     "zh": "极地装甲的魔力保留效能降低 {0}%",
     "en": "Arctic Armour has {0}% reduced Mana Reservation Efficiency"
@@ -31215,16 +30377,6 @@
     "id": "arctic_armour_mana_reservation_efficiency_-2%_per_1",
     "zh": "极地装甲的魔力保留效能提高 {0}%",
     "en": "Arctic Armour has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "arctic_armour_mana_reservation_efficiency_+%",
-    "zh": "极地装甲的魔力保留效能提高 {0}%",
-    "en": "Arctic Armour has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "arctic_armour_mana_reservation_efficiency_+%",
-    "zh": "极地装甲的魔力保留效能降低 {0}%",
-    "en": "Arctic Armour has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "arctic_armour_no_reservation",
@@ -32702,16 +31854,6 @@
     "en": "{0}% reduced Attack Speed if you've Killed Recently"
   },
   {
-    "id": "attack_speed_+%_if_have_been_hit_recently",
-    "zh": "若你近期内被击中，则攻击速度加快 {0}%",
-    "en": "{0}% increased Attack Speed if you've been Hit Recently"
-  },
-  {
-    "id": "attack_speed_+%_if_have_been_hit_recently",
-    "zh": "若你近期内被击中，则攻击速度减慢 {0}%",
-    "en": "{0}% reduced Attack Speed if you've been Hit Recently"
-  },
-  {
     "id": "attack_speed_+%_if_have_blocked_recently",
     "zh": "若你近期内有过格挡，则攻击速度加快 {0}%",
     "en": "{0}% increased Attack Speed if you have Blocked Recently"
@@ -33113,11 +32255,6 @@
   },
   {
     "id": "axe_mastery_hit_and_ailment_damage_+%_final_vs_enemies_on_low_life",
-    "zh": "击中和异常状态伤害对低血敌人总增 {0}%",
-    "en": "{0}% more Damage with Hits and Ailments against Enemies that are on Low Life"
-  },
-  {
-    "id": "axe_mastery_hit_and_ailment_damage_+%_final_vs_enemies_on_low_life",
     "zh": "击中和异常状态伤害对低血敌人总降 {0}%",
     "en": "{0}% less Damage with Hits and Ailments against Enemies that are on Low Life"
   },
@@ -33285,16 +32422,6 @@
     "id": "banner_skills_mana_reservation_efficiency_-2%_per_1",
     "zh": "旗帜技能的魔力保留效能提高 {0}%",
     "en": "{0}% increased Mana Reservation Efficiency of Banner Skills"
-  },
-  {
-    "id": "banner_skills_mana_reservation_efficiency_+%",
-    "zh": "旗帜技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Banner Skills"
-  },
-  {
-    "id": "banner_skills_mana_reservation_efficiency_+%",
-    "zh": "旗帜技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Banner Skills"
   },
   {
     "id": "banner_skills_reserve_no_mana",
@@ -33867,16 +32994,6 @@
     "en": "Enemies affected by Bear Trap take {0}% reduced Damage from Trap or Mine Hits"
   },
   {
-    "id": "bear_trap_damage_taken_+%_from_traps_and_mines",
-    "zh": "踩中捕熊陷阱的敌人受到陷阱或地雷的击中伤害提高 {0}%",
-    "en": "Enemies affected by Bear Trap take {0}% increased Damage from Trap or Mine Hits"
-  },
-  {
-    "id": "bear_trap_damage_taken_+%_from_traps_and_mines",
-    "zh": "踩中捕熊陷阱的敌人受到陷阱或地雷的击中伤害降低 {0}%",
-    "en": "Enemies affected by Bear Trap take {0}% reduced Damage from Trap or Mine Hits"
-  },
-  {
     "id": "bear_trap_movement_speed_+%_final",
     "zh": "移动速度总增 {0}%",
     "en": "{0}% more Movement Speed"
@@ -33980,36 +33097,6 @@
     "id": "blackstar_moonlight_cold_damage_taken_+%_final",
     "zh": "从攻击中受到的冰霜伤害总降 {0}%",
     "en": "{0}% less Cold Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_moonlight_fire_damage_taken_+%_final",
-    "zh": "从攻击中受到的火焰伤害总增 {0}%",
-    "en": "{0}% more Fire Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_moonlight_fire_damage_taken_+%_final",
-    "zh": "从攻击中受到的火焰伤害总降 {0}%",
-    "en": "{0}% less Fire Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_sunlight_cold_damage_taken_+%_final",
-    "zh": "从攻击中受到的冰霜伤害总增 {0}%",
-    "en": "{0}% more Cold Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_sunlight_cold_damage_taken_+%_final",
-    "zh": "从攻击中受到的冰霜伤害总降 {0}%",
-    "en": "{0}% less Cold Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_sunlight_fire_damage_taken_+%_final",
-    "zh": "从攻击中受到的火焰伤害总增 {0}%",
-    "en": "{0}% more Fire Damage taken from Hits"
-  },
-  {
-    "id": "blackstar_sunlight_fire_damage_taken_+%_final",
-    "zh": "从攻击中受到的火焰伤害总降 {0}%",
-    "en": "{0}% less Fire Damage taken from Hits"
   },
   {
     "id": "blade_blase_damage_+%",
@@ -35108,33 +34195,13 @@
   },
   {
     "id": "blight_tower_arc_damage_+%",
-    "zh": "电弧之塔的伤害提高 {0}%",
-    "en": "Your Arc Towers deal {0}% increased Damage"
-  },
-  {
-    "id": "blight_tower_arc_damage_+%",
     "zh": "电弧之塔的伤害降低 {0}%",
     "en": "Your Arc Towers dea {0}% reduced Damage"
-  },
-  {
-    "id": "blight_tower_chilling_cost_+%",
-    "zh": "冰霜之塔的射程提高 {0}%",
-    "en": "Your Chilling Towers have {0}% increased Range"
-  },
-  {
-    "id": "blight_tower_chilling_cost_+%",
-    "zh": "冰霜之塔的射程降低 {0}%",
-    "en": "Your Chilling Towers have {0}% reduced Range"
   },
   {
     "id": "blight_tower_damage_per_tower_type_+%",
     "zh": "每有一种启动的防御塔，就使你防御塔造成的伤害提高 {0}%",
     "en": "Your Towers deal {0}% increased Damage per Type of Tower Active"
-  },
-  {
-    "id": "blight_tower_fireball_additional_projectile",
-    "zh": "火球之塔发射一个额外的投射物",
-    "en": "Your Fireball Towers fire an additional Projectile"
   },
   {
     "id": "blight_tower_fireball_additional_projectile",
@@ -35280,16 +34347,6 @@
     "id": "blood_sand_mana_reservation_efficiency_-2%_per_1",
     "zh": "血与沙的魔力保留效能提高 {0}%",
     "en": "Blood and Sand has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "blood_sand_mana_reservation_efficiency_+%",
-    "zh": "血与沙的魔力保留效能提高 {0}%",
-    "en": "Blood and Sand has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "blood_sand_mana_reservation_efficiency_+%",
-    "zh": "血与沙的魔力保留效能降低 {0}%",
-    "en": "Blood and Sand has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "blood_sand_stance_buff_effect_+%",
@@ -35477,11 +34534,6 @@
     "en": "Drops Sapped Ground while moving, lasting {0} seconds"
   },
   {
-    "id": "boots_implicit_ground_scorched_duration_ms",
-    "zh": "移动时留下烧灼地面，持续 {0} 秒",
-    "en": "Drops Scorched Ground while moving, lasting {0} seconds"
-  },
-  {
     "id": "boots_mod_effect_+%",
     "zh": "装备鞋子获得的加成提高 {0}%",
     "en": "{0}% increased bonuses gained from Equipped Boots"
@@ -35608,16 +34660,6 @@
   },
   {
     "id": "buff_time_passed_+%_only_buff_category",
-    "zh": "你受到的有益效果消减速度减慢 {0}%",
-    "en": "Buffs on you expire {0}% slower"
-  },
-  {
-    "id": "buff_time_passed_+%",
-    "zh": "你受到的有益效果消减速度加快 {0}%",
-    "en": "Buffs on you expire {0}% faster"
-  },
-  {
-    "id": "buff_time_passed_+%",
     "zh": "你受到的有益效果消减速度减慢 {0}%",
     "en": "Buffs on you expire {0}% slower"
   },
@@ -37132,11 +36174,6 @@
     "en": "{0}% reduced Effect of Chill you inflict with Critical Strikes"
   },
   {
-    "id": "chill_minimum_slow_%_from_mastery",
-    "zh": "你击中造成的冰缓效果总能使行动速度降低至少 {0}%",
-    "en": "Chills from your Hits always reduce Action Speed by at least {0}%"
-  },
-  {
     "id": "chill_nearby_enemies_when_you_focus",
     "zh": "你在专注时，冰缓周围敌人，使其行动速度降低 30%",
     "en": "Chill nearby Enemies when you Focus, causing 30% reduced Action Speed"
@@ -37235,16 +36272,6 @@
     "id": "clarity_mana_reservation_efficiency_-2%_per_1",
     "zh": "清晰的魔力保留效能提高 {0}%",
     "en": "Clarity has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "clarity_mana_reservation_efficiency_+%",
-    "zh": "清晰的魔力保留效能提高 {0}%",
-    "en": "Clarity has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "clarity_mana_reservation_efficiency_+%",
-    "zh": "清晰的魔力保留效能降低 {0}%",
-    "en": "Clarity has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "clarity_reserves_no_mana",
@@ -38722,16 +37749,6 @@
     "en": "{0}% increased Mana Reservation Efficiency of Curse Aura Skills"
   },
   {
-    "id": "curse_aura_skills_mana_reservation_efficiency_+%",
-    "zh": "诅咒光环技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Curse Aura Skills"
-  },
-  {
-    "id": "curse_aura_skills_mana_reservation_efficiency_+%",
-    "zh": "诅咒光环技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Curse Aura Skills"
-  },
-  {
     "id": "curse_effect_on_self_+%_while_on_consecrated_ground",
     "zh": "在奉献地面上，你身上的诅咒效果提高 {0}%",
     "en": "{0}% increased Effect of Curses on you while on Consecrated Ground"
@@ -39310,11 +38327,6 @@
     "id": "damage_+%_per_poison_up_to_75%",
     "zh": "你身上每层中毒效果都使伤害提高 {0}%，最大提升至 75%",
     "en": "{0}% increased Damage for each Poison on you up to a maximum of 75%"
-  },
-  {
-    "id": "damage_+%_per_poison_up_to_75%",
-    "zh": "你身上每层中毒效果都使伤害降低 {0}%",
-    "en": "{0}% reduced Damage for each Poison on you"
   },
   {
     "id": "damage_+%_per_power_charge",
@@ -40137,16 +39149,6 @@
     "en": "Determination has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "determination_mana_reservation_efficiency_+%",
-    "zh": "坚定的魔力保留效能提高 {0}%",
-    "en": "Determination has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "determination_mana_reservation_efficiency_+%",
-    "zh": "坚定的魔力保留效能降低 {0}%",
-    "en": "Determination has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "determination_reserves_no_mana",
     "zh": "坚定没有保留效果",
     "en": "Determination has no Reservation"
@@ -40255,16 +39257,6 @@
     "id": "discipline_mana_reservation_efficiency_-2%_per_1",
     "zh": "纪律的魔力保留效能提高 {0}%",
     "en": "Discipline has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "discipline_mana_reservation_efficiency_+%",
-    "zh": "纪律的魔力保留效能提高 {0}%",
-    "en": "Discipline has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "discipline_mana_reservation_efficiency_+%",
-    "zh": "纪律的魔力保留效能降低 {0}%",
-    "en": "Discipline has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "discipline_reserves_no_mana",
@@ -40520,16 +39512,6 @@
     "id": "divine_tempest_number_of_additional_nearby_enemies_to_zap",
     "zh": "堆叠层数时，圣怨会对周围的 {0} 个额外敌人造成伤害",
     "en": "Divine Ire Damages {0} additional nearby Enemies when gaining Stages"
-  },
-  {
-    "id": "doedre_aura_damage_+%_final",
-    "zh": "伤害总增 {0}%",
-    "en": "{0}% more Damage"
-  },
-  {
-    "id": "doedre_aura_damage_+%_final",
-    "zh": "伤害总降 {0}%",
-    "en": "{0}% less Damage"
   },
   {
     "id": "dominating_blow_and_absolution_additive_minion_damage_modifiers_apply_to_you_at_150%_value",
@@ -41970,11 +40952,6 @@
     "id": "energy_shield_regeneration_rate_per_minute_while_on_consecrated_ground",
     "zh": "位于奉献地面上时，每秒再生 {0} 能量护盾",
     "en": "Regenerate {0} Energy Shield per Second while on Consecrated Ground"
-  },
-  {
-    "id": "energy_shield_regeneration_rate_per_second",
-    "zh": "每秒再生 {0} 能量护盾",
-    "en": "Regenerate {0} Energy Shield per second"
   },
   {
     "id": "energy_shield_regeneration_rate_+%",
@@ -43447,16 +42424,6 @@
     "en": "Flesh and Stone has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "flesh_stone_mana_reservation_efficiency_+%",
-    "zh": "血肉与岩石的魔力保留效能提高 {0}%",
-    "en": "Flesh and Stone has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "flesh_stone_mana_reservation_efficiency_+%",
-    "zh": "血肉与岩石的魔力保留效能降低 {0}%",
-    "en": "Flesh and Stone has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "flesh_stone_no_reservation",
     "zh": "血肉与岩石没有保留效果",
     "en": "Flesh and Stone has no Reservation"
@@ -43550,11 +42517,6 @@
     "id": "fortify_duration_+%_per_10_strength",
     "zh": "护体持续时间按照每 10 点力量降低 {0}%",
     "en": "{0}% reduced Fortification Duration per 10 Strength"
-  },
-  {
-    "id": "fortify_on_hit",
-    "zh": "近战击中提供护体状态",
-    "en": "Melee Hits Fortify"
   },
   {
     "id": "four_seconds_after_being_hit_lose_life_equal_to_x%_of_hit",
@@ -44255,11 +43217,6 @@
     "id": "gain_frenzy_charge_on_critical_strike_%",
     "zh": "暴击时有 {0}% 的几率获得狂怒球",
     "en": "{0}% chance to gain a Frenzy Charge on Critical Strike"
-  },
-  {
-    "id": "gain_frenzy_charge_on_critical_strike_%",
-    "zh": "暴击时获得狂怒球",
-    "en": "Gain a Frenzy Charge on Critical Strike"
   },
   {
     "id": "gain_frenzy_charge_on_enemy_shattered_chance_%",
@@ -45092,11 +44049,6 @@
     "en": "Adds {0} to {1} Lightning Damage against Shocked Enemies"
   },
   {
-    "id": "global_minimum_added_physical_damage_vs_bleeding_enemies global_maximum_added_physical_damage_vs_bleeding_enemies",
-    "zh": "对流血敌人附加 {0} - {1} 基础物理伤害",
-    "en": "Adds {0} to {1} Physical Damage against Bleeding Enemies"
-  },
-  {
     "id": "global_physical_damage_reduction_rating_while_moving",
     "zh": "移动时 {0} 点最大护甲",
     "en": "{0} to Global Armour while moving"
@@ -45220,16 +44172,6 @@
     "id": "grace_mana_reservation_efficiency_-2%_per_1",
     "zh": "优雅的魔力保留效能提高 {0}%",
     "en": "Grace has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "grace_mana_reservation_efficiency_+%",
-    "zh": "优雅的魔力保留效能提高 {0}%",
-    "en": "Grace has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "grace_mana_reservation_efficiency_+%",
-    "zh": "优雅的魔力保留效能降低 {0}%",
-    "en": "Grace has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "grace_reserves_no_mana",
@@ -45457,16 +44399,6 @@
     "en": "Haste has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "haste_mana_reservation_efficiency_+%",
-    "zh": "迅捷的魔力保留效能提高 {0}%",
-    "en": "Haste has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "haste_mana_reservation_efficiency_+%",
-    "zh": "迅捷的魔力保留效能降低 {0}%",
-    "en": "Haste has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "haste_reserves_no_mana",
     "zh": "迅捷没有保留效果",
     "en": "Haste has no Reservation"
@@ -45490,16 +44422,6 @@
     "id": "hatred_mana_reservation_efficiency_-2%_per_1",
     "zh": "憎恨的魔力保留效能提高 {0}%",
     "en": "Hatred has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "hatred_mana_reservation_efficiency_+%",
-    "zh": "憎恨的魔力保留效能提高 {0}%",
-    "en": "Hatred has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "hatred_mana_reservation_efficiency_+%",
-    "zh": "憎恨的魔力保留效能降低 {0}%",
-    "en": "Hatred has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "hatred_reserves_no_mana",
@@ -45577,11 +44499,6 @@
     "en": "Freeze Enemies as though dealing {0}% more Damage"
   },
   {
-    "id": "helmet_mod_shock_as_though_damage_+%_final",
-    "zh": "使敌人感电如同伤害总增 {0}%",
-    "en": "Shock Enemies as though dealing {0}% more Damage"
-  },
-  {
     "id": "herald_effect_on_self_+%",
     "zh": "你身上的捷增益效果提高 {0}%",
     "en": "{0}% increased Effect of Herald Buffs on you"
@@ -45627,16 +44544,6 @@
     "en": "Herald of Agony has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "herald_of_agony_mana_reservation_efficiency_+%",
-    "zh": "苦痛之捷的魔力保留效能提高 {0}%",
-    "en": "Herald of Agony has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_agony_mana_reservation_efficiency_+%",
-    "zh": "苦痛之捷的魔力保留效能降低 {0}%",
-    "en": "Herald of Agony has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "herald_of_agony_mana_reservation_+%",
     "zh": "苦痛之捷的保留效果提高 {0}%",
     "en": "Herald of Agony has {0}% increased Reservation"
@@ -45667,16 +44574,6 @@
     "en": "Herald of Ash has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "herald_of_ash_mana_reservation_efficiency_+%",
-    "zh": "灰烬之捷的魔力保留效能提高 {0}%",
-    "en": "Herald of Ash has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_ash_mana_reservation_efficiency_+%",
-    "zh": "灰烬之捷的魔力保留效能降低 {0}%",
-    "en": "Herald of Ash has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "herald_of_ash_spell_fire_damage_+%_final",
     "zh": "法术火焰伤害总增 {0}%",
     "en": "{0}% more Spell Fire Damage"
@@ -45705,16 +44602,6 @@
     "id": "herald_of_ice_mana_reservation_efficiency_-2%_per_1",
     "zh": "寒冰之捷的魔力保留效能提高 {0}%",
     "en": "Herald of Ice has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_ice_mana_reservation_efficiency_+%",
-    "zh": "寒冰之捷的魔力保留效能提高 {0}%",
-    "en": "Herald of Ice has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_ice_mana_reservation_efficiency_+%",
-    "zh": "寒冰之捷的魔力保留效能降低 {0}%",
-    "en": "Herald of Ice has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "herald_of_light_and_dominating_blow_minions_use_holy_slam",
@@ -45750,16 +44637,6 @@
     "id": "herald_of_purity_mana_reservation_efficiency_-2%_per_1",
     "zh": "纯净之捷的魔力保留效能提高 {0}%",
     "en": "Herald of Purity has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_purity_mana_reservation_efficiency_+%",
-    "zh": "纯净之捷的魔力保留效能提高 {0}%",
-    "en": "Herald of Purity has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_purity_mana_reservation_efficiency_+%",
-    "zh": "纯净之捷的魔力保留效能降低 {0}%",
-    "en": "Herald of Purity has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "herald_of_purity_mana_reservation_+%",
@@ -45802,16 +44679,6 @@
     "en": "Herald of Thunder has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "herald_of_thunder_mana_reservation_efficiency_+%",
-    "zh": "闪电之捷的魔力保留效能提高 {0}%",
-    "en": "Herald of Thunder has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "herald_of_thunder_mana_reservation_efficiency_+%",
-    "zh": "闪电之捷的魔力保留效能降低 {0}%",
-    "en": "Herald of Thunder has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "herald_scorpion_number_of_additional_projectiles",
     "zh": "召唤的苦痛爬行者额外发射 1 的投射物",
     "en": "Summoned Agony Crawler fires 1 additional Projectile"
@@ -45835,16 +44702,6 @@
     "id": "herald_skills_mana_reservation_efficiency_-2%_per_1",
     "zh": "捷技能的魔力保留效能提高 {0}%",
     "en": "{0}% increased Mana Reservation Efficiency of Herald Skills"
-  },
-  {
-    "id": "herald_skills_mana_reservation_efficiency_+%",
-    "zh": "捷技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Herald Skills"
-  },
-  {
-    "id": "herald_skills_mana_reservation_efficiency_+%",
-    "zh": "捷技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Herald Skills"
   },
   {
     "id": "herald_skills_mana_reservation_+%",
@@ -45973,23 +44830,8 @@
   },
   {
     "id": "hit_and_ailment_damage_+%_vs_bleeding_enemies",
-    "zh": "对流血敌人的击中和异常状态伤害提高 {0}%",
-    "en": "{0}% increased Damage with Hits and Ailments against Bleeding Enemies"
-  },
-  {
-    "id": "hit_and_ailment_damage_+%_vs_bleeding_enemies",
     "zh": "对流血敌人的击中和异常状态伤害降低 {0}%",
     "en": "{0}% reduced Damage with Hits and Ailments against Bleeding Enemies"
-  },
-  {
-    "id": "hit_and_ailment_damage_+%_vs_blinded_enemies",
-    "zh": "对致盲敌人的击中和异常状态伤害提高 {0}%",
-    "en": "{0}% increased Damage with Hits and Ailments against Blinded Enemies"
-  },
-  {
-    "id": "hit_and_ailment_damage_+%_vs_blinded_enemies",
-    "zh": "对致盲敌人的击中和异常状态伤害降低 {0}%",
-    "en": "{0}% reduced Damage with Hits and Ailments against Blinded Enemies"
   },
   {
     "id": "hit_and_ailment_damage_+%_vs_chilled_enemies",
@@ -46300,16 +45142,6 @@
     "id": "ice_shot_area_angle_+%",
     "zh": "冰霜射击的效果区域角度缩小 {0}%",
     "en": "Ice Shot has {0}% reduced Area of Effect angle"
-  },
-  {
-    "id": "ice_shot_pierce_+",
-    "zh": "冰霜射击穿透 1 个额外目标",
-    "en": "Ice Shot Pierces an additional Target"
-  },
-  {
-    "id": "ice_shot_pierce_+",
-    "zh": "冰霜射击穿透 {0} 个额外目标",
-    "en": "Ice Shot Pierces {0} additional Targets"
   },
   {
     "id": "ice_siphon_trap_chill_effect_+%",
@@ -47132,16 +45964,6 @@
     "en": "Impales on Enemies you Kill Reflect Damage to surrounding Enemies"
   },
   {
-    "id": "killed_monster_dropped_gold_+%",
-    "zh": "被击败的敌人掉落的金币数量提高 {0}%",
-    "en": "{0}% increased Quantity of Gold Dropped by Slain Enemies"
-  },
-  {
-    "id": "killed_monster_dropped_gold_+%",
-    "zh": "被击败的敌人掉落的金币数量降低 {0}%",
-    "en": "{0}% reduced Quantity of Gold Dropped by Slain Enemies"
-  },
-  {
     "id": "killing_blow_consumes_corpse_restore_10%_life_chance_%",
     "zh": "击败敌人有 {0}% 的几率消耗灵柩并回复 10% 的生命",
     "en": "Killing Blows have {0}% chance to Consume corpses to recover 10% of Maximum Life"
@@ -47207,11 +46029,6 @@
     "en": "Kinetic Bolt changes direction {0} additional times"
   },
   {
-    "id": "kinetic_wand_implicit_cannot_roll_caster_modifiers",
-    "zh": "不能附加法术相关属性修正",
-    "en": "Cannot roll Caster Modifiers"
-  },
-  {
     "id": "knockback_on_crit_with_projectile_damage",
     "zh": "你的投射物伤害造成暴击时击退敌人",
     "en": "Knock Back Enemies if you get a Critical Strike with Projectile Damage"
@@ -47230,16 +46047,6 @@
     "id": "labyrinth_darkshrine_boss_room_traps_are_disabled",
     "zh": "帝王迷宫陷阱已经失效",
     "en": "Labyrinth Traps are disabled in the Aspirant's Trial"
-  },
-  {
-    "id": "labyrinth_darkshrine_divine_font_grants_one_additional_enchantment_use_to_player_x",
-    "zh": "你可以额外使用一次神圣之泉",
-    "en": "You will receive an additional use of the Divine Font"
-  },
-  {
-    "id": "labyrinth_darkshrine_divine_font_grants_one_additional_enchantment_use_to_player_x",
-    "zh": "你可以额外使用 {0} 次神圣之泉",
-    "en": "You will receive {0} additional uses of the Divine Font"
   },
   {
     "id": "labyrinth_darkshrine_izaro_dropped_unique_items_+",
@@ -48060,11 +46867,6 @@
     "id": "lightning_conduit_damage_+%",
     "zh": "闪电环廊造成的伤害降低{0}%",
     "en": "Lightning Conduit deals {0}% reduced Damage"
-  },
-  {
-    "id": "lightning_damage_can_ignite",
-    "zh": "你的闪电伤害可以造成点燃",
-    "en": "Your Lightning Damage can Ignite"
   },
   {
     "id": "lightning_damage_+%_per_lightning_resistance_above_75",
@@ -50207,11 +49009,6 @@
     "en": "1 Added Passive Skill is Weight Advantage"
   },
   {
-    "id": "local_affliction_notable_whispers_of_death",
-    "zh": "其中 1 个增加的天赋为邪恶之眼",
-    "en": "1 Added Passive Skill is Evil Eye"
-  },
-  {
     "id": "local_affliction_notable_wicked_pall",
     "zh": "其中 1 个增加的天赋为邪恶烟云",
     "en": "1 Added Passive Skill is Wicked Pall"
@@ -50295,16 +49092,6 @@
     "id": "local_attacks_grant_onslaught_on_kill_chance_%_with_ranged_abyss_jewel_socketed",
     "zh": "镶嵌锐利之凝珠宝时，攻击有 {0}% 的几率在击败时获得猛攻效果",
     "en": "With a Searching Eye Jewel Socketed, Attacks have {0}% chance to grant Onslaught On Kill"
-  },
-  {
-    "id": "local_attacks_impale_on_hit_%_chance",
-    "zh": "攻击击中时有 {0}% 的几率穿刺敌人",
-    "en": "{0}% chance to Impale Enemies on Hit with Attacks"
-  },
-  {
-    "id": "local_attacks_impale_on_hit_%_chance",
-    "zh": "攻击击中时穿刺敌人",
-    "en": "Impale Enemies on Hit with Attacks"
   },
   {
     "id": "local_attacks_intimidate_on_hit_for_4_seconds_with_melee_abyss_jewel_socketed",
@@ -51077,11 +49864,6 @@
     "en": "Lose {0} Life per Enemy Hit with this Weapon while you are Leeching"
   },
   {
-    "id": "local_life_leech_from_any_damage_permyriad",
-    "zh": "攻击伤害的 {0}% 转化为生命偷取",
-    "en": "{0}% of Attack Damage Leeched as Life"
-  },
-  {
     "id": "local_lightning_resistance_%_per_2%_quality",
     "zh": "每 2% 品质 {0}% 闪电抗性",
     "en": "Grants {0}% to Lightning Resistance per 2% Quality"
@@ -51095,11 +49877,6 @@
     "id": "local_maim_on_hit_%",
     "zh": "击中时造成瘫痪",
     "en": "Maim on Hit"
-  },
-  {
-    "id": "local_mana_leech_from_any_damage_permyriad",
-    "zh": "攻击伤害的 {0}% 转化为魔力偷取",
-    "en": "{0}% of Attack Damage Leeched as Mana"
   },
   {
     "id": "local_mana_leech_is_instant",
@@ -51192,16 +49969,6 @@
     "en": "Cause Poison on Critical Strike"
   },
   {
-    "id": "local_poison_on_hit_%",
-    "zh": "击中时有 {0}% 的几率使目标中毒",
-    "en": "{0}% chance to Poison on Hit"
-  },
-  {
-    "id": "local_poison_on_hit_%",
-    "zh": "击中时使目标中毒",
-    "en": "Always Poison on Hit"
-  },
-  {
     "id": "local_prefix_mod_effect_+%",
     "zh": "前缀幅度提高 {0}%",
     "en": "{0}% increased Prefix Modifier magnitudes"
@@ -51250,26 +50017,6 @@
     "id": "local_right_ring_socketed_curse_replaces_skitterbots_shocking_aura",
     "zh": "右戒指栏位：电震的飞掠者用插入的魔蛊替代光环",
     "en": "Right Ring Slot: Your Shocking Skitterbot's Aura applies Socketed Hex Curse instead"
-  },
-  {
-    "id": "local_ring_attack_speed_+%_final",
-    "zh": "攻击速度总增 {0}%",
-    "en": "{0}% more Attack Speed"
-  },
-  {
-    "id": "local_ring_attack_speed_+%_final",
-    "zh": "攻击速度总降 {0}%",
-    "en": "{0}% less Attack Speed"
-  },
-  {
-    "id": "local_ring_burning_damage_+%_final",
-    "zh": "燃烧伤害总增 {0}%",
-    "en": "{0}% more Burning Damage"
-  },
-  {
-    "id": "local_ring_burning_damage_+%_final",
-    "zh": "燃烧伤害总降 {0}%",
-    "en": "{0}% less Burning Damage"
   },
   {
     "id": "local_ring_impaled_debuff_duration_+%_final",
@@ -52365,16 +51112,6 @@
     "en": "Malevolence has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "malevolence_mana_reservation_efficiency_+%",
-    "zh": "怨毒光环的魔力保留效能提高 {0}%",
-    "en": "Malevolence has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "malevolence_mana_reservation_efficiency_+%",
-    "zh": "怨毒光环的魔力保留效能降低 {0}%",
-    "en": "Malevolence has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "mamba_strike_area_of_effect_+%",
     "zh": "致疫打击的效果区域扩大 {0}%",
     "en": "Pestilent Strike has {0}% increased Area of Effect"
@@ -52755,16 +51492,6 @@
     "en": "{0}% reduced Mana Reservation Efficiency of Skills that throw Mines"
   },
   {
-    "id": "mana_reservation_efficiency_-2%_per_1_for_skills_that_throw_mines",
-    "zh": "地雷投掷技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Skills that throw Mines"
-  },
-  {
-    "id": "mana_reservation_efficiency_-2%_per_1_for_skills_that_throw_mines",
-    "zh": "地雷投掷技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Skills that throw Mines"
-  },
-  {
     "id": "mana_reservation_efficiency_-2%_per_250_total_attributes",
     "zh": "技能的魔力保留效能按照每 250 点总属性降低 {0}%",
     "en": "{0}% reduced Mana Reservation Efficiency of Skills per 250 total Attributes"
@@ -52773,16 +51500,6 @@
     "id": "mana_reservation_efficiency_-2%_per_250_total_attributes",
     "zh": "技能的魔力保留效能按照每 250 点总属性提高 {0}%",
     "en": "{0}% increased Mana Reservation Efficiency of Skills per 250 total Attributes"
-  },
-  {
-    "id": "mana_reservation_efficiency_+%_per_250_total_attributes",
-    "zh": "技能的魔力保留效能按照每 250 点总属性提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Skills per 250 total Attributes"
-  },
-  {
-    "id": "mana_reservation_efficiency_+%_per_250_total_attributes",
-    "zh": "技能的魔力保留效能按照每 250 点总属性降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Skills per 250 total Attributes"
   },
   {
     "id": "mana_reservation_+%_per_250_total_attributes",
@@ -52963,11 +51680,6 @@
     "id": "max_chance_to_block_attacks_if_not_blocked_recently",
     "zh": "若你近期内没有格挡，你的攻击伤害格挡率将处于最高值",
     "en": "You are at Maximum Chance to Block Attack Damage if you have not Blocked Recently"
-  },
-  {
-    "id": "max_fortification_+1_per_5",
-    "zh": "护体上限 {0}",
-    "en": "{0} to maximum Fortification"
   },
   {
     "id": "max_fortification_while_focused_+1_per_5",
@@ -53393,16 +52105,6 @@
     "id": "maximum_number_of_raised_spectres_is_x",
     "zh": "复苏的灵体最大数量为 {0}",
     "en": "Maximum number of Raised Spectres is {0}"
-  },
-  {
-    "id": "maximum_physical_attack_damage_+%_final",
-    "zh": "物理攻击伤害上限总增 {0}%",
-    "en": "{0}% more Maximum Physical Attack Damage"
-  },
-  {
-    "id": "maximum_physical_attack_damage_+%_final",
-    "zh": "物理攻击伤害上限总降 {0}%",
-    "en": "{0}% less Maximum Physical Attack Damage"
   },
   {
     "id": "maximum_power_and_endurance_charges_+",
@@ -54550,11 +53252,6 @@
     "en": "Minions gain added Resistances equal to {0}% of your Resistances"
   },
   {
-    "id": "minions_gain_your_strength",
-    "zh": "你一半的力量属性将添加至你的召唤生物身上",
-    "en": "Half of your Strength is added to your Minions"
-  },
-  {
     "id": "minions_go_crazy_on_crit_ms",
     "zh": "召唤生物造成暴击后会在 {0} 秒内听到低语",
     "en": "Minions can hear the whispers for {0} seconds after they deal a Critical Strike"
@@ -54693,46 +53390,6 @@
     "id": "missing_unreserved_mana_%_gained_as_mana_before_hit",
     "zh": "被敌人击中前获得已损失未保留魔力的 {0}%",
     "en": "Gain {0}% of Missing Unreserved Mana before being Hit by an Enemy"
-  },
-  {
-    "id": "mod_granted_passive_hash",
-    "zh": "配置 {0}",
-    "en": "Allocates {0}",
-    "refs": {
-      "0": "anointed_passive"
-    }
-  },
-  {
-    "id": "mod_granted_passive_hash_2",
-    "zh": "配置 {0}",
-    "en": "Allocates {0}",
-    "refs": {
-      "0": "anointed_passive"
-    }
-  },
-  {
-    "id": "mod_granted_passive_hash_3",
-    "zh": "配置 {0}",
-    "en": "Allocates {0}",
-    "refs": {
-      "0": "anointed_passive"
-    }
-  },
-  {
-    "id": "mod_granted_passive_hash_4",
-    "zh": "配置 {0}",
-    "en": "Allocates {0}",
-    "refs": {
-      "0": "anointed_passive"
-    }
-  },
-  {
-    "id": "mod_granted_passive_hash_5",
-    "zh": "配置 {0}",
-    "en": "Allocates {0}",
-    "refs": {
-      "0": "passive_hash"
-    }
   },
   {
     "id": "modifiers_to_fire_resistance_also_apply_to_cold_lightning_resistance_at_%_value",
@@ -55230,11 +53887,6 @@
     "en": "{0}% increased Movement Speed for each Poison on you"
   },
   {
-    "id": "movement_velocity_+%_per_poison_stack",
-    "zh": "你身上每层中毒效果都使移动速度减慢 {0}%",
-    "en": "{0}% reduced Movement Speed for each Poison on you"
-  },
-  {
     "id": "movement_velocity_+%_while_no_gems_in_boots",
     "zh": "若装备的靴子没有镶嵌宝石，移动速度提高 {0}%",
     "en": "{0}% increased Movement Speed if you have Equipped Boots with no Socketed Gems"
@@ -55308,11 +53960,6 @@
     "id": "nearby_enemies_are_blinded_while_you_have_active_physical_aegis",
     "zh": "周围敌人在物理神盾没有耗尽时被致盲",
     "en": "Nearby Enemies are Blinded while Physical Aegis is not depleted"
-  },
-  {
-    "id": "nearby_enemies_are_chilled",
-    "zh": "周围敌人被冰缓",
-    "en": "Nearby Enemies are Chilled"
   },
   {
     "id": "nearby_enemies_are_chilled_and_shocked_while_you_are_near_a_corpse",
@@ -55900,11 +54547,6 @@
     "en": "Maximum number of Summoned Raging Spirits is 3"
   },
   {
-    "id": "number_of_skeletons_allowed_per_2_old",
-    "zh": "{0} 魔侍数量上限",
-    "en": "{0} to maximum number of Skeletons"
-  },
-  {
     "id": "number_of_support_ghosts_is_limited_to_3",
     "zh": "召唤幻影的数量上限为 3",
     "en": "Maximum number of Summoned Phantasms is 3"
@@ -56195,26 +54837,6 @@
     "en": "{0}% less Maximum Physical Attack Damage with Daggers"
   },
   {
-    "id": "passive_mastery_more_projectile_speed_+%_final",
-    "zh": "投射物速度总增 {0}%",
-    "en": "{0}% more Projectile Speed"
-  },
-  {
-    "id": "passive_mastery_more_projectile_speed_+%_final",
-    "zh": "投射物速度总降 {0}%",
-    "en": "{0}% less Projectile Speed"
-  },
-  {
-    "id": "passive_mastery_more_skill_effect_duration_+%_final",
-    "zh": "技能效果持续时间总增 {0}%",
-    "en": "{0}% more Skill Effect Duration"
-  },
-  {
-    "id": "passive_mastery_more_skill_effect_duration_+%_final",
-    "zh": "技能效果持续时间总降 {0}%",
-    "en": "{0}% less Skill Effect Duration"
-  },
-  {
     "id": "passive_mastery_physical_damage_taken_+%_final_while_on_full_energy_shield",
     "zh": "能量护盾全满时，受到的物理伤害总增 {0}%",
     "en": "{0}% more Physical Damage Taken while on Full Energy Shield"
@@ -56223,16 +54845,6 @@
     "id": "passive_mastery_physical_damage_taken_+%_final_while_on_full_energy_shield",
     "zh": "能量护盾全满时，受到的物理伤害总降 {0}%",
     "en": "{0}% less Physical Damage Taken while on Full Energy Shield"
-  },
-  {
-    "id": "passive_mastery_shock_proliferation_radius",
-    "zh": "你造成的感电会扩散给 1 米内的其他敌人",
-    "en": "Shocks you inflict spread to other Enemies within 1 metre"
-  },
-  {
-    "id": "passive_mastery_shock_proliferation_radius",
-    "zh": "你造成的感电会扩散给 {0} 米内的其他敌人",
-    "en": "Shocks you inflict spread to other Enemies within {0} metres"
   },
   {
     "id": "passive_mastery_stun_duration_+%_final_with_two_hand_weapon",
@@ -56428,16 +55040,6 @@
     "id": "petrified_blood_mana_reservation_efficiency_-2%_per_1",
     "zh": "赤血凝结的魔力保留效能提高 {0}%",
     "en": "Petrified Blood has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "petrified_blood_mana_reservation_efficiency_+%",
-    "zh": "赤血凝结的魔力保留效能提高 {0}%",
-    "en": "Petrified Blood has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "petrified_blood_mana_reservation_efficiency_+%",
-    "zh": "赤血凝结的魔力保留效能降低 {0}%",
-    "en": "Petrified Blood has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "petrified_blood_reservation_+%",
@@ -57105,16 +55707,6 @@
     "en": "Precision has 100% increased Mana Reservation Efficiency"
   },
   {
-    "id": "precision_mana_reservation_efficiency_+%",
-    "zh": "精准的魔力保留效能提高 {0}%",
-    "en": "Precision has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "precision_mana_reservation_efficiency_+%",
-    "zh": "精准的魔力保留效能降低 {0}%",
-    "en": "Precision has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "precision_mana_reservation_-50%_final",
     "zh": "精准的保留效果总降 50%",
     "en": "Precision has 50% less Reservation"
@@ -57183,16 +55775,6 @@
     "id": "pride_mana_reservation_efficiency_-2%_per_1",
     "zh": "尊严的魔力保留效能提高 {0}%",
     "en": "Pride has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "pride_mana_reservation_efficiency_+%",
-    "zh": "尊严的魔力保留效能提高 {0}%",
-    "en": "Pride has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "pride_mana_reservation_efficiency_+%",
-    "zh": "尊严的魔力保留效能降低 {0}%",
-    "en": "Pride has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "pride_mana_reservation_+%",
@@ -57415,26 +55997,6 @@
     "en": "Projectiles from Spells cannot Pierce"
   },
   {
-    "id": "projectiles_pierce_1_additional_target_per_10_stat_value",
-    "zh": "投射物会穿透 1 个额外目标",
-    "en": "Projectiles Pierce an additional Target"
-  },
-  {
-    "id": "projectiles_pierce_1_additional_target_per_10_stat_value",
-    "zh": "投射物会穿透 {0} 个额外目标",
-    "en": "Projectiles Pierce {0} additional Targets"
-  },
-  {
-    "id": "projectiles_pierce_1_additional_target_per_15_stat_value",
-    "zh": "投射物会穿透 1 个额外目标",
-    "en": "Projectiles Pierce an additional Target"
-  },
-  {
-    "id": "projectiles_pierce_1_additional_target_per_15_stat_value",
-    "zh": "投射物会穿透 {0} 个额外目标",
-    "en": "Projectiles Pierce {0} additional Targets"
-  },
-  {
     "id": "projectiles_pierce_all_nearby_targets",
     "zh": "投射物可以贯穿所有周围目标",
     "en": "Projectiles Pierce all nearby Targets"
@@ -57535,16 +56097,6 @@
     "en": "Purity of Elements has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "purity_of_elements_mana_reservation_efficiency_+%",
-    "zh": "元素净化的魔力保留效能提高 {0}%",
-    "en": "Purity of Elements has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_elements_mana_reservation_efficiency_+%",
-    "zh": "元素净化的魔力保留效能降低 {0}%",
-    "en": "Purity of Elements has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "purity_of_elements_reserves_no_mana",
     "zh": "元素净化没有保留效果",
     "en": "Purity of Elements has no Reservation"
@@ -57558,16 +56110,6 @@
     "id": "purity_of_fire_mana_reservation_efficiency_-2%_per_1",
     "zh": "火焰净化的魔力保留效能提高 {0}%",
     "en": "Purity of Fire has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_fire_mana_reservation_efficiency_+%",
-    "zh": "火焰净化的魔力保留效能提高 {0}%",
-    "en": "Purity of Fire has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_fire_mana_reservation_efficiency_+%",
-    "zh": "火焰净化的魔力保留效能降低 {0}%",
-    "en": "Purity of Fire has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "purity_of_fire_reserves_no_mana",
@@ -57585,16 +56127,6 @@
     "en": "Purity of Ice has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "purity_of_ice_mana_reservation_efficiency_+%",
-    "zh": "冰霜净化的魔力保留效能提高 {0}%",
-    "en": "Purity of Ice has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_ice_mana_reservation_efficiency_+%",
-    "zh": "冰霜净化的魔力保留效能降低 {0}%",
-    "en": "Purity of Ice has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "purity_of_ice_reserves_no_mana",
     "zh": "冰霜净化没有保留效果",
     "en": "Purity of Ice has no Reservation"
@@ -57608,16 +56140,6 @@
     "id": "purity_of_lightning_mana_reservation_efficiency_-2%_per_1",
     "zh": "闪电净化的魔力保留效能提高 {0}%",
     "en": "Purity of Lightning has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_lightning_mana_reservation_efficiency_+%",
-    "zh": "闪电净化的魔力保留效能提高 {0}%",
-    "en": "Purity of Lightning has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "purity_of_lightning_mana_reservation_efficiency_+%",
-    "zh": "闪电净化的魔力保留效能降低 {0}%",
-    "en": "Purity of Lightning has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "purity_of_lightning_reserves_no_mana",
@@ -57845,11 +56367,6 @@
     "en": "Rain of Arrows has {0}% chance to fire an additional sequence of arrows"
   },
   {
-    "id": "rain_of_arrows_rain_of_arrows_additional_sequence_chance_%",
-    "zh": "箭雨有 {0}% 的几率额外发射一串箭矢",
-    "en": "Rain of Arrows has {0}% chance to fire an additional sequence of arrows"
-  },
-  {
     "id": "rain_of_arrows_toxic_rain_active_skill_bleeding_damage_+%_final",
     "zh": "箭雨和毒雨造成的流血伤害总增 {0}%",
     "en": "Rain of Arrows and Toxic Rain deal {0}% more Damage with Bleeding"
@@ -57926,11 +56443,6 @@
   },
   {
     "id": "rallying_cry_buff_effect_1%_per_3_stat_value",
-    "zh": "激励战吼增益效果提高 {0}%",
-    "en": "{0}% increased Rallying Cry Buff Effect"
-  },
-  {
-    "id": "rallying_cry_buff_effect_1%_per_5_stat_value",
     "zh": "激励战吼增益效果提高 {0}%",
     "en": "{0}% increased Rallying Cry Buff Effect"
   },
@@ -59670,26 +58182,6 @@
     "en": "Summon Skitterbots has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "skitterbots_mana_reservation_efficiency_+%",
-    "zh": "召唤飞掠者的魔力保留效能提高 {0}%",
-    "en": "Summon Skitterbots has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "skitterbots_mana_reservation_efficiency_+%",
-    "zh": "召唤飞掠者的魔力保留效能降低 {0}%",
-    "en": "Summon Skitterbots has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
-    "id": "slayer_area_of_effect_+%_per_enemy_killed_recently_up_to_50%",
-    "zh": "若你近期内有击败敌人，则效果区域扩大 {0}%，最多 50%",
-    "en": "{0}% increased Area of Effect per Enemy killed recently, up to 50%"
-  },
-  {
-    "id": "slayer_area_of_effect_+%_per_enemy_killed_recently_up_to_50%",
-    "zh": "若你近期内有击败敌人，则效果区域缩小 {0}%，最多 50%",
-    "en": "{0}% reduced Area of Effect per Enemy killed recently"
-  },
-  {
     "id": "slayer_critical_strike_multiplier_+_per_nearby_enemy_up_to_100",
     "zh": "每一个周围的敌人 {0}% 攻击暴击伤害加成，最大+100%",
     "en": "{0}% to Critical Strike Multiplier per Nearby Enemy, up to +100%"
@@ -59858,11 +58350,6 @@
     "id": "soulrend_number_of_additional_projectiles",
     "zh": "裂魂术可以额外发射 {0} 个投射物",
     "en": "Soulrend fires {0} additional Projectiles"
-  },
-  {
-    "id": "spark_number_of_additional_projectiles",
-    "zh": "电球会发射 1 个额外投射物",
-    "en": "Spark fires an additional Projectile"
   },
   {
     "id": "spark_number_of_additional_projectiles",
@@ -60555,16 +59042,6 @@
     "en": "{0}% increased Mana Reservation Efficiency of Skills Supported by Spellslinger"
   },
   {
-    "id": "spellslinger_mana_reservation_efficiency_+%",
-    "zh": "被法术节魔辅助的技能的魔力保留效能提高 {0}%",
-    "en": "{0}% increased Mana Reservation Efficiency of Skills Supported by Spellslinger"
-  },
-  {
-    "id": "spellslinger_mana_reservation_efficiency_+%",
-    "zh": "被法术节魔辅助的技能的魔力保留效能降低 {0}%",
-    "en": "{0}% reduced Mana Reservation Efficiency of Skills Supported by Spellslinger"
-  },
-  {
     "id": "spellslinger_mana_reservation_+%",
     "zh": "技能被法术节魔辅助时，其魔力保留提高 {0}%",
     "en": "Skills Supported by Spellslinger have {0}% increased Mana Reservation"
@@ -60628,16 +59105,6 @@
     "id": "split_arrow_projectiles_fire_in_parallel_x_dist",
     "zh": "分裂箭矢会平行射出投射物",
     "en": "Split Arrow fires Projectiles in Parallel"
-  },
-  {
-    "id": "splitting_steel_area_of_effect_+%",
-    "zh": "分裂钢刃的效果区域扩大 {0}%",
-    "en": "Splitting Steel has {0}% increased Area of Effect"
-  },
-  {
-    "id": "splitting_steel_area_of_effect_+%",
-    "zh": "分裂钢刃的效果区域缩小 {0}%",
-    "en": "Splitting Steel has {0}% reduced Area of Effect"
   },
   {
     "id": "splitting_steel_area_of_effect_+%",
@@ -61280,11 +59747,6 @@
     "en": "80% chance to Summon an additional Skeleton with Summon Skeletons"
   },
   {
-    "id": "summon_skeletons_additional_warrior_skeleton_one_twentieth_chance",
-    "zh": "召唤魔侍额外召唤一个魔侍",
-    "en": "Summon an additional Skeleton with Summon Skeletons"
-  },
-  {
     "id": "summon_skeletons_additional_warrior_skeleton_%_chance",
     "zh": "召唤魔侍有 {0}% 的几率额外召唤一个魔侍",
     "en": "{0}% chance to Summon an additional Skeleton with Summon Skeletons"
@@ -61443,16 +59905,6 @@
     "id": "support_mirage_archer_base_duration",
     "zh": "幻影弓手持续时间 {0} 秒",
     "en": "{0} seconds to Mirage Archer Duration"
-  },
-  {
-    "id": "support_slashing_damage_+%_final_from_distance",
-    "zh": "基于距离对敌人的总近战伤害最多总增 {0}%",
-    "en": "Deal up to {0}% more Melee Damage to Enemies, based on proximity"
-  },
-  {
-    "id": "support_slashing_damage_+%_final_from_distance",
-    "zh": "基于距离对敌人的总近战伤害最多总降 {0}%",
-    "en": "Deal up to {0}% less Melee Damage to Enemies, based on proximity"
   },
   {
     "id": "supported_aura_skill_gem_level_+",
@@ -61635,11 +60087,6 @@
     "en": "Take no Burning Damage if you've stopped taking Burning Damage Recently"
   },
   {
-    "id": "talisman_implicit_projectiles_pierce_1_additional_target_per_10",
-    "zh": "投射物会穿透 {0} 个额外目标",
-    "en": "Projectiles Pierce {0} additional Targets"
-  },
-  {
     "id": "taunt_on_projectile_hit_chance_%",
     "zh": "投射物击中时有 {0}% 的几率嘲讽敌人",
     "en": "{0}% chance to Taunt Enemies on Projectile Hit"
@@ -61696,11 +60143,6 @@
   },
   {
     "id": "tectonic_slam_side_crack_additional_chance_1%_per_2_stat_value",
-    "zh": "破釜一击 {0}% 裂缝分叉几率",
-    "en": "Tectonic Slam has {0}% fissure branching chance"
-  },
-  {
-    "id": "tectonic_slam_side_crack_additional_chance_% quality_display_tectonic_slam_is_gem",
     "zh": "破釜一击 {0}% 裂缝分叉几率",
     "en": "Tectonic Slam has {0}% fissure branching chance"
   },
@@ -62011,11 +60453,6 @@
   },
   {
     "id": "totems_explode_on_death_for_%_life_as_physical",
-    "zh": "图腾被击败时爆炸，造成等于它 {0}% 生命的物理伤害",
-    "en": "Totems Explode on Death, dealing {0}% of their Life as Physical Damage"
-  },
-  {
-    "id": "totems_explode_on_death_for_%_life_as_physical_divide_20",
     "zh": "图腾被击败时爆炸，造成等于它 {0}% 生命的物理伤害",
     "en": "Totems Explode on Death, dealing {0}% of their Life as Physical Damage"
   },
@@ -62585,11 +61022,6 @@
     "en": "Attacks fire 1 additional Projectile when in Off Hand"
   },
   {
-    "id": "unique_attacks_fire_X_additional_projectiles_while_in_off_hand",
-    "zh": "在副手时攻击额外发射 {0} 个投射物",
-    "en": "Attacks fire {0} additional Projectiles when in Off Hand"
-  },
-  {
     "id": "unique_attacks_have_area_+%_while_in_main_hand",
     "zh": "在主手时攻击的效果范围扩大 {0}%",
     "en": "Attacks have {0}% increased Area of Effect when in Main Hand"
@@ -62698,16 +61130,6 @@
     "id": "local_unique_jewel_life_regeneration_rate_per_minute_%_with_passive_tree_connected_to_marauder_start local_unique_jewel_melee_range_+_with_passive_tree_connected_to_duelist_start local_unique_jewel_flask_charges_gained_+%_with_passive_tree_connected_to_ranger_start local_unique_jewel_attack_and_cast_speed_+%_with_passive_tree_connected_to_shadow_start local_unique_jewel_skill_effect_duration_+%_with_passive_tree_connected_to_witch_start local_unique_jewel_spell_and_attack_block_%_with_passive_tree_connected_to_templar_start local_unique_jewel_damage_+%_with_passive_tree_connected_to_scion_start",
     "zh": "你在天赋树上连接到一个职业的出发位置时，你获得：\n野蛮人：每秒生命再生 {0}%\n决斗者：近战打击距离 {1}\n游侠：药剂充能获取率提高  {2}%\n暗影：攻击和施法速度加快  {3}%\n女巫：技能效果持续时间延长  {4}%\n圣堂武僧：攻击和法术伤害格挡率 {5}%\n贵族：伤害提高  {6}%",
     "en": "While your Passive Skill Tree connects to a class' starting location, you gain:\nMarauder: {0}% of Life Regenerated per second\nDuelist: {1} metres to Melee Strike Range\nRanger: {2}% increased Flask Charges gained\nShadow: {3}% increased Attack and Cast Speed\nWitch: {4}% increased Skill Effect Duration\nTemplar: {5}% Chance to Block Attack and Spell Damage\nScion: {6}% increased Damage"
-  },
-  {
-    "id": "unique_jewel_flask_charges_gained_+%_final_from_kills",
-    "zh": "击败敌人的药剂充能获取率总增 {0}%",
-    "en": "{0}% more Flask Charges gained from Kills"
-  },
-  {
-    "id": "unique_jewel_flask_charges_gained_+%_final_from_kills",
-    "zh": "击败敌人的药剂充能获取率总降 {0}%",
-    "en": "{0}% less Flask Charges gained from Kills"
   },
   {
     "id": "unique_jewel_flask_duration_+%_final",
@@ -62829,36 +61251,6 @@
     "id": "utility_flask_charges_recovered_per_3_seconds",
     "zh": "非恢复类药剂每 3 秒获得 {0} 次充能",
     "en": "Utility Flasks gain {0} Charges every 3 seconds"
-  },
-  {
-    "id": "utility_flask_cold_damage_taken_+%_final",
-    "zh": "受到的冰霜伤害总增 {0}%",
-    "en": "{0}% more Cold Damage taken"
-  },
-  {
-    "id": "utility_flask_cold_damage_taken_+%_final",
-    "zh": "受到的冰霜伤害总降 {0}%",
-    "en": "{0}% less Cold Damage taken"
-  },
-  {
-    "id": "utility_flask_fire_damage_taken_+%_final",
-    "zh": "受到的火焰伤害总增 {0}%",
-    "en": "{0}% more Fire Damage taken"
-  },
-  {
-    "id": "utility_flask_fire_damage_taken_+%_final",
-    "zh": "受到的火焰伤害总降 {0}%",
-    "en": "{0}% less Fire Damage taken"
-  },
-  {
-    "id": "utility_flask_lightning_damage_taken_+%_final",
-    "zh": "受到的闪电伤害总增 {0}%",
-    "en": "{0}% more Lightning Damage taken"
-  },
-  {
-    "id": "utility_flask_lightning_damage_taken_+%_final",
-    "zh": "受到的闪电伤害总降 {0}%",
-    "en": "{0}% less Lightning Damage taken"
   },
   {
     "id": "vaal_skill_gem_level_+",
@@ -63019,16 +61411,6 @@
     "id": "vitality_mana_reservation_efficiency_-2%_per_1",
     "zh": "活力的魔力保留效能提高 {0}%",
     "en": "Vitality has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "vitality_mana_reservation_efficiency_+%",
-    "zh": "活力的魔力保留效能提高 {0}%",
-    "en": "Vitality has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "vitality_mana_reservation_efficiency_+%",
-    "zh": "活力的魔力保留效能降低 {0}%",
-    "en": "Vitality has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "vitality_reserves_no_mana",
@@ -63521,11 +61903,6 @@
     "en": "Item sells for an additional Magmatic Ore"
   },
   {
-    "id": "weapon_tree_local_sell_price_for_additional_specific_currency",
-    "zh": "出售物品可额外获得一个神圣石",
-    "en": "Item sells for an additional Divine Orb"
-  },
-  {
     "id": "weapon_tree_local_sell_price_for_additional_specific_unique",
     "zh": "出售物品可额外获得一件该基础类型的传奇物品",
     "en": "Item sells for an additional Unique of this Base Type"
@@ -63649,11 +62026,6 @@
     "id": "weapon_tree_maximum_mana_+%_final",
     "zh": "魔力上限总降 {0}%",
     "en": "{0}% less maximum Mana"
-  },
-  {
-    "id": "weapon_tree_throw_traps_in_circle_radius",
-    "zh": "技能投出的陷阱会被随机扔在目标位置附近",
-    "en": "Traps from Skills are thrown randomly around targeted location"
   },
   {
     "id": "while_curse_is_25%_expired_hinder_enemy_%",
@@ -63806,16 +62178,6 @@
     "en": "Wrath has {0}% increased Mana Reservation Efficiency"
   },
   {
-    "id": "wrath_mana_reservation_efficiency_+%",
-    "zh": "雷霆的魔力保留效能提高 {0}%",
-    "en": "Wrath has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "wrath_mana_reservation_efficiency_+%",
-    "zh": "雷霆的魔力保留效能降低 {0}%",
-    "en": "Wrath has {0}% reduced Mana Reservation Efficiency"
-  },
-  {
     "id": "wrath_reserves_no_mana",
     "zh": "雷霆没有保留效果",
     "en": "Wrath has no Reservation"
@@ -63931,11 +62293,6 @@
     "en": "You are Cursed with Temporal Chains"
   },
   {
-    "id": "you_are_cursed_with_vulnerability",
-    "zh": "你遭到了脆弱诅咒",
-    "en": "You are Cursed with Vulnerability"
-  },
-  {
     "id": "you_cannot_be_hindered",
     "zh": "你无法被缓速",
     "en": "You cannot be Hindered"
@@ -63969,11 +62326,6 @@
     "id": "you_have_your_maximum_fortification",
     "zh": "你具有最大护体层数",
     "en": "You have your maximum Fortification"
-  },
-  {
-    "id": "your_ailments_deal_damage_faster_%_while_affected_by_malevolence",
-    "zh": "受怨毒光环影响时，你造成的伤害类异常状态的伤害生效速度加快 {0}%",
-    "en": "Damaging Ailments you inflict deal Damage {0}% faster while affected by Malevolence"
   },
   {
     "id": "your_ailments_deal_damage_faster_%_while_affected_by_malevolence",
@@ -64297,16 +62649,6 @@
     "id": "zealotry_mana_reservation_efficiency_-2%_per_1",
     "zh": "奋锐光环的魔力保留效能提高 {0}%",
     "en": "Zealotry has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "zealotry_mana_reservation_efficiency_+%",
-    "zh": "奋锐光环的魔力保留效能提高 {0}%",
-    "en": "Zealotry has {0}% increased Mana Reservation Efficiency"
-  },
-  {
-    "id": "zealotry_mana_reservation_efficiency_+%",
-    "zh": "奋锐光环的魔力保留效能降低 {0}%",
-    "en": "Zealotry has {0}% reduced Mana Reservation Efficiency"
   },
   {
     "id": "zealotry_mana_reservation_+%",
@@ -65155,11 +63497,6 @@
   },
   {
     "id": "melee_splash_with_tinctured_weapons melee_splash_area_of_effect_+%",
-    "zh": "近战打击技能对周围目标造成溅射伤害",
-    "en": "Melee Strike Skills deal Splash Damage to surrounding targets"
-  },
-  {
-    "id": "melee_splash_with_tinctured_weapons melee_splash_area_of_effect_+%",
     "zh": "近战打击技能对周围目标造成溅射伤害，其效果范围扩大 {0}%",
     "en": "Melee Strike Skills deal Splash Damage to surrounding targets, with {0}% increased Area of Effect"
   },
@@ -65172,11 +63509,6 @@
     "id": "melee_tinctured_weapon_range_+",
     "zh": "近战打击范围 +1 米",
     "en": "+1 metre to Melee Strike Range"
-  },
-  {
-    "id": "melee_tinctured_weapon_range_+",
-    "zh": "近战打击范围 {0} 米",
-    "en": "{0} metres to Melee Strike Range"
   },
   {
     "id": "number_of_additional_projectiles_with_tinctured_weapon_attacks_if_you_have_been_hit_recently",
@@ -65217,26 +63549,6 @@
     "id": "poison_damage_+%_with_tinctured_weapons",
     "zh": "近战武器造成的中毒伤害降低 {0}%",
     "en": "{0}% reduced Damage with Poison from Melee Weapons"
-  },
-  {
-    "id": "local_tincture_cooldown_recovery_+%",
-    "zh": "冷却回复速度加快 {0}%",
-    "en": "{0}% increased Cooldown Recovery Rate"
-  },
-  {
-    "id": "local_tincture_cooldown_recovery_+%",
-    "zh": "冷却回复速度减慢 {0}%",
-    "en": "{0}% reduced Cooldown Recovery Rate"
-  },
-  {
-    "id": "local_tincture_mod_effect_+%",
-    "zh": "效果提高 {0}%",
-    "en": "{0}% increased effect"
-  },
-  {
-    "id": "local_tincture_mod_effect_+%",
-    "zh": "效果降低 {0}%",
-    "en": "{0}% reduced effect"
   },
   {
     "id": "local_tincture_toxicity_rate_+%",

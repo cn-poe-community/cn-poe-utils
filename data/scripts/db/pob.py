@@ -4,8 +4,13 @@ import subprocess
 from common import at
 from config import POB_PATH
 
+latest_version = None
 
 def latest_tree_version() -> str:
+    global latest_version
+    if latest_version is not None:
+        return latest_version
+
     wd = at("scripts/luajit")
     env = os.environ.copy()
     env["LUA_PATH"] = f"{POB_PATH}/?.lua;{POB_PATH}/lua/?.lua;"
@@ -17,7 +22,9 @@ def latest_tree_version() -> str:
                             env=env)
     if result.stderr.strip() != "":
         raise Exception(f"POB: 获取最新天赋树版本失败 {result.stderr.strip()}")
-    return result.stdout.strip()
+
+    latest_version = result.stdout.strip()
+    return latest_version
 
 
 def get_tree(version: str):

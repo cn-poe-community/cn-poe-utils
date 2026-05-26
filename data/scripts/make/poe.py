@@ -1,44 +1,50 @@
 import os
-from common import at, read_json, read_ndjson
+from typing import Any
+from common import at, is_any_json, read_any_json, read_json, read_ndjson
 from db import skill, pair, passive_skill, stat, unique
 
 
-checked_non_ascii_types = {"Maelström Staff"}
-checked_non_ascii_names = {"Doppelgänger Guise", "Mjölner"}
+checked_non_ascii_en_list = {
+    "Maelström Staff", "Doppelgänger Guise", "Mjölner"}
 
 
-def check_non_ascii_names():
-    non_ascii_types = set()
-    non_ascii_names = set()
+def check_non_ascii_en():
+    """检查数据库中en字段的非ascii字符。
 
-    for file_name in os.listdir(at("db/items")):
-        source = at("db/items", file_name)
-        if os.path.isfile(source) and file_name.endswith(".json"):
-            data = read_json(source)
-            for item in data:
-                basetype = item["en"]
-                if not basetype.isascii():
-                    non_ascii_types.add(basetype)
+    游戏中存在非ascii字符的类型或传奇名称，POB中可能会将其转换为ascii字符，
+    生成POB代码时需要这些信息。
+    """
+    non_ascii_list = set()
 
-    uniques = read_ndjson(at(unique.UNIQUES_PATH))
-    for u in uniques:
-        name = u["en"]
-        if not name.isascii():
-            non_ascii_names.add(name)
+    targets = ["db/items", "db/passive_skills",
+               unique.UNIQUES_PATH]
 
-    deprecated_types = checked_non_ascii_types-non_ascii_types
-    deprecated_names = checked_non_ascii_names-non_ascii_names
-    new_types = non_ascii_types-checked_non_ascii_types
-    new_names = non_ascii_names-checked_non_ascii_names
+    for target in targets:
+        # 如果target是一个文件，则直接读取；如果target是一个目录，则读取目录下的所有json文件
+        if os.path.isfile(at(target)):
+            if is_any_json(at(target)):
+                data = read_any_json(at(target))
+                for item in data:
+                    en = item["en"]
+                    if not en.isascii():
+                        non_ascii_list.add(en)
+        elif os.path.isdir(at(target)):
+            for file_name in os.listdir(at(target)):
+                source = at(target, file_name)
+                if os.path.isfile(source) and is_any_json(source):
+                    data = read_any_json(source)
+                    for item in data:
+                        en = item["en"]
+                        if not en.isascii():
+                            non_ascii_list.add(en)
 
-    if len(deprecated_types) != 0:
-        print(f"warning: deprecated non-ascii basetypes: {deprecated_types}")
-    if len(deprecated_names) != 0:
-        print(f"warning: deprecated non-ascii uniques: {deprecated_names}")
-    if len(new_types) != 0:
-        print(f"warning: new non-ascii basetypes: {new_types}")
-    if len(new_names) != 0:
-        print(f"warning: new non-ascii uniques: {new_names}")
+    deprecated_list = checked_non_ascii_en_list - non_ascii_list
+    new_list = non_ascii_list - checked_non_ascii_en_list
+
+    if len(deprecated_list) != 0:
+        print(f"warning: deprecated non-ascii en strings: {deprecated_list}")
+    if len(new_list) != 0:
+        print(f"warning: new non-ascii en strings: {new_list}")
 
 
 def snake_to_camel(name: str):
@@ -56,31 +62,27 @@ def snake_to_camel(name: str):
     return result
 
 
-def remain_fields(obj: dict, fields: set[str]):
-    keys = list(obj.keys())
-    for key in keys:
-        if key not in fields:
-            del obj[key]
-        else:
-            val = obj[key]
-            if type(val) is dict:
-                remain_fields(val, fields)
-            elif type(val) is list:
-                for item in val:
-                    if type(item) is dict:
-                        remain_fields(item, fields)
+def remain_fields(obj, fields: set[str], recursive=True) -> Any:
+    """如果obj是一个字典，则删除不在fields中的键，并根据recursive参数决定是否递归处理值。
+       如果obj是一个列表，则对每个元素调用remain_fields。
+    """
+    if type(obj) is dict:
+        for key in list(obj.keys()):
+            if key not in fields:
+                del obj[key]
+            else:
+                if recursive:
+                    remain_fields(obj[key], fields, recursive)
+    elif type(obj) is list:
+        for item in obj:
+            remain_fields(item, fields, recursive)
 
-
-def remain_fields_of_each(arr: list[dict], fields: set[str]) -> list[dict]:
-    for item in arr:
-        remain_fields(item, fields)
-
-    return arr
+    return obj
 
 
 def get_attributes() -> list:
     data: list = read_json(at(pair.ATTRIBUTES_PATH))
-    return remain_fields_of_each(data, {"zh", "en", "values"})
+    return remain_fields(data, {"zh", "en", "values"})
 
 
 def get_properties() -> list:
@@ -88,27 +90,25 @@ def get_properties() -> list:
     data.extend(read_json(at(pair.PROPERTIES_PATH)))
     data.extend(read_json(at(pair.PROPERTIES2_PATH)))
 
-    return remain_fields_of_each(data, {"zh", "en", "values"})
+    return remain_fields(data, {"zh", "en", "values"})
 
 
 def get_requirements() -> list:
     data: list = read_json(at(pair.REQUIREMENTS_PATH))
-    return remain_fields_of_each(data, {"zh", "en", "values"})
+    return remain_fields(data, {"zh", "en", "values"})
 
 
 def get_requirements_suffixes() -> list:
     data: list = read_json(at(pair.REQUIREMENT_SUFFIXES_PATH))
-    return remain_fields_of_each(data, {"zh", "en", "values"})
+    return remain_fields(data, {"zh", "en", "values"})
 
 
 def get_strings() -> list:
     data: list = read_json(at(pair.STRINGS_PATH))
-    return remain_fields_of_each(data, {"id", "zh", "en", "type"})
+    return remain_fields(data, {"id", "zh", "en", "type"})
 
 
 def get_items() -> dict[str, list]:
-    check_non_ascii_names()
-
     uniques = read_ndjson(at(unique.UNIQUES_PATH))
     uniques_base_type_idx = {}
     for u in uniques:
@@ -128,8 +128,8 @@ def get_items() -> dict[str, list]:
                 if base_type in uniques_base_type_idx:
                     item["uniques"] = uniques_base_type_idx[base_type]
 
-            name = file_name[:-5]
-            remain_fields_of_each(data, {"zh", "en", "uniques"})
+            name = file_name[:file_name.rfind(".")]
+            remain_fields(data, {"zh", "en", "uniques"})
             items[snake_to_camel(name)] = data
 
     return items
@@ -138,13 +138,13 @@ def get_items() -> dict[str, list]:
 def get_skills() -> dict[str, list]:
     skills = {}
 
-    skills["gemSkills"] = remain_fields_of_each(
+    skills["gemSkills"] = remain_fields(
         read_ndjson(at(skill.GEM_SKILLS_PATH)), {"zh", "en"})
-    skills["transfiguredSkills"] = remain_fields_of_each(
+    skills["transfiguredSkills"] = remain_fields(
         read_ndjson(at(skill.TRANSFIGURED_SKILLS_PATH)), {"zh", "en"})
-    skills["hybridSkills"] = remain_fields_of_each(
+    skills["hybridSkills"] = remain_fields(
         read_ndjson(at(skill.HYBRID_SKILLS_PATH)), {"zh", "en"})
-    skills["indexableSupports"] = remain_fields_of_each(
+    skills["indexableSupports"] = remain_fields(
         read_ndjson(at(skill.INDEXABLE_SUPPORTS_PATH)), {"zh", "en"})
 
     return skills
@@ -152,11 +152,11 @@ def get_skills() -> dict[str, list]:
 
 def get_passive_skills() -> dict[str, list]:
     skills = {}
-    skills["anointed"] = remain_fields_of_each(
+    skills["anointed"] = remain_fields(
         read_ndjson(at(passive_skill.ANOINTED_PATH)), {"zh", "en"})
-    skills["keystones"] = remain_fields_of_each(
+    skills["keystones"] = remain_fields(
         read_ndjson(at(passive_skill.KEYSTONES_PATH)), {"zh", "en"})
-    skills["ascendant"] = remain_fields_of_each(
+    skills["ascendant"] = remain_fields(
         read_ndjson(at(passive_skill.ASCENDANT_PATH)), {"zh", "en"})
     return skills
 
@@ -188,10 +188,12 @@ def get_stats() -> list:
     stats = remove_repeats(stats)
 
     # 还需要保留refs字段以及refs中的参数索引，这里假设索引最大为5
-    return remain_fields_of_each(stats, {"zh", "en", "refs", "0", "1", "2", "3", "4", "5"})
+    return remain_fields(stats, {"zh", "en", "refs", "0", "1", "2", "3", "4", "5"})
 
 
 def get_all() -> dict[str, list]:
+    check_non_ascii_en()
+
     all = {}
     all["attributes"] = get_attributes()
     all["properties"] = get_properties()

@@ -1,19 +1,19 @@
-def check_duplicate_zhs(array: list[dict], logger: str, raise_error=False):
+def check_duplicate_zhs(array: list[dict], logger: str, raise_error=False, checked: set[str] = set()):
     """检查重复的中文"""
-    mapping = {}
+    zh2en = {}
     for item in array:
         if item["zh"] == "":
             continue
         zh = item["zh"]
         en = item["en"]
-        if zh in mapping and mapping[zh] != en:
+        if zh in zh2en and zh2en[zh] != en and zh not in checked:
             if raise_error:
                 raise Exception(f"{logger}: 发现重复的中文，但英文不同")
             else:
                 print(
-                    f"warning: [{logger}] 发现重复的中文，但英文不同: {zh}, {mapping[zh]}, {en}")
+                    f"warning: [{logger}] 发现重复的中文，但英文不同: {zh}, {zh2en[zh]}, {en}")
         else:
-            mapping[zh] = en
+            zh2en[zh] = en
 
 
 def remove_duplicate(array: list[dict]) -> list[dict]:

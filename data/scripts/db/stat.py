@@ -1,5 +1,6 @@
 import re
 from common import CLIENT_GLOBAL, CLIENT_TENCENT, LANG_CHS, LANG_EN, at, is_number, read_json, save_json
+from db.utils import remove_duplicate
 from export.trade import trade_file_path
 
 DESC_STATS_PATH = "db/stats/desc.json"
@@ -467,12 +468,13 @@ def fill_fixed_param_to_template(text: Text) -> str:
     for i, p in enumerate(text.params):
         if p.is_fixed_value():
             val = p.matcher.left
-            if "milliseconds_to_seconds" in p.Props or "milliseconds_to_seconds_0dp" in p.Props or "milliseconds_to_seconds_2dp_if_required" in p.Props:
-                val /= 1000
-            elif "per_minute_to_per_second" in p.Props or "per_minute_to_per_second_2dp_if_required" in p.Props:
-                val /= 60
-            elif "locations_to_metres" in p.Props:
-                val /= 10
+            if abs(val) > 1:
+                if "milliseconds_to_seconds" in p.Props or "milliseconds_to_seconds_0dp" in p.Props or "milliseconds_to_seconds_2dp_if_required" in p.Props:
+                    val /= 1000
+                elif "per_minute_to_per_second" in p.Props or "per_minute_to_per_second_2dp_if_required" in p.Props:
+                    val /= 60
+                elif "locations_to_metres" in p.Props:
+                    val /= 10
 
             if "negate" in p.Props:
                 val *= -1
@@ -676,6 +678,7 @@ def create_game_stats():
     for stat in array:
         handle_stat(stat)
 
+    array = remove_duplicate(array)
     save_json(at(DESC_STATS_PATH), array)
 
 

@@ -81,7 +81,7 @@ def update_pair(pair: dict, logger: str, table_info: str, field_info: str, join_
     为了保证JSON格式的一致性（字段顺序），当手动添加`zh`和`ref`，添加空的en、values(如果存在)、ref和key。
     '''
 
-    [table_name, pkey_name, field_name] = table_info.split(",")
+    [table_name, key_name, field_name] = table_info.split(",")
     [zh_field, en_field, key_field] = field_info.split(",")
 
     table1 = (CLIENT_TENCENT, LANG_CHS, table_name)
@@ -91,13 +91,13 @@ def update_pair(pair: dict, logger: str, table_info: str, field_info: str, join_
     duck_name2 = game.duck_table_name(*table2)
 
     game.load_table(*table1)
-    game.create_index(duck_name1, pkey_name)
+    game.create_index(duck_name1, key_name)
     game.create_index(duck_name1, field_name)
     game.load_table(*table2)
-    game.create_index(duck_name2, pkey_name)
+    game.create_index(duck_name2, key_name)
     game.create_index(duck_name2, field_name)
 
-    join_conds = f"{duck_name1}.{pkey_name} = {duck_name2}.{pkey_name}"
+    join_conds = f"{duck_name1}.{key_name} = {duck_name2}.{key_name}"
     if len(join_fields) > 0:
         builder = [join_conds]
         for field in join_fields:
@@ -133,17 +133,17 @@ def update_pair(pair: dict, logger: str, table_info: str, field_info: str, join_
 
         # 如果中英文都存在，那么两者同时匹配
         if en_field in pair and pair[en_field] and zh_field in pair and pair[zh_field]:
-            rows = duckdb.sql(f"""SELECT {duck_name1}.{pkey_name} FROM {duck_name1}
+            rows = duckdb.sql(f"""SELECT {duck_name1}.{key_name} FROM {duck_name1}
             INNER JOIN {duck_name2} ON {join_conds}
             WHERE {duck_name1}.{field_name} = '{sql_escape(pair[zh_field])}'
             AND {duck_name2}.{field_name} = '{sql_escape(pair[en_field])}'
             {more_where_conds}""").fetchall()
         elif zh_field in pair and pair[zh_field]:  # 只匹配中文
-            rows = duckdb.sql(f"""SELECT {duck_name1}.{pkey_name} FROM {duck_name1}
+            rows = duckdb.sql(f"""SELECT {duck_name1}.{key_name} FROM {duck_name1}
             WHERE {duck_name1}.{field_name} = '{sql_escape(pair[zh_field])}'
             {more_where_conds}""").fetchall()
         elif en_field in pair and pair[en_field]:  # 只匹配英文
-            rows = duckdb.sql(f"""SELECT {duck_name2}.{pkey_name} FROM {duck_name2}
+            rows = duckdb.sql(f"""SELECT {duck_name2}.{key_name} FROM {duck_name2}
             WHERE {duck_name2}.{field_name} = '{sql_escape(pair[en_field])}' 
             {more_where_conds}""").fetchall()
 
@@ -159,7 +159,7 @@ def update_pair(pair: dict, logger: str, table_info: str, field_info: str, join_
         key = pair[key_field]
         rows = duckdb.sql(f"""SELECT {duck_name1}.{field_name},{duck_name2}.{field_name} FROM {duck_name1}
         INNER JOIN {duck_name2} ON {join_conds}
-        WHERE {duck_name1}.{pkey_name} = '{sql_escape(key)}' 
+        WHERE {duck_name1}.{key_name} = '{sql_escape(key)}' 
         {more_where_conds}""")
 
         if len(rows) > 1:
@@ -197,12 +197,12 @@ def update_pair(pair: dict, logger: str, table_info: str, field_info: str, join_
 
 def update_pairs(pairs: list[dict], logger: str, table_info="", field_info="zh,en,key", join_fields=set(), filter={}):
     for pair in pairs:
-        if table_info == "":
-            table_info = pair.get("ref", "")
-        if table_info == "":
+        local_ti = pair.get("ref", "")
+        if local_ti == "":
+            local_ti = table_info
+        if local_ti == "":
             continue
-        update_pair(pair, logger, table_info,
-                    field_info=field_info, join_fields=join_fields, filter=filter)
+        update_pair(pair, logger, local_ti, field_info, join_fields, filter)
 
 
 def update_attributes():
