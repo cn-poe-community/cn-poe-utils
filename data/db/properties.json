@@ -274,6 +274,12 @@
     "key": "WeaponClassDisplayNameTwoHandedMace"
   },
   {
+    "en": "Level",
+    "zh": "等级",
+    "ref": "ClientStrings,Id,Text",
+    "key": "Level"
+  },
+  {
     "zh": "品质",
     "en": "Quality",
     "ref": "ClientStrings,Id,Text",

@@ -2,6 +2,7 @@ package zh2en
 
 import (
 	"bytes"
+	"slices"
 	"strings"
 
 	"github.com/cn-poe-community/cn-poe-utils/go/data/poe"
@@ -11,10 +12,7 @@ import (
 
 const DEFAULT_RARITY_ITEM_NAME = "Item"
 
-var GEM_PROPERTY_MAP = map[string]string{
-	"等级": "Level",
-	"品质": "Quality",
-}
+var SKILL_PROPERTY_NAMES = []string{"等级", "品质"}
 
 // ClientStringTranslator 客户端字符串翻译器
 type ClientStringTranslator struct {
@@ -428,8 +426,8 @@ func (t *BasicTranslator) TransSkill(name string) *string {
 
 // TransSkillProp 翻译技能属性
 func (t *BasicTranslator) TransSkillProp(name string) *string {
-	if val, ok := GEM_PROPERTY_MAP[name]; ok {
-		return &val
+	if slices.Contains(SKILL_PROPERTY_NAMES, name) {
+		return t.TransPropertyName(name)
 	}
 	return nil
 }

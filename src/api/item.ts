@@ -203,13 +203,13 @@ export interface Hybrid {
 /**
  * 宝石/技能。
  *
- * 宝石和技能虽然概念上泾渭分明，但是在代码中并没有严格区分。
+ * 宝石和技能虽然概念上泾渭分明，但是在API数据中并没有严格区分。
  */
 export interface Gem extends Item {
     /**
      * 是辅助？
      *
-     * 只有嫁接技能（都非辅助技能）没有这个字段。
+     * 只有嫁接技能(S28)没有这个字段。
      */
     support?: boolean;
     additionalProperties?: Property[];

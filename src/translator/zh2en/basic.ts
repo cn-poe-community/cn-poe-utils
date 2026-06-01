@@ -17,10 +17,7 @@ import { getTextSkeleton, LINE_SEPARATOR } from "./util/text.js";
 
 const DEFAULT_RARITY_ITEM_NAME = "Item";
 
-const GEM_PROPERTY_MAP = new Map([
-    ["等级", "Level"],
-    ["品质", "Quality"],
-]);
+const SKILL_PROPERTY_NAMES = new Set(["等级", "品质"]);
 
 class ClientStringTranslator {
     clientString: ClientString;
@@ -50,7 +47,7 @@ class ClientStringTranslator {
 }
 
 /**
- * BasicTranslator 提供了最基础、最底层的中文翻译为英文的功能，为更上层的 JSONTranslator 和 TextTranslator 提供支持。
+ * BasicTranslator 提供了最基础的中文翻译为英文的功能，为更上层的 JSONTranslator 和 TextTranslator 提供支持。
  */
 export class BasicTranslator {
     private readonly qualityItemTranslator: ClientStringTranslator;
@@ -296,11 +293,11 @@ export class BasicTranslator {
     /**
      * 翻译 name 和 typeLine，用于文本翻译。
      *
-     * typeLine 是 baseType 加上一些修饰词。修饰词可以分为两类，一类是 `忆境 ` 和 `精良的 `，一类是与物品词缀相关的修饰词。
+     * typeLine 是 baseType 加上一些修饰词。修饰词可以分为两类，一类是 `忆境` 和 `精良的`，一类是与物品词缀相关的修饰词。
      *
-     * `忆境 `出现在所有稀有度物品上，`精良的 `出现在非传奇物品上，第二类修饰词仅出现在魔法物品上。
+     * `忆境`出现在所有稀有度物品上，`精良的`出现在非传奇物品上，第二类修饰词仅出现在魔法物品上。
      *
-     * 未鉴定物品是例外，它只会存在第一类修饰词，`忆境 `和`精良的 `出现在所有稀有度的未鉴定物品上。
+     * 未鉴定物品是例外，它只会存在第一类修饰词，`忆境`和`精良的`出现在所有稀有度的未鉴定物品上。
      *
      * 由于第二类修饰词对于POB而言是没有什么作用的，且维护比较麻烦，这里仅支持第一类修饰词的翻译，第二类修饰词被移除。
      */
@@ -403,7 +400,10 @@ export class BasicTranslator {
     }
 
     transSkillProp(name: string): string | undefined {
-        return GEM_PROPERTY_MAP.get(name);
+        if (SKILL_PROPERTY_NAMES.has(name)) {
+            return this.transPropertyName(name);
+        }
+        return undefined;
     }
 
     /**
