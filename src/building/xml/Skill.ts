@@ -46,7 +46,7 @@ export class Skill {
     public toString(): string {
         const gemsView = this.gems.map((gem) => gem.toString()).join("\n");
 
-        if (this.imbuedSupport === "") {
+        if (this.imbuedSupport !== "") {
             return `<Skill enabled="true" slot="${this.slot}" mainActiveSkill="nil" imbuedSupport="${this.imbuedSupport}">
 ${gemsView}
 </Skill>`;
