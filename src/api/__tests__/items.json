@@ -1,0 +1,5223 @@
+{
+    "items": [
+        {
+            "verified": false,
+            "w": 1,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTEiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/54ba3c70ae/lifeflask11.png",
+            "league": "S29赛季（专家）",
+            "id": "753f88a8ee1a761e806ace33ecf5266c4896229039825b2cd4ee539134376d78",
+            "name": "",
+            "typeLine": "沸腾的解放之不朽生命药剂",
+            "baseType": "不朽生命药剂",
+            "rarity": "Magic",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "{1} 秒内回复 {0} 生命",
+                    "values": [
+                        [
+                            "816",
+                            1
+                        ],
+                        [
+                            "3.50",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "每次使用会从 {1} 充能次数中消耗 {0} 次",
+                    "values": [
+                        [
+                            "15",
+                            0
+                        ],
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "目前有 {0} 充能次数",
+                    "values": [
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "65",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "回复量降低 66%",
+                "立即回复",
+                "缓速时使用可以在接下来 15 秒免疫缓速",
+                "瘫痪时使用可以在接下来 15 秒免疫瘫痪"
+            ],
+            "descrText": "点击右键以喝下药剂。只有装备于腰带上时才会充能。击败怪物时会回复充能次数。",
+            "frameType": 1,
+            "x": 4,
+            "y": 0,
+            "inventoryId": "Flask"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTEiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/54ba3c70ae/lifeflask11.png",
+            "league": "S29赛季（专家）",
+            "id": "430b6bc6d6c204e1a1adbd49f06abc86fa1662e619e79b8070bfa3432d0082ae",
+            "name": "",
+            "typeLine": "沸腾的接地之不朽生命药剂",
+            "baseType": "不朽生命药剂",
+            "rarity": "Magic",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "{1} 秒内回复 {0} 生命",
+                    "values": [
+                        [
+                            "816",
+                            1
+                        ],
+                        [
+                            "3.50",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "每次使用会从 {1} 充能次数中消耗 {0} 次",
+                    "values": [
+                        [
+                            "15",
+                            0
+                        ],
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "目前有 {0} 充能次数",
+                    "values": [
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "60",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "回复量降低 66%",
+                "立即回复",
+                "遭受感电时使用可以在接下来 10 秒免疫感电"
+            ],
+            "descrText": "点击右键以喝下药剂。只有装备于腰带上时才会充能。击败怪物时会回复充能次数。",
+            "frameType": 1,
+            "x": 2,
+            "y": 0,
+            "inventoryId": "Flask"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTEiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/54ba3c70ae/lifeflask11.png",
+            "league": "S29赛季（专家）",
+            "id": "16a646bff487fb8774f966e481dcae98e1930d7e7f17397579529de8a6ac9316",
+            "name": "",
+            "typeLine": "沸腾的潮息之不朽生命药剂",
+            "baseType": "不朽生命药剂",
+            "rarity": "Magic",
+            "ilvl": 83,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "{1} 秒内回复 {0} 生命",
+                    "values": [
+                        [
+                            "816",
+                            1
+                        ],
+                        [
+                            "3.50",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "每次使用会从 {1} 充能次数中消耗 {0} 次",
+                    "values": [
+                        [
+                            "15",
+                            0
+                        ],
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "目前有 {0} 充能次数",
+                    "values": [
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "60",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "回复量降低 66%",
+                "立即回复",
+                "被点燃时使用可以在接下来 8 秒免疫点燃\n使用时移除所有燃烧效果"
+            ],
+            "descrText": "点击右键以喝下药剂。只有装备于腰带上时才会充能。击败怪物时会回复充能次数。",
+            "frameType": 1,
+            "x": 3,
+            "y": 0,
+            "inventoryId": "Flask"
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Cb290c1N0ckRleDIiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MSwic2VhcmluZyI6dHJ1ZSwidGFuZ2xlZCI6dHJ1ZSwiZnJhY3R1cmVkIjp0cnVlfV0/19e580c50f/BootsStrDex2.png",
+            "league": "S29赛季（专家）",
+            "id": "d8bf6c19aa45ae510e17412e8f66f3408882c5a12fbc5623e3a8696677de375a",
+            "searing": true,
+            "tangled": true,
+            "fractured": true,
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "奇术 远道",
+            "typeLine": "奇美拉鳞长靴",
+            "baseType": "奇美拉鳞长靴",
+            "rarity": "Rare",
+            "ilvl": 86,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+25%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "护甲",
+                    "values": [
+                        [
+                            "308",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 16
+                },
+                {
+                    "name": "闪避值",
+                    "values": [
+                        [
+                            "308",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 17
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "78",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "155",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "敏捷",
+                    "values": [
+                        [
+                            "85",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 64
+                }
+            ],
+            "implicitMods": [
+                "战吼施法速度加快 18%",
+                "+2% 火焰抗性上限"
+            ],
+            "explicitMods": [
+                "该装备的护甲与闪避提高 23%",
+                "每秒再生 45.7 生命",
+                "+48% 闪电抗性",
+                "+35% 混沌抗性",
+                "晕眩回复和格挡回复提高 11%"
+            ],
+            "craftedMods": [
+                "移动速度加快 20%",
+                "100% 几率避免被冰缓"
+            ],
+            "fracturedMods": [
+                "+127 最大生命"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Boots",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0luY3JlYXNlZER1cmF0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/a5db7ae0bd/IncreasedDuration.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "0b167341d622e92982766c101ccd03f16729119e04e02b0d1726036450afa920",
+                    "name": "",
+                    "typeLine": "持续时间总增（辅）",
+                    "baseType": "持续时间总增（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "辅助, 持续时间",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "130%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "111",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "辅助任意有持续时间的技能。",
+                    "explicitMods": [
+                        "被辅助技能的技能效果持续时间总增 49%"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9BbmNlc3RyYWxDcnkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/b4adaa4a42/AncestralCry.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "c4e7db0db2c42fe4a6da0b42b1b64a2555bcd63f9cf0f9f325b3ea50dc054d22",
+                    "name": "",
+                    "typeLine": "先祖战吼",
+                    "baseType": "先祖战吼",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "战吼, 效果区域, 持续时间",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "19 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "8.00 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "使用次数",
+                            "values": [
+                                [
+                                    "0.80 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "155",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "发出一声战吼，嘲讽全部周围的敌人，吸引他们攻击，增助随后的打击攻击。使自身和友军获得一个增益，提高元素抗性。",
+                    "explicitMods": [
+                        "基础持续时间为 3.40 秒",
+                        "战吼速度加快 38%",
+                        "冷却回复速度加快 40%",
+                        "计入范围内敌人的总威力值",
+                        "增益使每 5 点威力值令所有元素抗性 +5%，最多 30 点威力值",
+                        "增益使每 10 点威力值令所有\n元素抗性上限 +1%，最多 30 点威力值",
+                        "增助你随后施放的 8 次近战打击",
+                        "增助攻击以 2 个额外敌人为目标"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TZWlzbWljQ3J5U2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/983677c1be/SeismicCrySkillGem.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "50dd0e101ab23ff50b9e5025388f0fd8e1783a5f0152c3c49235c34de5e07dbb",
+                    "name": "",
+                    "typeLine": "震地战吼",
+                    "baseType": "震地战吼",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "战吼, 效果区域, 持续时间",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "19 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "8.00 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "使用次数",
+                            "values": [
+                                [
+                                    "0.80 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "155",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "发出一声战吼，嘲讽周围的敌人，吸引他们攻击，并增助随后的攻击。使自身和友军获得一个增益，提高护甲和晕眩阈值。",
+                    "explicitMods": [
+                        "击退距离扩大 200%",
+                        "基础持续时间为 3.40 秒",
+                        "战吼速度加快 38%",
+                        "冷却回复速度加快 40%",
+                        "在更小的区域里击退并打断敌人",
+                        "计入范围内敌人的总威力值",
+                        "增益使每 5 点威力值令护甲总增 5%，最多 25 点威力值",
+                        "增益使每 5 点威力值令晕眩阈值提高 15%，最多 25 点威力值",
+                        "增助你随后施放的 6 次近战猛击",
+                        "增助攻击的效果范围总增 50%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9FbmR1cmluZ0NyeSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/289ef19ddf/EnduringCry.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "a0cbe5e96e53375ba8914cd3bfebc919877c3233b7fe452afab4de5423ae7fe0",
+                    "name": "",
+                    "typeLine": "坚决战吼",
+                    "baseType": "坚决战吼",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "战吼, 效果区域, 持续时间",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "19 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "8.00 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "使用次数",
+                            "values": [
+                                [
+                                    "0.80 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "155",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "发出一声战吼，嘲讽周围的敌人，吸引他们攻击，并使自身和周围的友军获得增益。自身和友军还会获得耐力球。",
+                    "explicitMods": [
+                        "基础持续时间为 3.40 秒",
+                        "战吼速度加快 38%",
+                        "冷却回复速度加快 40%",
+                        "计入范围内敌人的总威力值",
+                        "每 5 点威力值使你和友军获得 1 个耐力球",
+                        "增益效果使你每 5 威力值每秒再生 2% 的生命，\n最多 25 威力值"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 3,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 3,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kTWFjZXMvT25lSGFuZE1hY2UzIiwidyI6MSwiaCI6Mywic2NhbGUiOjF9XQ/a3a1dace2a/OneHandMace3.png",
+            "league": "S29赛季（专家）",
+            "id": "768484302c7105728f2000d74c265cc7fb06fe16264a9d6627cf1de5b5ebad1d",
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 1,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "",
+            "typeLine": "钝钉木棒",
+            "baseType": "钝钉木棒",
+            "rarity": "Normal",
+            "ilvl": 15,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "单手锤",
+                    "values": [],
+                    "displayMode": 0
+                },
+                {
+                    "name": "物理伤害",
+                    "values": [
+                        [
+                            "13-16",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 9
+                },
+                {
+                    "name": "攻击暴击率",
+                    "values": [
+                        [
+                            "5.00%",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 12
+                },
+                {
+                    "name": "每秒攻击次数",
+                    "values": [
+                        [
+                            "1.45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 13
+                },
+                {
+                    "name": "武器范围：{0} 米",
+                    "values": [
+                        [
+                            "1.1",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3,
+                    "type": 14
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "68",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "95",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "66",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "implicitMods": [
+                "敌人晕眩门槛降低 10%"
+            ],
+            "frameType": 0,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Weapon2",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "a5496c7957f5d9dfb136f0f85bd829fe8bdadde9777049686f1d9ea1770b363f",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "a822104dcec925aaec89ebbcf3b91fda24afec218bec52c284239dc0b2bd5d33",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "109c3efcfb23a8a6af60738b308a2e3655b55220ed904e66c6ae7db91dcb3f32",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 3,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kTWFjZXMvT25lSGFuZE1hY2UzIiwidyI6MSwiaCI6Mywic2NhbGUiOjF9XQ/a3a1dace2a/OneHandMace3.png",
+            "league": "S29赛季（专家）",
+            "id": "6670590c0cd667021cd371eedc422f4f00c637b6e8682615a2a9eef5d4324b40",
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 1,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "",
+            "typeLine": "钝钉木棒",
+            "baseType": "钝钉木棒",
+            "rarity": "Normal",
+            "ilvl": 15,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "单手锤",
+                    "values": [],
+                    "displayMode": 0
+                },
+                {
+                    "name": "物理伤害",
+                    "values": [
+                        [
+                            "13-16",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 9
+                },
+                {
+                    "name": "攻击暴击率",
+                    "values": [
+                        [
+                            "5.00%",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 12
+                },
+                {
+                    "name": "每秒攻击次数",
+                    "values": [
+                        [
+                            "1.45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 13
+                },
+                {
+                    "name": "武器范围：{0} 米",
+                    "values": [
+                        [
+                            "1.1",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3,
+                    "type": 14
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "68",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "95",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "66",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "implicitMods": [
+                "敌人晕眩门槛降低 10%"
+            ],
+            "frameType": 0,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Offhand2",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "72456e66a340179c3afb785431198c8cef36da9814bda14edbb10af1ab8ca621",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "82fa67f3cb500060334297ed088d225ea82b05f0949617bda5f14464d18fdc0c",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "dfac20a9e59faef291ad765bdf49c6a3bbf699aed35db5403d1c9e8aab96d506",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "19",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "95",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "66",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "145592678 / 211877683",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 0.69,
+                            "type": 20
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +1.8 米",
+                        "你与周围友军的火焰抗性提高 40%",
+                        "你与周围友军的火焰抗性上限提高 3%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 3,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9MaWdodG5pbmdDb2lsIiwidyI6MiwiaCI6Mywic2NhbGUiOjEsIm11dGF0ZWQiOnRydWV9XQ/b117d83149/LightningCoil.png",
+            "league": "S29赛季（专家）",
+            "id": "6903e19d08d29a15e8ce08f6c61bf0a389da4b74ee7ce3dcd84d13ecfeecc058",
+            "mutated": true,
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "秽生雷语",
+            "typeLine": "荒野锁铠",
+            "baseType": "荒野锁铠",
+            "rarity": "Unique",
+            "ilvl": 83,
+            "identified": true,
+            "corrupted": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "护甲",
+                    "values": [
+                        [
+                            "880",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 16
+                },
+                {
+                    "name": "闪避值",
+                    "values": [
+                        [
+                            "880",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 17
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "76",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "111",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "敏捷",
+                    "values": [
+                        [
+                            "96",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 64
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "111",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "explicitMods": [
+                "攻击附加 1 - 19 基础闪电伤害",
+                "该装备的护甲与闪避提高 73%",
+                "-52% 闪电抗性",
+                "受到击中物理伤害的 54% 视作闪电伤害"
+            ],
+            "mutatedMods": [
+                "受到混沌伤害的 48% 视作闪电伤害"
+            ],
+            "flavourText": [
+                "\"看看那转瞬的安息，\r",
+                "我想不出更好的结局与之相比。\"\r",
+                "- 超灵者玛拉凯"
+            ],
+            "frameType": 3,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "BodyArmour",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0RlZmVuc2l2ZU1pbmlvbiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/604a531a0b/DefensiveMinion.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "492a71546877cb28d8b6e4fece785ea4e5de4369d87568972735ab7396995546",
+                    "name": "",
+                    "typeLine": "肉盾（辅）",
+                    "baseType": "肉盾（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "辅助, 召唤生物",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "120%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "111",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "辅助召唤生物技能。",
+                    "explicitMods": [
+                        "被辅助技能创造的召唤生物击中时有 20% 的几率嘲讽",
+                        "被辅助技能的召唤生物移动速度加快 29%",
+                        "被辅助技能的召唤生物对你附近的敌人造成的击中和异常状态伤害总增 30%",
+                        "被辅助技能创造的召唤生物受到的伤害总降 29%",
+                        "被辅助技能创造的召唤生物转为防御"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "I"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L211bHRpcGxlYXR0YWNrcyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJnZSI6dHJ1ZX1d/c4f26d9bf5/multipleattacks.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "bfea8423fffb93e2d2c547314a38c65ad6897a4265f2f082bdac8379a71225f6",
+                    "name": "",
+                    "typeLine": "高阶多重打击（辅）",
+                    "baseType": "高阶多重打击（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "卓越, 攻击, 近战, 辅助",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "3(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "160%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "76",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "75",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "敏捷",
+                            "values": [
+                                [
+                                    "52",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 64
+                        }
+                    ],
+                    "secDescrText": "辅助近战攻击技能，使该技能在使用时自动重复三次，每次以一个随机的敌人为目标。无法辅助瓦尔技能、持续吟唱技能、旅行技能、反击技能或触发类技能。",
+                    "explicitMods": [
+                        "被辅助的近战攻击技能可额外重复 3 次",
+                        "被辅助技能的总近战攻击速度总增 50%",
+                        "被辅助技能的攻击伤害总降 20%",
+                        "被辅助技能的近战伤害提高 10%",
+                        "第一个重复的被辅助技能造成的伤害总增 22%",
+                        "第二个重复的被辅助技能造成的伤害总增 44%",
+                        "第三个重复的被辅助技能造成的伤害总增 66%"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "flavourText": [
+                        "扎娜满怀敬畏地聆听着父亲的话语。他每吐出一个字，\r",
+                        "身影便显得愈发高大，愈发可怖，\r",
+                        "从沉醉的听众那里得到的回应也愈发狂热。"
+                    ],
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L01pbmlvbkZvY3VzRmlyZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/84babeb963/MinionFocusFire.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "e40edb73c6d7fb88bfb984db92a0860a3395d5a25d20a637fc02a90178fb97e0",
+                    "name": "",
+                    "typeLine": "掠食信标",
+                    "baseType": "掠食（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "辅助, 召唤生物, 法术, 持续时间",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "130%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "111",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "辅助召唤生物技能。",
+                    "explicitMods": [
+                        "来自被辅助技能的召唤生物的伤害总增 12%",
+                        "被辅助技能创造的召唤生物伤害提高 10%",
+                        "辅助技能的召唤生物对猎物造成的攻击和异常状态伤害总增 24%",
+                        "来自被辅助技能的召唤生物始终以猎物为目标"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "I",
+                    "hybrid": {
+                        "baseTypeName": "掠食（辅）",
+                        "properties": [
+                            {
+                                "name": "冷却时间",
+                                "values": [
+                                    [
+                                        "0.80 秒",
+                                        0
+                                    ]
+                                ],
+                                "displayMode": 0
+                            },
+                            {
+                                "name": "施放时间",
+                                "values": [
+                                    [
+                                        "瞬发",
+                                        0
+                                    ]
+                                ],
+                                "displayMode": 0
+                            }
+                        ],
+                        "explicitMods": [
+                            "基础持续时间为 8.00 秒"
+                        ],
+                        "secDescrText": "给一个指定的敌人施加减益效果，使你的召唤生物把它当作掠食目标。所有由【掠食】辅助的技能产生的召唤生物都会以它为目标。你一次只能有一个【掠食信标】。该技能不能用于图腾、陷阱和地雷。"
+                    }
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1dlYXBvbkVsZW1lbnRhbERhbWFnZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/2cfbdc80b2/WeaponElementalDamage.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "e1e754517015b8b68a178c5249be10f9635e34352a3b9bd36b8e25d7f8c917cf",
+                    "name": "",
+                    "typeLine": "武器元素伤害(辅)",
+                    "baseType": "武器元素伤害(辅)",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "攻击, 辅助",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "130%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "48",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "辅助攻击技能。",
+                    "explicitMods": [
+                        "攻击技能的元素伤害提高 10%",
+                        "被辅助的攻击技能的元素伤害总增 34%"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 3,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9BbmltYXRlQXJtb3VyIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImdkIjo1fV0/65673dac47/AnimateArmour.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "a1773f0e217f99dbff134b9daf8fbc094167ca431bb251ad08dbcae29d979f2e",
+                    "name": "",
+                    "typeLine": "惩击之幻化守卫",
+                    "baseType": "惩击之幻化守卫",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "法术, 召唤生物, 闪电",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "20 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "0.60 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "98",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "为一位隐形守卫幻化一把近战武器或一件护甲，使其为你而战，它会使用圣裁之惩击并忽略武器限制。可以为同一个守卫附加多个幻化物品。无法为其幻化未鉴定的物品。无法用于陷阱或地雷。如果守卫被击败，你无法再该地图再次召唤幻化守卫。",
+                    "builtInSupport": "被等级 1 的几率点燃辅助",
+                    "explicitMods": [
+                        "召唤生物移动速度加快 40%",
+                        "可以使用需要等级 100 的物品",
+                        "召唤生物造成的伤害增加76%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 4,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0ZpcmVQZW5ldHJhdGlvbiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/191dcc704c/FirePenetration.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "21d8ca15a375c8936c3f9fbd6a473ac62857d9afa235ee56abd656c870480ab2",
+                    "name": "",
+                    "typeLine": "火焰穿透(辅)",
+                    "baseType": "火焰穿透(辅)",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "火焰, 辅助",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "130%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "111",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "辅助任意击中敌人的技能，使击中能穿透敌人的火焰抗性。",
+                    "explicitMods": [
+                        "被辅助技能可以穿透 34% 火焰抗性",
+                        "被辅助技能的火焰伤害提高 10%"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 5,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTEiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/54ba3c70ae/lifeflask11.png",
+            "league": "S29赛季（专家）",
+            "id": "29d09f2b87ff9e8ceff812465c9718e02d63d0b556bca4d05d2d79324d31ec3a",
+            "name": "",
+            "typeLine": "沸腾的抗毒素之不朽生命药剂",
+            "baseType": "不朽生命药剂",
+            "rarity": "Magic",
+            "ilvl": 84,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "{1} 秒内回复 {0} 生命",
+                    "values": [
+                        [
+                            "979",
+                            1
+                        ],
+                        [
+                            "3.50",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "每次使用会从 {1} 充能次数中消耗 {0} 次",
+                    "values": [
+                        [
+                            "15",
+                            0
+                        ],
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "目前有 {0} 充能次数",
+                    "values": [
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "60",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "回复量降低 66%",
+                "立即回复",
+                "中毒时使用可以在接下来 7 秒免疫中毒"
+            ],
+            "descrText": "点击右键以喝下药剂。只有装备于腰带上时才会充能。击败怪物时会回复充能次数。",
+            "frameType": 1,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Flask"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTEiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/54ba3c70ae/lifeflask11.png",
+            "league": "S29赛季（专家）",
+            "id": "653768fada70352285613f17a5a676eba3ef63ff8370f44eb5d3b51e2c404766",
+            "name": "",
+            "typeLine": "沸腾的封闭之不朽生命药剂",
+            "baseType": "不朽生命药剂",
+            "rarity": "Magic",
+            "ilvl": 83,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "{1} 秒内回复 {0} 生命",
+                    "values": [
+                        [
+                            "979",
+                            1
+                        ],
+                        [
+                            "3.50",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "每次使用会从 {1} 充能次数中消耗 {0} 次",
+                    "values": [
+                        [
+                            "15",
+                            0
+                        ],
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                },
+                {
+                    "name": "目前有 {0} 充能次数",
+                    "values": [
+                        [
+                            "45",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "60",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "回复量降低 66%",
+                "立即回复",
+                "在流血时使用可以在接下来 8 秒免疫流血\n被腐化之血影响时使用可以在接下来 8 秒免疫腐化之血"
+            ],
+            "descrText": "点击右键以喝下药剂。只有装备于腰带上时才会充能。击败怪物时会回复充能次数。",
+            "frameType": 1,
+            "x": 1,
+            "y": 0,
+            "inventoryId": "Flask"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJlYWNobG9yZFJpbmdfWG9waCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/9642b72093/BreachlordRing_Xoph.png",
+            "league": "S29赛季（专家）",
+            "id": "58b9848f674700675fa8b1368b116b2332e083a59328b9df8fc0d1c3c812ea5d",
+            "name": "命运 闪耀之指",
+            "typeLine": "炽能戒指",
+            "baseType": "炽能戒指",
+            "rarity": "Rare",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质（生命和魔力词缀）",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "67",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "implicitMods": [
+                "+2% 火焰抗性上限",
+                "无法随机出非火焰伤害类型的词缀"
+            ],
+            "explicitMods": [
+                "+128 最大生命",
+                "+48% 火焰抗性"
+            ],
+            "craftedMods": [
+                "可以最多拥有 3 个工艺属性",
+                "+21 敏捷与智慧",
+                "非吟唱技能的总魔力消耗 -8"
+            ],
+            "flavourText": [
+                "赤红火堆的余烬仍在闪烁。"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Ring2"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJlYWNobG9yZFJpbmdfWG9waCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/9642b72093/BreachlordRing_Xoph.png",
+            "league": "S29赛季（专家）",
+            "id": "9544c1312008a68f77e756a93c0b07e085bf50e73650243fffeef13d53d2bc6f",
+            "name": "腐尸 圆环",
+            "typeLine": "炽能戒指",
+            "baseType": "炽能戒指",
+            "rarity": "Rare",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质（生命和魔力词缀）",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "67",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "implicitMods": [
+                "+2% 火焰抗性上限",
+                "无法随机出非火焰伤害类型的词缀"
+            ],
+            "explicitMods": [
+                "+136 最大生命",
+                "+48% 火焰抗性"
+            ],
+            "craftedMods": [
+                "可以最多拥有 3 个工艺属性",
+                "+24 敏捷与智慧",
+                "非吟唱技能的总魔力消耗 -8"
+            ],
+            "flavourText": [
+                "赤红火堆的余烬仍在闪烁。"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Ring"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJlYWNobG9yZFJpbmdfWG9waCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/9642b72093/BreachlordRing_Xoph.png",
+            "league": "S29赛季（专家）",
+            "id": "3f1180c0cc5847e638b99e0f72afdc7921f6a6edf0d42fb9b9203c5ca6afa3d8",
+            "name": "暴怒 灵环",
+            "typeLine": "炽能戒指",
+            "baseType": "炽能戒指",
+            "rarity": "Rare",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质（生命和魔力词缀）",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "65",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "implicitMods": [
+                "+2% 火焰抗性上限",
+                "无法随机出非火焰伤害类型的词缀"
+            ],
+            "explicitMods": [
+                "+54 敏捷",
+                "+135 最大生命"
+            ],
+            "craftedMods": [
+                "可以最多拥有 3 个工艺属性",
+                "+15% 火焰与混沌抗性",
+                "非吟唱技能的总魔力消耗 -7"
+            ],
+            "flavourText": [
+                "赤红火堆的余烬仍在闪烁。"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Ring3"
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvR2xvdmVzU3RyNCIsInciOjIsImgiOjIsInNjYWxlIjoxLCJzZWFyaW5nIjp0cnVlLCJ0YW5nbGVkIjp0cnVlLCJmcmFjdHVyZWQiOnRydWV9XQ/bb66d9d215/GlovesStr4.png",
+            "league": "S29赛季（专家）",
+            "id": "31395845e8d2c5ca009ae4e7cb6761152eb443e17b4541f1a0ab0fa3cf39ed12",
+            "searing": true,
+            "tangled": true,
+            "fractured": true,
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                }
+            ],
+            "name": "颅祭 猛钳",
+            "typeLine": "海怪护手",
+            "baseType": "海怪护手",
+            "rarity": "Rare",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "护甲",
+                    "values": [
+                        [
+                            "527",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 16
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "84",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "159",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "敏捷",
+                    "values": [
+                        [
+                            "68",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 64,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "98",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "implicitMods": [
+                "法术伤害压制率 +6%",
+                "召唤生物的伤害提高 19%"
+            ],
+            "explicitMods": [
+                "该装备的护甲提高 11%",
+                "+116 最大生命",
+                "+23% 火焰抗性",
+                "+31% 混沌抗性",
+                "晕眩回复和格挡回复提高 6%"
+            ],
+            "craftedMods": [
+                "召唤生物的伤害提高 20%"
+            ],
+            "fracturedMods": [
+                "生命再生速度提高 21%"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Gloves",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Db3JydXB0ZWRCbG9vZFN0cmVhbSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/2976ac6ef2/CorruptedBloodStream.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "9c778f2e679787cf368b3213b3157ff76e2c561406bf7d45e9fe3725ac63ca8a",
+                    "name": "",
+                    "typeLine": "腐灼热瘟",
+                    "baseType": "腐灼热瘟",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "法术, 持续时间, 物理",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "4",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "134 点生命",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.00 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "28",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "67",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "199345 / 199345",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 1,
+                            "type": 20
+                        }
+                    ],
+                    "nextLevelRequirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "31",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "73",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1
+                        }
+                    ],
+                    "secDescrText": "用自己的生命提供一个增益效果，并持续一段时间，使你击中敌人时对其施加腐化之血，在短时间内造成物理持续伤害。在该增益效果消减前花费足量生命可以刷新该增益效果的持续时间。",
+                    "explicitMods": [
+                        "每秒造成 20.5 点基础物理伤害",
+                        "基础持续时间为 6.00 秒",
+                        "总共消耗 43 点生命后刷新增益效果持续时间",
+                        "基础减益持续时间为 1.00 秒"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1RyYW5zZnVzaW9uU3VwcG9ydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJnZSI6dHJ1ZX1d/588a0b7758/TransfusionSupport.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "561f585f1e1addcc50028a9fb9dc94278baf8317cc245be4eba4ac3b74a3ad8d",
+                    "name": "",
+                    "typeLine": "渗透（辅）",
+                    "baseType": "渗透（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "卓越, 法术, 召唤生物, 辅助",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "1",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "150%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "72",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "72",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "50",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "226854909 / 226854909",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 1,
+                            "type": 20
+                        }
+                    ],
+                    "nextLevelRequirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "74",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "74",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "51",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1
+                        }
+                    ],
+                    "secDescrText": "辅助非祝福法术。",
+                    "explicitMods": [
+                        "被辅助技能消耗生命而非魔力",
+                        "使用被辅助法术时，每支付 200 点预支生命消耗，\n周围的一个召唤生物就会获得一个灵魂"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "flavourText": [
+                        "让你体内那永恒的尖啸，\r",
+                        "从你哭泣的血液中奔涌而出。"
+                    ],
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GbGFtZUxpbmtHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/d1e642950c/FlameLinkGem.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "07c8637c8b7fdb99c18ae81af5382e2bc5bf2a5b5a9b5fd8712a6239bc1eb5ad",
+                    "name": "",
+                    "typeLine": "烈炎羁绊",
+                    "baseType": "烈炎羁绊",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "法术, 持续时间, 羁绊, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "21(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "魔力每秒 33.83 点",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "0.50 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "72",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "159",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "同一名友方玩家产生羁绊并持续一段时间。在羁绊期间，羁绊对象按照你的生命造成额外火焰伤害。若羁绊对象在此期间被击败，你也会同时被击败。该技能不能由图腾、陷阱、地雷施放，也不能被触发。",
+                    "explicitMods": [
+                        "基础持续时间为 11.50 秒",
+                        "给羁绊对象附加 187 到 281 点火焰伤害",
+                        "羁绊对象获得额外火焰伤害，等于你生命上限的 5%",
+                        "羁绊在目标离开范围或超出视线 4 秒后中断\n每个目标身上只能有 1 种羁绊\n羁绊对象战败则你也战败"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9BdXRvQ2FzdEluc3RhbnRTa2lsbHMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/ec5d94a83e/AutoCastInstantSkills.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "995ccae3c5c2337bef291f4469ab6625170db427152b1ba3c0d897eb452bfdae",
+                    "name": "",
+                    "typeLine": "自动化（辅）",
+                    "baseType": "自动化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "触发, 法术",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "0.60 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "敏捷",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 64
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "98",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "该技能激活时，被辅助的法术会反复触发。",
+                    "explicitMods": [
+                        "每个被辅助法术的冷却时间结束时触发"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 3,
+                    "colour": "I",
+                    "hybrid": {
+                        "baseTypeName": "自动化",
+                        "properties": [
+                            {
+                                "name": "消耗及保留加成",
+                                "values": [
+                                    [
+                                        "150%",
+                                        0
+                                    ]
+                                ],
+                                "displayMode": 0
+                            }
+                        ],
+                        "explicitMods": [
+                            "被辅助法术的冷却时间结束时触发"
+                        ],
+                        "secDescrText": "辅助没有保留效果的瞬发技能或召唤法术技能。无法辅助瓦尔技能，无法辅助图腾、陷阱或地雷施放的技能。无法影响召唤生物的技能。"
+                    }
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 1,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvU291bGNvcmQiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/3817a36c97/Soulcord.png",
+            "league": "S29赛季（专家）",
+            "id": "afdb2b24fe02fc61fa8c3a3722a25a84a18809504bcec97535d96916fa3032c0",
+            "name": "枯萎尖叫",
+            "typeLine": "皮革腰带",
+            "baseType": "皮革腰带",
+            "rarity": "Unique",
+            "ilvl": 85,
+            "identified": true,
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "56",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "implicitMods": [
+                "+40 最大生命"
+            ],
+            "explicitMods": [
+                "当没有任何药剂效果时，获得威猛神龛增益效果",
+                "当没有任何药剂效果时，获得高等感电神龛效果",
+                "+28 智慧",
+                "+37% 混沌抗性",
+                "你身上的神龛增益效果提高 19%"
+            ],
+            "flavourText": [
+                "“我踉跄前行，渴求活命之水……以为寻得了喘息之地，\r",
+                "却不料……那是个填满初生之物的深坑……干涸而空洞……\r",
+                "他们仍在尖叫，乞求我为他们复仇……”"
+            ],
+            "frameType": 3,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Belt"
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 2,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0hlbG1ldFN0cjEwIiwidyI6MiwiaCI6Miwic2NhbGUiOjEsInNlYXJpbmciOnRydWUsInRhbmdsZWQiOnRydWUsImZyYWN0dXJlZCI6dHJ1ZX1d/888bff9269/HelmetStr10.png",
+            "league": "S29赛季（专家）",
+            "id": "602cfd570d92bc0754af73f19242bde2d679b709f15091e623fbf390221f1de5",
+            "searing": true,
+            "tangled": true,
+            "fractured": true,
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                },
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                },
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "嵌合 之幕",
+            "typeLine": "霸王战盔",
+            "baseType": "霸王战盔",
+            "rarity": "Rare",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "护甲",
+                    "values": [
+                        [
+                            "691",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 16
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "78",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "194",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63
+                },
+                {
+                    "name": "敏捷",
+                    "values": [
+                        [
+                            "48",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 64,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "98",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "implicitMods": [
+                "受到击中物理伤害的 6% 视作火焰伤害",
+                "有一个传奇怪物出现在你面前：易燃的诅咒效果提高 15%"
+            ],
+            "explicitMods": [
+                "+138 最大生命",
+                "所有召唤生物主动技能石等级 +1",
+                "+45% 火焰抗性",
+                "+24% 混沌抗性"
+            ],
+            "craftedMods": [
+                "战吼的增益效果提高 18%"
+            ],
+            "fracturedMods": [
+                "生命再生速度提高 21%"
+            ],
+            "frameType": 2,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Helm",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9MaWdodG5pbmdFeHBsb3Npb25NaW5lU2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6a6ceb8e5e/LightningExplosionMineSkillGem.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "8b8d50c4fe843608b980499a1d464a62ec10a71698489d6b55f4af7a85b9e4a6",
+                    "name": "",
+                    "typeLine": "雷暴地雷",
+                    "baseType": "雷暴地雷",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "地雷, 法术, 效果区域, 闪电, 光环, 新星",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "1",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "2 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "2 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "0.75 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "暴击几率",
+                            "values": [
+                                [
+                                    "6.00%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "伤害效用",
+                            "values": [
+                                [
+                                    "120%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "1",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "70 / 70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 1,
+                            "type": 20
+                        }
+                    ],
+                    "nextLevelRequirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "2",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "secDescrText": "投掷一个地雷，引爆时对一片区域造成伤害。",
+                    "explicitMods": [
+                        "造成 3 - 8 闪电伤害",
+                        "地雷持续 5 秒",
+                        "基础地雷引爆时间为 0.25 秒",
+                        "每个地雷使周围敌人受到的伤害提高 4%，\n最多 150%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "I"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GbGFtbWFiaWxpdHkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/9509f4c3a7/Flammability.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "1be5a997fccc7ab5f6999e1101937d08d5a6ef161448ecad78160b501e0446ae",
+                    "name": "",
+                    "typeLine": "易燃",
+                    "baseType": "易燃",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "法术, 效果区域, 持续时间, 火焰, 诅咒, 魔蛊",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "50 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "0.50 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "68",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "98",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "诅咒一片区域的所有目标，降低它们的火焰抗性，并使它们被击中时有几率被点燃。",
+                    "explicitMods": [
+                        "基础持续时间为 11.80 秒",
+                        "范围 +1 米",
+                        "被诅咒的敌人的火焰抗性 -36%",
+                        "对抗被诅咒的敌人时，击中的点燃几率 +25%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "I"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L01pbmVmaWVsZCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/04b0f0d1e0/Minefield.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "989303d5046d694690277c8e091cf1c5f14cbbad166fe9919e4343804ff991ea",
+                    "name": "",
+                    "typeLine": "地雷网(辅)",
+                    "baseType": "地雷网(辅)",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "辅助, 地雷",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "140%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "敏捷",
+                            "values": [
+                                [
+                                    "48",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 64
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "辅助地雷技能。",
+                    "explicitMods": [
+                        "被辅助的地雷技能的投掷速度加快 5%",
+                        "被辅助技能最多同时可额外放置 3 个地雷",
+                        "被辅助技能可以额外投掷 4 个地雷",
+                        "被辅助技能的地雷投掷速度总降 46%"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "I"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0Jsb29kTWFnaWMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/f90e23f319/BloodMagic.png",
+                    "support": true,
+                    "league": "S29赛季（专家）",
+                    "id": "0971c60082714222af94f8efeba579a18698b62d0a33d62b45e1a0babe582886",
+                    "name": "",
+                    "typeLine": "赤嚣（辅）",
+                    "baseType": "赤嚣（辅）",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "光环, 辅助",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗及保留加成",
+                            "values": [
+                                [
+                                    "201%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "111",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "辅助具有保留效果的非祝福技能。",
+                    "explicitMods": [
+                        "被辅助技能的光环强度提高 24%",
+                        "被辅助技能保留生命而非魔力"
+                    ],
+                    "descrText": "这是一颗辅助宝石。它并不会为你的角色增加属性数值，但会强化与其连接的技能宝石。将其放置于物品上同样颜色的插槽并连接想要强化的技能宝石。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 3,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 4,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1N1cGVyaGVhdGVkU2hpZWxkIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/59e3552a9b/SuperheatedShield.png",
+            "league": "S29赛季（专家）",
+            "id": "e0ba3ad3fae21d21777c4cd53fe7652d4285939c02c217b7ea1dd3b412e32e5c",
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 0,
+                    "attr": "I",
+                    "sColour": "B"
+                }
+            ],
+            "name": "破晓者",
+            "typeLine": "巨型塔盾",
+            "baseType": "巨型塔盾",
+            "rarity": "Unique",
+            "ilvl": 86,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "格挡几率",
+                    "values": [
+                        [
+                            "44%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 15
+                },
+                {
+                    "name": "护甲",
+                    "values": [
+                        [
+                            "1874",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 16
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "70",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "159",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "75",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "implicitMods": [
+                "+20 最大生命"
+            ],
+            "explicitMods": [
+                "该装备的护甲提高 184%",
+                "该装备 +21% 攻击格挡率",
+                "攻击伤害格挡率按照近期内被击中所受到的每 200 点火焰伤害 -1%",
+                "受到冰霜伤害的 19% 视作火焰伤害",
+                "受到闪电伤害的 16% 视作火焰伤害",
+                "受到物理伤害的 20% 视作火焰伤害",
+                "你格挡近距离敌人时烧灼它们"
+            ],
+            "flavourText": [
+                "“新来之人警告着凡人无法理解的毁灭和死亡。\r",
+                "我反问到，既然我辈侍奉光之王，为何还要惧怕火焰？”\r",
+                "——首任神主马克夏留斯"
+            ],
+            "frameType": 3,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Offhand",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Nb2x0ZW5TaGVsbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/d7b86e4b76/MoltenShell.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "8c25480e57f11ecbefcf547d901a87d57927cf2f415041b58233b7d604225179",
+                    "name": "",
+                    "typeLine": "熔岩护盾",
+                    "baseType": "熔岩护盾",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "法术, 效果区域, 持续时间, 火焰, 物理, 护卫",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "1",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "8 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "4.00 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "16",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "41",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "49725 / 49725",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 1,
+                            "type": 20
+                        }
+                    ],
+                    "nextLevelRequirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "50",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1
+                        }
+                    ],
+                    "secDescrText": "施加一个增益效果，增加护甲值，并在耗尽前替你承担部分伤害。当该增益效果时间结束或耗尽时，该技能将基于该增益效果承受的总伤害，把伤害反射给周围的敌人。与其它防卫技能共用冷却时间。",
+                    "explicitMods": [
+                        "基础持续时间为 3.00 秒",
+                        "效果持续时间内无法回复该技能的冷却时间",
+                        "75% 的击中伤害在作用于你的生命或能量护盾前由增益效果受到\n增益效果可受到的伤害等于你护甲的 10%，最多 5000 点",
+                        "该增益效果时间结束或耗尽时，将受到伤害的 100% 以火焰伤害的形式反射回去",
+                        "增益效果 +115 护甲"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TaGllbGRDaGFyZ2UiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6d2723f822/ShieldCharge.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "5262ef5bcb88935b6ed5df10fd5d82b714711bdca1810d05dfd54b264f63e489",
+                    "name": "",
+                    "typeLine": "重盾冲锋",
+                    "baseType": "重盾冲锋",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "攻击, 近战, 效果区域, 位移, 旅行, 物理",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "10 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "攻击时间",
+                            "values": [
+                                [
+                                    "0.50 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "暴击率",
+                            "values": [
+                                [
+                                    "5.00%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "攻击伤害",
+                            "values": [
+                                [
+                                    "100% 基础",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "155",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "向一个目标位置或敌人冲锋，将路径上的敌人推向两旁，同时对你面前的小范围不断造成副手伤害。当抵达目标时，你对更大范围造成伤害。你穿越的距离越远，造成的伤害就越高，晕眩敌人的几率也越高。",
+                    "explicitMods": [
+                        "252 - 378 基础副手物理伤害",
+                        "盾牌上每有 15 点护甲或闪避值，则附加 8 - 12 物理伤害",
+                        "到达最大冲锋距离时，晕眩门槛减免效果提高 75%",
+                        "到达最大冲锋距离时，击中伤害总增 100%",
+                        "移动速度加快 129%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Gcm9zdGJsaW5rU2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/03a84470ab/FrostblinkSkillGem.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "cb08536aee7b449c710dc3537a6807fc71fda6a23c081b8e2f9122448935c920",
+                    "name": "",
+                    "typeLine": "冰霜闪现",
+                    "baseType": "冰霜闪现",
+                    "ilvl": 0,
+                    "identified": true,
+                    "properties": [
+                        {
+                            "name": "法术, 位移, 持续时间, 冰霜, 旅行, 闪现, 效果区域",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "9",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "消耗",
+                            "values": [
+                                [
+                                    "16 点魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "2.85 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "暴击几率",
+                            "values": [
+                                [
+                                    "5.00%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "伤害效用",
+                            "values": [
+                                [
+                                    "210%",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+20%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "32",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "75",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "additionalProperties": [
+                        {
+                            "name": "经验值",
+                            "values": [
+                                [
+                                    "453996 / 453996",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 2,
+                            "progress": 1,
+                            "type": 20
+                        }
+                    ],
+                    "nextLevelRequirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "36",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "83",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1
+                        }
+                    ],
+                    "secDescrText": "传送到指定地点，对敌人造成伤害，并在传送开始位置和结束位置留下冰缓地面。和其它闪现技能共用冷却时间。",
+                    "explicitMods": [
+                        "造成 103 - 154 冰霜伤害",
+                        "基础持续时间为 3.00 秒",
+                        "范围 +0.1 米",
+                        "范围中每有一个普通或魔法敌人，就使冷却时间回复速度加快 17% \n范围中每有一个稀有或传奇敌人，就使冷却时间回复速度加快 88%",
+                        "最大移动距离延长 26%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "I"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 2,
+            "h": 3,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9TY2VwdGVycy9Wb2lkR2F6ZSIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/e24a55cd27/VoidGaze.png",
+            "league": "S29赛季（专家）",
+            "id": "a5df6d855c24d9c124e9d63cb97002bd2710505bddc696e4299990c0e9aecdc8",
+            "sockets": [
+                {
+                    "group": 0,
+                    "attr": "D",
+                    "sColour": "G"
+                },
+                {
+                    "group": 0,
+                    "attr": "S",
+                    "sColour": "R"
+                },
+                {
+                    "group": 1,
+                    "attr": "S",
+                    "sColour": "R"
+                }
+            ],
+            "name": "黯黑贤者",
+            "typeLine": "影语短杖",
+            "baseType": "影语短杖",
+            "rarity": "Unique",
+            "ilvl": 85,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "短杖",
+                    "values": [],
+                    "displayMode": 0
+                },
+                {
+                    "name": "品质",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                },
+                {
+                    "name": "物理伤害",
+                    "values": [
+                        [
+                            "29-44",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 9
+                },
+                {
+                    "name": "攻击暴击率",
+                    "values": [
+                        [
+                            "7.30%",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 12
+                },
+                {
+                    "name": "每秒攻击次数",
+                    "values": [
+                        [
+                            "1.25",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 13
+                },
+                {
+                    "name": "武器范围：{0} 米",
+                    "values": [
+                        [
+                            "1.1",
+                            0
+                        ]
+                    ],
+                    "displayMode": 3,
+                    "type": 14
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "72",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "力量",
+                    "values": [
+                        [
+                            "155",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 63,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "敏捷",
+                    "values": [
+                        [
+                            "159",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 64,
+                    "suffix": "(宝石)"
+                },
+                {
+                    "name": "智慧",
+                    "values": [
+                        [
+                            "70",
+                            0
+                        ]
+                    ],
+                    "displayMode": 1,
+                    "type": 65,
+                    "suffix": "(宝石)"
+                }
+            ],
+            "enchantMods": [
+                "品质不提高物理伤害",
+                "每 4% 品质使效果区域扩大 1%"
+            ],
+            "implicitMods": [
+                "元素伤害提高 22%"
+            ],
+            "explicitMods": [
+                "所有法术主动技能石等级 +2",
+                "击中时有 10% 的几率使敌人致盲",
+                "被你致盲的敌人受到恶语术影响",
+                "每级 +1 最大能量护盾",
+                "每级 +2 最大生命",
+                "不受致盲影响"
+            ],
+            "flavourText": [
+                "以光明之子的生命为饵食，\r",
+                "将黑暗赐与吾眼所视之物，\r",
+                "直到我们在阴影中合而为一。"
+            ],
+            "frameType": 3,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Weapon",
+            "socketedItems": [
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9HcmFjZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/0d4fbca4ae/Grace.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "ca9fa758c5451c74f6dc00bb4e969dce6d3fac00493afaf6b23bbd5b16d2bd8b",
+                    "name": "",
+                    "typeLine": "优雅",
+                    "baseType": "优雅",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "21(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "50% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "72",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "敏捷",
+                            "values": [
+                                [
+                                    "159",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 64
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响友军获得额外的闪避.",
+                    "explicitMods": [
+                        "范围 +2 米",
+                        "你与周围友军的闪避值提高 1620",
+                        "你与周围友军的总闪避值总增 30%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 0,
+                    "colour": "D"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9EZXRlcm1pbmF0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/9d35188568/Determination.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "912bfbdcd0c7f216a5c44d4997521f0a39a119b50bd2df8b9ea30ea1bfc823e0",
+                    "name": "",
+                    "typeLine": "坚定",
+                    "baseType": "坚定",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 物理",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "20(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "50% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "品质",
+                            "values": [
+                                [
+                                    "+3%",
+                                    1
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 6
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "155",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响友军获得额外的护甲.",
+                    "explicitMods": [
+                        "范围 +1.9 米",
+                        "效果区域扩大 6%",
+                        "你与周围友军的护甲提高 1026",
+                        "你与周围友军的护甲总增 49%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 1,
+                    "colour": "S"
+                },
+                {
+                    "verified": false,
+                    "w": 1,
+                    "h": 1,
+                    "icon": "https://poecdn.game.qq.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9GaXJlUmVzaXN0QXVyYSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c2ab10c400/FireResistAura.png",
+                    "support": false,
+                    "league": "S29赛季（专家）",
+                    "id": "3a192c38449ad128bfd5866e5037ee9632ad74186d531c89b8a7f1bf12c9cbf5",
+                    "name": "",
+                    "typeLine": "火焰净化",
+                    "baseType": "火焰净化",
+                    "ilvl": 0,
+                    "identified": true,
+                    "corrupted": true,
+                    "properties": [
+                        {
+                            "name": "光环, 法术, 效果区域, 火焰",
+                            "values": [],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "21(最高等级)",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 5
+                        },
+                        {
+                            "name": "保留",
+                            "values": [
+                                [
+                                    "35% 魔力",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "冷却时间",
+                            "values": [
+                                [
+                                    "1.20 秒",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        },
+                        {
+                            "name": "施放时间",
+                            "values": [
+                                [
+                                    "瞬发",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0
+                        }
+                    ],
+                    "requirements": [
+                        {
+                            "name": "等级",
+                            "values": [
+                                [
+                                    "72",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 0,
+                            "type": 62
+                        },
+                        {
+                            "name": "力量",
+                            "values": [
+                                [
+                                    "100",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 63
+                        },
+                        {
+                            "name": "智慧",
+                            "values": [
+                                [
+                                    "70",
+                                    0
+                                ]
+                            ],
+                            "displayMode": 1,
+                            "type": 65
+                        }
+                    ],
+                    "secDescrText": "施放一个光环，使你与受光环影响的友军获得额外的火焰抗性.",
+                    "explicitMods": [
+                        "范围 +2 米",
+                        "你与周围友军的火焰抗性提高 42%",
+                        "你与周围友军的火焰抗性上限提高 4%"
+                    ],
+                    "descrText": "将其放置于物品上同样颜色的插槽来获得这项技能。点击右键从插槽中移除。",
+                    "frameType": 4,
+                    "socket": 2,
+                    "colour": "S"
+                }
+            ]
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9ZcGhldGhha2tzSGVhcnRVcGdyYWRlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsIm11dGF0ZWQiOnRydWV9XQ/d43d2d423b/YphethakksHeartUpgrade.png",
+            "league": "S29赛季（专家）",
+            "id": "cb2064599c0f4348c48a3c15fff5cfe9442759027a752153feb299d26dc6ba21",
+            "mutated": true,
+            "name": "秽生索伏之血",
+            "typeLine": "琥珀护身符",
+            "baseType": "琥珀护身符",
+            "rarity": "Unique",
+            "ilvl": 83,
+            "identified": true,
+            "properties": [
+                {
+                    "name": "品质（生命和魔力词缀）",
+                    "values": [
+                        [
+                            "+20%",
+                            1
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 6
+                }
+            ],
+            "requirements": [
+                {
+                    "name": "等级",
+                    "values": [
+                        [
+                            "64",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "enchantMods": [
+                "配置 严峻训练"
+            ],
+            "implicitMods": [
+                "+30 力量"
+            ],
+            "explicitMods": [
+                "力量提高 10%",
+                "生命上限提高 12%",
+                "伤害穿透 10% 火焰抗性",
+                "被击中时让敌人受到灰烬缠身",
+                "火之化身"
+            ],
+            "mutatedMods": [
+                "受到击中物理伤害的 15% 视作火焰伤害"
+            ],
+            "flavourText": [
+                "我们是他的血肉。\r",
+                "透过我们，他散播炙热的启示。"
+            ],
+            "frameType": 3,
+            "x": 0,
+            "y": 0,
+            "inventoryId": "Amulet"
+        }
+    ],
+    "character": {
+        "name": "客心_S29_I",
+        "realm": "pc",
+        "class": "Chieftain",
+        "league": "S29赛季（专家）",
+        "level": 100,
+        "lastLoginTime": 1776655853
+    }
+}

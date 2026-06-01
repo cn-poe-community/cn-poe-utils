@@ -35,21 +35,22 @@ type Expansion struct {
 
 // Node 节点
 type Node struct {
-	Skill           string          `json:"skill"`
-	Name            *string         `json:"name"`
-	Icon            *string         `json:"icon"`
-	IsMastery       *bool           `json:"isMastery,omitempty"`
-	Stats           []string        `json:"stats"`
-	Group           string          `json:"group"`
-	Orbit           int             `json:"orbit"`
-	OrbitIndex      int             `json:"orbitIndex"`
-	Out             []string        `json:"out"`
-	In              []string        `json:"in"`
-	IsJewelSocket   *bool           `json:"isJewelSocket,omitempty"`
-	ExpansionJewel  *ExpansionJewel `json:"expansionJewel,omitempty"`
-	ReminderText    []string        `json:"reminderText,omitempty"`
-	IsNotable       *bool           `json:"isNotable,omitempty"`
-	GrantedStrength *int            `json:"grantedStrength,omitempty"`
+	Skill            string          `json:"skill"`
+	Name             *string         `json:"name"`
+	Icon             *string         `json:"icon"`
+	IsMastery        *bool           `json:"isMastery,omitempty"`
+	Stats            []string        `json:"stats"`
+	Group            string          `json:"group"`
+	Orbit            int             `json:"orbit"`
+	OrbitIndex       int             `json:"orbitIndex"`
+	Out              []string        `json:"out"`
+	In               []string        `json:"in"`
+	IsJewelSocket    *bool           `json:"isJewelSocket,omitempty"`
+	ExpansionJewel   *ExpansionJewel `json:"expansionJewel,omitempty"`
+	ReminderText     []string        `json:"reminderText,omitempty"`
+	IsNotable        *bool           `json:"isNotable,omitempty"`
+	GrantedStrength  *int            `json:"grantedStrength,omitempty"`
+	GrantedDexterity *int            `json:"grantedDexterity,omitempty"`
 }
 
 type ExpansionJewel struct {

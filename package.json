@@ -38,7 +38,8 @@
     "build": "rimraf dist && tsc",
     "format": "prettier --write src/",
     "lint": "eslint src",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "typetest": "node scripts/typetest.js && tsc -p tsconfig.type-test.json"
   },
   "keywords": [
     "path of exile",

@@ -56,11 +56,12 @@ type Tree struct {
 
 // ClusterJewelMetadata 星团珠宝元数据
 type ClusterJewelMetadata struct {
-	SizeIndex       int   `json:"sizeIndex"`
-	NotableIndicies []int `json:"notableIndicies"`
-	SocketIndicies  []int `json:"socketIndicies"`
-	SmallIndicies   []int `json:"smallIndicies"`
-	TotalIndicies   int   `json:"totalIndicies"`
+	Size            string `json:"size"`
+	SizeIndex       int    `json:"sizeIndex"`
+	NotableIndicies []int  `json:"notableIndicies"`
+	SocketIndicies  []int  `json:"socketIndicies"`
+	SmallIndicies   []int  `json:"smallIndicies"`
+	TotalIndicies   int    `json:"totalIndicies"`
 }
 
 type ClusterJewels struct {

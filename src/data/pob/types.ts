@@ -44,6 +44,7 @@ export type Tree = {
 };
 
 export type ClusterJewelMetadata = {
+    size: string;
     sizeIndex: number;
     notableIndicies: number[];
     socketIndicies: number[];
