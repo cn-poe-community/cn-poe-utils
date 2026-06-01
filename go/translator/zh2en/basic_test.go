@@ -1,30 +1,13 @@
 package zh2en
 
 import (
-	"encoding/json"
-	"os"
 	"testing"
-
-	"github.com/cn-poe-community/cn-poe-utils/go/data/poe"
 )
 
-func loadTestData(t *testing.T) *poe.Data {
-	data, err := os.ReadFile("../../data/poe/testdata/all.json")
-	if err != nil {
-		t.Fatalf("无法读取测试文件: %v", err)
-	}
-
-	var result poe.Data
-	if err := json.Unmarshal(data, &result); err != nil {
-		t.Fatalf("反序列化失败: %v", err)
-	}
-	return &result
-}
+var factory = NewTranslatorFactory()
+var translator = factory.GetBasicTranslator()
 
 func TestTransNameAndBaseType(t *testing.T) {
-	data := loadTestData(t)
-	translator := NewBasicTranslator(data)
-
 	testCases := []struct {
 		name         string
 		zhName       string
@@ -72,9 +55,6 @@ func TestTransNameAndBaseType(t *testing.T) {
 }
 
 func TestTransMod(t *testing.T) {
-	data := loadTestData(t)
-	translator := NewBasicTranslator(data)
-
 	testCases := []struct {
 		zh string
 		en string
@@ -115,9 +95,6 @@ func TestTransMod(t *testing.T) {
 }
 
 func TestTransAscendant(t *testing.T) {
-	data := loadTestData(t)
-	translator := NewBasicTranslator(data)
-
 	testCases := []struct {
 		zh string
 		en string
@@ -142,9 +119,6 @@ func TestTransAscendant(t *testing.T) {
 }
 
 func TestFindBaseTypeFromTypeLine(t *testing.T) {
-	data := loadTestData(t)
-	translator := NewBasicTranslator(data)
-
 	testCases := []struct {
 		name         string
 		typeLine     string
@@ -173,9 +147,6 @@ func TestFindBaseTypeFromTypeLine(t *testing.T) {
 }
 
 func TestTransNameAndTypeLine(t *testing.T) {
-	data := loadTestData(t)
-	translator := NewBasicTranslator(data)
-
 	testCases := []struct {
 		name         string
 		zhName       string

@@ -57,16 +57,16 @@ type BasicTranslator struct {
 }
 
 // NewBasicTranslator 创建基础翻译器
-func NewBasicTranslator(data *poe.Data) *BasicTranslator {
-	attributeProvider := provider.NewAttributeProvider(data)
-	baseTypeProvider := provider.NewBaseTypeProvider(data)
-	passiveSkillProvider := provider.NewPassiveSkillProvider(data)
-	propertyProvider := provider.NewPropertyProvider(data)
-	requirementProvider := provider.NewRequirementProvider(data)
-	skillProvider := provider.NewSkillProvider(data)
-	statProvider := provider.NewStatProvider(data)
-	stringProvider := provider.NewStringProvider(data)
-
+func NewBasicTranslator(
+	attributeProvider *provider.AttributeProvider,
+	baseTypeProvider *provider.BaseTypeProvider,
+	passiveSkillProvider *provider.PassiveSkillProvider,
+	propertyProvider *provider.PropertyProvider,
+	requirementProvider *provider.RequirementProvider,
+	skillProvider *provider.SkillProvider,
+	statProvider *provider.StatProvider,
+	stringProvider *provider.StringProvider,
+) *BasicTranslator {
 	qualityItem := stringProvider.MustProvide("QualityItem")
 	synthesisedItem := stringProvider.MustProvide("SynthesisedItem")
 	mutatedUniqueName := stringProvider.MustProvide("MutatedUniqueName")

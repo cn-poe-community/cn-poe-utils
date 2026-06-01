@@ -25,28 +25,29 @@ type StatProvider struct {
 	multilineRefStats      []MultilineStat
 }
 
-func NewStatProvider(data *poe.Data) *StatProvider {
+func NewStatProvider() *StatProvider {
 	zhSkeletonIdx := make(map[string][]*poe.Stat)
 	firstLineZhSkeletonIdx := make(map[string]*MultilineStatGroup)
 	referenceStats := make([]*poe.Stat, 0)
 	multilineRefStats := make([]MultilineStat, 0)
 
-	for i, item := range data.Stats {
-		if item.Refs != nil {
-			referenceStats = append(referenceStats, &data.Stats[i])
-			if strings.Contains(item.Zh, util.LINE_SEPARATOR) {
+	for i := range poe.DATA.Stats {
+		stat := &poe.DATA.Stats[i]
+		if stat.Refs != nil {
+			referenceStats = append(referenceStats, stat)
+			if strings.Contains(stat.Zh, util.LINE_SEPARATOR) {
 				multilineRefStats = append(multilineRefStats, MultilineStat{
-					LineSize: strings.Count(item.Zh, util.LINE_SEPARATOR) + 1,
-					Stat:     &data.Stats[i],
+					LineSize: strings.Count(stat.Zh, util.LINE_SEPARATOR) + 1,
+					Stat:     stat,
 				})
 			}
 			continue
 		}
-		skeleton := util.GetTextSkeleton(item.Zh)
-		zhSkeletonIdx[skeleton] = append(zhSkeletonIdx[skeleton], &data.Stats[i])
+		skeleton := util.GetTextSkeleton(stat.Zh)
+		zhSkeletonIdx[skeleton] = append(zhSkeletonIdx[skeleton], stat)
 
-		if strings.Contains(item.Zh, util.LINE_SEPARATOR) {
-			lines := strings.Split(item.Zh, util.LINE_SEPARATOR)
+		if strings.Contains(stat.Zh, util.LINE_SEPARATOR) {
+			lines := strings.Split(stat.Zh, util.LINE_SEPARATOR)
 			lineCount := len(lines)
 			firstLine := lines[0]
 			firstLineSkeleton := util.GetTextSkeleton(firstLine)
@@ -60,7 +61,7 @@ func NewStatProvider(data *poe.Data) *StatProvider {
 			group := firstLineZhSkeletonIdx[firstLineSkeleton]
 			group.Stats = append(group.Stats, MultilineStat{
 				LineSize: lineCount,
-				Stat:     &data.Stats[i],
+				Stat:     stat,
 			})
 
 			if group.MaxLineSize < lineCount {

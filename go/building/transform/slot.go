@@ -16,7 +16,7 @@ func GetSlotName(itemData *api.Item) (string, error) {
 			return fmt.Sprintf("Flask %d", *itemData.X+1), nil
 		}
 
-		if slotName, ok := pob.DefaultData.SlotMap[*inventoryId]; ok {
+		if slotName, ok := pob.DATA.SlotMap[*inventoryId]; ok {
 			return slotName, nil
 		}
 	}

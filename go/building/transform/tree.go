@@ -13,12 +13,12 @@ import (
 
 // GetNodeIdOfJewelSlot 获取星团珠宝插槽的节点ID
 func GetNodeIdOfJewelSlot(slotId int) int {
-	return pob.DefaultData.Tree.JewelSlots[slotId]
+	return pob.DATA.Tree.JewelSlots[slotId]
 }
 
 // GetCharacterName 获取角色名称
 func GetCharacterName(num int) string {
-	return pob.DefaultData.Tree.Classes[num].Name
+	return pob.DATA.Tree.Classes[num].Name
 }
 
 // GetAscendancyName 获取升华名称
@@ -26,13 +26,13 @@ func GetAscendancyName(characterNum int, ascendancyNum int) string {
 	if ascendancyNum == 0 {
 		return ""
 	}
-	return pob.DefaultData.Tree.Classes[characterNum].Ascendancies[ascendancyNum-1].Name
+	return pob.DATA.Tree.Classes[characterNum].Ascendancies[ascendancyNum-1].Name
 }
 
 var phreciaAscendancySet = make(map[string]struct{})
 
 func init() {
-	for _, name := range pob.DefaultData.PhreciaAscendancyMap {
+	for _, name := range pob.DATA.PhreciaAscendancyMap {
 		phreciaAscendancySet[name] = struct{}{}
 	}
 }
@@ -215,7 +215,7 @@ func getEnabledNodeIdsOfClusterJewel(
 	socketInfos map[int]*SocketInfo,
 ) (enabledNodeIds []int, probableNodeIds []int) {
 	slotNodeId := GetNodeIdOfJewelSlot(jewelInfo.SlotId)
-	expansionJewel := pob.DefaultData.Tree.Nodes[slotNodeId].ExpansionJewel
+	expansionJewel := pob.DATA.Tree.Nodes[slotNodeId].ExpansionJewel
 
 	if expansionJewel == nil {
 		log.Printf("expansion jewel data for slotId is missing %d", jewelInfo.SlotId)
@@ -223,7 +223,7 @@ func getEnabledNodeIdsOfClusterJewel(
 	}
 
 	jSize := jewelInfo.Size
-	clusterJewel := pob.DefaultData.ClusterJewels.Jewels[string(jSize)]
+	clusterJewel := pob.DATA.ClusterJewels.Jewels[string(jSize)]
 
 	idVal := 0x10000
 	if id != nil {
@@ -236,8 +236,8 @@ func getEnabledNodeIdsOfClusterJewel(
 	}
 	nodeId := idVal + (clusterJewel.SizeIndex << 4)
 
-	proxyNode := pob.DefaultData.Tree.Nodes[util.MustAtoi(expansionJewel.Proxy)]
-	proxyGroup := pob.DefaultData.Tree.Groups[proxyNode.Group]
+	proxyNode := pob.DATA.Tree.Nodes[util.MustAtoi(expansionJewel.Proxy)]
+	proxyGroup := pob.DATA.Tree.Groups[proxyNode.Group]
 
 	group := jewelInfo.Data.Subgraph.Groups[fmt.Sprintf("expansion_%d", jewelInfo.SlotId)]
 	exIds := make([]int, 0, len(group.Nodes))
@@ -400,15 +400,15 @@ func getEnabledNodeIdsOfClusterJewel(
 			return
 		}
 
-		proxyNode = pob.DefaultData.Tree.Nodes[util.MustAtoi(socket.ExpansionJewel.Proxy)]
-		proxyGroup = pob.DefaultData.Tree.Groups[proxyNode.Group]
+		proxyNode = pob.DATA.Tree.Nodes[util.MustAtoi(socket.ExpansionJewel.Proxy)]
+		proxyGroup = pob.DATA.Tree.Groups[proxyNode.Group]
 		groupSize = socket.ExpansionJewel.Size
 		upSizeVal++
 	}
 
 	translatedIndicies := make(map[int]*ClusterJewelNode)
 
-	proxyNodeSkillsPerOrbit := pob.DefaultData.Tree.Constants.SkillsPerOrbit[proxyNode.Orbit]
+	proxyNodeSkillsPerOrbit := pob.DATA.Tree.Constants.SkillsPerOrbit[proxyNode.Orbit]
 	for _, node := range clusterJewelNodes {
 		proxyNodeOidxRelativeToClusterIndicies := translateOidx(
 			proxyNode.OrbitIndex,
@@ -486,7 +486,7 @@ func findSocket(
 	index int,
 ) *SocketResult {
 	for _, nodeId := range group.Nodes {
-		node := pob.DefaultData.Tree.Nodes[nodeId]
+		node := pob.DATA.Tree.Nodes[nodeId]
 		if node.ExpansionJewel != nil && node.ExpansionJewel.Index == index {
 			return &SocketResult{
 				ID:   nodeId,

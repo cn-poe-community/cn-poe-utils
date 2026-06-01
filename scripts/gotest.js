@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-const srcDir = "src/api/__tests__/wg";
-const destDir = "go/api/testdata/wg";
+const srcDir = "src/api/__tests__";
+const destDir = "go/api/testdata";
 
 const files = fs.readdirSync(srcDir).filter(f => f.endsWith(".json"));
 

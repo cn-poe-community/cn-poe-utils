@@ -4,3 +4,4 @@ node_modules/
 src/data/poe/data.json
 src/data/pob/data.json
 *.type-test.ts
+go/api/testdata/

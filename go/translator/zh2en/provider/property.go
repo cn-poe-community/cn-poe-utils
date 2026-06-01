@@ -14,16 +14,18 @@ type PropertyProvider struct {
 	zhSkeletonIdx map[string][]*poe.Property
 }
 
-func NewPropertyProvider(data *poe.Data) *PropertyProvider {
+func NewPropertyProvider() *PropertyProvider {
 	zhIdx := make(map[string]*poe.Property)
 	zhSkeletonIdx := make(map[string][]*poe.Property)
 
-	for i, item := range data.Properties {
-		zhIdx[item.Zh] = &data.Properties[i]
+	for i := range poe.DATA.Properties {
+		prop := &poe.DATA.Properties[i]
 
-		if strings.Contains(item.Zh, VARIABLE_PLACEHOLDER) {
-			zhSkeletonIdx[util.GetTextSkeleton(item.Zh)] =
-				append(zhSkeletonIdx[util.GetTextSkeleton(item.Zh)], &data.Properties[i])
+		if strings.Contains(prop.Zh, VARIABLE_PLACEHOLDER) {
+			zhSkeletonIdx[util.GetTextSkeleton(prop.Zh)] =
+				append(zhSkeletonIdx[util.GetTextSkeleton(prop.Zh)], prop)
+		} else {
+			zhIdx[prop.Zh] = prop
 		}
 	}
 	return &PropertyProvider{

@@ -1,11 +1,11 @@
 package util
 
-import "github.com/cn-poe-community/cn-poe-utils/go/data/pob"
+import "github.com/cn-poe-community/cn-poe-utils/go/data/poe"
 
 var transfiguredSkillSet = make(map[string]struct{})
 
 func init() {
-	for _, skill := range pob.DefaultData.TransfiguredSkills {
+	for _, skill := range poe.DATA.TransfiguredSkills {
 		transfiguredSkillSet[skill.En] = struct{}{}
 	}
 }

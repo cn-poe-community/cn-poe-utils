@@ -1,5 +1,10 @@
 package poe
 
+import (
+	_ "embed"
+	"encoding/json"
+)
+
 // Attribute 属性
 type Attribute struct {
 	Zh     string           `json:"zh"`
@@ -53,9 +58,9 @@ type PropertyValue struct {
 
 // Requirement 需求
 type Requirement struct {
-	Zh     string               `json:"zh"`
-	En     string               `json:"en"`
-	Values []RequirementValue   `json:"values,omitempty"`
+	Zh     string             `json:"zh"`
+	En     string             `json:"en"`
+	Values []RequirementValue `json:"values,omitempty"`
 }
 
 // RequirementValue 需求值
@@ -87,35 +92,46 @@ type ClientString struct {
 // Data 数据
 type Data struct {
 	// item types
-	Amulets           []BaseType `json:"amulets"`
-	Belts             []BaseType `json:"belts"`
-	BodyArmours       []BaseType `json:"bodyArmours"`
-	Boots             []BaseType `json:"boots"`
-	Flasks            []BaseType `json:"flasks"`
-	Gloves            []BaseType `json:"gloves"`
-	Helmets           []BaseType `json:"helmets"`
-	Jewels            []BaseType `json:"jewels"`
-	Quivers           []BaseType `json:"quivers"`
-	Rings             []BaseType `json:"rings"`
-	Shields           []BaseType `json:"shields"`
-	Tattoos           []BaseType `json:"tattoos"`
-	Tinctures         []BaseType `json:"tinctures"`
-	Weapons           []BaseType `json:"weapons"`
+	Amulets     []BaseType `json:"amulets"`
+	Belts       []BaseType `json:"belts"`
+	BodyArmours []BaseType `json:"bodyArmours"`
+	Boots       []BaseType `json:"boots"`
+	Flasks      []BaseType `json:"flasks"`
+	Gloves      []BaseType `json:"gloves"`
+	Helmets     []BaseType `json:"helmets"`
+	Jewels      []BaseType `json:"jewels"`
+	Quivers     []BaseType `json:"quivers"`
+	Rings       []BaseType `json:"rings"`
+	Shields     []BaseType `json:"shields"`
+	Tattoos     []BaseType `json:"tattoos"`
+	Tinctures   []BaseType `json:"tinctures"`
+	Weapons     []BaseType `json:"weapons"`
 	// skills
-	GemSkills         []Skill    `json:"gemSkills"`
-	HybridSkills      []Skill    `json:"hybridSkills"`
-	IndexableSupports []Skill    `json:"indexableSupports"`
-	TransfiguredSkills []Skill   `json:"transfiguredSkills"`
+	GemSkills          []Skill `json:"gemSkills"`
+	HybridSkills       []Skill `json:"hybridSkills"`
+	IndexableSupports  []Skill `json:"indexableSupports"`
+	TransfiguredSkills []Skill `json:"transfiguredSkills"`
 	// passive skill nodes
-	Anointed          []Node     `json:"anointed"`
-	Ascendant         []Node     `json:"ascendant"`
-	Keystones         []Node     `json:"keystones"`
+	Anointed  []Node `json:"anointed"`
+	Ascendant []Node `json:"ascendant"`
+	Keystones []Node `json:"keystones"`
 	// stats
-	Stats             []Stat     `json:"stats"`
+	Stats []Stat `json:"stats"`
 	// others
-	Attributes        []Attribute `json:"attributes"`
-	Properties        []Property  `json:"properties"`
-	Requirements      []Requirement `json:"requirements"`
+	Attributes          []Attribute         `json:"attributes"`
+	Properties          []Property          `json:"properties"`
+	Requirements        []Requirement       `json:"requirements"`
 	RequirementSuffixes []RequirementSuffix `json:"requirementSuffixes"`
-	Strings           []ClientString `json:"strings"`
+	Strings             []ClientString      `json:"strings"`
 }
+
+var DATA Data
+
+func init() {
+	if err := json.Unmarshal(dataJSON, &DATA); err != nil {
+		panic(err)
+	}
+}
+
+//go:embed data.json
+var dataJSON []byte

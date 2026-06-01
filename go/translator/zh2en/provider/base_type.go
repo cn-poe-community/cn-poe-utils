@@ -9,28 +9,30 @@ type BaseTypeProvider struct {
 	zhIdx map[string][]*poe.BaseType
 }
 
-func NewBaseTypeProvider(data *poe.Data) *BaseTypeProvider {
+func NewBaseTypeProvider() *BaseTypeProvider {
 	// 所有基础类型
-	list := make([][]poe.BaseType, 0)
-	list = append(list, data.Amulets)
-	list = append(list, data.Belts)
-	list = append(list, data.BodyArmours)
-	list = append(list, data.Boots)
-	list = append(list, data.Flasks)
-	list = append(list, data.Gloves)
-	list = append(list, data.Helmets)
-	list = append(list, data.Jewels)
-	list = append(list, data.Quivers)
-	list = append(list, data.Rings)
-	list = append(list, data.Shields)
-	list = append(list, data.Tattoos)
-	list = append(list, data.Tinctures)
-	list = append(list, data.Weapons)
+	list := [][]poe.BaseType{
+		poe.DATA.Amulets,
+		poe.DATA.Belts,
+		poe.DATA.BodyArmours,
+		poe.DATA.Boots,
+		poe.DATA.Flasks,
+		poe.DATA.Gloves,
+		poe.DATA.Helmets,
+		poe.DATA.Jewels,
+		poe.DATA.Quivers,
+		poe.DATA.Rings,
+		poe.DATA.Shields,
+		poe.DATA.Tattoos,
+		poe.DATA.Tinctures,
+		poe.DATA.Weapons,
+	}
 
 	zhIdx := make(map[string][]*poe.BaseType)
 	for _, baseTypes := range list {
-		for i, baseType := range baseTypes {
-			zhIdx[baseType.Zh] = append(zhIdx[baseType.Zh], &baseTypes[i])
+		for i := range baseTypes {
+			baseType := &baseTypes[i]
+			zhIdx[baseType.Zh] = append(zhIdx[baseType.Zh], baseType)
 		}
 	}
 

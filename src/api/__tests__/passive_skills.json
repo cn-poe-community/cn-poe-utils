@@ -1,714 +1,499 @@
 {
-    "character": 1,
-    "ascendancy": 3,
-    "alternate_ascendancy": 6,
-    "hashes": [
-        1325,
-        2491,
-        3644,
-        4139,
-        4833,
-        5152,
-        5197,
-        5233,
-        5643,
-        5743,
-        5935,
-        6028,
-        6043,
-        6289,
-        6712,
-        6764,
-        8544,
-        9386,
-        10031,
-        10594,
-        10661,
-        10904,
-        11730,
-        12382,
-        12795,
-        13714,
-        14057,
-        14930,
-        15868,
-        16544,
-        17566,
-        18103,
-        18901,
-        19732,
-        19750,
-        19939,
-        20551,
-        21435,
-        21974,
-        22627,
-        23027,
-        24083,
-        24383,
-        24824,
-        24914,
-        25011,
-        25031,
-        25831,
-        26196,
-        26270,
-        26712,
-        26725,
-        27806,
-        28475,
-        29353,
-        29933,
-        30380,
-        30733,
-        31080,
-        31257,
-        31471,
-        31667,
-        32241,
-        32249,
-        32739,
-        32932,
-        33287,
-        33623,
-        33657,
-        34171,
-        34400,
-        35288,
-        36047,
-        36915,
-        36949,
-        37326,
-        37584,
-        40653,
-        40907,
-        41415,
-        42659,
-        42668,
-        43374,
-        43689,
-        43902,
-        44202,
-        44903,
-        46578,
-        47197,
-        48109,
-        48287,
-        48290,
-        48480,
-        49178,
-        49412,
-        50340,
-        50904,
-        53118,
-        53793,
-        53987,
-        54127,
-        54849,
-        55190,
-        55485,
-        55676,
-        57992,
-        58218,
-        59928,
-        60031,
-        60472,
-        61198,
-        61262,
-        62017,
-        62319,
-        62429,
-        62588,
-        63048,
-        63282,
-        63723,
-        64210,
-        64406,
-        64587,
-        65125,
-        65167,
-        65485
-    ],
-    "hashes_ex": [
-        78,
-        81,
-        84,
-        87,
-        105,
-        107
-    ],
-    "mastery_effects": {
-        "47197": 61097,
-        "54849": 9876,
-        "19750": 62285,
-        "12382": 64381,
-        "62588": 34242,
-        "25011": 47642,
-        "41415": 21468,
-        "32241": 38454,
-        "64406": 59936,
-        "25031": 14206,
-        "48290": 20153,
-        "4139": 31822,
-        "33657": 4319
+  "character": 1,
+  "ascendancy": 3,
+  "alternate_ascendancy": 6,
+  "hashes": [
+    1325, 2491, 3644, 4139, 4833, 5152, 5197, 5233, 5643, 5743, 5935, 6028,
+    6043, 6289, 6712, 6764, 8544, 9386, 10031, 10594, 10661, 10904, 11730,
+    12382, 12795, 13714, 14057, 14930, 15868, 16544, 17566, 18103, 18901, 19732,
+    19750, 19939, 20551, 21435, 21974, 22627, 23027, 24083, 24383, 24824, 24914,
+    25011, 25031, 25831, 26196, 26270, 26712, 26725, 27806, 28475, 29353, 29933,
+    30380, 30733, 31080, 31257, 31471, 31667, 32241, 32249, 32739, 32932, 33287,
+    33623, 33657, 34171, 34400, 35288, 36047, 36915, 36949, 37326, 37584, 40653,
+    40907, 41415, 42659, 42668, 43374, 43689, 43902, 44202, 44903, 46578, 47197,
+    48109, 48287, 48290, 48480, 49178, 49412, 50340, 50904, 53118, 53793, 53987,
+    54127, 54849, 55190, 55485, 55676, 57992, 58218, 59928, 60031, 60472, 61198,
+    61262, 62017, 62319, 62429, 62588, 63048, 63282, 63723, 64210, 64406, 64587,
+    65125, 65167, 65485
+  ],
+  "hashes_ex": [78, 81, 84, 87, 105, 107],
+  "mastery_effects": {
+    "47197": 61097,
+    "54849": 9876,
+    "19750": 62285,
+    "12382": 64381,
+    "62588": 34242,
+    "25011": 47642,
+    "41415": 21468,
+    "32241": 38454,
+    "64406": 59936,
+    "25031": 14206,
+    "48290": 20153,
+    "4139": 31822,
+    "33657": 4319
+  },
+  "skill_overrides": {
+    "49412": {
+      "name": "努葛玛呼好战者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/firedamage.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["有 5% 的几率点燃"],
+      "reminderText": [
+        "(点燃会造成持续燃烧的火焰伤害, 取决于技能的基础火焰伤害, 持续4秒)"
+      ]
     },
-    "skill_overrides": {
-        "49412": {
-            "name": "努葛玛呼好战者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/firedamage.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "有 5% 的几率点燃"
-            ],
-            "reminderText": [
-                "(点燃会造成持续燃烧的火焰伤害, 取决于技能的基础火焰伤害, 持续4秒)"
-            ]
-        },
-        "25031": {
-            "name": "曲空之符文嵌板",
-            "icon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/Village/RuneCraftingPassiveBG.png",
-            "isMastery": true,
-            "inactiveIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "activeIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "stats": [
-                "你受到的有益效果消减速度减慢 30%",
-                "你身上的减益效果消失速度加快 30%"
-            ],
-            "reminderText": [
-                "（效果无法低于正常消退速率的 25%）"
-            ]
-        },
-        "40653": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        },
-        "53793": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        },
-        "5233": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        },
-        "63723": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        },
-        "62429": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        },
-        "59928": {
-            "name": "努葛玛呼烈焰行者的文身",
-            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+6% 火焰抗性"
-            ]
-        }
+    "25031": {
+      "name": "曲空之符文嵌板",
+      "icon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/Village/RuneCraftingPassiveBG.png",
+      "isMastery": true,
+      "inactiveIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
+      "activeIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
+      "stats": [
+        "你受到的有益效果消减速度减慢 30%",
+        "你身上的减益效果消失速度加快 30%"
+      ],
+      "reminderText": ["（效果无法低于正常消退速率的 25%）"]
     },
-    "items": [
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/78f6bf8356/NewGemBase2.png",
-            "league": "S29赛季（专家）",
-            "id": "9ab20b9375176a6399d671628c29fee8039bb979f62a024714a07f2d0e0fffbe",
-            "name": "鹰翼流银",
-            "typeLine": "中型星团珠宝",
-            "baseType": "中型星团珠宝",
-            "rarity": "Rare",
-            "ilvl": 83,
-            "identified": true,
-            "requirements": [
-                {
-                    "name": "等级",
-                    "values": [
-                        [
-                            "54",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 62
-                }
-            ],
-            "enchantMods": [
-                "增加 4 个天赋技能",
-                "其中 1 个增加的天赋为珠宝槽",
-                "增加的小天赋获得：召唤生物的最大生命提高 12%"
-            ],
-            "explicitMods": [
-                "增加的小天赋还获得：+3% 火焰抗性",
-                "增加的小天赋还获得：战吼持续时间延长 3%",
-                "其中 1 个增加的天赋为按图索骥",
-                "其中 1 个增加的天赋为警戒之号"
-            ],
-            "descrText": "放入天赋树上配置好的中型或大型珠宝槽。增加的天赋跟珠宝范围无关。可以右键点击从插槽中移除。",
-            "frameType": 2,
-            "x": 13,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljZGV4IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/248654efbc/basicdex.png",
-            "league": "S29赛季（专家）",
-            "id": "f0c78535fdbe7de5168800638225528dbbf001dfa4cdae51544dc122af6c7e98",
-            "fractured": true,
-            "name": "疫源流银",
-            "typeLine": "翠绿珠宝",
-            "baseType": "翠绿珠宝",
-            "rarity": "Rare",
-            "ilvl": 86,
-            "identified": true,
-            "explicitMods": [
-                "攻击伤害格挡率在持盾牌时 +2%",
-                "+5% 持续伤害加成",
-                "+2% 火焰抗性上限"
-            ],
-            "fracturedMods": [
-                "生命上限提高 7%"
-            ],
-            "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
-            "frameType": 2,
-            "x": 15,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/b470123709/basicint.png",
-            "league": "S29赛季（专家）",
-            "id": "00eacd5c9cb876f96e4dda4ef021b4e70ccd29a6aa7df928267389f4e4a7d44e",
-            "fractured": true,
-            "name": "乱世精华",
-            "typeLine": "钴蓝珠宝",
-            "baseType": "钴蓝珠宝",
-            "rarity": "Rare",
-            "ilvl": 84,
-            "identified": true,
-            "explicitMods": [
-                "+7% 冰霜持续伤害加成",
-                "闪电技能施法速度加快 4%",
-                "+2% 火焰抗性上限"
-            ],
-            "fracturedMods": [
-                "生命上限提高 7%"
-            ],
-            "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
-            "frameType": 2,
-            "x": 7,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/b470123709/basicint.png",
-            "league": "S29赛季（专家）",
-            "id": "a41f771c3dca9ca92e7491348257b85233fd06c6431587c58603e82e951adfa5",
-            "fractured": true,
-            "name": "灵魂切口",
-            "typeLine": "钴蓝珠宝",
-            "baseType": "钴蓝珠宝",
-            "rarity": "Rare",
-            "ilvl": 85,
-            "identified": true,
-            "explicitMods": [
-                "生命上限提高 7%",
-                "+2% 火焰抗性上限",
-                "投射物速度加快 7%"
-            ],
-            "fracturedMods": [
-                "药剂效果的持续时间延长 8%"
-            ],
-            "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
-            "frameType": 2,
-            "x": 16,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1RlbXBsYXJDaXZpbGl6YXRpb24iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/09ecf8ac86/TemplarCivilization.png",
-            "league": "S29赛季（专家）",
-            "id": "5b8a942efcc9487d35edcf75e561ff463443a001d4b2e648b0365bac2d5f224c",
-            "name": "好战的信仰",
-            "typeLine": "永恒珠宝",
-            "baseType": "永恒珠宝",
-            "rarity": "Unique",
-            "ilvl": 83,
-            "identified": true,
-            "properties": [
-                {
-                    "name": "仅限",
-                    "values": [
-                        [
-                            "1 史实",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0
-                },
-                {
-                    "name": "范围",
-                    "values": [
-                        [
-                            "大",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 24
-                }
-            ],
-            "explicitMods": [
-                "赞美 4841 名被神主玛萨留斯转化的新信徒\n范围内的天赋被圣堂教团抑制",
-                "每 10 点奉献可使范围伤害提高 4%",
-                "每 10 点奉献使召唤生物攻击和施法速度加快 1%",
-                "史实"
-            ],
-            "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
-            "flavourText": [
-                "他们坚信自己有最崇高的信仰，可信念却变成了迫害。"
-            ],
-            "frameType": 3,
-            "x": 18,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1RoZVJlZERyZWFtIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsIm11dGF0ZWQiOnRydWV9XQ/ad9a659d67/TheRedDream.png",
-            "league": "S29赛季（专家）",
-            "id": "932d10f81241735b297ea3cae5c2dc905988db1221903cc12f0b72c3e570eddb",
-            "mutated": true,
-            "name": "秽生赤影梦境",
-            "typeLine": "赤红珠宝",
-            "baseType": "赤红珠宝",
-            "rarity": "Unique",
-            "ilvl": 83,
-            "identified": true,
-            "properties": [
-                {
-                    "name": "仅限",
-                    "values": [
-                        [
-                            "1",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0
-                },
-                {
-                    "name": "范围",
-                    "values": [
-                        [
-                            "大",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 24
-                }
-            ],
-            "explicitMods": [
-                "获得额外混沌伤害， 其数值等同于火焰伤害的 7%"
-            ],
-            "mutatedMods": [
-                "范围内，提供火焰抗性或所有元素抗性的天赋点，\n也会将其数值的 50% 转化为提高最大生命"
-            ],
-            "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
-            "flavourText": [
-                "我们如鲜血般涌入夏乌拉的口中，\r",
-                "同时洒落在我们熟悉的大地上。"
-            ],
-            "frameType": 3,
-            "x": 0,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/0eb1a9d981/NewGemBase1.png",
-            "league": "S29赛季（专家）",
-            "id": "159be6d547f744c11bec79076f0550a46c675d1e892b78db4e1d1cecd79c1ba7",
-            "name": "疫源 之眼",
-            "typeLine": "小型星团珠宝",
-            "baseType": "小型星团珠宝",
-            "rarity": "Rare",
-            "ilvl": 83,
-            "identified": true,
-            "requirements": [
-                {
-                    "name": "等级",
-                    "values": [
-                        [
-                            "58",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 62
-                }
-            ],
-            "enchantMods": [
-                "增加 2 个天赋技能",
-                "增加的小天赋获得：技能的魔力保留效能提高 6%"
-            ],
-            "explicitMods": [
-                "增加的小天赋还获得：+35 闪避值",
-                "增加的小天赋还获得：+7% 火焰抗性",
-                "增加的小天赋还获得：+8 智慧",
-                "其中 1 个增加的天赋为崇高之形"
-            ],
-            "descrText": "放入天赋树上配置好的小型、中型、大型珠宝槽。增加的天赋跟珠宝范围无关。可以右键点击从插槽中移除。",
-            "frameType": 2,
-            "x": 37,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        }
-    ],
-    "jewel_data": {
-        "13": {
-            "type": "JewelPassiveTreeExpansionMedium",
-            "subgraph": {
-                "groups": {
-                    "expansion_13": {
-                        "proxy": "30275",
-                        "nodes": [
-                            "1078",
-                            "78",
-                            "81",
-                            "84",
-                            "87"
-                        ],
-                        "x": -8798.67,
-                        "y": -116.185,
-                        "orbits": [
-                            3
-                        ]
-                    }
-                },
-                "nodes": {
-                    "1078": {
-                        "skill": "14933",
-                        "name": "召唤生物生命专精",
-                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupMinions.png",
-                        "isMastery": true,
-                        "stats": [],
-                        "group": "expansion_13",
-                        "orbit": 0,
-                        "orbitIndex": 0,
-                        "out": [],
-                        "in": []
-                    },
-                    "78": {
-                        "skill": "7107",
-                        "name": "警戒之号",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedWarcryNotable.png",
-                        "isNotable": true,
-                        "stats": [
-                            "你使用战吼时，每 5 点威力值使护甲在 8 秒内提高 25%，最大 100%"
-                        ],
-                        "reminderText": [
-                            "（普通怪物的威力为 1，魔法怪物为 2，稀有怪物为 10，传奇怪物为 20，玩家为 5）"
-                        ],
-                        "group": "expansion_13",
-                        "orbit": 2,
-                        "orbitIndex": 0,
-                        "out": [
-                            "81"
-                        ],
-                        "in": [
-                            "87"
-                        ]
-                    },
-                    "81": {
-                        "skill": "20492",
-                        "name": "召唤生物生命",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreaseMinionLifeNode.png",
-                        "stats": [
-                            "+3% 火焰抗性",
-                            "召唤生物的最大生命提高 12%",
-                            "战吼持续时间延长 3%"
-                        ],
-                        "group": "expansion_13",
-                        "orbit": 2,
-                        "orbitIndex": 4,
-                        "out": [
-                            "84",
-                            "78"
-                        ],
-                        "in": [
-                            "55190"
-                        ]
-                    },
-                    "84": {
-                        "skill": "36655",
-                        "name": "按图索骥",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedWarcryNotable.png",
-                        "isNotable": true,
-                        "grantedStrength": 10,
-                        "grantedDexterity": 10,
-                        "stats": [
-                            "你使用战吼时， 你和周围友军在 4 秒内获得猛攻",
-                            "+10 力量和敏捷"
-                        ],
-                        "reminderText": [
-                            "( 猛攻赋予你额外你 20% 攻击速度, 施法速度, 和移动速度 )"
-                        ],
-                        "group": "expansion_13",
-                        "orbit": 2,
-                        "orbitIndex": 8,
-                        "out": [
-                            "87"
-                        ],
-                        "in": [
-                            "81"
-                        ]
-                    },
-                    "87": {
-                        "skill": "36931",
-                        "name": "小型珠宝槽",
-                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
-                        "isJewelSocket": true,
-                        "expansionJewel": {
-                            "size": 0,
-                            "index": 0,
-                            "proxy": "49951",
-                            "parent": "17219"
-                        },
-                        "stats": [],
-                        "group": "expansion_13",
-                        "orbit": 2,
-                        "orbitIndex": 12,
-                        "out": [
-                            "78"
-                        ],
-                        "in": [
-                            "84"
-                        ]
-                    }
-                }
-            }
-        },
-        "15": {
-            "type": "JewelDex"
-        },
-        "7": {
-            "type": "JewelInt"
-        },
-        "16": {
-            "type": "JewelInt"
-        },
-        "18": {
-            "type": "JewelTimeless",
-            "radius": 1800,
-            "radiusVisual": "Templar"
-        },
-        "0": {
-            "type": "JewelStr",
-            "radius": 1800
-        },
-        "37": {
-            "type": "JewelPassiveTreeExpansionSmall",
-            "subgraph": {
-                "groups": {
-                    "expansion_37": {
-                        "proxy": "49951",
-                        "nodes": [
-                            "105",
-                            "107"
-                        ],
-                        "x": -10156.7,
-                        "y": -75.185,
-                        "orbits": [
-                            1
-                        ]
-                    }
-                },
-                "nodes": {
-                    "105": {
-                        "skill": "21796",
-                        "name": "保留效能",
-                        "icon": "Art/2DArt/SkillIcons/passives/AuraEffectNode.png",
-                        "stats": [
-                            "+35 点闪避值",
-                            "+7% 火焰抗性",
-                            "技能的魔力保留效能提高 6%",
-                            "+8 智慧"
-                        ],
-                        "group": "expansion_37",
-                        "orbit": 1,
-                        "orbitIndex": 1,
-                        "out": [
-                            "107"
-                        ],
-                        "in": [
-                            "36931"
-                        ]
-                    },
-                    "107": {
-                        "skill": "60690",
-                        "name": "崇高之形",
-                        "icon": "Art/2DArt/SkillIcons/passives/EvasionNotable.png",
-                        "isNotable": true,
-                        "stats": [
-                            "+10% 所有元素抗性",
-                            "优雅的魔力保留效能提高 50%"
-                        ],
-                        "group": "expansion_37",
-                        "orbit": 1,
-                        "orbitIndex": 5,
-                        "out": [],
-                        "in": [
-                            "105"
-                        ]
-                    }
-                }
-            }
-        }
+    "40653": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
+    },
+    "53793": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
+    },
+    "5233": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
+    },
+    "63723": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
+    },
+    "62429": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
+    },
+    "59928": {
+      "name": "努葛玛呼烈焰行者的文身",
+      "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+      "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+      "isTattoo": true,
+      "stats": ["+6% 火焰抗性"]
     }
+  },
+  "items": [
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/78f6bf8356/NewGemBase2.png",
+      "league": "S29赛季（专家）",
+      "id": "9ab20b9375176a6399d671628c29fee8039bb979f62a024714a07f2d0e0fffbe",
+      "name": "鹰翼流银",
+      "typeLine": "中型星团珠宝",
+      "baseType": "中型星团珠宝",
+      "rarity": "Rare",
+      "ilvl": 83,
+      "identified": true,
+      "requirements": [
+        {
+          "name": "等级",
+          "values": [["54", 0]],
+          "displayMode": 0,
+          "type": 62
+        }
+      ],
+      "enchantMods": [
+        "增加 4 个天赋技能",
+        "其中 1 个增加的天赋为珠宝槽",
+        "增加的小天赋获得：召唤生物的最大生命提高 12%"
+      ],
+      "explicitMods": [
+        "增加的小天赋还获得：+3% 火焰抗性",
+        "增加的小天赋还获得：战吼持续时间延长 3%",
+        "其中 1 个增加的天赋为按图索骥",
+        "其中 1 个增加的天赋为警戒之号"
+      ],
+      "descrText": "放入天赋树上配置好的中型或大型珠宝槽。增加的天赋跟珠宝范围无关。可以右键点击从插槽中移除。",
+      "frameType": 2,
+      "x": 13,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljZGV4IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/248654efbc/basicdex.png",
+      "league": "S29赛季（专家）",
+      "id": "f0c78535fdbe7de5168800638225528dbbf001dfa4cdae51544dc122af6c7e98",
+      "fractured": true,
+      "name": "疫源流银",
+      "typeLine": "翠绿珠宝",
+      "baseType": "翠绿珠宝",
+      "rarity": "Rare",
+      "ilvl": 86,
+      "identified": true,
+      "explicitMods": [
+        "攻击伤害格挡率在持盾牌时 +2%",
+        "+5% 持续伤害加成",
+        "+2% 火焰抗性上限"
+      ],
+      "fracturedMods": ["生命上限提高 7%"],
+      "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
+      "frameType": 2,
+      "x": 15,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/b470123709/basicint.png",
+      "league": "S29赛季（专家）",
+      "id": "00eacd5c9cb876f96e4dda4ef021b4e70ccd29a6aa7df928267389f4e4a7d44e",
+      "fractured": true,
+      "name": "乱世精华",
+      "typeLine": "钴蓝珠宝",
+      "baseType": "钴蓝珠宝",
+      "rarity": "Rare",
+      "ilvl": 84,
+      "identified": true,
+      "explicitMods": [
+        "+7% 冰霜持续伤害加成",
+        "闪电技能施法速度加快 4%",
+        "+2% 火焰抗性上限"
+      ],
+      "fracturedMods": ["生命上限提高 7%"],
+      "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
+      "frameType": 2,
+      "x": 7,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/b470123709/basicint.png",
+      "league": "S29赛季（专家）",
+      "id": "a41f771c3dca9ca92e7491348257b85233fd06c6431587c58603e82e951adfa5",
+      "fractured": true,
+      "name": "灵魂切口",
+      "typeLine": "钴蓝珠宝",
+      "baseType": "钴蓝珠宝",
+      "rarity": "Rare",
+      "ilvl": 85,
+      "identified": true,
+      "explicitMods": [
+        "生命上限提高 7%",
+        "+2% 火焰抗性上限",
+        "投射物速度加快 7%"
+      ],
+      "fracturedMods": ["药剂效果的持续时间延长 8%"],
+      "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
+      "frameType": 2,
+      "x": 16,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1RlbXBsYXJDaXZpbGl6YXRpb24iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/09ecf8ac86/TemplarCivilization.png",
+      "league": "S29赛季（专家）",
+      "id": "5b8a942efcc9487d35edcf75e561ff463443a001d4b2e648b0365bac2d5f224c",
+      "name": "好战的信仰",
+      "typeLine": "永恒珠宝",
+      "baseType": "永恒珠宝",
+      "rarity": "Unique",
+      "ilvl": 83,
+      "identified": true,
+      "properties": [
+        {
+          "name": "仅限",
+          "values": [["1 史实", 0]],
+          "displayMode": 0
+        },
+        {
+          "name": "范围",
+          "values": [["大", 0]],
+          "displayMode": 0,
+          "type": 24
+        }
+      ],
+      "explicitMods": [
+        "赞美 4841 名被神主玛萨留斯转化的新信徒\n范围内的天赋被圣堂教团抑制",
+        "每 10 点奉献可使范围伤害提高 4%",
+        "每 10 点奉献使召唤生物攻击和施法速度加快 1%",
+        "史实"
+      ],
+      "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
+      "flavourText": ["他们坚信自己有最崇高的信仰，可信念却变成了迫害。"],
+      "frameType": 3,
+      "x": 18,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1RoZVJlZERyZWFtIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsIm11dGF0ZWQiOnRydWV9XQ/ad9a659d67/TheRedDream.png",
+      "league": "S29赛季（专家）",
+      "id": "932d10f81241735b297ea3cae5c2dc905988db1221903cc12f0b72c3e570eddb",
+      "mutated": true,
+      "name": "秽生赤影梦境",
+      "typeLine": "赤红珠宝",
+      "baseType": "赤红珠宝",
+      "rarity": "Unique",
+      "ilvl": 83,
+      "identified": true,
+      "properties": [
+        {
+          "name": "仅限",
+          "values": [["1", 0]],
+          "displayMode": 0
+        },
+        {
+          "name": "范围",
+          "values": [["大", 0]],
+          "displayMode": 0,
+          "type": 24
+        }
+      ],
+      "explicitMods": ["获得额外混沌伤害， 其数值等同于火焰伤害的 7%"],
+      "mutatedMods": [
+        "范围内，提供火焰抗性或所有元素抗性的天赋点，\n也会将其数值的 50% 转化为提高最大生命"
+      ],
+      "descrText": "放置到一个天赋树的珠宝插槽中以产生效果。右键点击以移出插槽。",
+      "flavourText": [
+        "我们如鲜血般涌入夏乌拉的口中，\r",
+        "同时洒落在我们熟悉的大地上。"
+      ],
+      "frameType": 3,
+      "x": 0,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    },
+    {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "https://poecdn.game.qq.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/0eb1a9d981/NewGemBase1.png",
+      "league": "S29赛季（专家）",
+      "id": "159be6d547f744c11bec79076f0550a46c675d1e892b78db4e1d1cecd79c1ba7",
+      "name": "疫源 之眼",
+      "typeLine": "小型星团珠宝",
+      "baseType": "小型星团珠宝",
+      "rarity": "Rare",
+      "ilvl": 83,
+      "identified": true,
+      "requirements": [
+        {
+          "name": "等级",
+          "values": [["58", 0]],
+          "displayMode": 0,
+          "type": 62
+        }
+      ],
+      "enchantMods": [
+        "增加 2 个天赋技能",
+        "增加的小天赋获得：技能的魔力保留效能提高 6%"
+      ],
+      "explicitMods": [
+        "增加的小天赋还获得：+35 闪避值",
+        "增加的小天赋还获得：+7% 火焰抗性",
+        "增加的小天赋还获得：+8 智慧",
+        "其中 1 个增加的天赋为崇高之形"
+      ],
+      "descrText": "放入天赋树上配置好的小型、中型、大型珠宝槽。增加的天赋跟珠宝范围无关。可以右键点击从插槽中移除。",
+      "frameType": 2,
+      "x": 37,
+      "y": 0,
+      "inventoryId": "PassiveJewels"
+    }
+  ],
+  "jewel_data": {
+    "13": {
+      "type": "JewelPassiveTreeExpansionMedium",
+      "subgraph": {
+        "groups": {
+          "expansion_13": {
+            "proxy": "30275",
+            "nodes": ["1078", "78", "81", "84", "87"],
+            "x": -8798.67,
+            "y": -116.185,
+            "orbits": [3]
+          }
+        },
+        "nodes": {
+          "1078": {
+            "skill": "14933",
+            "name": "召唤生物生命专精",
+            "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupMinions.png",
+            "isMastery": true,
+            "stats": [],
+            "group": "expansion_13",
+            "orbit": 0,
+            "orbitIndex": 0,
+            "out": [],
+            "in": []
+          },
+          "78": {
+            "skill": "7107",
+            "name": "警戒之号",
+            "icon": "Art/2DArt/SkillIcons/passives/IncreasedWarcryNotable.png",
+            "isNotable": true,
+            "stats": [
+              "你使用战吼时，每 5 点威力值使护甲在 8 秒内提高 25%，最大 100%"
+            ],
+            "reminderText": [
+              "（普通怪物的威力为 1，魔法怪物为 2，稀有怪物为 10，传奇怪物为 20，玩家为 5）"
+            ],
+            "group": "expansion_13",
+            "orbit": 2,
+            "orbitIndex": 0,
+            "out": ["81"],
+            "in": ["87"]
+          },
+          "81": {
+            "skill": "20492",
+            "name": "召唤生物生命",
+            "icon": "Art/2DArt/SkillIcons/passives/IncreaseMinionLifeNode.png",
+            "stats": [
+              "+3% 火焰抗性",
+              "召唤生物的最大生命提高 12%",
+              "战吼持续时间延长 3%"
+            ],
+            "group": "expansion_13",
+            "orbit": 2,
+            "orbitIndex": 4,
+            "out": ["84", "78"],
+            "in": ["55190"]
+          },
+          "84": {
+            "skill": "36655",
+            "name": "按图索骥",
+            "icon": "Art/2DArt/SkillIcons/passives/IncreasedWarcryNotable.png",
+            "isNotable": true,
+            "grantedStrength": 10,
+            "grantedDexterity": 10,
+            "stats": [
+              "你使用战吼时， 你和周围友军在 4 秒内获得猛攻",
+              "+10 力量和敏捷"
+            ],
+            "reminderText": [
+              "( 猛攻赋予你额外你 20% 攻击速度, 施法速度, 和移动速度 )"
+            ],
+            "group": "expansion_13",
+            "orbit": 2,
+            "orbitIndex": 8,
+            "out": ["87"],
+            "in": ["81"]
+          },
+          "87": {
+            "skill": "36931",
+            "name": "小型珠宝槽",
+            "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+            "isJewelSocket": true,
+            "expansionJewel": {
+              "size": 0,
+              "index": 0,
+              "proxy": "49951",
+              "parent": "17219"
+            },
+            "stats": [],
+            "group": "expansion_13",
+            "orbit": 2,
+            "orbitIndex": 12,
+            "out": ["78"],
+            "in": ["84"]
+          }
+        }
+      }
+    },
+    "15": {
+      "type": "JewelDex"
+    },
+    "7": {
+      "type": "JewelInt"
+    },
+    "16": {
+      "type": "JewelInt"
+    },
+    "18": {
+      "type": "JewelTimeless",
+      "radius": 1800,
+      "radiusVisual": "Templar"
+    },
+    "0": {
+      "type": "JewelStr",
+      "radius": 1800
+    },
+    "37": {
+      "type": "JewelPassiveTreeExpansionSmall",
+      "subgraph": {
+        "groups": {
+          "expansion_37": {
+            "proxy": "49951",
+            "nodes": ["105", "107"],
+            "x": -10156.7,
+            "y": -75.185,
+            "orbits": [1]
+          }
+        },
+        "nodes": {
+          "105": {
+            "skill": "21796",
+            "name": "保留效能",
+            "icon": "Art/2DArt/SkillIcons/passives/AuraEffectNode.png",
+            "stats": [
+              "+35 点闪避值",
+              "+7% 火焰抗性",
+              "技能的魔力保留效能提高 6%",
+              "+8 智慧"
+            ],
+            "group": "expansion_37",
+            "orbit": 1,
+            "orbitIndex": 1,
+            "out": ["107"],
+            "in": ["36931"]
+          },
+          "107": {
+            "skill": "60690",
+            "name": "崇高之形",
+            "icon": "Art/2DArt/SkillIcons/passives/EvasionNotable.png",
+            "isNotable": true,
+            "stats": ["+10% 所有元素抗性", "优雅的魔力保留效能提高 50%"],
+            "group": "expansion_37",
+            "orbit": 1,
+            "orbitIndex": 5,
+            "out": [],
+            "in": ["105"]
+          }
+        }
+      }
+    }
+  }
 }

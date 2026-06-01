@@ -9,22 +9,26 @@ type SkillProvider struct {
 	indexableSupportZhIdx map[string]*poe.Skill
 }
 
-func NewSkillProvider(data *poe.Data) *SkillProvider {
+func NewSkillProvider() *SkillProvider {
 	zhIdx := make(map[string]*poe.Skill)
 	indexableSupportZhIdx := make(map[string]*poe.Skill)
 
-	for i, item := range data.GemSkills {
-		zhIdx[item.Zh] = &data.GemSkills[i]
+	for i := range poe.DATA.GemSkills {
+		skill := &poe.DATA.GemSkills[i]
+		zhIdx[skill.Zh] = skill
 	}
-	for i, item := range data.HybridSkills {
-		zhIdx[item.Zh] = &data.HybridSkills[i]
+	for i := range poe.DATA.HybridSkills {
+		skill := &poe.DATA.HybridSkills[i]
+		zhIdx[skill.Zh] = skill
 	}
-	for i, item := range data.TransfiguredSkills {
-		zhIdx[item.Zh] = &data.TransfiguredSkills[i]
+	for i := range poe.DATA.TransfiguredSkills {
+		skill := &poe.DATA.TransfiguredSkills[i]
+		zhIdx[skill.Zh] = skill
 	}
 
-	for i, item := range data.IndexableSupports {
-		indexableSupportZhIdx[item.Zh] = &data.IndexableSupports[i]
+	for i := range poe.DATA.IndexableSupports {
+		skill := &poe.DATA.IndexableSupports[i]
+		indexableSupportZhIdx[skill.Zh] = skill
 	}
 	return &SkillProvider{
 		zhIdx:                 zhIdx,

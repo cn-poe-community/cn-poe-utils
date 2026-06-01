@@ -8,10 +8,11 @@ type StringProvider struct {
 	idx map[string]*poe.ClientString
 }
 
-func NewStringProvider(data *poe.Data) *StringProvider {
+func NewStringProvider() *StringProvider {
 	idx := make(map[string]*poe.ClientString)
-	for i, item := range data.Strings {
-		idx[item.Id] = &data.Strings[i]
+	for i := range poe.DATA.Strings {
+		item := &poe.DATA.Strings[i]
+		idx[item.Id] = item
 	}
 	return &StringProvider{
 		idx: idx,

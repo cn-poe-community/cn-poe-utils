@@ -19,5 +19,8 @@ test("transform", () => {
     jsonTranslator.transPassiveSkills(passiveSkills);
     const building = transform(items, passiveSkills);
 
-    fs.writeFileSync("D:\\AppsInDisk\\PathOfBuildingCommunity\\Builds\\test.xml", building.toString());
+    fs.writeFileSync(
+        "D:\\AppsInDisk\\PathOfBuildingCommunity\\Builds\\test.xml",
+        building.toString(),
+    );
 });

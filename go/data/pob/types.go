@@ -1,6 +1,9 @@
 package pob
 
-import "encoding/json"
+import (
+	_ "embed"
+	"encoding/json"
+)
 
 // Clazz 职业
 type Clazz struct {
@@ -81,13 +84,15 @@ type Data struct {
 	RarityMap            map[int]string    `json:"rarityMap"`
 	SlotMap              map[string]string `json:"slotMap"`
 	ClusterJewels        ClusterJewels     `json:"clusterJewels"`
-	TransfiguredSkills   []Skill           `json:"transfiguredSkills"`
 }
 
-var DefaultData Data
+var DATA Data
 
 func init() {
-	if err := json.Unmarshal([]byte(dataStr), &DefaultData); err != nil {
-		panic("DefaultData 反序列化失败: " + err.Error())
+	if err := json.Unmarshal(dataJSON, &DATA); err != nil {
+		panic(err)
 	}
 }
+
+//go:embed data.json
+var dataJSON []byte

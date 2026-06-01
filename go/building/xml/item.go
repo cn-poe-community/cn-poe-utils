@@ -197,7 +197,7 @@ func flattenMods(mods []string) []string {
 }
 
 func toPobRarity(frameType int) string {
-	if rarity, ok := pob.DefaultData.RarityMap[frameType]; ok {
+	if rarity, ok := pob.DATA.RarityMap[frameType]; ok {
 		return rarity
 	}
 	return "Normal"

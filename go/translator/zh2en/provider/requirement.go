@@ -9,15 +9,17 @@ type RequirementProvider struct {
 	suffixZhIdx map[string]*poe.RequirementSuffix
 }
 
-func NewRequirementProvider(data *poe.Data) *RequirementProvider {
+func NewRequirementProvider() *RequirementProvider {
 	zhIdx := make(map[string]*poe.Requirement)
 	suffixZhIdx := make(map[string]*poe.RequirementSuffix)
 
-	for i, item := range data.Requirements {
-		zhIdx[item.Zh] = &data.Requirements[i]
+	for i := range poe.DATA.Requirements {
+		req := &poe.DATA.Requirements[i]
+		zhIdx[req.Zh] = req
 	}
-	for i, item := range data.RequirementSuffixes {
-		suffixZhIdx[item.Zh] = &data.RequirementSuffixes[i]
+	for i := range poe.DATA.RequirementSuffixes {
+		suffix := &poe.DATA.RequirementSuffixes[i]
+		suffixZhIdx[suffix.Zh] = suffix
 	}
 
 	return &RequirementProvider{

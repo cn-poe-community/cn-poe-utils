@@ -11,13 +11,14 @@ type PassiveSkillProvider struct {
 	keystonesZhIdx map[string]*poe.Node
 }
 
-func NewPassiveSkillProvider(data *poe.Data) *PassiveSkillProvider {
+func NewPassiveSkillProvider() *PassiveSkillProvider {
 	anointedZhCount := map[string]int{}
 
 	anointedZhIdx := make(map[string]*poe.Node)
-	for i, item := range data.Anointed {
-		anointedZhIdx[item.Zh] = &data.Anointed[i]
-		anointedZhCount[item.Zh]++
+	for i := range poe.DATA.Anointed {
+		node := &poe.DATA.Anointed[i]
+		anointedZhIdx[node.Zh] = node
+		anointedZhCount[node.Zh]++
 	}
 	// 移除重复的中文对应的索引，避免返回错误的涂油词缀翻译
 	for zh, count := range anointedZhCount {
@@ -27,12 +28,14 @@ func NewPassiveSkillProvider(data *poe.Data) *PassiveSkillProvider {
 	}
 
 	ascendantZhIdx := make(map[string]*poe.Node)
-	for i, item := range data.Ascendant {
-		ascendantZhIdx[item.Zh] = &data.Ascendant[i]
+	for i := range poe.DATA.Ascendant {
+		node := &poe.DATA.Ascendant[i]
+		ascendantZhIdx[node.Zh] = node
 	}
 	keystonesZhIdx := make(map[string]*poe.Node)
-	for i, item := range data.Keystones {
-		keystonesZhIdx[item.Zh] = &data.Keystones[i]
+	for i := range poe.DATA.Keystones {
+		node := &poe.DATA.Keystones[i]
+		keystonesZhIdx[node.Zh] = node
 	}
 
 	return &PassiveSkillProvider{
