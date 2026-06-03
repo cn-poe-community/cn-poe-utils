@@ -70,7 +70,7 @@ export class Gem {
 
     static parseJson(json: itemTypes.Gem): {
         gem: Gem;
-        buildInSupport?: Gem;
+        buildInSupport: Gem | undefined;
     } {
         const gem = new Gem();
         let buildInSupport: Gem | undefined = undefined;

@@ -23,7 +23,7 @@ export class Transformer {
     private passiveSkillsData: passiveSkillTypes.GetPassiveSkillsResult;
     private building?: PathOfBuilding;
     private itemIdGenerator = 1;
-    private options?: TransformOptions;
+    private options: TransformOptions | undefined;
 
     constructor(
         itemsData: itemTypes.GetItemsResult,

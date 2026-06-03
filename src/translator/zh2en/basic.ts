@@ -106,7 +106,7 @@ export class BasicTranslator {
     transAttr(
         name: string,
         value?: string,
-    ): { name: string; value?: string } | undefined {
+    ): { name: string; value: string | undefined } | undefined {
         const attr = this.attributeProvider.provideByZh(name);
         if (attr) {
             const en = attr.en;
@@ -454,7 +454,7 @@ export class BasicTranslator {
     transProperty(
         name: string,
         value: string,
-    ): { name: string; value?: string } | undefined {
+    ): { name: string; value: string | undefined } | undefined {
         const prop = this.propertyProvider.provideByZh(name);
         if (prop) {
             if (prop.values) {
@@ -469,6 +469,7 @@ export class BasicTranslator {
             }
             return {
                 name: prop.en,
+                value: undefined,
             };
         }
 
@@ -521,7 +522,7 @@ export class BasicTranslator {
     transRequirement(
         name: string,
         value: string,
-    ): { name: string; value?: string } | undefined {
+    ): { name: string; value: string | undefined } | undefined {
         const r = this.requirementProvider.provideByZh(name);
         if (r) {
             if (r.values) {
@@ -533,6 +534,7 @@ export class BasicTranslator {
             }
             return {
                 name: r.en,
+                value: undefined,
             };
         }
 

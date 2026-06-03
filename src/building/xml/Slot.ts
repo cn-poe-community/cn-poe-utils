@@ -1,8 +1,8 @@
 export class Slot {
     name: string;
     itemPbURL = "";
-    itemId?: number;
-    nodeId?: number;
+    itemId: number | undefined;
+    nodeId: number | undefined;
     active: boolean;
 
     private constructor(name: string, itemId?: number, nodeId?: number) {
