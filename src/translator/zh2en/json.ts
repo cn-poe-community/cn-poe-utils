@@ -367,6 +367,15 @@ export class JsonTranslator {
                     } else {
                         console.warn(`untranslated: keystone, ${name}`);
                     }
+                } else if (value.isNotable) {
+                    const result = this.basic.transAscendant(name);
+                    if (result) {
+                        value.name = result;
+                    } else {
+                        console.warn(
+                            `untranslated: ascendant notable, ${name}`,
+                        );
+                    }
                 } else {
                     const result = this.basic.transBaseType(name);
                     if (result) {
