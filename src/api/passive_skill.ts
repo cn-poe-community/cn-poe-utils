@@ -60,26 +60,30 @@ export interface ExpansionJewel {
 }
 
 export interface SkillOverride {
-    name: string;
-    icon: string;
     activeEffectImage: string;
     /**
-     * 以下isXXX字段只有在值为true时才存在。
+     * 激活时图标，仅限于Mastery技能
      */
-    isKeystone?: boolean;
-    isTattoo?: boolean;
-    isMastery?: boolean;
-    stats: string[];
-    reminderText?: string[];
+    activeIcon?: string;
     flavorText?: string;
+    grantedDexterity?: number;
+    grantedIntelligence?: number;
+    grantedStrength?: number;
+    icon: string;
     /**
      * 未激活时图标，仅限于Mastery技能
      */
     inactiveIcon?: string;
     /**
-     * 激活时图标，仅限于Mastery技能
+     * 以下isXXX字段只有在值为true时才存在
      */
-    activeIcon?: string;
+    isKeystone?: boolean;
+    isNotable?: boolean;
+    isTattoo?: boolean;
+    isMastery?: boolean;
+    name: string;
+    reminderText?: string[];
+    stats: string[];
 }
 
 export type MasteryEffects =
@@ -101,7 +105,7 @@ export type GetPassiveSkillsResult = {
     mastery_effects: MasteryEffects;
     skill_overrides: SkillOverrides;
     /**
-     * 天赋树插槽中的物品，包括：普通珠宝、星团珠宝、深渊珠宝。
+     * 天赋树插槽中的物品，包括：普通珠宝、星团珠宝、深渊珠宝
      */
     items: Item[];
     jewel_data: JewelData;

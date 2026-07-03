@@ -9004,21 +9004,11 @@
   },
   {
     "id": "physical_damage_reduction_rating_+%",
-    "zh": "护甲提高 {0}%",
-    "en": "{0}% increased Armour"
-  },
-  {
-    "id": "physical_damage_reduction_rating_+%",
-    "zh": "护甲降低 {0}%",
-    "en": "{0}% reduced Armour"
-  },
-  {
-    "id": "local_physical_damage_reduction_rating_+%",
     "zh": "该装备的护甲提高 {0}%",
     "en": "{0}% increased Armour"
   },
   {
-    "id": "local_physical_damage_reduction_rating_+%",
+    "id": "physical_damage_reduction_rating_+%",
     "zh": "该装备的护甲降低 {0}%",
     "en": "{0}% reduced Armour"
   },
@@ -9054,21 +9044,11 @@
   },
   {
     "id": "evasion_rating_+%",
-    "zh": "闪避值提高 {0}%",
-    "en": "{0}% increased Evasion Rating"
-  },
-  {
-    "id": "evasion_rating_+%",
-    "zh": "闪避值降低 {0}%",
-    "en": "{0}% reduced Evasion Rating"
-  },
-  {
-    "id": "local_evasion_rating_+%",
     "zh": "该装备的闪避值提高 {0}%",
     "en": "{0}% increased Evasion Rating"
   },
   {
-    "id": "local_evasion_rating_+%",
+    "id": "evasion_rating_+%",
     "zh": "该装备的闪避值降低 {0}%",
     "en": "{0}% reduced Evasion Rating"
   },
@@ -31781,7 +31761,7 @@
   {
     "id": "attack_speed_+%_per_enemy_in_close_range",
     "zh": "每有一个近身敌人，攻击速度减慢 {0}%",
-    "en": "{0}% decreased Attack Speed per Enemy in Close Range"
+    "en": "{0}% reduced Attack Speed per Enemy in Close Range"
   },
   {
     "id": "attack_speed_+%_per_explicit_map_mod_affecting_area",
@@ -39477,6 +39457,41 @@
     "id": "display_strongbox_drops_additional_shaper_or_elder_cards",
     "zh": "内含额外命运卡，可兑换塑界者和裂界者物品",
     "en": "Contains additional Divination Cards that give Shaper or Elder items"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机游侠升华天赋",
+    "en": "Grants a random Ranger Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机决斗者升华天赋",
+    "en": "Grants a random Duelist Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机野蛮人升华天赋",
+    "en": "Grants a random Marauder Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机圣堂武僧升华天赋",
+    "en": "Grants a random Templar Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机女巫升华天赋",
+    "en": "Grants a random Witch Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机暗影升华天赋",
+    "en": "Grants a random Shadow Ascendancy Notable"
+  },
+  {
+    "id": "display_tattoo_grants_random_ascendancy_notable_of_class",
+    "zh": "获得一个随机贵族升华天赋",
+    "en": "Grants a random Scion Ascendancy Notable"
   },
   {
     "id": "display_tattoo_grants_random_keystone",

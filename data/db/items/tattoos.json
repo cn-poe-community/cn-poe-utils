@@ -465,6 +465,41 @@
     "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique6"
   },
   {
+    "zh": "游侠的禁忌文身",
+    "en": "Forbidden Tattoo of the Ranger",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Ranger"
+  },
+  {
+    "zh": "决斗者的禁忌文身",
+    "en": "Forbidden Tattoo of the Duelist",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Duelist"
+  },
+  {
+    "zh": "野蛮人的禁忌文身",
+    "en": "Forbidden Tattoo of the Marauder",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Marauder"
+  },
+  {
+    "zh": "圣堂武僧的禁忌文身",
+    "en": "Forbidden Tattoo of the Templar",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Templar"
+  },
+  {
+    "zh": "女巫的禁忌文身",
+    "en": "Forbidden Tattoo of the Witch",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Witch"
+  },
+  {
+    "zh": "暗影的禁忌文身",
+    "en": "Forbidden Tattoo of the Shadow",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Shadow"
+  },
+  {
+    "zh": "贵族的禁忌文身",
+    "en": "Forbidden Tattoo of the Scion",
+    "key": "Metadata/Items/Currency/AncestralTattooSpecialUnique7Scion"
+  },
+  {
     "zh": "河川之符文嵌板",
     "en": "Runegraft of the River",
     "key": "Metadata/Items/Currency/RunegraftLowLifeRestore"

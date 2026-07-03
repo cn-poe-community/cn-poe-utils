@@ -114,6 +114,7 @@ export interface Item {
      */
     fracturedMods?: string[];
     frameType: number;
+    frameTypeId: string;
     h: number;
     icon: string;
     /**
@@ -151,6 +152,7 @@ export interface Item {
     name: string;
     properties?: Property[];
     rarity?: Rarity;
+    replica?: boolean;
     requirements?: Requirement[];
     /**
      * 天灾词缀
