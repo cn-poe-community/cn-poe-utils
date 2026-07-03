@@ -39,8 +39,7 @@
     "format": "prettier --write src/",
     "lint": "eslint src",
     "test": "vitest --run",
-    "typetest": "node scripts/typetest.js && tsc -p tsconfig.type-test.json",
-    "gotest": "node scripts/gotest.js && cd go && go test ./..."
+    "typetest": "node scripts/typetest.js && tsc -p tsconfig.type-test.json"
   },
   "keywords": [
     "path of exile",
